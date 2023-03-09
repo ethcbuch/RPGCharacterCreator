@@ -12,7 +12,7 @@ This project is currently being developed by: Ethan Buchanan and Steven Garcia-A
 ### Character creation screen
 ![image](https://user-images.githubusercontent.com/89400338/223882313-f07d0a55-e733-478d-8d2f-d4ee7df7ccb6.png)
 
-### Sections where users can adjust character stats, taits And more
+### Sections where users can adjust character stats, traits And more
 ![image](https://user-images.githubusercontent.com/89400338/223883078-0bce9daf-cd4f-4320-8947-967dceeae4b7.png)
 ![image](https://user-images.githubusercontent.com/89400338/223883014-829d84d5-fb1e-4cab-bf59-cf543962582b.png)
 ![image](https://user-images.githubusercontent.com/89400338/223883042-21c47ea2-66b8-4e7e-bb61-cb6e2974cabb.png)
