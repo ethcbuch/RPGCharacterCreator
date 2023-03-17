@@ -2,8 +2,17 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:RPGCharacterCreator"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewmodel="clr-namespace:RPGCharacterCreator.WVVM.ViewModel"
+             xmlns:view="clr-namespace:RPGCharacterCreator.WVVM.View"
+             >
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type TypeName=viewmodel:StartViewModel}">
+            <view:StartView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type TypeName=viewmodel:CharacterCreationViewModel}">
+            <view:CharacterCreationView/>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>
