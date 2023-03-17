@@ -16,6 +16,7 @@
 
     <Border Background="#424549"
             CornerRadius="7">
+
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300">
@@ -24,12 +25,19 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="150">
-
                 </RowDefinition>
             </Grid.RowDefinitions>
+            <Border Background="#36393E"
+                    Margin="0,0,-740,75"
+                    Grid.Row="1">
+                <Image Source="/Images/Logo2.png"
+                   Height="100"
+                   Width="292"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="10,10,0,0"/>
+            </Border>
 
-            <Image Width="300"
-                   Source="/Images/Logo2.png" Margin="0,-8,0,66"/>
         </Grid>
+
     </Border>
 </Window>

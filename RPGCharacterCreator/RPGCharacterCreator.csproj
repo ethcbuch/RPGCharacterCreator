@@ -97,11 +97,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Theme\" />
     <Folder Include="WVVM\Model\" />
     <Folder Include="WVVM\ViewModel\" />
     <Folder Include="WVVM\View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Logo2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
