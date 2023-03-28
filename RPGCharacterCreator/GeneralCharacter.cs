@@ -1,18 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RPGCharacterCreator
+﻿namespace RPGCharacterCreator
 {
+
+    public enum Classes
+    {
+        Warrior,
+        Rogue,
+        Mage
+    }
+
+    public enum Races
+    {
+        Human,
+        Elf,
+        Dwarf
+    }
+
+    public enum Backgrounds
+    {
+        Noble,
+        Peasant,
+        Sage
+    }
+
+
     internal class GeneralCharacter
     {
         protected Bio characterBio;
         protected Class characterClass;
+        protected Background characterBackground;
+        protected Race characterRace;
 
-        public GeneralCharacter(Bio characterBio, Class characterClass) 
+        public GeneralCharacter(Bio characterBio, Class characterClass)
         {
             this.characterBio = characterBio;
             this.characterClass = characterClass;
@@ -26,8 +44,8 @@ namespace RPGCharacterCreator
             string charGender;
             int charAge;
             string charBio;
-            
-            public Bio(string charName, string charBirthday, string charGender, int charAge, string charBio) 
+
+            public Bio(string charName, string charBirthday, string charGender, int charAge, string charBio)
             {
                 this.charName = charName;
                 this.charBirthday = charBirthday;
@@ -42,7 +60,7 @@ namespace RPGCharacterCreator
             {
             }
 
-            public string getCharName () { return charName; }
+            public string getCharName() { return charName; }
 
             public string getCharBirthday() { return charBirthday; }
 
@@ -61,10 +79,9 @@ namespace RPGCharacterCreator
             string secondaryStats;
 
             public string getClassName() { return className; }
-            public string getClassDescription() { return classDescription;} 
-            public string getPrimaryStats() {  return primaryStats; }
-
-            public string getSecondaryStats() {  return secondaryStats;}
+            public string getClassDescription() { return classDescription; }
+            public string getPrimaryStats() { return primaryStats; }
+            public string getSecondaryStats() { return secondaryStats; }
 
         }
 
@@ -75,7 +92,7 @@ namespace RPGCharacterCreator
             string primaryStats;
             string secondaryStats;
 
-            public Warrior() 
+            public Warrior()
             {
                 className = "Warrior";
                 classDescription = "placeholder";
@@ -84,13 +101,43 @@ namespace RPGCharacterCreator
 
             }
         }
-    }
 
-    public enum Classes
-    {
-        Warrior,
-        Rogue,
-        Mage
+        public class Race
+        {
+
+        }
+
+        public class Human : Race
+        {
+
+        }
+
+        public class Background
+        {
+            string backgroundName;
+            string backgroundDesc;
+            string backgroundSkills;
+
+            public string getBackgroundName() { return backgroundName; }
+            public string getBackgroundDesc() { return backgroundDesc; }
+            public string getBackgroundSkills() { return backgroundSkills; }
+
+        }
+
+        public class Noble : Background
+        {
+            string backgroundName;
+            string backgroundDesc;
+            string backgroundSkills;
+
+            public Noble()
+            {
+                backgroundName = "Noble";
+                backgroundDesc = "placeholder";
+                backgroundSkills = "placeholder";
+            }
+
+        }
     }
 
     interface CharacterBuilder
@@ -103,9 +150,9 @@ namespace RPGCharacterCreator
 
         GeneralCharacter.Class buildClass(Classes aClass);
 
-        void buildRace();
+        GeneralCharacter.Race buildRace(Races aRace);
 
-        void buildBackground();
+        GeneralCharacter.Background buildBackground(Backgrounds aBackgroud);
 
         void buildStats();
 
@@ -114,10 +161,10 @@ namespace RPGCharacterCreator
         void buildAlignment();
 
         GeneralCharacter GetCharacter();
-        
+
     }
 
-    internal class GeneralCharacterBuilder : CharacterBuilder 
+    internal class GeneralCharacterBuilder : CharacterBuilder
     {
 
         GeneralCharacter aChar;
@@ -133,9 +180,9 @@ namespace RPGCharacterCreator
 
         public void buildPortrait() { }
 
-        public GeneralCharacter.Class buildClass(Classes aClass) 
+        public GeneralCharacter.Class buildClass(Classes aClass)
         {
-            if (aClass == Classes.Warrior) 
+            if (aClass == Classes.Warrior)
             {
                 GeneralCharacter.Warrior war = new GeneralCharacter.Warrior();
                 return war;
@@ -143,9 +190,20 @@ namespace RPGCharacterCreator
             else { return null; }
         }
 
-        public void buildRace() { }
+        public GeneralCharacter.Race buildRace(Races aRace)
+        {
+            GeneralCharacter.Race race = new GeneralCharacter.Race();
 
-         public void buildBackground() { }
+            return race;
+        }
+
+        public GeneralCharacter.Background buildBackground(Backgrounds aBackground)
+        {
+            GeneralCharacter.Background background = new GeneralCharacter.Background();
+
+            return background;
+
+        }
 
         public void buildStats() { }
 
@@ -153,10 +211,10 @@ namespace RPGCharacterCreator
 
         public void buildAlignment() { }
 
-        public GeneralCharacter GetCharacter() 
+        public GeneralCharacter GetCharacter()
         {
 
-            return aChar; 
+            return aChar;
         }
 
     }

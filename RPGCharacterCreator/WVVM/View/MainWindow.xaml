@@ -29,7 +29,7 @@
             </Grid.RowDefinitions>
             <Border Background="#36393E"
                     Margin="0,0,-740,20" BorderThickness="0,0,0,1">
-                <Image Source="/Images/Logo2.png"
+                <Image Source="/Images/LogoFlat.png"
                    Height="90"
                    Width="310"
                    HorizontalAlignment="Left"
