@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,19 +9,27 @@ namespace RPGCharacterCreator
 {
     internal class GeneralCharacter
     {
-        string charName;
-        string charBirthday;
-        string charGender;
-        string charAge;
-        string charBio;
+        Bio characterBio;
+        Class characterClass;
 
-        internal GeneralCharacter(string charName, string charBirthday, string charGender, string charAge, string charBio)
+
+        internal class Bio
         {
-            this.charName = charName;
-            this.charBirthday = charBirthday;
-            this.charGender = charGender;
-            this.charAge = charAge;
-            this.charBio = charBio;
+            string charName;
+            string charBirthday;
+            string charGender;
+            string charAge;
+            string charBio;
+            
+            public string getCharName () { return charName; }
+
+            public string getCharBirthday() { return charBirthday; }
+
+            public string getCharGender() { return charGender; }
+
+            public string getCharAge() { return charAge; }
+
+            public string getCharBio() { return charBio; }
         }
 
         internal class Class
@@ -30,7 +39,7 @@ namespace RPGCharacterCreator
             string primaryStats;
             string secondaryStats;
 
-            string getClassName() { return className; }
+            public string getClassName() { return className; }
             public string getClassDescription() { return classDescription;} 
             public string getPrimaryStats() {  return primaryStats; }
 
@@ -38,7 +47,7 @@ namespace RPGCharacterCreator
 
         }
 
-        class Warrior : Class
+        public class Warrior : Class
         {
             string className;
             string classDescription;
@@ -78,5 +87,38 @@ namespace RPGCharacterCreator
 
         void buildAlignment();
         
+    }
+
+    internal class GeneralCharacterBuilder : CharacterBuilder 
+    {
+
+        GeneralCharacter aChar;
+
+        public void reset() { }
+
+        public void buildBio()
+        {
+        }
+
+        public void buildPortrait() { }
+
+        public void buildClass(Classes aClass) 
+        {
+            if (aClass == Classes.Warrior) 
+            {
+                GeneralCharacter.Warrior war = new GeneralCharacter.Warrior();
+            }
+        }
+
+        public void buildRace() { }
+
+         public void buildBackground() { }
+
+        public void buildStats() { }
+
+        public void buildSkills() { }
+
+        public void buildAlignment() { }
+
     }
 }
