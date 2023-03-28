@@ -9,30 +9,51 @@ namespace RPGCharacterCreator
 {
     internal class GeneralCharacter
     {
-        Bio characterBio;
-        Class characterClass;
+        protected Bio characterBio;
+        protected Class characterClass;
 
+        public GeneralCharacter(Bio characterBio, Class characterClass) 
+        {
+            this.characterBio = characterBio;
+            this.characterClass = characterClass;
 
-        internal class Bio
+        }
+
+        public class Bio
         {
             string charName;
             string charBirthday;
             string charGender;
-            string charAge;
+            int charAge;
             string charBio;
             
+            public Bio(string charName, string charBirthday, string charGender, int charAge, string charBio) 
+            {
+                this.charName = charName;
+                this.charBirthday = charBirthday;
+                this.charGender = charGender;
+                this.charAge = charAge;
+                this.charBio = charBio;
+
+
+            }
+
+            public Bio()
+            {
+            }
+
             public string getCharName () { return charName; }
 
             public string getCharBirthday() { return charBirthday; }
 
             public string getCharGender() { return charGender; }
 
-            public string getCharAge() { return charAge; }
+            public int getCharAge() { return charAge; }
 
             public string getCharBio() { return charBio; }
         }
 
-        internal class Class
+        public class Class
         {
             string className;
             string classDescription;
@@ -57,6 +78,9 @@ namespace RPGCharacterCreator
             public Warrior() 
             {
                 className = "Warrior";
+                classDescription = "placeholder";
+                primaryStats = "Strength";
+                secondaryStats = "Agility";
 
             }
         }
@@ -64,18 +88,20 @@ namespace RPGCharacterCreator
 
     public enum Classes
     {
-        Warrior
+        Warrior,
+        Rogue,
+        Mage
     }
 
     interface CharacterBuilder
     {
         void reset();
 
-        void buildBio();
+        GeneralCharacter.Bio buildBio();
 
         void buildPortrait();
 
-        void buildClass(Classes aClass);
+        GeneralCharacter.Class buildClass(Classes aClass);
 
         void buildRace();
 
@@ -86,6 +112,8 @@ namespace RPGCharacterCreator
         void buildSkills();
 
         void buildAlignment();
+
+        GeneralCharacter GetCharacter();
         
     }
 
@@ -96,18 +124,23 @@ namespace RPGCharacterCreator
 
         public void reset() { }
 
-        public void buildBio()
+        public GeneralCharacter.Bio buildBio()
         {
+            GeneralCharacter.Bio bio = new GeneralCharacter.Bio();
+
+            return bio;
         }
 
         public void buildPortrait() { }
 
-        public void buildClass(Classes aClass) 
+        public GeneralCharacter.Class buildClass(Classes aClass) 
         {
             if (aClass == Classes.Warrior) 
             {
                 GeneralCharacter.Warrior war = new GeneralCharacter.Warrior();
+                return war;
             }
+            else { return null; }
         }
 
         public void buildRace() { }
@@ -119,6 +152,12 @@ namespace RPGCharacterCreator
         public void buildSkills() { }
 
         public void buildAlignment() { }
+
+        public GeneralCharacter GetCharacter() 
+        {
+
+            return aChar; 
+        }
 
     }
 }

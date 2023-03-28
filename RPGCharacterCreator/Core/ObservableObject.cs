@@ -16,5 +16,6 @@ namespace RPGCharacterCreator.Core
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
     }
 }

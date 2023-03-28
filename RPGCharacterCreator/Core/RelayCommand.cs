@@ -34,5 +34,6 @@ namespace RPGCharacterCreator.Core
         {
             _execute(parameter);
         }
+
     }
 }
