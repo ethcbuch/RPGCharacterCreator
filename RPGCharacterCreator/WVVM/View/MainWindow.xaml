@@ -8,14 +8,14 @@
         Height="800" Width="1040"
         WindowStyle="None"
         
-        ResizeMode="CanMinimize"
+        ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         >
 
     <Border Background="#424549"
-            CornerRadius="7">
+            CornerRadius="20">
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -24,18 +24,20 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="150">
+                <RowDefinition Height="100">
                 </RowDefinition>
             </Grid.RowDefinitions>
             <Border Background="#36393E"
-                    Margin="0,0,-740,75"
-                    Grid.Row="1">
+                    Margin="0,0,-740,20" BorderThickness="0,0,0,1">
                 <Image Source="/Images/Logo2.png"
-                   Height="100"
-                   Width="292"
+                   Height="90"
+                   Width="310"
                    HorizontalAlignment="Left"
-                   VerticalAlignment="Top" Margin="10,10,0,0"/>
+                   VerticalAlignment="Top"/>
             </Border>
+            <ScrollViewer Margin="0,80,-80,-595" Background="#FF1B195D">
+                <StackPanel Height="600" Width="357"/>
+            </ScrollViewer>
 
         </Grid>
 
