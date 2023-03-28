@@ -24,5 +24,11 @@ namespace RPGCharacterCreator
         {
             InitializeComponent();
         }
+
+        private void headerThumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+        {
+            Left = Left + e.HorizontalChange;
+            Top = Top + e.VerticalChange;
+        }
     }
 }
