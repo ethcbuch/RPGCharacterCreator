@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RPGCharacterCreator"
         xmlns:view="clr-namespace:RPGCharacterCreator.WVVM.View"
         xmlns:viewmodel="clr-namespace:RPGCharacterCreator.WVVM.ViewModel"
+        d:DataContext="{d:DesignInstance viewmodel:BioViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
         WindowStyle="None"
@@ -14,7 +15,7 @@
         >
 
     <Window.DataContext>
-        <viewmodel:BioViewModel> </viewmodel:BioViewModel>
+        <viewmodel:BioViewModel/>
     </Window.DataContext>
 
     <Border 
@@ -82,10 +83,7 @@
             <ContentControl Margin="10,90,0,0" 
                             Width="1260" 
                             Height="622" 
-                            Grid.ColumnSpan="2"
-                            Content="{Binding c}">
-
-            </ContentControl>
+                            Grid.ColumnSpan="2" Content="{Binding bioVM.CurrentView}"/>
 
 
         </Grid>

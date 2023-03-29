@@ -1,5 +1,7 @@
 ﻿using RPGCharacterCreator.Core;
 using RPGCharacterCreator.WVVM.View;
+using System.ComponentModel;
+using System.Windows;
 
 namespace RPGCharacterCreator.WVVM.ViewModel
 {
