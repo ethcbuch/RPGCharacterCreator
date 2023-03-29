@@ -13,7 +13,6 @@
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-
             <DataTemplate DataType="{x:Type viewmodel:BioViewModel}">
                 <view:BioView/>
             </DataTemplate>

@@ -5,6 +5,9 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 {
     internal class BioViewModel : ObservableObject
     {
+
+        public BioViewModel bioVM { get; set; }
+
         private object _currentView;
 
         public object CurrentView
@@ -22,7 +25,10 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public BioViewModel()
         {
-            BioView = new BioViewModel();
+            bioVM = new BioViewModel();
+            CurrentView = bioVM;
+
+
         }
 
     }

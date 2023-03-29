@@ -4,17 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPGCharacterCreator"
+        xmlns:view="clr-namespace:RPGCharacterCreator.WVVM.View"
+        xmlns:viewmodel="clr-namespace:RPGCharacterCreator.WVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
         >
+
+    <Window.DataContext>
+        <viewmodel:BioViewModel> </viewmodel:BioViewModel>
+    </Window.DataContext>
+
     <Border 
             x:Name="windowBackground"
             Background="#424549" 
             CornerRadius="10">
         <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="245">
+                </ColumnDefinition>
+                <ColumnDefinition Width="1035"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
             <Border 
                     x:Name="headerBorder"
                     Background="#36393E" Grid.ColumnSpan="2"
@@ -59,21 +78,14 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource MenuButtonMenu }" FontSize="24"/>
             </StackPanel>
-            <ContentControl Content="ContentControl" Margin="10,90,0,0" Width="1260" Height="622" Grid.ColumnSpan="2">
-            
+           
+            <ContentControl Margin="10,90,0,0" 
+                            Width="1260" 
+                            Height="622" 
+                            Grid.ColumnSpan="2"
+                            Content="{Binding c}">
+
             </ContentControl>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="245">
-                </ColumnDefinition>
-                <ColumnDefinition Width="1035"/>
-
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
-            </Grid.RowDefinitions>
-
 
 
         </Grid>
