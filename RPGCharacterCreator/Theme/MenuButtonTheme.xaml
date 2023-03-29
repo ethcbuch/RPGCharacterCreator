@@ -22,8 +22,6 @@
 
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">

@@ -1,18 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RPGCharacterCreator.Core;
+﻿using RPGCharacterCreator.Core;
+using RPGCharacterCreator.WVVM.View;
 
 namespace RPGCharacterCreator.WVVM.ViewModel
 {
     internal class BioViewModel : ObservableObject
     {
+        private object _currentView;
+
+        public object CurrentView
+        {
+            get
+            {
+                return _currentView;
+            }
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged();
+            }
+        }
 
         public BioViewModel()
         {
-             
+            BioView = new BioViewModel();
         }
 
     }
