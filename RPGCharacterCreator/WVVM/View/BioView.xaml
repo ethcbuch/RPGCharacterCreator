@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="RPGCharacterCreator.WVVM.View.BioView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RPGCharacterCreator.WVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="400"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="540"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <TextBlock Text="CHOOSE CLASS"
+                   Foreground="White"
+                   Margin="0,0,0,20
+                   " FontFamily="Franklin Gothic Heavy" FontSize="24"/>
+            <StackPanel/>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

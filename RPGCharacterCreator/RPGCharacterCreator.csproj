@@ -57,6 +57,10 @@
     </ApplicationDefinition>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="WVVM\ViewModel\BioViewModel.cs" />
+    <Compile Include="WVVM\View\BioView.xaml.cs">
+      <DependentUpon>BioView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +75,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WVVM\View\BioView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,8 +114,7 @@
     <Resource Include="Images\LogoFlat.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WVVM\ViewModel\" />
-    <Folder Include="WVVM\View\" />
+    <Folder Include="WVVM\Model\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LogoStacked.png" />

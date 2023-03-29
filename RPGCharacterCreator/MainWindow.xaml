@@ -26,10 +26,11 @@
                    Opacity="0"
                    Background="{x:Null}"
                    Foreground="{x:Null}"
-                   Grid.ColumnSpan="2" DragDelta="headerThumb_DragDelta"
+                   DragDelta="headerThumb_DragDelta"
+                   Grid.ColumnSpan="2"
                     />
 
-            <StackPanel Grid.Column="2"
+            <StackPanel Grid.Column="1"
                         Orientation="Horizontal">
                 <RadioButton x:Name="bioButton"
                              Content="CHARACTER"
@@ -58,11 +59,14 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource MenuButtonMenu }" FontSize="24"/>
             </StackPanel>
+            <ContentControl Content="ContentControl" Margin="10,90,0,0" Width="1260" Height="622" Grid.ColumnSpan="2">
+            
+            </ContentControl>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250">
+                <ColumnDefinition Width="245">
                 </ColumnDefinition>
-                <ColumnDefinition Width="1030"/>
+                <ColumnDefinition Width="1035"/>
 
             </Grid.ColumnDefinitions>
 
@@ -70,7 +74,7 @@
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
-        
+
 
         </Grid>
     </Border>
