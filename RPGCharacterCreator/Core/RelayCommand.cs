@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace RPGCharacterCreator.Core
@@ -24,9 +20,9 @@ namespace RPGCharacterCreator.Core
             _canExecute = canExecute;
         }
 
-        public bool CanExecute(object parameter) 
+        public bool CanExecute(object parameter)
         {
-            return _canExecute == null || _canExecute(parameter);  
+            return _canExecute == null || _canExecute(parameter);
 
         }
 

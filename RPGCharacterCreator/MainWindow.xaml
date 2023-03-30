@@ -6,40 +6,43 @@
         xmlns:local="clr-namespace:RPGCharacterCreator"
         xmlns:view="clr-namespace:RPGCharacterCreator.WVVM.View"
         xmlns:viewmodel="clr-namespace:RPGCharacterCreator.WVVM.ViewModel"
-        d:DataContext="{d:DesignInstance viewmodel:BioViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280"
+        Title="MainWindow"
+        Height="720"
+        Width="1280"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
         >
 
     <Window.DataContext>
-        <viewmodel:BioViewModel/>
+        <viewmodel:MainViewModel />
     </Window.DataContext>
 
-    <Border 
-            x:Name="windowBackground"
-            Background="#424549" 
+    <Border x:Name="windowBackground"
+            Background="#424549"
             CornerRadius="10">
         <Grid>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="245">
                 </ColumnDefinition>
-                <ColumnDefinition Width="1035"/>
+                <ColumnDefinition Width="1035" />
 
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="80" />
             </Grid.RowDefinitions>
 
-            <Border 
-                    x:Name="headerBorder"
-                    Background="#36393E" Grid.ColumnSpan="2"
-                    >
-                <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="239" Source="/Images/LogoStacked.png"/>
+            <Border x:Name="headerBorder"
+                    Background="#36393E"
+                    Grid.ColumnSpan="2">
+                <Image HorizontalAlignment="Left"
+                       Height="100"
+                       VerticalAlignment="Center"
+                       Width="239"
+                       Source="/Images/LogoStacked.png" />
             </Border>
 
             <Thumb x:Name="headerThumb"
@@ -47,43 +50,48 @@
                    Background="{x:Null}"
                    Foreground="{x:Null}"
                    DragDelta="headerThumb_DragDelta"
-                   Grid.ColumnSpan="2"
-                    />
+                   Grid.ColumnSpan="2" />
 
             <StackPanel Grid.Column="1"
                         Orientation="Horizontal">
                 <RadioButton x:Name="bioButton"
                              Content="CHARACTER"
                              Height="80"
-                             Width="150" 
-                             FontFamily="Franklin Gothic Heavy" 
+                             Width="150"
+                             FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalAlignment="Left"
-                             Style="{StaticResource MenuButtonMenu }" FontSize="24"/>
+                             IsChecked="True"
+                             Style="{StaticResource MenuButtonMenu }"
+                             FontSize="24"
+                             Command="{Binding BioViewCommand}" />
 
                 <RadioButton x:Name="portraitButton"
                              Content="PORTRAIT"
                              Height="80"
-                             Width="150" 
-                             FontFamily="Franklin Gothic Heavy" 
+                             Width="150"
+                             FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalAlignment="Left"
-                             Style="{StaticResource MenuButtonMenu }" FontSize="24"/>
+                             Style="{StaticResource MenuButtonMenu }"
+                             FontSize="24" />
                 <RadioButton x:Name="classButton"
                              Content="CLASS"
                              Height="80"
-                             Width="150" 
-                             FontFamily="Franklin Gothic Heavy" 
+                             Width="150"
+                             FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalAlignment="Left"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource MenuButtonMenu }" FontSize="24"/>
+                             Style="{StaticResource MenuButtonMenu }"
+                             FontSize="24"
+                             Command="{Binding ClassViewCommand}" />
             </StackPanel>
-           
-            <ContentControl Margin="10,90,0,0" 
-                            Width="1260" 
-                            Height="622" 
-                            Grid.ColumnSpan="2" Content="{Binding bioVM.CurrentView}"/>
+
+            <ContentControl Margin="0,80,0,-640"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Content="{Binding CurrentView}" />
 
 
         </Grid>

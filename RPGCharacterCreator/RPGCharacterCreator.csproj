@@ -58,8 +58,13 @@
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="WVVM\ViewModel\BioViewModel.cs" />
+    <Compile Include="WVVM\ViewModel\ClassViewModel.cs" />
+    <Compile Include="WVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="WVVM\View\BioView.xaml.cs">
       <DependentUpon>BioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WVVM\View\ClassView.xaml.cs">
+      <DependentUpon>ClassView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WVVM\View\BioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WVVM\View\ClassView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

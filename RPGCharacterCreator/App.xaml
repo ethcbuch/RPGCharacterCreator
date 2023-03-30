@@ -17,6 +17,12 @@
                 <view:BioView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodel:ClassViewModel}">
+                <view:ClassView/>
+            </DataTemplate>
+
+
+
         </ResourceDictionary>
 
     </Application.Resources>

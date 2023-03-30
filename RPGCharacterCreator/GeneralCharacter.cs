@@ -1,7 +1,4 @@
-﻿using System.Management.Instrumentation;
-using System.Windows.Annotations;
-
-namespace RPGCharacterCreator
+﻿namespace RPGCharacterCreator
 {
 
     public enum Classes
@@ -33,8 +30,8 @@ namespace RPGCharacterCreator
         protected Background characterBackground;
         protected Race characterRace;
 
-        public GeneralCharacter() 
-        {        
+        public GeneralCharacter()
+        {
 
         }
 
@@ -177,8 +174,8 @@ namespace RPGCharacterCreator
 
         GeneralCharacter aChar;
 
-        public void reset() 
-        { 
+        public void reset()
+        {
             aChar = new GeneralCharacter();
         }
 
@@ -239,9 +236,9 @@ namespace RPGCharacterCreator
 
         //void changeBuilder(CharacterBuilder aCharacterBuilder) { }
 
-        GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder) 
+        GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder)
         {
-            return null;        
+            return null;
         }
 
     }
