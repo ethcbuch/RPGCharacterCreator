@@ -143,22 +143,27 @@
         <StackPanel Grid.Column="1"
                     Margin="6,83,0,0"
                     Grid.RowSpan="4">
-            <TextBox x:Name="bioTextBox"
-                     TextWrapping="Wrap"
-                     Width="620"
-                     Height="500"
-                     Text="Type character's story here..."
-                     Background="#00000000"
-                     Foreground="White"
-                     TextAlignment="Left"
-                     FontFamily="Franklin Gothic Heavy"
-                     FontSize="20"
-                     BorderThickness="0"
-                     BorderBrush="Transparent"
-                     GotFocus="bioTextBox_GotFocus"
-                     SelectionBrush="Transparent"
-                     Padding="10,10,10,10"
-                     />
+
+            <Border BorderBrush="#A0A0A0"
+                    BorderThickness="3"
+                    Width="635">
+                <TextBox x:Name="bioTextBox"
+                         TextWrapping="Wrap"
+                         Width="620"
+                         Height="500"
+                         Text="Type character's story here..."
+                         Background="#00000000"
+                         Foreground="White"
+                         TextAlignment="Left"
+                         FontFamily="Franklin Gothic Heavy"
+                         FontSize="20"
+                         BorderThickness="0"
+                         BorderBrush="Transparent"
+                         GotFocus="bioTextBox_GotFocus"
+                         SelectionBrush="Transparent"
+                         Padding="10,10,10,10" />
+            </Border>
+           
         </StackPanel>
         <Label x:Name="bioLabel"
                Content="CHARACTER BIOGRAPHY"

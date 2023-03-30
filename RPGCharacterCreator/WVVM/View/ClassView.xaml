@@ -14,8 +14,8 @@
             <RowDefinition Height="360" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="325" />
-            <ColumnDefinition Width="475" />
+            <ColumnDefinition Width="370" />
+            <ColumnDefinition Width="430" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1"
                     Grid.RowSpan="2"
@@ -53,10 +53,15 @@
                 Grid.Column="1" />
         <Border BorderBrush="#1E2124"
                 BorderThickness="2"
-                Margin="0,0,472,-190"
+                Margin="0,0,430,-190"
                 Grid.Column="1"
                 Grid.RowSpan="3" />
-        <StackPanel Grid.Row="2"
-                    Margin="0,0,5,-180" />
+        <ScrollViewer Grid.Row="1"
+                      Margin="0,0,0,-180"
+                      Grid.RowSpan="2"
+                      VerticalScrollBarVisibility="Auto">
+
+        </ScrollViewer>
+
     </Grid>
 </UserControl>

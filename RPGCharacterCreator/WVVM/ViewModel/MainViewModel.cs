@@ -12,13 +12,17 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
     internal class MainViewModel : ObservableObject
     {
+        public RelayCommand HomeViewCommand { get; set; }
 
         public RelayCommand BioViewCommand { get; set; }
         public RelayCommand ClassViewCommand { get; set; }
 
-        public BioViewModel bioVm { get; set; }
 
-        public ClassViewModel classVm { get; set; }
+        public HomeViewModel homeVM { get; set; }
+
+        public BioViewModel bioVM { get; set; }
+
+        public ClassViewModel classVM { get; set; }
 
         private object _currentView;
 
@@ -37,19 +41,26 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public MainViewModel()
         {
-            bioVm = new BioViewModel();
-            classVm = new ClassViewModel();
+            homeVM= new HomeViewModel();
+            bioVM = new BioViewModel();
+            classVM = new ClassViewModel();
 
-            CurrentView = bioVm;
+            CurrentView = homeVM;
+
+            HomeViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = homeVM;
+            });
 
             BioViewCommand = new RelayCommand( o =>
             {
-                CurrentView = bioVm;
+                CurrentView = bioVM;
             });
+
 
             ClassViewCommand = new RelayCommand(o =>
             {
-                CurrentView = classVm;
+                CurrentView = classVM;
             });
         }
     }

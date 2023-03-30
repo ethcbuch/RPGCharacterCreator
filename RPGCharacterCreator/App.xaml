@@ -12,10 +12,15 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/CharacterButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml" />
+                <ResourceDictionary Source="Theme/PortraitButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewmodel:BioViewModel}">
                 <view:BioView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
+                <view:HomeView />
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewmodel:ClassViewModel}">
