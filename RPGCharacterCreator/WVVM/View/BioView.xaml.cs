@@ -11,5 +11,17 @@ namespace RPGCharacterCreator.WVVM.View
         {
             InitializeComponent();
         }
+
+        bool hasBeenClicked = false;
+
+        private void bioTextBox_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!hasBeenClicked) 
+            {
+                bioTextBox.Text = string.Empty;
+                hasBeenClicked = true;
+            }
+
+        }
     }
 }

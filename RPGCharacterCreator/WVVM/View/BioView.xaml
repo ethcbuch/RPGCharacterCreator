@@ -25,7 +25,8 @@
                 Grid.RowSpan="4"
                 Grid.Column="1" />
         <StackPanel>
-            <Label Content="CHARACTER NAME"
+            <Label Name="nameLabel"
+                   Content="CHARACTER NAME"
                    HorizontalAlignment="Left"
                    Foreground="White"
                    Margin="50,20,50,50"
@@ -53,14 +54,15 @@
         <StackPanel Margin="0,1,0,157"
                     Grid.RowSpan="2"
                     Grid.Row="1">
-            <Label Content="CHARACTER NAME"
+            <Label Name="ageLabel"
+                   Content="AGE"
                    HorizontalAlignment="Left"
                    Foreground="White"
                    Margin="50,20,50,50"
                    FontFamily="Franklin Gothic Heavy"
                    FontSize="36" />
             <TextBox TextWrapping="NoWrap"
-                     Width="396"
+                     Width="156"
                      Height="34"
                      Background="#00000000"
                      Foreground="White"
@@ -77,19 +79,20 @@
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="55,101,123,54"
+                Margin="55,101,350,54"
                 Grid.Row="1" />
         <StackPanel Margin="0,4,0,154"
                     Grid.RowSpan="2"
                     Grid.Row="2">
-            <Label Content="CHARACTER NAME"
+            <Label Name="birthdayLabel"
+                   Content="BIRTHDAY"
                    HorizontalAlignment="Left"
                    Foreground="White"
                    Margin="50,20,50,50"
                    FontFamily="Franklin Gothic Heavy"
                    FontSize="36" />
             <TextBox TextWrapping="NoWrap"
-                     Width="396"
+                     Width="231"
                      Height="34"
                      Background="#00000000"
                      Foreground="White"
@@ -106,18 +109,19 @@
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="55,104,123,51"
+                Margin="55,104,287,51"
                 Grid.Row="2" />
         <StackPanel Margin="0,1,0,-1"
                     Grid.Row="3">
-            <Label Content="CHARACTER NAME"
+            <Label Name="genderLabel"
+                   Content="GENDER"
                    HorizontalAlignment="Left"
                    Foreground="White"
                    Margin="50,20,50,50"
                    FontFamily="Franklin Gothic Heavy"
                    FontSize="36" />
             <TextBox TextWrapping="NoWrap"
-                     Width="396"
+                     Width="236"
                      Height="34"
                      Background="#00000000"
                      Foreground="White"
@@ -134,8 +138,35 @@
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="55,101,123,54"
+                Margin="55,101,287,54"
                 Grid.Row="3" />
+        <StackPanel Grid.Column="1"
+                    Margin="6,83,0,0"
+                    Grid.RowSpan="4">
+            <TextBox x:Name="bioTextBox"
+                     TextWrapping="Wrap"
+                     Width="620"
+                     Height="500"
+                     Text="Type character's story here..."
+                     Background="#00000000"
+                     Foreground="White"
+                     TextAlignment="Left"
+                     FontFamily="Franklin Gothic Heavy"
+                     FontSize="20"
+                     BorderThickness="0"
+                     BorderBrush="Transparent"
+                     GotFocus="bioTextBox_GotFocus"
+                     SelectionBrush="Transparent"
+                     Padding="10,10,10,10"
+                     />
+        </StackPanel>
+        <Label x:Name="bioLabel"
+               Content="CHARACTER BIOGRAPHY"
+               Foreground="White"
+               FontFamily="Franklin Gothic Heavy"
+               FontSize="36"
+               Margin="40,20,240,87"
+               Grid.Column="1" />
 
     </Grid>
 

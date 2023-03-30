@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Media;
 
 namespace RPGCharacterCreator
 {
@@ -18,5 +19,6 @@ namespace RPGCharacterCreator
             Left = Left + e.HorizontalChange;
             Top = Top + e.VerticalChange;
         }
+
     }
 }

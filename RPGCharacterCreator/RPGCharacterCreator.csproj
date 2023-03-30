@@ -59,12 +59,16 @@
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="WVVM\ViewModel\BioViewModel.cs" />
     <Compile Include="WVVM\ViewModel\ClassViewModel.cs" />
+    <Compile Include="WVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="WVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="WVVM\View\BioView.xaml.cs">
       <DependentUpon>BioView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WVVM\View\ClassView.xaml.cs">
       <DependentUpon>ClassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WVVM\View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,7 +83,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Theme\MenuButtonTheme.xaml">
+    <Page Include="Theme\HomeButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\CharacterButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WVVM\View\ClassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WVVM\View\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
