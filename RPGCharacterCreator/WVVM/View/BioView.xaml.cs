@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 
 namespace RPGCharacterCreator.WVVM.View
 {
@@ -16,12 +17,12 @@ namespace RPGCharacterCreator.WVVM.View
 
         private void bioTextBox_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (!hasBeenClicked) 
+            if (!hasBeenClicked)
             {
-                bioTextBox.Text = string.Empty;
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
                 hasBeenClicked = true;
             }
-
         }
     }
 }

@@ -9,20 +9,21 @@
              d:DesignWidth="1280">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="305" />
-            <ColumnDefinition Width="495" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="880" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0"
-                    Margin="0,-1,0,4">
-            
-            
-            
-        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" />
         <Border BorderBrush="#1E2124"
                 BorderThickness="3"
-                Margin="0,0,490,0"
+                Margin="0,0,874,-4"
                 Grid.Column="1" />
-        <StackPanel Margin="0,0,5,0" />
+        <ContentControl Content="ContentControl"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Width="874"
+                        Height="626"
+                        Margin="6,4,0,0"
+                        Grid.Column="1" />
     </Grid>
 </UserControl>

@@ -25,21 +25,13 @@
 
     internal class GeneralCharacter
     {
-        protected Bio characterBio;
-        protected Class characterClass;
-        protected Background characterBackground;
-        protected Race characterRace;
+        public Bio characterBio;
+        public Class characterClass;
+        public Background characterBackground;
+        public Race characterRace;
 
         public GeneralCharacter()
         {
-
-        }
-
-        public GeneralCharacter(Bio characterBio, Class characterClass)
-        {
-            this.characterBio = characterBio;
-            this.characterClass = characterClass;
-
         }
 
         public class Bio
@@ -47,33 +39,17 @@
             string charName;
             string charBirthday;
             string charGender;
-            int charAge;
+            string charAge;
             string charBio;
 
-            public Bio()
-            {
-            }
-
-            public Bio(string charName, string charBirthday, string charGender, int charAge, string charBio)
+            public Bio(string charName, string charAge, string charBirthday, string charGender, string charBio)
             {
                 this.charName = charName;
                 this.charBirthday = charBirthday;
                 this.charGender = charGender;
                 this.charAge = charAge;
                 this.charBio = charBio;
-
-
             }
-
-            public string getCharName() { return charName; }
-
-            public string getCharBirthday() { return charBirthday; }
-
-            public string getCharGender() { return charGender; }
-
-            public int getCharAge() { return charAge; }
-
-            public string getCharBio() { return charBio; }
         }
 
         public class Class
@@ -149,7 +125,7 @@
     {
         void reset();
 
-        GeneralCharacter.Bio buildBio();
+        void buildBio(string charName, string charAge, string charBD, string charGender, string charBio);
 
         void buildPortrait();
 
@@ -172,18 +148,16 @@
     internal class GeneralCharacterBuilder : CharacterBuilder
     {
 
-        GeneralCharacter aChar;
+        public GeneralCharacter character = new GeneralCharacter();
 
         public void reset()
         {
-            aChar = new GeneralCharacter();
+            character = new GeneralCharacter();
         }
 
-        public GeneralCharacter.Bio buildBio()
+        public void buildBio(string charName, string charAge, string charBD, string charGender, string charBio)
         {
-            GeneralCharacter.Bio bio = new GeneralCharacter.Bio();
-
-            return bio;
+            character.characterBio = new GeneralCharacter.Bio(charName, charAge, charBD, charGender, charBio);
         }
 
         public void buildPortrait() { }
@@ -221,24 +195,33 @@
 
         public GeneralCharacter GetCharacter()
         {
-            aChar = new GeneralCharacter();
-            return aChar;
+            return character;
         }
 
     }
 
 
-    class CharacterDirector
+    internal class CharacterDirector
     {
-        CharacterBuilder aCharacterBuilder;
+        private CharacterBuilder charBuilder;
 
-        CharacterDirector(CharacterBuilder aCharacterBuilder) { }
+        public CharacterDirector(CharacterBuilder aCharacterBuilder)
+        {
+            charBuilder = aCharacterBuilder;
+        }
 
         //void changeBuilder(CharacterBuilder aCharacterBuilder) { }
 
-        GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder)
+        public CharacterBuilder getBuilder()
         {
-            return null;
+            return charBuilder;
+        }
+
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder)
+        {
+            GeneralCharacter character = new GeneralCharacter();
+
+            return character;
         }
 
     }

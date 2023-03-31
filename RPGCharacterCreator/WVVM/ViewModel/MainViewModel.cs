@@ -39,22 +39,29 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             }
         }
 
+
+
         public MainViewModel()
         {
-            homeVM= new HomeViewModel();
+            homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
             classVM = new ClassViewModel();
+
 
             CurrentView = homeVM;
 
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = homeVM;
+
             });
 
             BioViewCommand = new RelayCommand( o =>
             {
                 CurrentView = bioVM;
+
+
+
             });
 
 

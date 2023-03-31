@@ -24,10 +24,6 @@
         <Grid>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="255">
-                </ColumnDefinition>
-                <ColumnDefinition Width="1025" />
-
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -62,7 +58,7 @@
                 <RadioButton x:Name="bioButton"
                              Content="CHARACTER"
                              Height="80"
-                             Width="120"
+                             Width="140"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              Style="{StaticResource CharacterButtonMenu}"
@@ -71,17 +67,14 @@
                              Visibility="Visible" />
 
                 <RadioButton x:Name="portraitButton"
-                             Content="PORTRAIT"
                              Height="80"
                              Width="100"
-                             FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
                              Style="{StaticResource PortraitButtonMenu}"
                              Visibility="Visible" />
                 <RadioButton x:Name="classButton"
                              Content="CLASS"
                              Height="80"
-                             Width="100"
+                             Width="90"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
@@ -92,7 +85,7 @@
                 <RadioButton x:Name="raceButton"
                              Content="RACE"
                              Height="80"
-                             Width="100"
+                             Width="90"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
@@ -103,7 +96,7 @@
                 <RadioButton x:Name="backgroundButton"
                              Content="BACKGROUND"
                              Height="80"
-                             Width="140"
+                             Width="150"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
@@ -114,7 +107,7 @@
                 <RadioButton x:Name="statsButton"
                              Content="STATS"
                              Height="80"
-                             Width="140"
+                             Width="90"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
@@ -125,7 +118,7 @@
                 <RadioButton x:Name="skillsButton"
                              Content="SKILLS"
                              Height="80"
-                             Width="140"
+                             Width="90"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"

@@ -15,8 +15,11 @@
                                 <Image Source=" /Images/placeholder.png"
                                        Height="50"
                                        Width="50" />
-                                
-                                
+                                <Label Content="PORTRAIT" 
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Heavy"
+                                       FontSize="19"/>
+
                             </StackPanel>
 
                         </Grid>
