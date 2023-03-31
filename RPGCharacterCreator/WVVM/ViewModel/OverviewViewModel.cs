@@ -1,6 +1,7 @@
 ﻿using RPGCharacterCreator.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,15 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public string CharName
         {
-            get { return _charName; }
+            get
+            {
+                _charName = Creator.director.getBuilder().GetCharacter().characterBio.getCharName();
+                return _charName;
+            }
             set
             {
-                
-                _charName = Creator.director.getBuilder().GetCharacter().characterBio.getCharName();
-                OnPropertyChanged();
+
+                _charName = value;
             }
         }
 
@@ -27,29 +31,46 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public string CharAge
         {
-            get { return _charAge; }
-            set { _charAge = Creator.director.getBuilder().GetCharacter().characterBio.getCharAge(); }
+            get
+            {
+                _charAge = Creator.director.getBuilder().GetCharacter().characterBio.getCharAge();
+                return _charAge;
+            }
+            set
+            {
+                _charAge = value;
+            }
         }
 
         private string _charBirthday;
 
         public string CharBirthday
         {
-            get { return _charBirthday; }
-            set
+            get
             {
                 _charBirthday = Creator.director.getBuilder().GetCharacter().characterBio.getCharBirthday();
+                return _charBirthday;
             }
+            set
+            {
+                _charBirthday = value;
+            }
+
         }
 
         private string _charGender;
 
         public string CharGender
         {
-            get { return _charGender; }
-            set
+            get
             {
                 _charGender = Creator.director.getBuilder().GetCharacter().characterBio.getCharGender();
+                return _charGender;
+            }
+            set
+            {
+                _charGender = value;
+
             }
         }
 
@@ -57,11 +78,21 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public string CharBio
         {
-            get { return _charBio; }
-            set
+            get
             {
                 _charBio = Creator.director.getBuilder().GetCharacter().characterBio.getCharBio();
+                return _charBio;
             }
+            set
+            {
+                _charBio = value;
+
+            }
+        }
+
+        public OverviewViewModel()
+        {
+
         }
     }
 }

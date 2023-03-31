@@ -15,7 +15,7 @@ namespace RPGCharacterCreator.WVVM.View
 
         bool hasBeenClicked = false;
 
-        private void bioTextBox_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void bioTextBox_GotFocus_1(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!hasBeenClicked)
             {

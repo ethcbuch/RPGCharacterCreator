@@ -1,4 +1,6 @@
 ﻿using RPGCharacterCreator.Core;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.WVVM.ViewModel
 {
@@ -13,7 +15,8 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             set
             {
                 _charName = value;
-                Creator.director.getBuilder().buildBio(CharName, CharAge, CharBirthday, CharGender, CharBio);
+                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
+                OnPropertyChanged();
             }
         }
 
@@ -22,7 +25,12 @@ namespace RPGCharacterCreator.WVVM.ViewModel
         public string CharAge
         {
             get { return _charAge; }
-            set { _charAge = value; }
+            set
+            {
+                _charAge = value;
+                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
+                OnPropertyChanged();
+            }
         }
 
         private string _charBirthday;
@@ -33,7 +41,8 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             set
             {
                 _charBirthday = value;
-                Creator.director.getBuilder().buildBio(CharName, CharAge, CharBirthday, CharGender, CharBio);
+                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
+                OnPropertyChanged();
             }
         }
 
@@ -45,7 +54,8 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             set
             {
                 _charGender = value;
-                Creator.director.getBuilder().buildBio(CharName, CharAge, CharBirthday, CharGender, CharBio);
+                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
+                OnPropertyChanged();
             }
         }
 
@@ -57,7 +67,8 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             set
             {
                 _charBio = value;
-                Creator.director.getBuilder().buildBio(CharName, CharAge, CharBirthday, CharGender, CharBio);
+                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
+                OnPropertyChanged();
             }
         }
 
