@@ -50,6 +50,13 @@
                 this.charAge = charAge;
                 this.charBio = charBio;
             }
+
+            public string getCharName() { return charName; }
+            public string getCharBirthday() { return charBirthday; }
+            public string getCharGender() { return charGender; }
+            public string getCharAge() { return charAge; }
+            public string getCharBio() { return charBio; }
+
         }
 
         public class Class

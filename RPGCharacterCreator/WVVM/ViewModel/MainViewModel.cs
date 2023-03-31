@@ -16,6 +16,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public RelayCommand BioViewCommand { get; set; }
         public RelayCommand ClassViewCommand { get; set; }
+        public RelayCommand OverviewViewCommand { get; set; }
 
 
         public HomeViewModel homeVM { get; set; }
@@ -23,6 +24,8 @@ namespace RPGCharacterCreator.WVVM.ViewModel
         public BioViewModel bioVM { get; set; }
 
         public ClassViewModel classVM { get; set; }
+
+        public OverviewViewModel overviewVM { get; set; }
 
         private object _currentView;
 
@@ -46,7 +49,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
             classVM = new ClassViewModel();
-
+            overviewVM = new OverviewViewModel();
 
             CurrentView = homeVM;
 
@@ -68,6 +71,11 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             ClassViewCommand = new RelayCommand(o =>
             {
                 CurrentView = classVM;
+            });
+
+            OverviewViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = overviewVM;
             });
         }
     }

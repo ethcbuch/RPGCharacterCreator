@@ -24,21 +24,27 @@
         <Border BorderBrush="LightGray"
                 BorderThickness="2"
                 Height="525"
-                Width="580">
-
-        </Border>
+                Margin="0,0,10.182,105.982"
+                Grid.RowSpan="4" />
         <Border VerticalAlignment="Top"
                 Grid.RowSpan="4"
                 Margin="5,5,5,0"
                 Height="615"
                 Grid.Column="1"
                 BorderThickness="2"
-                BorderBrush="LightGray" />
+                BorderBrush="LightGray">
+            <TextBox TextWrapping="Wrap"
+                     Background="Transparent"
+                     FontFamily="Franklin Gothic Medium"
+                     Foreground="White"
+                     FontSize="14"
+                     Text="{Binding CharBio, UpdateSourceTrigger=PropertyChanged}" />
+        </Border>
         <StackPanel Grid.Column="2"
                     Grid.Row="0"
                     Grid.ColumnSpan="2">
             <Label Grid.RowSpan="2"
-                   Content="PLACEHOLDER"
+                   Content="{Binding CharName, UpdateSourceTrigger=PropertyChanged}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
                    Foreground="White"
@@ -53,8 +59,137 @@
             <Border BorderBrush="LightGray"
                     BorderThickness="3"
                     Height="155">
-                <Border BorderBrush="Black"
-                        BorderThickness="1" />
+                <Grid>
+                    <StackPanel Margin="7.382,7.382,432.345,97.727">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="{Binding CharName, UpdateSourceTrigger=PropertyChanged}"
+                                   Margin="0,0,28.873,0"
+                                   Height="20"
+                                   Foreground="White"
+                                   FontFamily="Franklin Gothic Medium Cond"
+                                   FontSize="14" />
+                        <Border BorderBrush="#A0A0A0"
+                                BorderThickness="3"
+                                Height="3"
+                                Margin="0,0,28.927,0" />
+                        <Label Content="GENDER"
+                               Margin="0,0,-0.073,0"
+                               FontFamily="Franklin Gothic Heavy"
+                               Foreground="White"
+                               FontSize="14" />
+                    </StackPanel>
+                    <StackPanel Margin="152,7,287.727,98.109">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="TextBlock"
+                                   Margin="0,0,28.873,0"
+                                   Height="20"
+                                   Foreground="White"
+                                   FontFamily="Franklin Gothic Medium Cond"
+                                   FontSize="14" />
+                        <Border BorderBrush="#A0A0A0"
+                                BorderThickness="3"
+                                Height="3"
+                                Margin="0,0,28.927,0" />
+                        <Label Content="RACE"
+                               Margin="0,0,-0.073,0"
+                               FontFamily="Franklin Gothic Heavy"
+                               Foreground="White"
+                               FontSize="14" />
+                    </StackPanel>
+                    <StackPanel Margin="302,7,137.727,98.109">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="TextBlock"
+                                   Margin="0,0,28.873,0"
+                                   Height="20"
+                                   Foreground="White"
+                                   FontFamily="Franklin Gothic Medium Cond"
+                                   FontSize="14" />
+                        <Border BorderBrush="#A0A0A0"
+                                BorderThickness="3"
+                                Height="3"
+                                Margin="0,0,28.927,0" />
+                        <Label Content="CLASS"
+                               Margin="0,0,-0.073,0"
+                               FontFamily="Franklin Gothic Heavy"
+                               Foreground="White"
+                               FontSize="14" />
+                    </StackPanel>
+                    <StackPanel Margin="440,7,-0.273,98.109">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="TextBlock"
+                                   Margin="0,0,28.873,0"
+                                   Height="20"
+                                   Foreground="White"
+                                   FontFamily="Franklin Gothic Medium Cond"
+                                   FontSize="14" />
+                        <Border BorderBrush="#A0A0A0"
+                                BorderThickness="3"
+                                Height="3"
+                                Margin="0,0,9.873,0" />
+                        <Label Content="BACKGROUND"
+                               Margin="0,0,-0.073,0"
+                               FontFamily="Franklin Gothic Heavy"
+                               Foreground="White"
+                               FontSize="14" />
+                    </StackPanel>
+                    <StackPanel Margin="10,87,429.727,18.109">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="{Binding CharGender, UpdateSourceTrigger=PropertyChanged}"
+                                   Margin="0,0,28.873,0"
+                                   Height="20"
+                                   Foreground="White"
+                                   FontFamily="Franklin Gothic Medium Cond"
+                                   FontSize="14" />
+                        <Border BorderBrush="#A0A0A0"
+                                BorderThickness="3"
+                                Height="3"
+                                Margin="0,0,28.927,0" />
+                        <Label Content="AGE"
+                               Margin="0,0,-0.073,0"
+                               FontFamily="Franklin Gothic Heavy"
+                               Foreground="White"
+                               FontSize="14" />
+                    </StackPanel>
+                    <StackPanel Margin="160,87,279.727,18.109">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="{Binding CharBirthday, UpdateSourceTrigger=PropertyChanged}"
+                                   Margin="0,0,28.873,0"
+                                   Height="20"
+                                   Foreground="White"
+                                   FontFamily="Franklin Gothic Medium Cond"
+                                   FontSize="14" />
+                        <Border BorderBrush="#A0A0A0"
+                                BorderThickness="3"
+                                Height="3"
+                                Margin="0,0,28.927,0" />
+                        <Label Content="BIRTHDAY"
+                               Margin="0,0,-0.073,0"
+                               FontFamily="Franklin Gothic Heavy"
+                               Foreground="White"
+                               FontSize="14" />
+                    </StackPanel>
+                    <StackPanel Margin="323,87,59.727,18.109">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="TextBlock"
+                                   Margin="0,0,28.873,0"
+                                   Height="20"
+                                   Foreground="White"
+                                   FontFamily="Franklin Gothic Medium Cond"
+                                   FontSize="14" />
+                        <Border BorderBrush="#A0A0A0"
+                                BorderThickness="3"
+                                Height="3"
+                                Margin="0,0,28.927,0" />
+                        <Label Content="ALIGNMENT"
+                               Margin="0,0,-0.073,0"
+                               FontFamily="Franklin Gothic Heavy"
+                               Foreground="White"
+                               FontSize="14" />
+                    </StackPanel>
+                </Grid>
+                
+                
+                
             </Border>
 
         </StackPanel>

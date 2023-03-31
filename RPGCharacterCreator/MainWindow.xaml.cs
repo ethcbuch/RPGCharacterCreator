@@ -30,5 +30,7 @@ namespace RPGCharacterCreator
             Left = Left + e.HorizontalChange;
             Top = Top + e.VerticalChange;
         }
+
+       
     }
 }

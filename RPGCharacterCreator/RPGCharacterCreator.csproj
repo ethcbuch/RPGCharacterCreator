@@ -61,6 +61,7 @@
     <Compile Include="WVVM\ViewModel\ClassViewModel.cs" />
     <Compile Include="WVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="WVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="WVVM\ViewModel\OverviewViewModel.cs" />
     <Compile Include="WVVM\View\BioView.xaml.cs">
       <DependentUpon>BioView.xaml</DependentUpon>
     </Compile>
@@ -142,14 +143,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Logo.png" />
-    <Resource Include="Images\LogoFlat.png" />
+    <Resource Include="Images\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LogoFlat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WVVM\Model\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\LogoStacked.png" />
+    <Resource Include="Images\LogoStacked.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
