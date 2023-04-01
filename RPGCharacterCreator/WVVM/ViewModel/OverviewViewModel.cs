@@ -17,6 +17,10 @@ namespace RPGCharacterCreator.WVVM.ViewModel
         {
             get
             {
+                if (Creator.director.getBuilder().GetCharacter().characterBio == null)
+                {
+                    return _charName;
+                }
                 _charName = Creator.director.getBuilder().GetCharacter().characterBio.getCharName();
                 return _charName;
             }
@@ -33,6 +37,10 @@ namespace RPGCharacterCreator.WVVM.ViewModel
         {
             get
             {
+                if (Creator.director.getBuilder().GetCharacter().characterBio == null)
+                {
+                    return _charAge;
+                }
                 _charAge = Creator.director.getBuilder().GetCharacter().characterBio.getCharAge();
                 return _charAge;
             }
@@ -48,6 +56,10 @@ namespace RPGCharacterCreator.WVVM.ViewModel
         {
             get
             {
+                if ( Creator.director.getBuilder().GetCharacter().characterBio == null )
+                {
+                    return _charBirthday;
+                }
                 _charBirthday = Creator.director.getBuilder().GetCharacter().characterBio.getCharBirthday();
                 return _charBirthday;
             }
@@ -64,6 +76,10 @@ namespace RPGCharacterCreator.WVVM.ViewModel
         {
             get
             {
+                if (Creator.director.getBuilder().GetCharacter().characterBio == null)
+                {
+                    return _charGender;
+                }
                 _charGender = Creator.director.getBuilder().GetCharacter().characterBio.getCharGender();
                 return _charGender;
             }
@@ -80,6 +96,10 @@ namespace RPGCharacterCreator.WVVM.ViewModel
         {
             get
             {
+                if (Creator.director.getBuilder().GetCharacter().characterBio == null)
+                {
+                    return _charBio;
+                }
                 _charBio = Creator.director.getBuilder().GetCharacter().characterBio.getCharBio();
                 return _charBio;
             }
