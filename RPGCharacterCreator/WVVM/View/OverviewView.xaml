@@ -43,7 +43,7 @@
         <StackPanel Grid.Column="2"
                     Grid.Row="0"
                     Grid.ColumnSpan="2">
-            <Label Content="{Binding CharName, UpdateSourceTrigger=PropertyChanged,  Mode=TwoWay}"
+            <Label Content="{Binding TempBio.CharName, UpdateSourceTrigger=PropertyChanged,  Mode=TwoWay}"
                    Foreground="White"
                    FontFamily="Franklin Gothic Heavy"
                    FontSize="72"

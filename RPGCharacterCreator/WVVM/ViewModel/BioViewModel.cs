@@ -1,81 +1,30 @@
 ﻿using RPGCharacterCreator.Core;
-using System.Diagnostics;
-using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.WVVM.ViewModel
 {
     internal class BioViewModel : ObservableObject
     {
 
-        private string _charName;
 
-        public string CharName
+        private Bio _tempBio;
+
+        public Bio TempBio
         {
-            get { return _charName; }
+            get
+            {
+                return _tempBio;
+            }
             set
             {
-                _charName = value;
-                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
+                _tempBio = value;
                 OnPropertyChanged();
             }
         }
 
-        private string _charAge;
-
-        public string CharAge
-        {
-            get { return _charAge; }
-            set
-            {
-                _charAge = value;
-                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
-                OnPropertyChanged();
-            }
-        }
-
-        private string _charBirthday;
-
-        public string CharBirthday
-        {
-            get { return _charBirthday; }
-            set
-            {
-                _charBirthday = value;
-                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
-                OnPropertyChanged();
-            }
-        }
-
-        private string _charGender;
-
-        public string CharGender
-        {
-            get { return _charGender; }
-            set
-            {
-                _charGender = value;
-                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
-                OnPropertyChanged();
-            }
-        }
-
-        private string _charBio = "Type your character's story here...";
-
-        public string CharBio
-        {
-            get { return _charBio; }
-            set
-            {
-                _charBio = value;
-                Creator.director.getBuilder().buildBio(_charName, _charAge, _charBirthday, _charGender, _charBio);
-                OnPropertyChanged();
-            }
-        }
 
 
         public BioViewModel()
         {
-
         }
 
     }

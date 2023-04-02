@@ -23,72 +23,14 @@
     }
 
 
-    internal class GeneralCharacter
+    internal class GeneralCharacter : Bio
     {
         public Bio characterBio;
         public Class characterClass;
         public Background characterBackground;
         public Race characterRace;
 
-        public GeneralCharacter()
-        {
-        }
-
-        public class Bio
-        {
-            string charName;
-            string charBirthday;
-            string charGender;
-            string charAge;
-            string charBio;
-
-            public Bio(string charName, string charAge, string charBirthday, string charGender, string charBio)
-            {
-                this.charName = charName;
-                this.charBirthday = charBirthday;
-                this.charGender = charGender;
-                this.charAge = charAge;
-                this.charBio = charBio;
-            }
-
-            public string getCharName() { return charName; }
-            public string getCharBirthday() { return charBirthday; }
-            public string getCharGender() { return charGender; }
-            public string getCharAge() { return charAge; }
-            public string getCharBio() { return charBio; }
-
-        }
-
-        public class Class
-        {
-            string className;
-            string classDescription;
-            string primaryStats;
-            string secondaryStats;
-
-            public string getClassName() { return className; }
-            public string getClassDescription() { return classDescription; }
-            public string getPrimaryStats() { return primaryStats; }
-            public string getSecondaryStats() { return secondaryStats; }
-
-        }
-
-        public class Warrior : Class
-        {
-            string className;
-            string classDescription;
-            string primaryStats;
-            string secondaryStats;
-
-            public Warrior()
-            {
-                className = "Warrior";
-                classDescription = "placeholder";
-                primaryStats = "Strength";
-                secondaryStats = "Agility";
-
-            }
-        }
+        
 
         public class Race
         {
@@ -132,11 +74,11 @@
     {
         void reset();
 
-        void buildBio(string charName, string charAge, string charBD, string charGender, string charBio);
+        void buildBio(Bio aBio);
 
         void buildPortrait();
 
-        GeneralCharacter.Class buildClass(Classes aClass);
+        Class buildClass(Classes aClass);
 
         GeneralCharacter.Race buildRace(Races aRace);
 
@@ -162,18 +104,18 @@
             character = new GeneralCharacter();
         }
 
-        public void buildBio(string charName, string charAge, string charBD, string charGender, string charBio)
+        public void buildBio(Bio aBio)
         {
-            character.characterBio = new GeneralCharacter.Bio(charName, charAge, charBD, charGender, charBio);
+            character.characterBio = new Bio(aBio);
         }
 
         public void buildPortrait() { }
 
-        public GeneralCharacter.Class buildClass(Classes aClass)
+        public Class buildClass(Classes aClass)
         {
             if (aClass == Classes.Warrior)
             {
-                GeneralCharacter.Warrior war = new GeneralCharacter.Warrior();
+                Warrior war = new Warrior();
                 return war;
             }
             else { return null; }
