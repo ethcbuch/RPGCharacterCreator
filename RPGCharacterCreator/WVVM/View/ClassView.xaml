@@ -25,7 +25,7 @@
                     Margin="0,0,20,0"
                     Grid.ColumnSpan="3">
             <TextBlock Grid.RowSpan="2"
-                       Text="PLACEHOLDER"
+                       Text="{Binding AClass.ClassName}"
                        HorizontalAlignment="Center"
                        Foreground="White"
                        Margin="0,0,0,20
@@ -87,16 +87,17 @@
                 Grid.RowSpan="4" />
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="0,3,259,-180"
+                Margin="0.291,2.891,259.018,-190.182"
                 Grid.Row="2"
                 Grid.Column="2"
                 Grid.RowSpan="2" />
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="0,0,371,-180"
-                Grid.Row="2"
-                Grid.Column="3"
-                Grid.RowSpan="2" />
+                Margin="265.291,31.309,370.291,-190.182"
+                Grid.Row="1"
+                Grid.Column="2"
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="2" />
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
                 Margin="6,0,0,105"
@@ -112,33 +113,48 @@
                     Margin="0,0,0,106"
                     Grid.RowSpan="2">
             <Label Content="PRIMARY STATS"
-                   Height="50"
+                   Height="33"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
-                   FontSize="24" />
-            <TextBlock TextWrapping="Wrap"
-                       Text="Hah"
-                       FontFamily="Franklin Gothic Medium"
-                       Foreground="White"
-                       FontSize="18"
-                       Height="190"
-                       Width="250" />
+                   FontSize="24"
+                   Margin="10,0,0.309,0" />
+            <ItemsControl Background="Transparent"
+                          ItemsSource="{Binding AClass.ClassPrimaryStats, UpdateSourceTrigger=PropertyChanged}"
+                          Height="193"
+                          Margin="0,0,0.309,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="Franklin Gothic Medium"
+                                   Foreground="White"
+                                   Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                                   FontSize="18"
+                                   Height="28"
+                                   Width="260"
+                                   Margin="5,0,4.2,0"
+                                   Padding="5,5,0,0" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
         </StackPanel>
         <StackPanel Grid.Column="1"
                     Grid.Row="2"
                     Margin="0,0,0,-177"
                     Grid.RowSpan="2">
             <Label Content="CLASS DESCRIPTION"
-                   Height="50"
+                   Height="33"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
-                   FontSize="24" />
+                   FontSize="24"
+                   Margin="0,0,-0.327,0" />
             <TextBlock TextWrapping="Wrap"
-                       Text="Hah"
+                       Text="{Binding AClass.ClassDescription, UpdateSourceTrigger=PropertyChanged}"
                        FontFamily="Franklin Gothic Medium"
                        Foreground="White"
-                       FontSize="18"
-                       Height="475" />
+                       FontSize="16"
+                       Height="490"
+                       Padding="5,2,0,0"
+                       Margin="0,0,-0.327,0" />
         </StackPanel>
         <StackPanel Grid.Column="2"
                     Grid.Row="3"
@@ -148,45 +164,60 @@
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
                    FontSize="24" />
-            <TextBlock TextWrapping="Wrap"
-                       Text="Hah"
-                       FontFamily="Franklin Gothic Medium"
-                       Foreground="White"
-                       FontSize="18"
-                       Height="234"
-                       Width="250" />
+            <ItemsControl Background="Transparent"
+                          ItemsSource="{Binding AClass.ClassSecondaryStats, UpdateSourceTrigger=PropertyChanged}"
+                          Height="236"
+                          Margin="0,0,0.2,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="Franklin Gothic Medium"
+                                   Foreground="White"
+                                   Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                                   FontSize="18"
+                                   Height="28"
+                                   Width="260"
+                                   Margin="5,0,4.2,0"
+                                   Padding="5,5,0,0" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
         </StackPanel>
         <StackPanel Grid.Column="3"
                     Grid.Row="2"
                     Margin="6,6,1,0">
             <Label Content="CLASS SKILLS"
-                   Height="50"
+                   Height="37"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
-                   FontSize="24" />
+                   FontSize="24"
+                   Margin="0,0,0.291,0" />
             <TextBlock TextWrapping="Wrap"
                        Text="Hah"
                        FontFamily="Franklin Gothic Medium"
                        Foreground="White"
                        FontSize="18"
                        Height="184"
-                       Width="364" />
+                       Width="364"
+                       Padding="5,2,0,0" />
         </StackPanel>
         <StackPanel Grid.Column="3"
                     Grid.Row="3"
                     Margin="5,6,1,-180">
             <Label Content="CLASS ABILITIES"
-                   Height="50"
+                   Height="41"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
-                   FontSize="24" />
+                   FontSize="24"
+                   Margin="0,0,0.164,0" />
             <TextBlock TextWrapping="Wrap"
                        Text="Hah"
                        FontFamily="Franklin Gothic Medium"
                        Foreground="White"
                        FontSize="18"
                        Height="234"
-                       Width="369" />
+                       Width="369"
+                       Padding="5,2,0,0" />
         </StackPanel>
 
 
