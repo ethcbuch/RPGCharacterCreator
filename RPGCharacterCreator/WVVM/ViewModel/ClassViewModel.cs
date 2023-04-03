@@ -13,7 +13,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public RelayCommand WarriorButtonCommand { get; set; }
 
-        private Class _aClass = new Class();
+        private Class _aClass;
 
         public Class AClass
         {
@@ -28,9 +28,11 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public ClassViewModel()
         {
+
             WarriorButtonCommand = new RelayCommand(o =>
             {
                 AClass = new Warrior();
+                Debug.WriteLine(AClass.ClassName);
                 OnPropertyChanged();
             });
         }

@@ -76,7 +76,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
             OverviewViewCommand = new RelayCommand(o =>
             {
-
+                overviewVM = new OverviewViewModel(bioVM, classVM);
                 CurrentView = overviewVM;
             });
         }

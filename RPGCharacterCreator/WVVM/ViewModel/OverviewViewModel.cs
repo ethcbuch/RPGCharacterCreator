@@ -26,7 +26,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             }
         }
 
-        private Class _overviewClass = new Class();
+        private Class _overviewClass;
 
         public Class OverviewClass
         {
@@ -46,7 +46,6 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             OverviewBio = bioVM.TempBio;
             OverviewClass = classVM.AClass;
 
-            Task.Run(() => { while (true) { Debug.WriteLine(OverviewClass.ClassName); Thread.Sleep(1000); } });
         }
     }
 }

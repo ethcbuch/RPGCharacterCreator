@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace RPGCharacterCreator
 {
-    public class Class
+    public abstract class Class
     {
         private string _className;
         private string _classDesciption;
@@ -15,37 +11,24 @@ namespace RPGCharacterCreator
         private List<string> _classSkills;
         private List<string> _classAbilities;
 
-        public string ClassName
-        {
-            get { return _className; }
-            set { _className = value; }
-        }
+        public abstract string ClassName { get; set; }
 
-        public string ClassDescription
+        public abstract string ClassDescription { get; set; }
+        public abstract List<string> ClassPrimaryStats
         {
-            get { return _classDesciption; }
-            set { _classDesciption = value; }
+            get; set;
         }
-
-        public List<string> ClassPrimaryStats
+        public abstract List<string> ClassSecondaryStats
         {
-            get { return _classPrimaryStats; }
-            set { _classPrimaryStats = value; }
+            get; set;
         }
-        public List<string> ClassSecondaryStats
+        public abstract List<string> ClassSkills
         {
-            get { return _classSecondaryStats; }
-            set { _classSecondaryStats = value; }
+            get; set;
         }
-        public List<string> ClassSkills
+        public abstract List<string> ClassAbilities
         {
-            get { return _classSkills; }
-            set { _classSkills = value; }
-        }
-        public List<string> ClassAbilities
-        {
-            get { return _classAbilities; }
-            set { _classAbilities = value; }
+            get; set;
         }
 
     }
@@ -55,39 +38,39 @@ namespace RPGCharacterCreator
         private string _className = "Warrior";
         private string _classDesciption = "This guy fights on the front lines";
         private List<string> _classPrimaryStats = new List<string> { "Strength", "Constition" };
-        private List<string> _classSecondaryStats = new List<string> { "Dexterity"};
+        private List<string> _classSecondaryStats = new List<string> { "Dexterity" };
         private List<string> _classSkills = new List<string> { "Athletics", };
-        private List<string> _classAbilities = new List<string> { "Taunt" };
+        private List<string> _classAbilities = new List<string> { "Taunt", "Shield Bash" };
 
-        public new string ClassName
+        public override string ClassName
         {
             get { return _className; }
             set { _className = value; }
         }
 
-        public new string ClassDescription
+        public override string ClassDescription
         {
             get { return _classDesciption; }
             set { _classDesciption = value; }
         }
 
-        public new List<string> ClassPrimaryStats
+        public override List<string> ClassPrimaryStats
         {
             get { return _classPrimaryStats; }
             set { _classPrimaryStats = value; }
         }
-        public new List<string> ClassSecondaryStats
+        public override List<string> ClassSecondaryStats
         {
             get { return _classSecondaryStats; }
             set { _classSecondaryStats = value; }
         }
 
-        public new List<string> ClassSkills
+        public override List<string> ClassSkills
         {
             get { return _classSkills; }
             set { _classSkills = value; }
         }
-        public new List<string> ClassAbilities
+        public override List<string> ClassAbilities
         {
             get { return _classAbilities; }
             set { _classAbilities = value; }
