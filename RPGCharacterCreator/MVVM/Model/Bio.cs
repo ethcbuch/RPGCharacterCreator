@@ -22,5 +22,6 @@ namespace RPGCharacterCreator
 
         }
 
+        public Bio(Bio aBio) { }
     }
 }

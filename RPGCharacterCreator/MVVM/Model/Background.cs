@@ -10,31 +10,26 @@ namespace RPGCharacterCreator.MVVM.Model
     {
         private string _backgroundName;
         private string _backgroundDescription;
-        private List<string> _BackgroundSkills;
+        private List<string> _backgroundSkills;
 
         public abstract string BackgroundName { get; set; }
 
         public abstract string BackgroundDescription { get; set; }
-        public abstract List<string> ClassPrimaryStats
-        {
-            get; set;
-        }
+        public abstract List<string> BackgroundSkills { get; set; }
 
 
     }
 
     public class Noble : Background
     {
-        string backgroundName;
-        string backgroundDesc;
-        string backgroundSkills;
+        private string _backgroundName;
+        private string _backgroundDescription;
+        private List<string> _backgroundSkills;
 
-        public Noble()
-        {
-            backgroundName = "Noble";
-            backgroundDesc = "placeholder";
-            backgroundSkills = "placeholder";
-        }
+        public override string BackgroundName { get { return _backgroundName; } set { _backgroundName = value; } }
+
+        public override string BackgroundDescription { get { return _backgroundName; } set { _backgroundName = value; } }
+        public override List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; } }
 
     }
 }

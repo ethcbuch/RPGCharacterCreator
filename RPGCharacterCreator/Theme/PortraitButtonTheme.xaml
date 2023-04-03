@@ -12,7 +12,7 @@
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
                             <StackPanel Orientation="Vertical">
-                                <Image Source=" /Images/placeholder.png"
+                                <Image Source="/Images/placeholder.png"
                                        Height="50"
                                        Width="50" />
                                 <Label Content="PORTRAIT" 

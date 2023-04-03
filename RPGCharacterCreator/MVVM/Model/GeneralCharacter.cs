@@ -93,7 +93,7 @@ namespace RPGCharacterCreator
 
         public Background buildBackground(Backgrounds aBackground)
         {
-            Background background = new Background();
+            Background background = null;
 
             return background;
 

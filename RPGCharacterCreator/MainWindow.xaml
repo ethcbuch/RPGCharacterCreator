@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RPGCharacterCreator"
         xmlns:view="clr-namespace:RPGCharacterCreator.MVVM.View"
         xmlns:viewmodel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
+        
         mc:Ignorable="d"
         Title="MainWindow"
         Height="720"
