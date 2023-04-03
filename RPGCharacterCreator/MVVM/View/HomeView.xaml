@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="RPGCharacterCreator.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:RPGCharacterCreator.MVVM.View"
+             mc:Ignorable="d"
+             d:DesignHeight="630"
+             d:DesignWidth="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="880" />
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" />
+        <Border BorderBrush="#1E2124"
+                BorderThickness="3"
+                Margin="0,0,874,-4"
+                Grid.Column="1" />
+        <ContentControl Content="ContentControl"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Width="874"
+                        Height="626"
+                        Margin="6,4,0,0"
+                        Grid.Column="1" />
+    </Grid>
+</UserControl>
