@@ -102,7 +102,7 @@
                     </StackPanel>
                     <StackPanel Margin="302,7,137.727,98.109">
                         <TextBlock TextWrapping="Wrap"
-                                   Text="TextBlock"
+                                   Text="{Binding OverviewClass.ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
                                    Foreground="White"

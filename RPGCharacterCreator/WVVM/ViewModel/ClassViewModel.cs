@@ -28,7 +28,6 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public ClassViewModel()
         {
-            Task.Run(() => { while (true) { Debug.WriteLine(AClass.ClassDescription); Thread.Sleep(1000); } });
             WarriorButtonCommand = new RelayCommand(o =>
             {
                 AClass = new Warrior();

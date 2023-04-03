@@ -1,4 +1,6 @@
-﻿namespace RPGCharacterCreator
+﻿using RPGCharacterCreator.WVVM.Model;
+
+namespace RPGCharacterCreator
 {
 
     public enum Classes
@@ -23,53 +25,14 @@
     }
 
 
-    internal class GeneralCharacter : Bio
+    internal class GeneralCharacter
     {
         public Bio characterBio;
         public Class characterClass;
         public Background characterBackground;
         public Race characterRace;
 
-        
-
-        public class Race
-        {
-
-        }
-
-        public class Human : Race
-        {
-
-        }
-
-        public class Background
-        {
-            string backgroundName;
-            string backgroundDesc;
-            string backgroundSkills;
-
-            public string getBackgroundName() { return backgroundName; }
-            public string getBackgroundDesc() { return backgroundDesc; }
-            public string getBackgroundSkills() { return backgroundSkills; }
-
-        }
-
-        public class Noble : Background
-        {
-            string backgroundName;
-            string backgroundDesc;
-            string backgroundSkills;
-
-            public Noble()
-            {
-                backgroundName = "Noble";
-                backgroundDesc = "placeholder";
-                backgroundSkills = "placeholder";
-            }
-
-        }
     }
-
     interface CharacterBuilder
     {
         void reset();
@@ -80,9 +43,9 @@
 
         Class buildClass(Classes aClass);
 
-        GeneralCharacter.Race buildRace(Races aRace);
+        Race buildRace(Races aRace);
 
-        GeneralCharacter.Background buildBackground(Backgrounds aBackgroud);
+        Background buildBackground(Backgrounds aBackgroud);
 
         void buildStats();
 
@@ -94,7 +57,7 @@
 
     }
 
-    internal class GeneralCharacterBuilder : CharacterBuilder
+   internal class GeneralCharacterBuilder : CharacterBuilder
     {
 
         public GeneralCharacter character = new GeneralCharacter();
@@ -121,16 +84,16 @@
             else { return null; }
         }
 
-        public GeneralCharacter.Race buildRace(Races aRace)
+        public Race buildRace(Races aRace)
         {
-            GeneralCharacter.Race race = new GeneralCharacter.Race();
+            Race race = new Race();
 
             return race;
         }
 
-        public GeneralCharacter.Background buildBackground(Backgrounds aBackground)
+        public Background buildBackground(Backgrounds aBackground)
         {
-            GeneralCharacter.Background background = new GeneralCharacter.Background();
+            Background background = new Background();
 
             return background;
 

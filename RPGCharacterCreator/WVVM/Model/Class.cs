@@ -9,9 +9,11 @@ namespace RPGCharacterCreator
     public class Class
     {
         private string _className;
-        private string _classDesciption = "Bad";
+        private string _classDesciption;
         private List<string> _classPrimaryStats;
         private List<string> _classSecondaryStats;
+        private List<string> _classSkills;
+        private List<string> _classAbilities;
 
         public string ClassName
         {
@@ -35,6 +37,16 @@ namespace RPGCharacterCreator
             get { return _classSecondaryStats; }
             set { _classSecondaryStats = value; }
         }
+        public List<string> ClassSkills
+        {
+            get { return _classSkills; }
+            set { _classSkills = value; }
+        }
+        public List<string> ClassAbilities
+        {
+            get { return _classAbilities; }
+            set { _classAbilities = value; }
+        }
 
     }
 
@@ -44,6 +56,8 @@ namespace RPGCharacterCreator
         private string _classDesciption = "This guy fights on the front lines";
         private List<string> _classPrimaryStats = new List<string> { "Strength", "Constition" };
         private List<string> _classSecondaryStats = new List<string> { "Dexterity"};
+        private List<string> _classSkills = new List<string> { "Athletics", };
+        private List<string> _classAbilities = new List<string> { "Taunt" };
 
         public new string ClassName
         {
@@ -66,6 +80,17 @@ namespace RPGCharacterCreator
         {
             get { return _classSecondaryStats; }
             set { _classSecondaryStats = value; }
+        }
+
+        public new List<string> ClassSkills
+        {
+            get { return _classSkills; }
+            set { _classSkills = value; }
+        }
+        public new List<string> ClassAbilities
+        {
+            get { return _classAbilities; }
+            set { _classAbilities = value; }
         }
 
     }

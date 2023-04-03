@@ -192,14 +192,24 @@
                    Foreground="White"
                    FontSize="24"
                    Margin="0,0,0.291,0" />
-            <TextBlock TextWrapping="Wrap"
-                       Text="Hah"
-                       FontFamily="Franklin Gothic Medium"
-                       Foreground="White"
-                       FontSize="18"
-                       Height="184"
-                       Width="364"
-                       Padding="5,2,0,0" />
+            <ItemsControl Background="Transparent"
+                          ItemsSource="{Binding AClass.ClassSkills, UpdateSourceTrigger=PropertyChanged}"
+                          Height="200"
+                          Margin="0,0,0.291,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="Franklin Gothic Medium"
+                                   Foreground="White"
+                                   Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                                   FontSize="18"
+                                   Height="28"
+                                   Width="260"
+                                   Margin="5,0,4.2,0"
+                                   Padding="5,5,0,0" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
         </StackPanel>
         <StackPanel Grid.Column="3"
                     Grid.Row="3"
@@ -210,14 +220,24 @@
                    Foreground="White"
                    FontSize="24"
                    Margin="0,0,0.164,0" />
-            <TextBlock TextWrapping="Wrap"
-                       Text="Hah"
-                       FontFamily="Franklin Gothic Medium"
-                       Foreground="White"
-                       FontSize="18"
-                       Height="234"
-                       Width="369"
-                       Padding="5,2,0,0" />
+            <ItemsControl Background="Transparent"
+                          ItemsSource="{Binding AClass.ClassAbilities, UpdateSourceTrigger=PropertyChanged}"
+                          Height="245"
+                          Margin="0,0,0.164,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="Franklin Gothic Medium"
+                                   Foreground="White"
+                                   Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                                   FontSize="18"
+                                   Height="28"
+                                   Width="260"
+                                   Margin="5,0,4.2,0"
+                                   Padding="5,5,0,0" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
         </StackPanel>
 
 

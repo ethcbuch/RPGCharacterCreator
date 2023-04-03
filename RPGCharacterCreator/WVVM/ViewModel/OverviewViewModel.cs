@@ -25,9 +25,28 @@ namespace RPGCharacterCreator.WVVM.ViewModel
                 OnPropertyChanged();
             }
         }
-        public OverviewViewModel(BioViewModel bioVM)
+
+        private Class _overviewClass = new Class();
+
+        public Class OverviewClass
+        {
+            get
+            {
+                return _overviewClass;
+            }
+            set
+            {
+                _overviewClass = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM)
         {
             OverviewBio = bioVM.TempBio;
+            OverviewClass = classVM.AClass;
+
+            Task.Run(() => { while (true) { Debug.WriteLine(OverviewClass.ClassName); Thread.Sleep(1000); } });
         }
     }
 }

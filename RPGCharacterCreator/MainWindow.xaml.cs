@@ -4,17 +4,6 @@ using System.Windows.Media;
 
 namespace RPGCharacterCreator
 {
-
-
-    internal static class Creator
-    {
-        public static GeneralCharacterBuilder builder = new GeneralCharacterBuilder();
-
-        public static CharacterDirector director = new CharacterDirector(builder);
-    }
-
-
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>

@@ -51,7 +51,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
             classVM = new ClassViewModel();
-            overviewVM = new OverviewViewModel(bioVM);
+            overviewVM = new OverviewViewModel(bioVM, classVM);
 
             //the users view will be automatically be set to the homeVM
             CurrentView = homeVM;
