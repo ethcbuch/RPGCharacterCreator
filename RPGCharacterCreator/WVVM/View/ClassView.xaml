@@ -35,8 +35,7 @@
                        Height="102" />
         </StackPanel>
         <StackPanel Grid.Column="0"
-                    Margin="0,-1,0,4"
-                    Grid.RowSpan="2">
+                    Margin="0,-1,0,1">
             <TextBlock Text="CHOOSE CLASS"
                        VerticalAlignment="Center"
                        Foreground="White"
@@ -62,22 +61,22 @@
                 Grid.Column="1"
                 Grid.RowSpan="4" />
 
-        <ScrollViewer Grid.Row="1"
-                      Grid.RowSpan="3"
+        <ScrollViewer Grid.RowSpan="4"
                       VerticalScrollBarVisibility="Auto"
-                      Height="560"
-                      VerticalAlignment="Top">
+                      Height="562"
+                      VerticalAlignment="Top"
+                      Margin="0,68,0,0">
             <StackPanel>
                 <RadioButton x:Name="overviewButton"
                              Content="WARRIOR"
-                             Height="60"
+                             Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
-                             Command="{Binding OverviewViewCommand}"
+                             Command="{Binding WarriorButtonCommand}"
                              Visibility="Visible" />
             </StackPanel>
         </ScrollViewer>
