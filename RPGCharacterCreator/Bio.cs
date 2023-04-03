@@ -1,6 +1,8 @@
-﻿namespace RPGCharacterCreator
+﻿using RPGCharacterCreator.Core;
+
+namespace RPGCharacterCreator
 {
-    public class Bio
+    internal class Bio : ObservableObject
     {
         private string _charName { get; set; }
         private string _charBirthday { get; set; }
@@ -8,16 +10,16 @@
         private string _charAge { get; set; }
         private string _charBio { get; set; }
 
-        public string CharName { get { return _charName; } set { _charName = value; } }
-        public string CharBirthday { get { return _charBirthday; } set { _charBirthday = value; } }
-        public string CharGender { get { return _charGender; } set { _charGender = value; } }
-        public string CharAge { get { return _charAge; } set { _charAge = value; } }
-        public string CharBio { get { return _charBio; } set { _charBio = value; } }
+        public string CharName { get { return _charName; } set { _charName = value; OnPropertyChanged(); } }
+        public string CharBirthday { get { return _charBirthday; } set { _charBirthday = value; OnPropertyChanged(); } }
+        public string CharGender { get { return _charGender; } set { _charGender = value; OnPropertyChanged(); } }
+        public string CharAge { get { return _charAge; } set { _charAge = value; OnPropertyChanged(); } }
+        public string CharBio { get { return _charBio; } set { _charBio = value; OnPropertyChanged(); } }
 
 
         public Bio()
         {
-            
+
         }
 
         public Bio(Bio aBio)

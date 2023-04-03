@@ -10,26 +10,29 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="360" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="240" />
+            <RowDefinition Height="110" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="370" />
-            <ColumnDefinition Width="430" />
+            <ColumnDefinition Width="270" />
+            <ColumnDefinition Width="265" />
+            <ColumnDefinition Width="375" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1"
                     Grid.RowSpan="2"
-                    Margin="0,0,-460,0">
+                    Margin="0,0,20,0"
+                    Grid.ColumnSpan="3">
             <TextBlock Grid.RowSpan="2"
                        Text="PLACEHOLDER"
-                       VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        Foreground="White"
                        Margin="0,0,0,20
                    "
                        FontFamily="Franklin Gothic Heavy"
-                       FontSize="72"
-                       Height="75" />
+                       FontSize="84"
+                       Height="102" />
         </StackPanel>
         <StackPanel Grid.Column="0"
                     Margin="0,-1,0,4"
@@ -48,20 +51,146 @@
                 Margin="0,65,0,2" />
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="3,0,-480,360"
+                Margin="2,0,1,235"
                 Grid.Row="2"
-                Grid.Column="1" />
+                Grid.Column="1"
+                Grid.ColumnSpan="3">
+        </Border>
         <Border BorderBrush="#1E2124"
                 BorderThickness="2"
-                Margin="0,0,430,-190"
+                Margin="0,0,270,-190"
                 Grid.Column="1"
-                Grid.RowSpan="3" />
-        <ScrollViewer Grid.Row="1"
-                      Margin="0,0,0,-180"
-                      Grid.RowSpan="2"
-                      VerticalScrollBarVisibility="Auto">
+                Grid.RowSpan="4" />
 
+        <ScrollViewer Grid.Row="1"
+                      Grid.RowSpan="3"
+                      VerticalScrollBarVisibility="Auto"
+                      Height="560"
+                      VerticalAlignment="Top">
+            <StackPanel>
+                <RadioButton x:Name="overviewButton"
+                             Content="WARRIOR"
+                             Height="60"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CharacterButtonMenu}"
+                             FontSize="19"
+                             Command="{Binding OverviewViewCommand}"
+                             Visibility="Visible" />
+            </StackPanel>
         </ScrollViewer>
+        <Border BorderBrush="#1E2124"
+                BorderThickness="4"
+                Margin="0,-1,268,-180"
+                Grid.Column="1"
+                Grid.RowSpan="4" />
+        <Border BorderBrush="#A0A0A0"
+                BorderThickness="3"
+                Margin="0,3,259,-180"
+                Grid.Row="2"
+                Grid.Column="2"
+                Grid.RowSpan="2" />
+        <Border BorderBrush="#A0A0A0"
+                BorderThickness="3"
+                Margin="0,0,371,-180"
+                Grid.Row="2"
+                Grid.Column="3"
+                Grid.RowSpan="2" />
+        <Border BorderBrush="#A0A0A0"
+                BorderThickness="3"
+                Margin="6,0,0,105"
+                Grid.Row="3"
+                Grid.Column="2"
+                Grid.ColumnSpan="2" />
+        <StackPanel Grid.Column="1"
+                    Grid.Row="2"
+                    Margin="0,0,0,-177"
+                    Grid.RowSpan="2" />
+        <StackPanel Grid.Column="2"
+                    Grid.Row="2"
+                    Margin="0,0,0,106"
+                    Grid.RowSpan="2">
+            <Label Content="PRIMARY STATS"
+                   Height="50"
+                   FontFamily="Franklin Gothic Heavy"
+                   Foreground="White"
+                   FontSize="24" />
+            <TextBlock TextWrapping="Wrap"
+                       Text="Hah"
+                       FontFamily="Franklin Gothic Medium"
+                       Foreground="White"
+                       FontSize="18"
+                       Height="190"
+                       Width="250" />
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="2"
+                    Margin="0,0,0,-177"
+                    Grid.RowSpan="2">
+            <Label Content="CLASS DESCRIPTION"
+                   Height="50"
+                   FontFamily="Franklin Gothic Heavy"
+                   Foreground="White"
+                   FontSize="24" />
+            <TextBlock TextWrapping="Wrap"
+                       Text="Hah"
+                       FontFamily="Franklin Gothic Medium"
+                       Foreground="White"
+                       FontSize="18"
+                       Height="475" />
+        </StackPanel>
+        <StackPanel Grid.Column="2"
+                    Grid.Row="3"
+                    Margin="6,6,0,-180">
+            <Label Content="SECONDARY STATS"
+                   Height="50"
+                   FontFamily="Franklin Gothic Heavy"
+                   Foreground="White"
+                   FontSize="24" />
+            <TextBlock TextWrapping="Wrap"
+                       Text="Hah"
+                       FontFamily="Franklin Gothic Medium"
+                       Foreground="White"
+                       FontSize="18"
+                       Height="234"
+                       Width="250" />
+        </StackPanel>
+        <StackPanel Grid.Column="3"
+                    Grid.Row="2"
+                    Margin="6,6,1,0">
+            <Label Content="CLASS SKILLS"
+                   Height="50"
+                   FontFamily="Franklin Gothic Heavy"
+                   Foreground="White"
+                   FontSize="24" />
+            <TextBlock TextWrapping="Wrap"
+                       Text="Hah"
+                       FontFamily="Franklin Gothic Medium"
+                       Foreground="White"
+                       FontSize="18"
+                       Height="184"
+                       Width="364" />
+        </StackPanel>
+        <StackPanel Grid.Column="3"
+                    Grid.Row="3"
+                    Margin="5,6,1,-180">
+            <Label Content="CLASS ABILITIES"
+                   Height="50"
+                   FontFamily="Franklin Gothic Heavy"
+                   Foreground="White"
+                   FontSize="24" />
+            <TextBlock TextWrapping="Wrap"
+                       Text="Hah"
+                       FontFamily="Franklin Gothic Medium"
+                       Foreground="White"
+                       FontSize="18"
+                       Height="234"
+                       Width="369" />
+        </StackPanel>
+
+
 
     </Grid>
 </UserControl>

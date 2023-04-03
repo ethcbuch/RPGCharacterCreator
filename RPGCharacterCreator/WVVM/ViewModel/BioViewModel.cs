@@ -1,4 +1,7 @@
 ﻿using RPGCharacterCreator.Core;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.WVVM.ViewModel
 {
@@ -6,7 +9,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
     {
 
 
-        private Bio _tempBio;
+        private Bio _tempBio = new Bio();
 
         public Bio TempBio
         {
@@ -25,6 +28,11 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
         public BioViewModel()
         {
+            //Task.Run(() => { while (true) { Debug.WriteLine(TempBio.CharName); Thread.Sleep(1000); } });
+
+
+
+
         }
 
     }

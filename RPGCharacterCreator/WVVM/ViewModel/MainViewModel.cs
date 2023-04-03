@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RPGCharacterCreator.Core;
+﻿using RPGCharacterCreator.Core;
 
 namespace RPGCharacterCreator.WVVM.ViewModel
 {
 
-   
+
 
     internal class MainViewModel : ObservableObject
     {
@@ -49,7 +44,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
             homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
             classVM = new ClassViewModel();
-            overviewVM = new OverviewViewModel();
+            overviewVM = new OverviewViewModel(bioVM);
 
             CurrentView = homeVM;
 
@@ -59,12 +54,9 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
             });
 
-            BioViewCommand = new RelayCommand( o =>
+            BioViewCommand = new RelayCommand(o =>
             {
                 CurrentView = bioVM;
-
-
-
             });
 
 
@@ -75,7 +67,7 @@ namespace RPGCharacterCreator.WVVM.ViewModel
 
             OverviewViewCommand = new RelayCommand(o =>
             {
-                overviewVM = new OverviewViewModel();
+
                 CurrentView = overviewVM;
             });
         }

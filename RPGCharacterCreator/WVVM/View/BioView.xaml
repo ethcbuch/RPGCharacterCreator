@@ -85,7 +85,7 @@
                      MaxLines="1"
                      BorderBrush="Transparent"
                      SelectionBrush="Transparent"
-                     Text="{Binding CharAge, UpdateSourceTrigger=PropertyChanged}" />
+                     Text="{Binding TempBio.CharAge, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
@@ -117,7 +117,7 @@
                      MaxLines="1"
                      BorderBrush="Transparent"
                      SelectionBrush="Transparent"
-                     Text="{Binding CharBirthday, UpdateSourceTrigger=PropertyChanged}" />
+                     Text="{Binding TempBio.CharBirthday, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
@@ -148,7 +148,7 @@
                      MaxLines="1"
                      BorderBrush="Transparent"
                      SelectionBrush="Transparent"
-                     Text="{Binding CharGender, UpdateSourceTrigger=PropertyChanged}" />
+                     Text="{Binding TempBio.CharGender, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
@@ -174,7 +174,7 @@
                          BorderBrush="Transparent"
                          SelectionBrush="Transparent"
                          Padding="10,10,10,10"
-                         Text="{Binding CharBio, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding TempBio.CharBio, UpdateSourceTrigger=PropertyChanged}"
                          GotFocus="bioTextBox_GotFocus_1" />
             </Border>
 
