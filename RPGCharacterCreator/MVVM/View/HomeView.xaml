@@ -13,7 +13,21 @@
             <ColumnDefinition Width="880" />
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" />
+        <ItemsControl>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" />
+            <RadioButton x:Name="createButton"
+                         Content="CREATE CHARACTER"
+                         Height="80"
+                         Width="400"
+                         FontFamily="Franklin Gothic Heavy"
+                         Foreground="White"
+                         HorizontalContentAlignment="Center"
+                         Style="{StaticResource CharacterButtonMenu}"
+                         FontSize="19"
+                         Command="{Binding CreateCharacterCommand}"
+                         Visibility="Visible" />
+        </ItemsControl>
+        
         <Border BorderBrush="#1E2124"
                 BorderThickness="3"
                 Margin="0,0,874,-4"

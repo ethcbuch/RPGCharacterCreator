@@ -11,7 +11,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 {
     class OverviewViewModel : ObservableObject
     {
-        private Bio _overviewBio = new Bio();
+        private Bio _overviewBio;
 
         public Bio OverviewBio
         {

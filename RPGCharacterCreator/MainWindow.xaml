@@ -6,15 +6,13 @@
         xmlns:local="clr-namespace:RPGCharacterCreator"
         xmlns:view="clr-namespace:RPGCharacterCreator.MVVM.View"
         xmlns:viewmodel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
-        
         mc:Ignorable="d"
         Title="MainWindow"
         Height="720"
         Width="1280"
         ResizeMode="CanMinimize"
-        WindowStyle="None"
-        Background="Transparent"
-        AllowsTransparency="True">
+        WindowStyle="SingleBorderWindow"
+        Background="Transparent">
 
     <Window.DataContext>
         <viewmodel:MainViewModel />
@@ -155,9 +153,8 @@
 
             </StackPanel>
 
-            <ContentControl Margin="0,80,0,-640"
+            <ContentControl Margin="0,80,0,-624"
                             Grid.Column="0"
-                            Grid.ColumnSpan="2"
                             Content="{Binding CurrentView}" />
 
 
