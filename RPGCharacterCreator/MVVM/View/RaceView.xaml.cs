@@ -18,7 +18,7 @@ namespace RPGCharacterCreator.MVVM.View
     /// <summary>
     /// Interaction logic for RaceView.xaml
     /// </summary>
-    public partial class RaceView : Page
+    public partial class RaceView : UserControl
     {
         public RaceView()
         {

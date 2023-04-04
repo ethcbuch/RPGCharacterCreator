@@ -57,7 +57,7 @@ namespace RPGCharacterCreator
 
     }
 
-   internal class GeneralCharacterBuilder : CharacterBuilder
+    internal class GeneralCharacterBuilder : CharacterBuilder
     {
 
         public GeneralCharacter character = new GeneralCharacter();
@@ -83,12 +83,15 @@ namespace RPGCharacterCreator
             }
             else { return null; }
         }
-
+        //ADDED THIS
         public Race buildRace(Races aRace)
         {
-            Race race = new Race();
-
-            return race;
+            if (aRace == Races.Human)
+            {
+                Human h = new Human();
+                return h;
+            }
+            else { return null; }
         }
 
         public Background buildBackground(Backgrounds aBackground)

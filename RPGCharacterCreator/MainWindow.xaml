@@ -91,7 +91,7 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
-                             Command="{Binding ClassViewCommand}"
+                             Command="{Binding RaceViewCommand}"
                              Visibility="Visible" />
                 <RadioButton x:Name="backgroundButton"
                              Content="BACKGROUND"

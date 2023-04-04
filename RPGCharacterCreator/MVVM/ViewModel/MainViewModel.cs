@@ -11,6 +11,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
 
         public RelayCommand BioViewCommand { get; set; }
+        //added
+        public RelayCommand RaceViewCommand { get; set; }
         public RelayCommand ClassViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
@@ -19,6 +21,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public HomeViewModel homeVM { get; set; }
 
         public BioViewModel bioVM { get; set; }
+        //added this
+        public RaceViewModel raceVM { get; set; }
 
         public ClassViewModel classVM { get; set; }
 
@@ -50,8 +54,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             //creates instances of the views that user can see/select from
             homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
+            //added
+            raceVM = new RaceViewModel();
             classVM = new ClassViewModel();
-            overviewVM = new OverviewViewModel(bioVM, classVM);
+            //added raceVM
+            overviewVM = new OverviewViewModel(bioVM, classVM,raceVM);
 
             //the users view will be automatically be set to the homeVM
             CurrentView = homeVM;
@@ -67,6 +74,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
                 CurrentView = bioVM;
             });
+            //added
+            RaceViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = raceVM;
+            });
 
 
             ClassViewCommand = new RelayCommand(o =>
@@ -76,7 +88,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             OverviewViewCommand = new RelayCommand(o =>
             {
-                overviewVM = new OverviewViewModel(bioVM, classVM);
+                //added raceVM
+                overviewVM = new OverviewViewModel(bioVM, classVM,raceVM);
                 CurrentView = overviewVM;
             });
         }
