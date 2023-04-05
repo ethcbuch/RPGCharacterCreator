@@ -11,7 +11,7 @@
         Height="720"
         Width="1280"
         ResizeMode="CanMinimize"
-        WindowStyle="SingleBorderWindow"
+        WindowStyle="None"
         Background="Transparent">
 
     <Window.DataContext>
@@ -41,7 +41,7 @@
                    Background="{x:Null}"
                    Foreground="{x:Null}"
                    DragDelta="headerThumb_DragDelta"
-                   Grid.ColumnSpan="2" />
+                   Margin="0,0,0,-640" />
 
             <StackPanel Orientation="Horizontal"
                         Grid.ColumnSpan="2">
@@ -53,6 +53,7 @@
                              Foreground="White"
                              Style="{StaticResource HomeButtonMenu}"
                              FontSize="24"
+                             IsChecked="True"
                              Command="{Binding HomeViewCommand}" />
 
                 <RadioButton x:Name="bioButton"
@@ -64,13 +65,13 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding BioViewCommand}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}"/>
 
                 <RadioButton x:Name="portraitButton"
                              Height="80"
                              Width="100"
                              Style="{StaticResource PortraitButtonMenu}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="classButton"
                              Content="CLASS"
                              Height="80"
@@ -81,7 +82,7 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="raceButton"
                              Content="RACE"
                              Height="80"
@@ -92,7 +93,7 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="backgroundButton"
                              Content="BACKGROUND"
                              Height="80"
@@ -103,7 +104,7 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="statsButton"
                              Content="STATS"
                              Height="80"
@@ -114,7 +115,7 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="skillsButton"
                              Content="SKILLS"
                              Height="80"
@@ -125,7 +126,7 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="alignmentButton"
                              Content="ALIGNMENT"
                              Height="80"
@@ -136,7 +137,7 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
-                             Visibility="Visible"
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}"
                              Margin="0,1,0,0.164" />
                 <RadioButton x:Name="overviewButton"
                              Content="OVERVIEW"
@@ -148,12 +149,13 @@
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
                              Command="{Binding OverviewViewCommand}"
-                             Visibility="Visible" />
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
 
 
             </StackPanel>
 
-            <ContentControl Margin="0,80,0,-624"
+            
+            <ContentControl Margin="0,80,0,-640"
                             Grid.Column="0"
                             Content="{Binding CurrentView}" />
 

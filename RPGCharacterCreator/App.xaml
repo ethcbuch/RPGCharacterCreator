@@ -5,15 +5,20 @@
              xmlns:viewmodel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
              xmlns:view="clr-namespace:RPGCharacterCreator.MVVM.View"
              StartupUri="MainWindow.xaml">
-    
+
     <Application.Resources>
 
+
         <ResourceDictionary>
+            
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/CharacterButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml" />
                 <ResourceDictionary Source="Theme/PortraitButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
 
             <DataTemplate DataType="{x:Type viewmodel:BioViewModel}">
                 <view:BioView/>
@@ -34,6 +39,7 @@
 
 
         </ResourceDictionary>
+        
 
     </Application.Resources>
 </Application>

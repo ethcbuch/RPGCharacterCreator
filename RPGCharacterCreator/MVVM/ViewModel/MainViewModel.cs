@@ -5,7 +5,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
 
     //class manages what view the user will see   
-    internal class MainViewModel : ObservableObject
+    internal class MainViewModel :  ObservableObject
     {
         //properties of type RelayCommand,(connects button with action to be performed)
         public RelayCommand HomeViewCommand { get; set; }
@@ -43,6 +43,17 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
+        private bool _buttCancel;
+        public bool ButtCancel
+        {
+            get { return _buttCancel; }
+            set
+            {
+                _buttCancel = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         //constructor sets up main view
         public MainViewModel()
@@ -56,10 +67,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             //the users view will be automatically be set to the homeVM
             CurrentView = homeVM;
 
+
             //lambda is ready to be called when button is clicked
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = homeVM;
+                ButtCancel = false;
 
             });
 
@@ -78,6 +91,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
                 overviewVM = new OverviewViewModel(bioVM, classVM);
                 CurrentView = overviewVM;
+            });
+
+            homeVM.CreateCharacterCommand = new RelayCommand(o =>
+            {
+                CurrentView = bioVM;
+                ButtCancel = true;
             });
         }
     }

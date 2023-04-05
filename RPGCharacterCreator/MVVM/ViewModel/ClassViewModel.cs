@@ -6,9 +6,6 @@ using System.Windows.Input;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
-
-
-
     internal class ClassViewModel : ObservableObject
     {
 

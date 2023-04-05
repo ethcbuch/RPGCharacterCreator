@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using RPGCharacterCreator.MVVM.ViewModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media;
 
@@ -11,6 +12,7 @@ namespace RPGCharacterCreator
     {
         public MainWindow()
         {
+
             InitializeComponent();
         }
 

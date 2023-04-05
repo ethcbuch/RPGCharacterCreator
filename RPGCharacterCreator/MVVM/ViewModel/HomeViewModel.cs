@@ -9,18 +9,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 {
     internal class HomeViewModel
     {
-
         public RelayCommand CreateCharacterCommand { get; set; }
 
-        public MainViewModel mainVM { get; set; }
 
-        public HomeViewModel()
-        {
-            CreateCharacterCommand = new RelayCommand(o =>
-            {
-                mainVM.CurrentView = mainVM.bioVM;
 
-            });
-        }
     }
 }
