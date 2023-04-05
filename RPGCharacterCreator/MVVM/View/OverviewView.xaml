@@ -86,10 +86,10 @@
                                FontSize="14" />
                     </StackPanel>
                     <StackPanel Margin="152,7,287.727,98.109">
-                        <TextBlock TextWrapping="Wrap"
-                                   Text="TextBlock"
+                        <TextBlock Text="{Binding OverviewRace.RaceName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
+                                   Background="Transparent"
                                    Foreground="White"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="14" />

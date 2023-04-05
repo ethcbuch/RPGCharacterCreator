@@ -25,7 +25,7 @@
                     Margin="0,0,20,0"
                     Grid.ColumnSpan="3">
             <TextBlock Grid.RowSpan="2"
-                       Text="{Binding AClass.ClassName}"
+                       Text="{Binding ARace.RaceName}"
                        HorizontalAlignment="Center"
                        Foreground="White"
                        Margin="0,0,0,20
@@ -67,8 +67,8 @@
                       VerticalAlignment="Top"
                       Margin="0,68,0,0">
             <StackPanel>
-                <RadioButton x:Name="warriorButton"
-                             Content="WARRIOR"
+                <RadioButton x:Name="humanButton"
+                             Content="HUMAN"
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
@@ -76,10 +76,10 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
-                             Command="{Binding WarriorButtonCommand}"
+                             Command="{Binding HumanButtonCommand}"
                              Visibility="Visible" />
-                <RadioButton x:Name="RogueButton"
-                             Content="ROGUE"
+                <RadioButton x:Name="DwarfButton"
+                             Content="DWARF"
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
@@ -87,7 +87,7 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
-                             Command="{Binding RogueButtonCommand}"
+                             Command="{Binding DwarfButtonCommand}"
                              Visibility="Visible" />
             </StackPanel>
         </ScrollViewer>
@@ -98,69 +98,28 @@
                 Grid.RowSpan="4" />
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="0.291,2.891,259.018,-190.182"
-                Grid.Row="2"
-                Grid.Column="2"
-                Grid.RowSpan="2" />
-        <Border BorderBrush="#A0A0A0"
-                BorderThickness="3"
                 Margin="265.291,31.309,370.291,-190.182"
                 Grid.Row="1"
                 Grid.Column="2"
                 Grid.RowSpan="3"
                 Grid.ColumnSpan="2" />
-        <Border BorderBrush="#A0A0A0"
-                BorderThickness="3"
-                Margin="6,0,0,105"
-                Grid.Row="3"
-                Grid.Column="2"
-                Grid.ColumnSpan="2" />
         <StackPanel Grid.Column="1"
                     Grid.Row="2"
                     Margin="0,0,0,-177"
                     Grid.RowSpan="2" />
-        <StackPanel Grid.Column="2"
-                    Grid.Row="2"
-                    Margin="0,0,0,106"
-                    Grid.RowSpan="2">
-            <Label Content="PRIMARY STATS"
-                   Height="33"
-                   FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
-                   FontSize="24"
-                   Margin="10,0,0.309,0" />
-            <ItemsControl Background="Transparent"
-                          ItemsSource="{Binding AClass.ClassPrimaryStats, UpdateSourceTrigger=PropertyChanged}"
-                          Height="207"
-                          Margin="0,0,0.309,0"
-                          Width="253">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
-                                   Text="{Binding UpdateSourceTrigger=PropertyChanged}"
-                                   FontSize="18"
-                                   Height="28"
-                                   Width="260"
-                                   Margin="5,0,4.2,0"
-                                   Padding="5,5,0,0" />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
 
-            </ItemsControl>
-        </StackPanel>
         <StackPanel Grid.Column="1"
                     Grid.Row="2"
                     Margin="0,0,0,-177"
                     Grid.RowSpan="2">
-            <Label Content="CLASS DESCRIPTION"
+            <Label Content="RACE DESCRIPTION"
                    Height="33"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
                    FontSize="24"
                    Margin="0,0,-0.327,0" />
             <TextBlock TextWrapping="Wrap"
-                       Text="{Binding AClass.ClassDescription, UpdateSourceTrigger=PropertyChanged}"
+                       Text="{Binding ARace.RaceDescription, UpdateSourceTrigger=PropertyChanged}"
                        FontFamily="Franklin Gothic Medium"
                        Foreground="White"
                        FontSize="16"
@@ -168,44 +127,17 @@
                        Padding="5,2,0,0"
                        Margin="0,0,-0.327,0" />
         </StackPanel>
-        <StackPanel Grid.Column="2"
-                    Grid.Row="3"
-                    Margin="6,6,0,-180">
-            <Label Content="SECONDARY STATS"
-                   Height="50"
-                   FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
-                   FontSize="24" />
-            <ItemsControl Background="Transparent"
-                          ItemsSource="{Binding AClass.ClassSecondaryStats, UpdateSourceTrigger=PropertyChanged}"
-                          Height="236"
-                          Margin="0,0,0.2,0">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
-                                   Text="{Binding UpdateSourceTrigger=PropertyChanged}"
-                                   FontSize="18"
-                                   Height="28"
-                                   Width="260"
-                                   Margin="5,0,4.2,0"
-                                   Padding="5,5,0,0" />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-
-            </ItemsControl>
-        </StackPanel>
         <StackPanel Grid.Column="3"
                     Grid.Row="2"
                     Margin="6,6,1,0">
-            <Label Content="CLASS SKILLS"
+            <Label Content="RACE TRAITS"
                    Height="37"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
                    FontSize="24"
                    Margin="0,0,0.291,0" />
             <ItemsControl Background="Transparent"
-                          ItemsSource="{Binding AClass.ClassSkills, UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding ARace.RaceTraits, UpdateSourceTrigger=PropertyChanged}"
                           Height="200"
                           Margin="0,0,0.291,0">
                 <ItemsControl.ItemTemplate>
@@ -223,34 +155,7 @@
 
             </ItemsControl>
         </StackPanel>
-        <StackPanel Grid.Column="3"
-                    Grid.Row="3"
-                    Margin="5,6,1,-180">
-            <Label Content="CLASS ABILITIES"
-                   Height="41"
-                   FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
-                   FontSize="24"
-                   Margin="0,0,0.164,0" />
-            <ItemsControl Background="Transparent"
-                          ItemsSource="{Binding AClass.ClassAbilities, UpdateSourceTrigger=PropertyChanged}"
-                          Height="245"
-                          Margin="0,0,0.164,0">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
-                                   Text="{Binding UpdateSourceTrigger=PropertyChanged}"
-                                   FontSize="18"
-                                   Height="28"
-                                   Width="260"
-                                   Margin="5,0,4.2,0"
-                                   Padding="2,0,0,0" />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-
-            </ItemsControl>
-        </StackPanel>
+        
 
 
 
