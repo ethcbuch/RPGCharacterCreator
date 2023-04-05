@@ -31,6 +31,10 @@
                 <view:RaceView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodel:BackgroundViewModel}">
+                <view:BackgroundView/>
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewmodel:OverviewViewModel}">
                 <view:OverviewView />
             </DataTemplate>

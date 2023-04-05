@@ -14,6 +14,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         //added
         public RelayCommand RaceViewCommand { get; set; }
         public RelayCommand ClassViewCommand { get; set; }
+        //added
+        public RelayCommand BackgroundViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
 
@@ -25,6 +27,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RaceViewModel raceVM { get; set; }
 
         public ClassViewModel classVM { get; set; }
+        //added this in
+        public BackgroundViewModel backgroundVM { get; set; }
 
         public OverviewViewModel overviewVM { get; set; }
 
@@ -54,42 +58,32 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             //creates instances of the views that user can see/select from
             homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
-            //added
+            //added raceVM
             raceVM = new RaceViewModel();
             classVM = new ClassViewModel();
-            //added raceVM
-            overviewVM = new OverviewViewModel(bioVM, classVM,raceVM);
+            //ADDED THIS IN
+            backgroundVM = new BackgroundViewModel();
+            overviewVM = new OverviewViewModel(bioVM, classVM,raceVM,backgroundVM);
 
             //the users view will be automatically be set to the homeVM
             CurrentView = homeVM;
 
             //lambda is ready to be called when button is clicked
-            HomeViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = homeVM;
-
-            });
-
-            BioViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = bioVM;
-            });
+            HomeViewCommand = new RelayCommand(o =>{CurrentView = homeVM;});
+            BioViewCommand = new RelayCommand(o =>{CurrentView = bioVM;});
             //added
-            RaceViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = raceVM;
-            });
-
+            RaceViewCommand = new RelayCommand(o =>{CurrentView = raceVM;});
 
             ClassViewCommand = new RelayCommand(o =>
             {
                 CurrentView = classVM;
             });
+            BackgroundViewCommand = new RelayCommand(o => { CurrentView = backgroundVM; });
 
             OverviewViewCommand = new RelayCommand(o =>
             {
                 //added raceVM
-                overviewVM = new OverviewViewModel(bioVM, classVM,raceVM);
+                overviewVM = new OverviewViewModel(bioVM, classVM,raceVM, backgroundVM);
                 CurrentView = overviewVM;
             });
         }

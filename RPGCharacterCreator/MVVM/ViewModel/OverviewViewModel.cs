@@ -13,7 +13,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
     class OverviewViewModel : ObservableObject
     {
         private Bio _overviewBio;
-
         public Bio OverviewBio
         {
             get
@@ -28,7 +27,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         }
 
         private Class _overviewClass;
-
         public Class OverviewClass
         {
             get
@@ -43,25 +41,26 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         }
 
         private Race _overviewRace;
-
         public Race OverviewRace
         {
-            get
-            {
-                return _overviewRace;
-            }
-            set
-            {
-                _overviewRace = value;
-                OnPropertyChanged();
-            }
+            get{ return _overviewRace; }
+            set{ _overviewRace = value; OnPropertyChanged(); }
         }
 
-        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM,RaceViewModel raceVM)
+        //added 
+        private Background _overviewBackground;
+        public Background OverviewBackground
+        {
+            get { return _overviewBackground; }
+            set { _overviewBackground = value; OnPropertyChanged(); }
+        }
+
+        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM,RaceViewModel raceVM,BackgroundViewModel backgroundVM)
         {
             OverviewBio = bioVM.TempBio;
             OverviewClass = classVM.AClass;
             OverviewRace = raceVM.ARace;
+            OverviewBackground = backgroundVM.ABackground;
 
 
         }

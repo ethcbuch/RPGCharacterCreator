@@ -96,9 +96,12 @@ namespace RPGCharacterCreator
 
         public Background buildBackground(Backgrounds aBackground)
         {
-            Background background = null;
-
-            return background;
+            if (aBackground == Backgrounds.Noble)
+            {
+                Noble n = new Noble();
+                return n;
+            }
+            else { return null; };
 
         }
 
