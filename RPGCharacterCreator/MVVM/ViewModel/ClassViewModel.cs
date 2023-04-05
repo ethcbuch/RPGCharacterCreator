@@ -13,7 +13,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand RogueButtonCommand { get; set; }
 
-        private Class _aClass;
+        private Class _aClass = new Class();
 
         public Class AClass
         {
@@ -32,6 +32,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             WarriorButtonCommand = new RelayCommand(o =>
             {
                 AClass = new Warrior();
+
                 OnPropertyChanged();
             });
 
@@ -40,6 +41,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 AClass = new Rogue();
                 OnPropertyChanged();
             });
+
+            Task.Run(() => { while (true) { Debug.WriteLine(AClass.ClassName); Thread.Sleep(1000); } });
+
         }
 
 

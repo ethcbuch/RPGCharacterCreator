@@ -105,12 +105,13 @@
                     </StackPanel>
                     <StackPanel Margin="302,7,137.727,98.109">
                         <TextBlock TextWrapping="Wrap"
-                                   Text="{Binding OverviewClass.ClassName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                   Text="{Binding OverviewClass.ClassName, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
                                    Foreground="White"
                                    FontFamily="Franklin Gothic Medium Cond"
-                                   FontSize="14" />
+                                   FontSize="14">
+                        </TextBlock>
                         <Border BorderBrush="#A0A0A0"
                                 BorderThickness="3"
                                 Height="3"

@@ -4,6 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:RPGCharacterCreator.MVVM.View"
              xmlns:ViewModel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
+             xmlns:RPGCharacterCreator="clr-namespace:RPGCharacterCreator"
              x:Class="RPGCharacterCreator.MVVM.View.HomeView"
              mc:Ignorable="d"
              d:DesignHeight="630"
@@ -14,22 +15,25 @@
             <ColumnDefinition Width="880" />
         </Grid.ColumnDefinitions>
 
-        <ItemsControl>
+        <ItemsControl ItemsSource="{Binding characterDict, UpdateSourceTrigger=PropertyChanged}">
+            <ItemsControl.DataContext>
+                <ViewModel:HomeViewModel />
+            </ItemsControl.DataContext>
             <ScrollViewer VerticalScrollBarVisibility="Auto" />
-            <RadioButton x:Name="createButton"
-                         Content="CREATE CHARACTER"
-                         Height="80"
-                         Width="400"
-                         FontFamily="Franklin Gothic Heavy"
-                         Foreground="White"
-                         HorizontalContentAlignment="Center"
-                         Style="{StaticResource CharacterButtonMenu}"
-                         FontSize="19"
-                         Command="{Binding CreateCharacterCommand}"
-                         Visibility="Visible">
-            </RadioButton>
-        </ItemsControl>
+            <RPGCharacterCreator:GeneralCharacter />
 
+        </ItemsControl>
+        <RadioButton x:Name="createButton"
+                     Content="CREATE CHARACTER"
+                     Height="80"
+                     Width="400"
+                     FontFamily="Franklin Gothic Heavy"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Style="{StaticResource CharacterButtonMenu}"
+                     FontSize="19"
+                     Command="{Binding CreateCharacterCommand}"
+                     Visibility="Visible" />
         <Border BorderBrush="#1E2124"
                 BorderThickness="3"
                 Margin="0,0,874,-4"

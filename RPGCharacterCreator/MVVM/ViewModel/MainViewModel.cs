@@ -1,5 +1,9 @@
 ﻿using RPGCharacterCreator.Core;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -7,9 +11,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
     //class manages what view the user will see   
     internal class MainViewModel :  ObservableObject
-    {
+    { 
 
-        Dictionary<GeneralCharacter, string> characterDict = new Dictionary<GeneralCharacter, string>();
+        CharacterBuilder builder;
+
+        CharacterDirector director;
 
         public int characterCount = 0;
 
@@ -70,6 +76,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             classVM = new ClassViewModel();
             overviewVM = new OverviewViewModel(bioVM, classVM);
 
+
+            builder = new GeneralCharacterBuilder();
+
+            director = new CharacterDirector(builder);
+
             //the users view will be automatically be set to the homeVM
             CurrentView = homeVM;
 
@@ -90,11 +101,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             ClassViewCommand = new RelayCommand(o =>
             {
+
                 CurrentView = classVM;
             });
 
             OverviewViewCommand = new RelayCommand(o =>
             {
+                overviewVM.OverviewClass = classVM.AClass;
+
                 CurrentView = overviewVM;
             });
 
@@ -106,9 +120,16 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
+                director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass);
+
+                homeVM.characterDict.Add(builder.GetCharacter(), characterCount.ToString());
+                characterCount++;
+
+
                 CurrentView = homeVM;
                 ButtCancel = false;
             });
+
         }
     }
 }

@@ -1,83 +1,76 @@
-﻿using System.Collections.Generic;
+﻿using RPGCharacterCreator.Core;
+using System.Collections.Generic;
 
 namespace RPGCharacterCreator
 {
-    public abstract class Class
+    internal class Class : ObservableObject
     {
-        private string _className;
-        private string _classDesciption;
-        private List<string> _classPrimaryStats;
-        private List<string> _classSecondaryStats;
-        private List<string> _classSkills;
-        private List<string> _classAbilities;
-
-        public abstract string ClassName { get; set; }
-
-        public abstract string ClassDescription { get; set; }
-        public abstract List<string> ClassPrimaryStats
+        private string _className { get; set; }
+        private string _classDesciption { get; set; }
+        private List<string> _classPrimaryStats { get; set; }
+        private List<string> _classSecondaryStats { get; set; }
+        private List<string> _classSkills
         {
             get; set;
         }
-        public abstract List<string> ClassSecondaryStats
-        {
-            get; set;
-        }
-        public abstract List<string> ClassSkills
-        {
-            get; set;
-        }
-        public abstract List<string> ClassAbilities
+        private List<string> _classAbilities
         {
             get; set;
         }
 
+        public string ClassName { get { return _className; } set { _className = value; OnPropertyChanged(); } }
+        public  string ClassDescription { get { return _className; } set { _className = value; OnPropertyChanged(); } }
+        public  List<string> ClassPrimaryStats { get { return _classPrimaryStats; } set { _classPrimaryStats = value; OnPropertyChanged(); } }
+        public  List<string> ClassSecondaryStats { get { return _classSecondaryStats; } set { _classSecondaryStats = value; OnPropertyChanged(); } }
+        public  List<string> ClassSkills { get { return _classSkills; } set { _classSkills = value; OnPropertyChanged(); } }
+        public  List<string> ClassAbilities { get { return _classAbilities; } set { _classAbilities = value; OnPropertyChanged(); } }
     }
 
-    public class Warrior : Class
+    internal class Warrior : Class
     {
-        private string _className = "Warrior";
-        private string _classDesciption = "This guy fights on the front lines";
-        private List<string> _classPrimaryStats = new List<string> { "Strength", "Constition" };
-        private List<string> _classSecondaryStats = new List<string> { "Dexterity" };
-        private List<string> _classSkills = new List<string> { "Athletics", };
-        private List<string> _classAbilities = new List<string> { "Taunt", "Shield Bash" };
+        private string _className { get; set; } = "Warrior";
+        private string _classDesciption { get; set; } = "This guy fights on the front lines";
+        private List<string> _classPrimaryStats { get; set; } = new List<string> { "Strength", "Constition" };
+        private List<string> _classSecondaryStats { get; set; } = new List<string> { "Dexterity" };
+        private List<string> _classSkills { get; set; } = new List<string> { "Athletics", };
+        private List<string> _classAbilities { get; set; } = new List<string> { "Taunt", "Shield Bash" };
 
-        public override string ClassName
+        public new string ClassName
         {
             get { return _className; }
             set { _className = value; }
         }
 
-        public override string ClassDescription
+        public  string ClassDescription
         {
             get { return _classDesciption; }
-            set { _classDesciption = value; }
+            set { _classDesciption = value; OnPropertyChanged(); }
         }
 
-        public override List<string> ClassPrimaryStats
+        public  List<string> ClassPrimaryStats
         {
             get { return _classPrimaryStats; }
-            set { _classPrimaryStats = value; }
+            set { _classPrimaryStats = value; OnPropertyChanged(); }
         }
-        public override List<string> ClassSecondaryStats
+        public  List<string> ClassSecondaryStats
         {
             get { return _classSecondaryStats; }
-            set { _classSecondaryStats = value; }
+            set { _classSecondaryStats = value; OnPropertyChanged(); }
         }
 
-        public override List<string> ClassSkills
+        public  List<string> ClassSkills
         {
             get { return _classSkills; }
-            set { _classSkills = value; }
+            set { _classSkills = value; OnPropertyChanged(); }
         }
-        public override List<string> ClassAbilities
+        public  List<string> ClassAbilities
         {
             get { return _classAbilities; }
-            set { _classAbilities = value; }
+            set { _classAbilities = value; OnPropertyChanged(); }
         }
 
     }
-    public class Rogue : Class
+    internal class Rogue : Class
     {
         private string _className = "Rogue";
         private string _classDesciption = "This is one sneaky boi";
@@ -86,35 +79,35 @@ namespace RPGCharacterCreator
         private List<string> _classSkills = new List<string> { "Lockpicking", "Pickpocket" };
         private List<string> _classAbilities = new List<string> { "Critical Mastery", "Sneak Attack" };
 
-        public override string ClassName
+        public  string ClassName
         {
             get { return _className; }
             set { _className = value; }
         }
 
-        public override string ClassDescription
+        public  string ClassDescription
         {
             get { return _classDesciption; }
             set { _classDesciption = value; }
         }
 
-        public override List<string> ClassPrimaryStats
+        public List<string> ClassPrimaryStats
         {
             get { return _classPrimaryStats; }
             set { _classPrimaryStats = value; }
         }
-        public override List<string> ClassSecondaryStats
+        public List<string> ClassSecondaryStats
         {
             get { return _classSecondaryStats; }
             set { _classSecondaryStats = value; }
         }
 
-        public override List<string> ClassSkills
+        public List<string> ClassSkills
         {
             get { return _classSkills; }
             set { _classSkills = value; }
         }
-        public override List<string> ClassAbilities
+        public List<string> ClassAbilities
         {
             get { return _classAbilities; }
             set { _classAbilities = value; }

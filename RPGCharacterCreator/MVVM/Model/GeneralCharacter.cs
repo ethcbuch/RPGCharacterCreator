@@ -98,13 +98,13 @@ namespace RPGCharacterCreator
             return charBuilder;
         }
 
-        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Race aRace, Class aClass, Background aBackground)
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Class aClass)
         {
             aCharacterBuilder.buildBio(aBio);
             aCharacterBuilder.buildPortrait();
             aCharacterBuilder.buildClass(aClass);
-            aCharacterBuilder.buildRace(aRace);
-            aCharacterBuilder.buildBackground(aBackground);
+            //aCharacterBuilder.buildRace(aRace);
+            //aCharacterBuilder.buildBackground(aBackground);
 
             return aCharacterBuilder.GetCharacter();
 
