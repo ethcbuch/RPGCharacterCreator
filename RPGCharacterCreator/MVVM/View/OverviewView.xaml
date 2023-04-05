@@ -42,7 +42,7 @@
                        FontFamily="Franklin Gothic Medium"
                        Foreground="White"
                        FontSize="16"
-                       Text="{Binding BioVM.CharBio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Text="{Binding OverviewBio.CharBio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Padding="2,0,0,0">
 
             </TextBlock>
