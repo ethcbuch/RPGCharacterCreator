@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
-    class OverviewViewModel : ObservableObject
+    internal class OverviewViewModel : ObservableObject
     {
+        public RelayCommand FinalizeButtonCommand { get; set; }
+
         private Bio _overviewBio;
 
         public Bio OverviewBio

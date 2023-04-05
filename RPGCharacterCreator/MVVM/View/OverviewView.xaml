@@ -42,7 +42,7 @@
                        FontFamily="Franklin Gothic Medium"
                        Foreground="White"
                        FontSize="16"
-                       Text="{Binding OverviewBio.CharBio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Text="{Binding BioVM.CharBio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Padding="2,0,0,0">
 
             </TextBlock>
@@ -222,6 +222,16 @@
                     BorderThickness="2"
                     Height="180" />
         </StackPanel>
-
+        <RadioButton x:Name="finalizeButton"
+                     Content="FINISH CHARACTER CREATION"
+                     FontFamily="Franklin Gothic Heavy"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Style="{StaticResource CharacterButtonMenu}"
+                     FontSize="24"
+                     Command="{Binding FinalizeButtonCommand}"
+                     Visibility="Visible"
+                     Margin="5,51,10,20"
+                     Grid.Row="3" />
     </Grid>
 </UserControl>

@@ -1,30 +1,8 @@
 ﻿using RPGCharacterCreator.MVVM.Model;
+using RPGCharacterCreator.MVVM.View;
 
 namespace RPGCharacterCreator
 {
-
-    public enum Classes
-    {
-        Warrior,
-        Rogue,
-        Mage
-    }
-
-    public enum Races
-    {
-        Human,
-        Elf,
-        Dwarf
-    }
-
-    public enum Backgrounds
-    {
-        Noble,
-        Peasant,
-        Sage
-    }
-
-
     internal class GeneralCharacter
     {
         public Bio characterBio;
@@ -41,11 +19,11 @@ namespace RPGCharacterCreator
 
         void buildPortrait();
 
-        Class buildClass(Classes aClass);
+        void buildClass(Class aClass);
 
-        Race buildRace(Races aRace);
+        void buildRace(Race aRace);
 
-        Background buildBackground(Backgrounds aBackgroud);
+        void buildBackground(Background aBackgroud);
 
         void buildStats();
 
@@ -69,33 +47,24 @@ namespace RPGCharacterCreator
 
         public void buildBio(Bio aBio)
         {
-            character.characterBio = new Bio(aBio);
+            character.characterBio = aBio;
         }
 
         public void buildPortrait() { }
 
-        public Class buildClass(Classes aClass)
+        public void buildClass(Class aClass)
         {
-            if (aClass == Classes.Warrior)
-            {
-                Warrior war = new Warrior();
-                return war;
-            }
-            else { return null; }
+               character.characterClass = aClass;
         }
 
-        public Race buildRace(Races aRace)
+        public void buildRace(Race aRace)
         {
-            Race race = new Race();
-
-            return race;
+                character.characterRace = aRace;
         }
 
-        public Background buildBackground(Backgrounds aBackground)
+        public void buildBackground(Background aBackground)
         {
-            Background background = null;
-
-            return background;
+            character.characterBackground = aBackground;
 
         }
 
@@ -122,18 +91,23 @@ namespace RPGCharacterCreator
             charBuilder = aCharacterBuilder;
         }
 
-        //void changeBuilder(CharacterBuilder aCharacterBuilder) { }
+        void changeBuilder(CharacterBuilder aCharacterBuilder) { }
 
         public CharacterBuilder getBuilder()
         {
             return charBuilder;
         }
 
-        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder)
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Race aRace, Class aClass, Background aBackground)
         {
-            GeneralCharacter character = new GeneralCharacter();
+            aCharacterBuilder.buildBio(aBio);
+            aCharacterBuilder.buildPortrait();
+            aCharacterBuilder.buildClass(aClass);
+            aCharacterBuilder.buildRace(aRace);
+            aCharacterBuilder.buildBackground(aBackground);
 
-            return character;
+            return aCharacterBuilder.GetCharacter();
+
         }
 
     }

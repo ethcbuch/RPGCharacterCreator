@@ -53,7 +53,6 @@
                              Foreground="White"
                              Style="{StaticResource HomeButtonMenu}"
                              FontSize="24"
-                             IsChecked="True"
                              Command="{Binding HomeViewCommand}" />
 
                 <RadioButton x:Name="bioButton"
@@ -64,6 +63,7 @@
                              Foreground="White"
                              Style="{StaticResource CharacterButtonMenu}"
                              FontSize="19"
+                             IsChecked="True"
                              Command="{Binding BioViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}"/>
 

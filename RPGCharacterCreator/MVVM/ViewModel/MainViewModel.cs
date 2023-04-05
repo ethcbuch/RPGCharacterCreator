@@ -1,4 +1,5 @@
 ﻿using RPGCharacterCreator.Core;
+using System.Collections.Generic;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -7,6 +8,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
     //class manages what view the user will see   
     internal class MainViewModel :  ObservableObject
     {
+
+        Dictionary<GeneralCharacter, string> characterDict = new Dictionary<GeneralCharacter, string>();
+
+        public int characterCount = 0;
+
+
         //properties of type RelayCommand,(connects button with action to be performed)
         public RelayCommand HomeViewCommand { get; set; }
 
@@ -54,7 +61,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
-
         //constructor sets up main view
         public MainViewModel()
         {
@@ -89,7 +95,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             OverviewViewCommand = new RelayCommand(o =>
             {
-                overviewVM = new OverviewViewModel(bioVM, classVM);
                 CurrentView = overviewVM;
             });
 
@@ -97,6 +102,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
                 CurrentView = bioVM;
                 ButtCancel = true;
+            });
+
+            overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
+            {
+                CurrentView = homeVM;
+                ButtCancel = false;
             });
         }
     }

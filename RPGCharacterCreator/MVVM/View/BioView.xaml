@@ -52,7 +52,7 @@
                      MaxLines="1"
                      BorderBrush="Transparent"
                      SelectionBrush="Transparent"
-                     Text="{Binding TempBio.CharName, UpdateSourceTrigger=PropertyChanged}" />
+                     Text="{Binding BioVM.CharName, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
