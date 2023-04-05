@@ -125,6 +125,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 homeVM.characterDict.Add(builder.GetCharacter(), characterCount.ToString());
                 characterCount++;
 
+                OnPropertyChanged();
 
                 CurrentView = homeVM;
                 ButtCancel = false;

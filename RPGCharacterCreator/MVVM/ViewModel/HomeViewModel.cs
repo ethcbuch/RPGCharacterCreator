@@ -11,7 +11,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
     {
         public RelayCommand CreateCharacterCommand { get; set; }
 
-        public Dictionary<GeneralCharacter, string> characterDict = new Dictionary<GeneralCharacter, string>();
+        public Dictionary<GeneralCharacter, string> characterDict;
+
+        public HomeViewModel()
+        {
+            characterDict = new Dictionary<GeneralCharacter, string>();
+        }
 
     }
 }
