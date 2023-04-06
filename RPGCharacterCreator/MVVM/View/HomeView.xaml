@@ -15,31 +15,72 @@
             <ColumnDefinition Width="880" />
         </Grid.ColumnDefinitions>
 
-        <ItemsControl ItemsSource="{Binding characterDict, UpdateSourceTrigger=PropertyChanged}">
-     
- 
-        </ItemsControl>
-        <RadioButton x:Name="createButton"
-                     Content="CREATE CHARACTER"
-                     Height="80"
-                     Width="400"
-                     FontFamily="Franklin Gothic Heavy"
-                     Foreground="White"
-                     HorizontalContentAlignment="Center"
-                     Style="{StaticResource CharacterButtonMenu}"
-                     FontSize="19"
-                     Command="{Binding CreateCharacterCommand}"
-                     Visibility="Visible" />
+        <ScrollViewer>
+            <StackPanel>
+                <ItemsControl x:Name="characterControl"
+                              ItemsSource="{Binding charDict, UpdateSourceTrigger=PropertyChanged}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+
+                            <RadioButton Content="CHARCTER CLASS"
+                                         Tag="race"
+                                         Height="80"
+                                         Width="400"
+                                         FontFamily="Franklin Gothic Heavy"
+                                         Foreground="White"
+                                         HorizontalContentAlignment="Center"
+                                         Style="{StaticResource CharacterButtonMenu}"
+                                         FontSize="19"
+                                         Command="{Binding Path=DataContext.ChangeCharacterCommand, ElementName = characterControl }"
+                                         Visibility="Visible">
+                            </RadioButton>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <RadioButton x:Name="createButton"
+                             Content="CREATE CHARACTER"
+                             Height="80"
+                             Width="400"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CharacterButtonMenu}"
+                             FontSize="19"
+                             Command="{Binding CreateCharacterCommand}"
+                             Visibility="Visible" />
+            </StackPanel>
+
+
+
+
+        </ScrollViewer>
+
+
+
+
+
         <Border BorderBrush="#1E2124"
                 BorderThickness="3"
                 Margin="0,0,874,-4"
                 Grid.Column="1" />
-        <ContentControl Content="ContentControl"
+        <Label Content="No Character Data Found..."
+               HorizontalAlignment="Left"
+               Foreground="#A0A0A0"
+               Margin="22,10,0,0"
+               VerticalAlignment="Top"
+               Grid.Column="1"
+               Height="35"
+               Width="243"
+               FontFamily="Franklin Gothic Heavy"
+               FontSize="18" />
+        <ContentControl  Content="{Binding ChildView}"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
+                        VerticalAlignment="Center"
                         Width="874"
-                        Height="626"
-                        Margin="6,4,0,0"
-                        Grid.Column="1" />
+                        Height="630"
+                        Margin="6,0,0,0"
+                        Grid.Column="1">
+
+        </ContentControl>
     </Grid>
 </UserControl>

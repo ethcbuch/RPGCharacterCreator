@@ -1,9 +1,11 @@
 ﻿using RPGCharacterCreator.Core;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -16,9 +18,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         CharacterBuilder builder;
 
         CharacterDirector director;
-
-        public int characterCount = 0;
-
 
         //properties of type RelayCommand,(connects button with action to be performed)
         public RelayCommand HomeViewCommand { get; set; }
@@ -67,6 +66,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
+        int characterCount = 0;
+
         //constructor sets up main view
         public MainViewModel()
         {
@@ -75,6 +76,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             bioVM = new BioViewModel();
             classVM = new ClassViewModel();
             overviewVM = new OverviewViewModel(bioVM, classVM);
+            CharacterViewModel characterVM = new CharacterViewModel();
 
 
             builder = new GeneralCharacterBuilder();
@@ -120,16 +122,26 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
-                director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass);
+                homeVM.charDict.Add(characterCount.ToString(), director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass));
 
-                homeVM.characterDict.Add(builder.GetCharacter(), characterCount.ToString());
                 characterCount++;
+                director.getBuilder().reset();
 
-                OnPropertyChanged();
+                overviewVM.OverviewBio = new Bio();
+                overviewVM.OverviewClass = new Class();
+                classVM.AClass = new Class();
+                bioVM.TempBio = new Bio();
 
                 CurrentView = homeVM;
                 ButtCancel = false;
             });
+
+            homeVM.ChangeCharacterCommand = new RelayCommand(o =>
+            {
+
+                homeVM.ChildView = characterVM;
+            });
+
 
         }
     }

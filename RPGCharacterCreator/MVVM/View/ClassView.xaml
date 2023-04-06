@@ -74,7 +74,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding WarriorButtonCommand}"
                              Visibility="Visible" />
@@ -85,7 +85,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding RogueButtonCommand}"
                              Visibility="Visible" />

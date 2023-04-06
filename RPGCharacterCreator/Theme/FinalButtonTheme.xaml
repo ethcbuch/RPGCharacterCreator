@@ -3,7 +3,7 @@
 
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="{x:Type RadioButton}"
-           x:Key="CharacterButtonMenu">
+           x:Key="FinalButtonMenu">
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
@@ -11,35 +11,17 @@
                         <Grid VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Images/placeholder.png"
-                                       Height="65"
-                                       Width="65"
-                                       Margin="5,0,0,0" />
-                                <StackPanel>
-                                    <Label x:Name="nameLabel"
-                                           Content="{TemplateBinding Property=Content}"
-                                           Foreground="White"
-                                           FontFamily="Franklin Gothic Heavy"
-                                           FontSize="19" />
-                                    <Label x:Name="raceLabel"
-                                           Content="{TemplateBinding Tag}"
-                                           Foreground="White"
-                                           FontFamily="Franklin Gothic Heavy"
-                                           FontSize="19" />
-                                </StackPanel>
-
-
-
-                            </StackPanel>
-
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,0,0"
+                                       HorizontalAlignment="Center" />
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
 
             <Setter Property="Background"
-                    Value="Transparent" />
+                    Value="#36393E" />
             <Setter Property="BorderThickness"
                     Value="2" />
         </Style.Setters>
@@ -61,5 +43,4 @@
             </MultiDataTrigger>
         </Style.Triggers>
     </Style>
-
 </ResourceDictionary>

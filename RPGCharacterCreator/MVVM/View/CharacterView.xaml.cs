@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace RPGCharacterCreator.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for CharacterView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class CharacterView : UserControl
     {
-        public HomeView()
+        public CharacterView()
         {
             InitializeComponent();
         }
-
     }
 }

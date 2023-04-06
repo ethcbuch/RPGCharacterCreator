@@ -42,8 +42,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 OnPropertyChanged();
             });
 
-            Task.Run(() => { while (true) { Debug.WriteLine(AClass.ClassName); Thread.Sleep(1000); } });
-
         }
 
 

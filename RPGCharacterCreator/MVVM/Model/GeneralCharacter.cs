@@ -1,4 +1,5 @@
-﻿using RPGCharacterCreator.MVVM.Model;
+﻿using RPGCharacterCreator.Core;
+using RPGCharacterCreator.MVVM.Model;
 using RPGCharacterCreator.MVVM.View;
 
 namespace RPGCharacterCreator

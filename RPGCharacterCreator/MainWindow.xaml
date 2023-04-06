@@ -61,7 +61,7 @@
                              Width="140"
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              IsChecked="True"
                              Command="{Binding BioViewCommand}"
@@ -79,7 +79,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
@@ -90,7 +90,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
@@ -101,7 +101,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
@@ -112,7 +112,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
@@ -123,7 +123,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
@@ -134,7 +134,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding ClassViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}"
@@ -146,7 +146,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding OverviewViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />

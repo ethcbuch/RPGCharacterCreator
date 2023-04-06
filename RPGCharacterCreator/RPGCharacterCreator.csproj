@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ParallelExtensionsExtras, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSFT.ParallelExtensionsExtras.1.2.0\lib\ParallelExtensionsExtras.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -64,6 +67,7 @@
     <Compile Include="MVVM\ViewModel\AlignmentViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BackgroundViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BioViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\CharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ClassViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
@@ -77,6 +81,9 @@
     </Compile>
     <Compile Include="MVVM\View\BioView.xaml.cs">
       <DependentUpon>BioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\CharacterView.xaml.cs">
+      <DependentUpon>CharacterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ClassView.xaml.cs">
       <DependentUpon>ClassView.xaml</DependentUpon>
@@ -109,11 +116,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Theme\HomeButtonTheme.xaml">
+    <Page Include="MVVM\View\CharacterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\CharacterButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\FinalButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\HomeButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\CreationTabsTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +191,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
