@@ -51,7 +51,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             set { _overviewRace = value; OnPropertyChanged(); }
         }
 
-        //added 
         private Background _overviewBackground;
         public Background OverviewBackground
         {
@@ -60,12 +59,22 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         }
 
 
-        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM)
+        //added 
+        private Alignment _overviewAlignment;
+        public Alignment OverviewAlignment
+        {
+            get { return _overviewAlignment; }
+            set { _overviewAlignment = value; OnPropertyChanged(); }
+        }
+
+
+        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM,AlignmentViewModel alignmentVM)
         {
             OverviewBio = bioVM.TempBio;
             OverviewClass = classVM.AClass;
             OverviewRace = raceVM.ARace;
             OverviewBackground = backgroundVM.ABackground;
+            OverviewAlignment = alignmentVM.AAlignment;
         }
     }
 }

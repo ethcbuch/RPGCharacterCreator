@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\Model\Alignment.cs" />
     <Compile Include="MVVM\Model\Background.cs" />
     <Compile Include="MVVM\Model\Bio.cs" />
     <Compile Include="MVVM\Model\Class.cs" />

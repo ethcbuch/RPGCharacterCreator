@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 internal class Race : ObservableObject
 {
+
     private string _raceName { get; set; }
     private string _raceDesciption { get; set; }
     private List<string> _raceTraits { get; set; }

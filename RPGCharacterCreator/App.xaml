@@ -47,6 +47,10 @@
                 <view:BackgroundView />
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodel:AlignmentViewModel}">
+                <view:AlignmentView />
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewmodel:OverviewViewModel}">
                 <view:OverviewView />
             </DataTemplate>

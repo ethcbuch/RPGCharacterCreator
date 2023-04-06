@@ -178,7 +178,7 @@
                     </StackPanel>
                     <StackPanel Margin="323,87,59.727,18.109">
                         <TextBlock TextWrapping="Wrap"
-                                   Text="TextBlock"
+                                   Text="{Binding OverviewAlignment.AlignmentName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
                                    Foreground="White"

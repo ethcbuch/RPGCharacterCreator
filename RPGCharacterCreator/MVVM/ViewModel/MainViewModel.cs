@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -26,6 +28,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand ClassViewCommand { get; set; }
         public RelayCommand RaceViewCommand { get; set; }
         public RelayCommand BackgroundViewCommand { get; set; }
+        //NEW
+        public RelayCommand AlignmentViewCommand { get; set; }
+
         public RelayCommand OverviewViewCommand { get; set; }
 
 
@@ -37,6 +42,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public ClassViewModel classVM { get; set; }
         public BackgroundViewModel backgroundVM { get; set; }
+        //NEW
+        public AlignmentViewModel alignmentVM { get; set; }
+
 
         public OverviewViewModel overviewVM { get; set; }
 
@@ -81,7 +89,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             classVM = new ClassViewModel();
             raceVM = new RaceViewModel();
             backgroundVM = new BackgroundViewModel();
-            overviewVM = new OverviewViewModel(bioVM, classVM, raceVM, backgroundVM);
+            //NEW
+            alignmentVM = new AlignmentViewModel();
+            //NEW
+            overviewVM = new OverviewViewModel(bioVM, classVM, raceVM, backgroundVM, alignmentVM);
             CharacterViewModel characterVM = new CharacterViewModel(homeVM.currentCharacter);
 
 
@@ -119,6 +130,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewClass = classVM.AClass;
                 overviewVM.OverviewRace = raceVM.ARace;
                 overviewVM.OverviewBackground = backgroundVM.ABackground;
+                overviewVM.OverviewAlignment = alignmentVM.AAlignment;
 
                 CurrentView = overviewVM;
             });
@@ -130,6 +142,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             });
 
             BackgroundViewCommand = new RelayCommand(o => { CurrentView = backgroundVM; });
+            //NEW
+            AlignmentViewCommand = new RelayCommand(o => { CurrentView = alignmentVM; });
 
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
@@ -143,6 +157,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewClass = new Class();
                 overviewVM.OverviewRace = new Race();
                 overviewVM.OverviewBackground = new Model.Background();
+                //NEW
+                overviewVM.OverviewAlignment = new Model.Alignment();
                 classVM.AClass = new Class();
                 bioVM.TempBio = new Bio();
                 raceVM.ARace = new Race();
