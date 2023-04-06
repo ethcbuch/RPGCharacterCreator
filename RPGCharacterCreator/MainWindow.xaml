@@ -92,7 +92,7 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding ClassViewCommand}"
+                             Command="{Binding RaceViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="backgroundButton"
                              Content="BACKGROUND"
@@ -103,7 +103,7 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding ClassViewCommand}"
+                             Command="{Binding BackgroundViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="statsButton"
                              Content="STATS"

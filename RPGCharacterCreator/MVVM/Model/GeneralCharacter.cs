@@ -6,10 +6,10 @@ namespace RPGCharacterCreator
 {
     internal class GeneralCharacter
     {
-        public Bio characterBio;
-        public Class characterClass;
-        public Background characterBackground;
-        public Race characterRace;
+        public Bio characterBio { get; set; }
+        public Class characterClass { get; set; }
+        public Background characterBackground { get; set; }
+        public Race characterRace { get; set; } 
 
     }
     interface CharacterBuilder
@@ -99,13 +99,13 @@ namespace RPGCharacterCreator
             return charBuilder;
         }
 
-        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Class aClass)
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Class aClass, Race aRace, Background aBackground)
         {
             aCharacterBuilder.buildBio(aBio);
             aCharacterBuilder.buildPortrait();
             aCharacterBuilder.buildClass(aClass);
-            //aCharacterBuilder.buildRace(aRace);
-            //aCharacterBuilder.buildBackground(aBackground);
+            aCharacterBuilder.buildRace(aRace);
+            aCharacterBuilder.buildBackground(aBackground);
 
             return aCharacterBuilder.GetCharacter();
 

@@ -87,7 +87,7 @@
                     </StackPanel>
                     <StackPanel Margin="152,7,287.727,98.109">
                         <TextBlock TextWrapping="Wrap"
-                                   Text="TextBlock"
+                                   Text="{Binding OverviewRace.RaceName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
                                    Foreground="White"
@@ -124,7 +124,7 @@
                     </StackPanel>
                     <StackPanel Margin="440,7,-0.273,98.109">
                         <TextBlock TextWrapping="Wrap"
-                                   Text="TextBlock"
+                                   Text="{Binding OverviewBackground.BackgroundName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
                                    Foreground="White"

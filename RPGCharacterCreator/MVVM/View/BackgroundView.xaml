@@ -1,74 +1,73 @@
-﻿<UserControl x:Class="RPGCharacterCreator.MVVM.View.RaceView"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d"
+﻿<UserControl x:Class="RPGCharacterCreator.MVVM.View.BackgroundView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:RPGCharacterCreator.MVVM.View"
+             mc:Ignorable="d"
              d:DesignHeight="630"
-             d:DesignWidth="1280" >
-
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="70" />
-			<RowDefinition Height="30" />
-			<RowDefinition Height="240" />
-			<RowDefinition Height="110" />
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="370" />
-			<ColumnDefinition Width="270" />
-			<ColumnDefinition Width="265" />
-			<ColumnDefinition Width="375" />
-		</Grid.ColumnDefinitions>
-		<StackPanel Grid.Column="1"
+             d:DesignWidth="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="240" />
+            <RowDefinition Height="110" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="370" />
+            <ColumnDefinition Width="270" />
+            <ColumnDefinition Width="265" />
+            <ColumnDefinition Width="375" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1"
                     Grid.RowSpan="2"
                     Margin="0,0,20,0"
                     Grid.ColumnSpan="3">
-			<TextBlock Grid.RowSpan="2"
-                       Text="{Binding ARace.RaceName}"
+            <TextBlock Grid.RowSpan="2"
+                       Text="{Binding ABackground.BackgroundName}"
                        HorizontalAlignment="Center"
                        Foreground="White"
-                       Margin="0,0,0,20
-                   "
+                       Margin="0,0,0,20"
                        FontFamily="Franklin Gothic Heavy"
                        FontSize="84"
                        Height="102" />
-		</StackPanel>
-		<StackPanel Grid.Column="0"
+        </StackPanel>
+        <StackPanel Grid.Column="0"
                     Margin="0,-1,0,1">
-			<TextBlock Text="CHOOSE CLASS"
+            <TextBlock Text="CHOOSE BACKGROUND"
                        VerticalAlignment="Center"
                        Foreground="White"
                        Margin="10,10,0,20"
                        FontFamily="Franklin Gothic Heavy"
-                       FontSize="36"
+                       FontSize="33"
                        Height="50" />
 
-		</StackPanel>
-		<Border BorderBrush="#1E2124"
+        </StackPanel>
+        <Border BorderBrush="#1E2124"
                 BorderThickness="4"
                 Margin="0,65,0,2" />
-		<Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
                 Margin="2,0,1,235"
                 Grid.Row="2"
                 Grid.Column="1"
                 Grid.ColumnSpan="3">
-		</Border>
-		<Border BorderBrush="#1E2124"
+        </Border>
+        <Border BorderBrush="#1E2124"
                 BorderThickness="2"
                 Margin="0,0,270,-190"
                 Grid.Column="1"
                 Grid.RowSpan="4" />
 
-		<ScrollViewer Grid.RowSpan="4"
+        <ScrollViewer Grid.RowSpan="4"
                       VerticalScrollBarVisibility="Auto"
                       Height="562"
                       VerticalAlignment="Top"
                       Margin="0,68,0,0">
-			<StackPanel>
-				<RadioButton x:Name="humanButton"
-                             Content="HUMAN"
+            <StackPanel>
+                <RadioButton x:Name="NobleButton"
+                             Content="NOBLE"
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
@@ -76,10 +75,10 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding HumanButtonCommand}"
+                             Command="{Binding NobleButtonCommand}"
                              Visibility="Visible" />
-				<RadioButton x:Name="DwarfButton"
-                             Content="DWARF"
+                <RadioButton x:Name="SageButton"
+                             Content="SAGE"
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
@@ -87,62 +86,67 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding DwarfButtonCommand}"
+                             Command="{Binding SageButtonCommand}"
                              Visibility="Visible" />
-			</StackPanel>
-		</ScrollViewer>
-		<Border BorderBrush="#1E2124"
+            </StackPanel>
+        </ScrollViewer>
+        <Border BorderBrush="#1E2124"
                 BorderThickness="4"
                 Margin="0,-1,268,-180"
                 Grid.Column="1"
                 Grid.RowSpan="4" />
-		<Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
                 Margin="265.291,31.309,370.291,-190.182"
                 Grid.Row="1"
                 Grid.Column="2"
                 Grid.RowSpan="3"
                 Grid.ColumnSpan="2" />
-		<StackPanel Grid.Column="1"
+        <StackPanel Grid.Column="1"
                     Grid.Row="2"
                     Margin="0,0,0,-177"
                     Grid.RowSpan="2" />
 
-		<StackPanel Grid.Column="1"
+        <StackPanel Grid.Column="1"
                     Grid.Row="2"
-                    Margin="0,0,10,-177"
-                    Grid.RowSpan="2" HorizontalAlignment="Left" Width="512" Grid.ColumnSpan="2">
-			<Label Content="RACE DESCRIPTION"
+                    Margin="0,0,0,-177"
+                    Grid.RowSpan="2"
+                    HorizontalAlignment="Left"
+                    Width="535"
+                    Grid.ColumnSpan="2">
+            <Label Content="BACKGROUND DESCRIPTION"
                    Height="33"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
                    FontSize="24"
-                   Margin="0,0,-0.327,0" Width="477" />
-			<TextBlock TextWrapping="Wrap"
-                       Text="{Binding ARace.RaceDescription, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,0,-0.327,0"
+                   Width="507" />
+            <TextBlock TextWrapping="Wrap"
+                       Text="{Binding ABackground.BackgroundDescription, UpdateSourceTrigger=PropertyChanged}"
                        FontFamily="Franklin Gothic Medium"
                        Foreground="White"
                        FontSize="16"
-                       Height="485"
+                       Height="490"
                        Padding="5,2,0,0"
-                       Width="482" />
-		</StackPanel>
-		<StackPanel Grid.Column="3"
+                       Margin="0,0,-0.327,0"
+                       Width="510" />
+        </StackPanel>
+        <StackPanel Grid.Column="3"
                     Grid.Row="2"
                     Margin="6,6,1,0">
-			<Label Content="RACE TRAITS"
+            <Label Content="BACKGROUND SKILLS"
                    Height="37"
                    FontFamily="Franklin Gothic Heavy"
                    Foreground="White"
                    FontSize="24"
                    Margin="0,0,0.291,0" />
-			<ItemsControl Background="Transparent"
-                          ItemsSource="{Binding ARace.RaceTraits, UpdateSourceTrigger=PropertyChanged}"
+            <ItemsControl Background="Transparent"
+                          ItemsSource="{Binding ABackground.BackgroundSkills, UpdateSourceTrigger=PropertyChanged}"
                           Height="200"
                           Margin="0,0,0.291,0">
-				<ItemsControl.ItemTemplate>
-					<DataTemplate>
-						<TextBlock FontFamily="Franklin Gothic Medium"
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="Franklin Gothic Medium"
                                    Foreground="White"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
@@ -150,14 +154,14 @@
                                    Width="260"
                                    Margin="5,0,4.2,0"
                                    Padding="2,0,0,0" />
-					</DataTemplate>
-				</ItemsControl.ItemTemplate>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
 
-			</ItemsControl>
-		</StackPanel>
-
-
+            </ItemsControl>
+        </StackPanel>
 
 
-	</Grid>
+
+
+    </Grid>
 </UserControl>

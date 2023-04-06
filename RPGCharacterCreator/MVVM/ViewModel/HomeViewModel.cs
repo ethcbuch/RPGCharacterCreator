@@ -34,12 +34,13 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
+        public GeneralCharacter currentCharacter { get; set; }
 
         public ObservableConcurrentDictionary<string, GeneralCharacter> charDict { get; set; }
 
         public HomeViewModel()
         {
-            CharacterViewModel charVM = new CharacterViewModel();
+            CharacterViewModel charVM = new CharacterViewModel(currentCharacter);
             charDict = new ObservableConcurrentDictionary<string, GeneralCharacter>();
             
         }

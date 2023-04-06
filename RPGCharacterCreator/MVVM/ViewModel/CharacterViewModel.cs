@@ -8,5 +8,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 {
     internal class CharacterViewModel
     {
+
+        public GeneralCharacter currentCharacter { get; set; }
+
+        public CharacterViewModel(GeneralCharacter currentCharacter) 
+        { 
+        this.currentCharacter = currentCharacter;
+        
+        
+        }
     }
 }

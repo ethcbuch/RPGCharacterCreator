@@ -24,6 +24,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand BioViewCommand { get; set; }
         public RelayCommand ClassViewCommand { get; set; }
+        public RelayCommand RaceViewCommand { get; set; }
+        public RelayCommand BackgroundViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
 
@@ -31,8 +33,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public HomeViewModel homeVM { get; set; }
 
         public BioViewModel bioVM { get; set; }
+        public RaceViewModel raceVM { get; set; }
 
         public ClassViewModel classVM { get; set; }
+        public BackgroundViewModel backgroundVM { get; set; }
 
         public OverviewViewModel overviewVM { get; set; }
 
@@ -75,8 +79,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
             classVM = new ClassViewModel();
-            overviewVM = new OverviewViewModel(bioVM, classVM);
-            CharacterViewModel characterVM = new CharacterViewModel();
+            raceVM = new RaceViewModel();
+            backgroundVM = new BackgroundViewModel();
+            overviewVM = new OverviewViewModel(bioVM, classVM, raceVM, backgroundVM);
+            CharacterViewModel characterVM = new CharacterViewModel(homeVM.currentCharacter);
 
 
             builder = new GeneralCharacterBuilder();
@@ -100,6 +106,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = bioVM;
             });
 
+            RaceViewCommand = new RelayCommand(o => { CurrentView = raceVM; });
 
             ClassViewCommand = new RelayCommand(o =>
             {
@@ -110,6 +117,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             OverviewViewCommand = new RelayCommand(o =>
             {
                 overviewVM.OverviewClass = classVM.AClass;
+                overviewVM.OverviewRace = raceVM.ARace;
+                overviewVM.OverviewBackground = backgroundVM.ABackground;
 
                 CurrentView = overviewVM;
             });
@@ -120,17 +129,23 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 ButtCancel = true;
             });
 
+            BackgroundViewCommand = new RelayCommand(o => { CurrentView = backgroundVM; });
+
+
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
-                homeVM.charDict.Add(characterCount.ToString(), director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass));
+                homeVM.charDict.Add(characterCount.ToString(), director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground));
 
                 characterCount++;
                 director.getBuilder().reset();
 
                 overviewVM.OverviewBio = new Bio();
                 overviewVM.OverviewClass = new Class();
+                overviewVM.OverviewRace = new Race();
+                overviewVM.OverviewBackground = new Model.Background();
                 classVM.AClass = new Class();
                 bioVM.TempBio = new Bio();
+                raceVM.ARace = new Race();
 
                 CurrentView = homeVM;
                 ButtCancel = false;
@@ -139,7 +154,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             homeVM.ChangeCharacterCommand = new RelayCommand(o =>
             {
 
+                homeVM.currentCharacter = homeVM.charDict["0"];
+                characterVM.currentCharacter = homeVM.charDict["0"];
                 homeVM.ChildView = characterVM;
+
+                
             });
 
 

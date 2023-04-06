@@ -1,4 +1,5 @@
 ﻿using RPGCharacterCreator.Core;
+using RPGCharacterCreator.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -43,11 +44,28 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
-        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM)
+        private Race _overviewRace;
+        public Race OverviewRace
+        {
+            get { return _overviewRace; }
+            set { _overviewRace = value; OnPropertyChanged(); }
+        }
+
+        //added 
+        private Background _overviewBackground;
+        public Background OverviewBackground
+        {
+            get { return _overviewBackground; }
+            set { _overviewBackground = value; OnPropertyChanged(); }
+        }
+
+
+        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM)
         {
             OverviewBio = bioVM.TempBio;
             OverviewClass = classVM.AClass;
-
+            OverviewRace = raceVM.ARace;
+            OverviewBackground = backgroundVM.ABackground;
         }
     }
 }

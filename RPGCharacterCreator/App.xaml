@@ -22,10 +22,7 @@
 
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
 
-            <DataTemplate DataType="{x:Type viewmodel:BioViewModel}">
-                <view:BioView/>
-            </DataTemplate>
-
+           
             <DataTemplate DataType="{x:Type viewmodel:CharacterViewModel}">
                 <view:CharacterView />
             </DataTemplate>
@@ -34,8 +31,20 @@
                 <view:HomeView />
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodel:BioViewModel}">
+                <view:BioView />
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewmodel:ClassViewModel}">
                 <view:ClassView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodel:RaceViewModel}">
+                <view:RaceView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodel:BackgroundViewModel}">
+                <view:BackgroundView />
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewmodel:OverviewViewModel}">

@@ -22,8 +22,8 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 
-                            <RadioButton Content="CHARCTER CLASS"
-                                         Tag="race"
+                            <RadioButton Content="Character Name"
+                                         Tag="race and Class"
                                          Height="80"
                                          Width="400"
                                          FontFamily="Franklin Gothic Heavy"

@@ -79,6 +79,9 @@
     <Compile Include="MVVM\View\AlignmentView.xaml.cs">
       <DependentUpon>AlignmentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\BackgroundView.xaml.cs">
+      <DependentUpon>BackgroundView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\BioView.xaml.cs">
       <DependentUpon>BioView.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,9 @@
     </Compile>
     <Compile Include="MVVM\View\PortraitView.xaml.cs">
       <DependentUpon>PortraitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\RaceView.xaml.cs">
+      <DependentUpon>RaceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\SkillsView.xaml.cs">
       <DependentUpon>SkillsView.xaml</DependentUpon>
@@ -116,9 +122,17 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\View\BackgroundView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\CharacterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\RaceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Theme\CharacterButtonTheme.xaml">
       <SubType>Designer</SubType>
