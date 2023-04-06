@@ -21,6 +21,7 @@
     <Border x:Name="windowBackground"
             Background="#424549"
             CornerRadius="10">
+
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -32,19 +33,20 @@
 
             <Border x:Name="headerBorder"
                     Background="#36393E"
-                    Grid.ColumnSpan="2">
-
-            </Border>
-
+                    Margin="0,15,0,-15" />
+            <Border BorderBrush="#2F3236"
+                    BorderThickness="0"
+                    Background="#2F3236"
+                    Margin="0,0,0,65" />
             <Thumb x:Name="headerThumb"
                    Opacity="0"
                    Background="{x:Null}"
                    Foreground="{x:Null}"
                    DragDelta="headerThumb_DragDelta"
-                   Margin="0,0,0,-640" />
+                   Margin="0,0,0,65" />
 
             <StackPanel Orientation="Horizontal"
-                        Grid.ColumnSpan="2">
+                        Margin="0,15,0,-15">
 
                 <RadioButton x:Name="homeButton"
                              Height="80"
@@ -65,7 +67,7 @@
                              FontSize="19"
                              IsChecked="True"
                              Command="{Binding BioViewCommand}"
-                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}"/>
+                             Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
 
                 <RadioButton x:Name="portraitButton"
                              Height="80"
@@ -154,10 +156,19 @@
 
             </StackPanel>
 
-            
-            <ContentControl Margin="0,80,0,-640"
+
+            <ContentControl Margin="0,95,0,-640"
                             Grid.Column="0"
                             Content="{Binding CurrentView}" />
+            <Button Content="X"
+                    HorizontalAlignment="Left"
+                    Margin="1265,2,0,0"
+                    FontSize="4"
+                    VerticalAlignment="Top"
+                    Height="10"
+                    Width="13"
+                    Click="Button_Click" />
+
 
 
         </Grid>

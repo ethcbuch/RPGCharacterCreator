@@ -22,6 +22,9 @@ namespace RPGCharacterCreator
             Top = Top + e.VerticalChange;
         }
 
-       
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
