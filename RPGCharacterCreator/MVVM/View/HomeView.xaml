@@ -22,7 +22,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 
-                            <RadioButton Content="{Binding charDict[0]}"
+                            <RadioButton Content="Character Name"
                                          Tag="race and Class"
                                          Height="80"
                                          Width="400"
