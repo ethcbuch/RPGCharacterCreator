@@ -8,7 +8,7 @@
         xmlns:viewmodel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="720"
+        Height="730"
         Width="1280"
         ResizeMode="CanMinimize"
         WindowStyle="None"
@@ -33,20 +33,20 @@
 
             <Border x:Name="headerBorder"
                     Background="#36393E"
-                    Margin="0,15,0,-15" />
+                    Margin="-2,25,2,-25" />
             <Border BorderBrush="#2F3236"
                     BorderThickness="0"
                     Background="#2F3236"
-                    Margin="0,0,0,65" />
+                    Margin="0,0,0,55" />
             <Thumb x:Name="headerThumb"
                    Opacity="0"
                    Background="{x:Null}"
                    Foreground="{x:Null}"
                    DragDelta="headerThumb_DragDelta"
-                   Margin="0,0,0,65" />
+                   Margin="0,0,0,55" />
 
             <StackPanel Orientation="Horizontal"
-                        Margin="0,15,0,-15">
+                        Margin="0,25,0,-25">
 
                 <RadioButton x:Name="homeButton"
                              Height="80"
@@ -157,17 +157,21 @@
             </StackPanel>
 
 
-            <ContentControl Margin="0,95,0,-640"
+            <ContentControl Margin="0,105,0,-650"
                             Grid.Column="0"
                             Content="{Binding CurrentView}" />
             <Button Content="X"
                     HorizontalAlignment="Left"
-                    Margin="1265,2,0,0"
-                    FontSize="4"
+                    Margin="1254,2,0,0"
+                    FontSize="13"
+                    
                     VerticalAlignment="Top"
-                    Height="10"
-                    Width="13"
-                    Click="Button_Click" />
+                    Foreground="White"
+                    Height="21"
+                    Width="24"
+                    Click="Button_Click"
+                    Background="#FFEF0000"
+                    FontWeight="Bold" />
 
 
 
