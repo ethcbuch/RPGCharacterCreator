@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.2.4)  4 MAR 2023 11:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.2.4)  10 APR 2023 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,29 +509,67 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.505 
        <./CSCI 352 Interface Mockups/Interface Mockup 1.5.png> <./CSCI 352 Inte
-rface Mockups/Interface Mockup 0.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
-13.
-
-(C:\Users\ethan\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-<cat2.jpg, id=171, 236.885pt x 200.75pt>
-File: cat2.jpg Graphic file (type jpg)
-<use cat2.jpg>
-Package pdftex.def Info: cat2.jpg  used on input line 516.
-(pdftex.def)             Requested size: 355.32661pt x 301.12424pt.
-
-[8
+rface Mockups/Interface Mockup 0.png>] [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.533 
-       <./CSCI 352 Interface Mockups/Interface Mockup 1.png>]
-** WARNING: \IEEEbiography is locked out when in conference mode (line 547).
-** WARNING: \IEEEbiographynophoto is locked out when in conference mode (line 5
-52).
+l.529 	
+        <./CSCI 352 Interface Mockups/Interface Mockup 1.png>]
+<RPGCharacterCreatorUML.png, id=176, 2537.48pt x 1284.8pt>
+File: RPGCharacterCreatorUML.png Graphic file (type png)
+<use RPGCharacterCreatorUML.png>
+Package pdftex.def Info: RPGCharacterCreatorUML.png  used on input line 536.
+(pdftex.def)             Requested size: 482.12622pt x 244.11453pt.
+<factMethod.png, id=177, 612.78937pt x 418.56375pt>
+File: factMethod.png Graphic file (type png)
+<use factMethod.png>
+Package pdftex.def Info: factMethod.png  used on input line 541.
+(pdftex.def)             Requested size: 245.1114pt x 167.42252pt.
+ [9
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.560 T
+       he GeneralCharacterBuilder class implements this interface and is res...
+ <./RPGCharacterCreatorUML.png>]
+<builderAndChar.png, id=187, 1294.8375pt x 424.58624pt>
+File: builderAndChar.png Graphic file (type png)
+<use builderAndChar.png>
+Package pdftex.def Info: builderAndChar.png  used on input line 572.
+(pdftex.def)             Requested size: 504.98459pt x 165.58797pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
+[][]
+ []
+
+<CharStuff.png, id=188, 1903.11pt x 511.15968pt>
+File: CharStuff.png Graphic file (type png)
+<use CharStuff.png>
+Package pdftex.def Info: CharStuff.png  used on input line 578.
+(pdftex.def)             Requested size: 532.86717pt x 143.12372pt.
+
+Overfull \hbox (26.97717pt too wide) in paragraph at lines 578--579
+[][]
+ []
+
+[10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.597 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.597 
+       <./factMethod.png> <./builderAndChar.png>]
+** WARNING: \IEEEbiography is locked out when in conference mode (line 611).
+** WARNING: \IEEEbiographynophoto is locked out when in conference mode (line 6
+16).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -543,35 +581,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[9
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
-s been already used, duplicate ignored
+[11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.569 \end{document}
-                     <./cat2.jpg>] (RPGCharacterCreatorDoc.aux)
+l.633 \end{document}
+                     <./CharStuff.png>] (RPGCharacterCreatorDoc.aux)
 Package rerunfilecheck Info: File `RPGCharacterCreatorDoc.out' has not changed.
 
 (rerunfilecheck)             Checksum: D1292BFF0D8844DD2CE3E31956FF90EA;1928.
  ) 
 Here is how much of TeX's memory you used:
- 9695 strings out of 475385
- 161960 string characters out of 2776908
- 515263 words of memory out of 3000000
- 30877 multiletter control sequences out of 15000+600000
- 507612 words of font info for 92 fonts, out of 8000000 for 9000
+ 9686 strings out of 475385
+ 162007 string characters out of 2776908
+ 515678 words of memory out of 3000000
+ 30866 multiletter control sequences out of 15000+600000
+ 507097 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,77p,753b,563s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,8n,77p,930b,563s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
 /Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
-.pfb><C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr
-8a.pfb><C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb
-8a.pfb><C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr
-8a.pfb><C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on RPGCharacterCreatorDoc.pdf (9 pages, 468995 bytes).
+.pfb><C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a
+.pfb><C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a
+.pfb><C:/Users/ethan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8
+a.pfb>
+Output written on RPGCharacterCreatorDoc.pdf (11 pages, 668476 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 90 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
