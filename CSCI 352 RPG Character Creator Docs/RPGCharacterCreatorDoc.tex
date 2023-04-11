@@ -225,7 +225,7 @@ We want to make sure that our project meets the user's needs, so we looked at si
 \subsubsection{Non-Functional}
 \begin{itemize}
 \item The application should be easy to use allowing the user to easily navigate through the GUI making it a more pleasant experience.
-\item Users will be able to use  RPG Character creator without it feeling choppy or unresponsive.
+\item Users will be able to use RPG Character creator without it feeling choppy or unresponsive.
 \end{itemize}
 
 \subsection{Use Cases}
@@ -504,19 +504,83 @@ Basic flow for the process:
 \end{figure}
 
 \section{Project Timeline}
-Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
+\textbf{Project Proposal Draft (February 04, 2023)} - First, we brainstormed ideas for a project that would be worth pursuing, and then we drafted a project proposal. This proposal included a project name, an abstract, an introduction, and a scope. Finally, we created a Github repository and uploaded the proposal to it.
+\\[10pt]
+\textbf{Project Proposal Update (February 28, 2023)} - The update to the project proposal involved identifying the use cases for the project, as well as defining its functional and non-functional requirements. In addition, several interface mockups were created to show our vision for the project.
+\\[10pt]
+\textbf{GUI Day (March 9th, 2023)}  - Showcased our interface mockups to the class and gathered feedback on potential additions or modifications to our interface mockups.
+\\[10pt]
+Coding of the actual project began during these two periods beginning with the implementation of a basic UI and building upon it leading up to demo day.
+\\[10pt]
+\textbf{Demo Day (April 6th, 2023)} - Presented the current status of our project to our classmates and Dr. Ericson.
+\\[10pt]
+\textbf{Project Update (April 10th, 2023)} - We created a timeline to showcase the progression we have made so far, which involved adding project structure and outlining UML diagrams to project documentation.
+\\[10pt]
+\textbf{Penultimate Writeup(April 21, 2023)} - We plan to revisit our work and make necessary updates to our documentation to ensure that it is accurate and up-to-date by the specified time.
+\\[10pt]
+\textbf{Presentation Draft (April 21, 2023)} - We plan on presenting our slides, and giving a small demo of our current project to receive feedback before our final presentation.
+\\[10pt]
+\textbf{Final presentation(April 29, 2023)} - We plan on finishing our project and giving our final presentation to the class.
+\\[10pt]
+\textbf{Final Written Report (April 28, 203)} - We plan on having our final written report that will contain all needed information to show what we have accomplished.
 
 \section{Project Structure}
-At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
+	First, we needed to determine our target audience. In our case, we decided that this RPG character creator would be geared towards everyone, including both experienced and beginner RPG players. We wanted to make the process as smooth as possible for the user, so we decided on having an easy-to-navigate user interface. We designed the RPG character creator with several sections, including Character which includes the basic character information such as name, age, birthday, and gender. There is also a portrait section where users can choose from pre-selected images or upload their own. The race, background, and alignment section allows users to choose from multiple options, and their information is filled in accordingly. There is also a stats and skills section and an overview page that lets users review their character's details before finalizing the creation process.
+	
+	In order to stay organized throughout the development stage, we have decided to implement the builder design pattern in our RPG character creator application. By using this pattern, we can easily create complex objects (Characters in our case) by building them step by step. The builder pattern offers the advantage of creating multiple types of objects using the same interface, which will be helpful for our application since users can create a variety of RPG characters.We also implemented the abstract factory design pattern which will be used to create different color themes for the application, easily allowing user to switch between different themes without affecting the functionality or structure of the application.
+	
+In addition to the design patterns, we have also implemented the Model-View-ViewModel (MVVM) architecture in our RPG character creator application. MVVM helps to cleanly separate the GUI and program logic allowing for better maintainability and testability.
 
 \subsection{UML Outline}
-Show the full structure of your program.  Make sure to keep on updating this section as your project evolves (you often start out with one plan, but end up modifying things as you move along).  As a note, while Dia fails miserably at generating pdfs (probably my fault), I have had much success with png files.  Make sure to wrap your images in a \texttt{figure} environment, and to reference with the \texttt{ref} command.  For example, see Figure \ref{cat2}.
+\begin{figure}[ht!]
+\includegraphics[scale=0.19]{RPGCharacterCreatorUML.png}
+\caption{The entire UML for the project}
+\label{fullUML}
+\end{figure}
+\begin{figure}[ht!]
+\includegraphics[scale=0.4]{factMethod.png}
+\caption{Possible implementation for a factory method that allows for us to easily change the theme of the UI.}
+\label{themeFact}
+\end{figure}
+
+The following UML is an Abstract Factory Design pattern see Figure \ref{themeFact}
+
+The BackgroundFactory is an abstract class that defines a factory method, ‘CreateBackground()’ , which returns a Background object.
+
+The LightTheme and DarkTheme classes are concrete implementations of the BackgroundFactory class. Each class provides a different implementation of the CreateBackground() method, which creates a Background object that has a different color theme.
+
+The Background class is a product of the BackgroundFactory class. It defines a set of properties and methods that allow clients to interact with the background object, such as getting and setting the background color.
+
+Clients of the BackgroundFactory pattern use the factory method to create a Background object without having to know the implementation details of the factory or the product.
+\\[10pt]
+The following UML is a Builder Design pattern see Figure \ref{charAndBuilder}.
+
+The CharacterBuilder interface specifies the steps for building a character. 
+
+The GeneralCharacterBuilder class implements this interface and is responsible for building the character. 
+
+The CharacterDirector class instructs the GeneralCharacterBuilder on the steps to building a character.
+ The GeneralCharacter object is the complex object, and the CharacterBuilder interface defines the steps required to construct it. 
+
+The GeneralCharacterBuilder class implements these steps in its methods.
+
+The CharacterDirector class acts as a director, which looks over  the construction process and can create a specific type of character by using a specific implementation of the CharacterBuilder interface.
+
+
 
 \begin{figure}[ht!]
-\includegraphics[scale=1.5]{cat2.jpg}
-\caption{Your figures should be in the \emph{figure} environment, and have captions.  Should also be of diagrams pertaining to your project, not random internet kittens}
-\label{cat2}
+\includegraphics[scale=0.39]{builderAndChar.png}
+\caption{The Builder of the project, the generalCharacterBuilder creates a general character and through the director builds a generalCharacter with each of its variables being assigned through the builder.}
+\label{charAndBuilder}
 \end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[scale=0.28]{CharStuff.png}
+\caption{The generalCharacter is made of these classes, these classes store information and allow for us to easily update the UI through the use of data binding and properties.}
+\label{charStuff}
+\end{figure}
+
+
 
 
 \subsection{Design Patterns Used}
