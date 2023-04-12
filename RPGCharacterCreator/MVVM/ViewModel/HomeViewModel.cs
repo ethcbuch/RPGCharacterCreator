@@ -34,15 +34,29 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
-        public GeneralCharacter currentCharacter { get; set; }
+        private GeneralCharacter _aChar = new GeneralCharacter();
+
+        public GeneralCharacter AChar
+        {
+            get { return _aChar; }
+            set
+            {
+                _aChar = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ObservableCollection<GeneralCharacter> CharCollection { get; set; }
 
         public HomeViewModel()
         {
-            CharacterViewModel charVM = new CharacterViewModel(currentCharacter);
             CharCollection = new ObservableCollection<GeneralCharacter>();
-            
+
+            ChangeCharacterCommand = new RelayCommand(parameter =>
+            {
+                AChar = CharCollection[(int)parameter];
+
+            });
         }
 
     }

@@ -71,6 +71,17 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
+        private bool _buttChecked;
+        public bool ButtChecked
+        {
+            get { return _buttChecked; }
+            set
+            {
+                _buttChecked = value;
+                OnPropertyChanged();
+            }
+        }
+
         int characterCount = 0;
 
         //constructor sets up main view
@@ -83,7 +94,6 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             raceVM = new RaceViewModel();
             backgroundVM = new BackgroundViewModel();
             overviewVM = new OverviewViewModel(bioVM, classVM, raceVM, backgroundVM);
-            CharacterViewModel characterVM = new CharacterViewModel(homeVM.currentCharacter);
 
 
             builder = new GeneralCharacterBuilder();
@@ -117,6 +127,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             OverviewViewCommand = new RelayCommand(o =>
             {
+                overviewVM.OverviewBio = bioVM.TempBio;
                 overviewVM.OverviewClass = classVM.AClass;
                 overviewVM.OverviewRace = raceVM.ARace;
                 overviewVM.OverviewBackground = backgroundVM.ABackground;
@@ -152,23 +163,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
                 CurrentView = homeVM;
                 ButtCancel = false;
+                ButtChecked = false;
             });
 
-            homeVM.ChangeCharacterCommand = new RelayCommand(parameter =>
-            {
-                homeVM.currentCharacter = homeVM.CharCollection[(int)parameter];
-                characterVM.currentCharacter = homeVM.CharCollection[(int)parameter];
-
-                if (homeVM.ChildView != characterVM)
-                {
-    
-                    homeVM.ChildView = characterVM;
-                }
-                else
-                    characterVM = new CharacterViewModel(homeVM.currentCharacter);
-
-
-            });
+            Task.Run(() => { while (true) { Debug.WriteLine(overviewVM.OverviewBio.CharName); Thread.Sleep(1000); } });
         }
     }
 }

@@ -65,7 +65,6 @@
                              Foreground="White"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             IsChecked="True"
                              Command="{Binding BioViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
 
@@ -148,6 +147,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
+                             IsChecked="{Binding ButtChecked}"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding OverviewViewCommand}"

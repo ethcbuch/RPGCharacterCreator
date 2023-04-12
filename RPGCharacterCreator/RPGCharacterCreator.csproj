@@ -67,7 +67,6 @@
     <Compile Include="MVVM\ViewModel\AlignmentViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BackgroundViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BioViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\CharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ClassViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />

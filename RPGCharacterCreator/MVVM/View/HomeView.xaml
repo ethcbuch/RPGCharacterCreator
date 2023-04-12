@@ -18,13 +18,14 @@
         <ScrollViewer>
             <StackPanel>
                 <ItemsControl x:Name="characterControl"
-                              ItemsSource="{Binding CharCollection, UpdateSourceTrigger=PropertyChanged}" AlternationCount="100">
+                              ItemsSource="{Binding CharCollection, UpdateSourceTrigger=PropertyChanged}"
+                              AlternationCount="100">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 
                             <RadioButton GroupName="characterButtons"
-                                         Content="{Binding Path=CharCollection}"
-                                         Tag="race and Class"
+                                         Content="{Binding characterBio.CharName}"
+                                         Tag="{Binding characterRace.RaceName}"
                                          Height="80"
                                          Width="400"
                                          FontFamily="Franklin Gothic Heavy"
@@ -34,8 +35,7 @@
                                          FontSize="19"
                                          Command="{Binding Path=DataContext.ChangeCharacterCommand, ElementName = characterControl }"
                                          CommandParameter="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource TemplatedParent}}"
-                                         Visibility="Visible">
-                            </RadioButton>
+                                         Visibility="Visible" />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -51,38 +51,229 @@
                              Command="{Binding CreateCharacterCommand}"
                              Visibility="Visible" />
             </StackPanel>
-
-
-
-
         </ScrollViewer>
 
+        <Grid Grid.Column="1"
+              Margin="5.418,0,0.291,0.109">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="95" />
+                <RowDefinition Height="155" />
+                <RowDefinition Height="190" />
+                <RowDefinition Height="190" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="310" />
+                <ColumnDefinition Width="190" />
+                <ColumnDefinition Width="374" />
+                <ColumnDefinition Width="0*" />
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="LightGray"
+                    BorderThickness="2"
+                    Margin="10,10,0,170"
+                    Grid.RowSpan="3"
+                    HorizontalAlignment="Left"
+                    Width="265" />
+            <Border VerticalAlignment="Top"
+                    Grid.RowSpan="2"
+                    Margin="11,30,35,0"
+                    Height="335"
+                    BorderThickness="2"
+                    BorderBrush="LightGray"
+                    Grid.Row="2">
+                <TextBlock TextWrapping="Wrap"
+                           Background="Transparent"
+                           FontFamily="Franklin Gothic Medium"
+                           Foreground="White"
+                           FontSize="16"
+                           Text="{Binding AChar.characterBio.CharBio, UpdateSourceTrigger=PropertyChanged}"
+                           Padding="2,0,0,0"
+                           Margin="0,0,-2,-2" />
+            </Border>
+            <StackPanel Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        Margin="1,10,34,0"
+                        Grid.Column="1">
+
+                <Label Content="{Binding AChar.characterBio.CharName, UpdateSourceTrigger=PropertyChanged}"
+                       Foreground="White"
+                       FontFamily="Franklin Gothic Heavy"
+                       FontSize="54"
+                       Height="90"
+                       Width="530"
+                       Margin="0,5,0,0" />
+            </StackPanel>
+            <StackPanel Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Margin="1,10,34,180"
+                        Grid.RowSpan="2"
+                        Grid.Column="1">
+
+                <Border BorderBrush="LightGray"
+                        BorderThickness="3"
+                        Height="155">
+                    <Grid>
+                        <StackPanel Margin="7,7,415,98">
+                            <TextBlock Text="{Binding AChar.characterBio.CharGender,UpdateSourceTrigger=PropertyChanged}"
+                                       Height="20"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium Cond"
+                                       FontSize="12"
+                                       Padding="0,6,0,0" />
+                            <Border BorderBrush="#A0A0A0"
+                                    BorderThickness="2"
+                                    Height="3"
+                                    Margin="0,0,28.927,0"
+                                    Width="71" />
+                            <Label Content="GENDER"
+                                   Margin="0,0,-0.073,0"
+                                   FontFamily="Franklin Gothic Heavy"
+                                   Foreground="White"
+                                   FontSize="12" />
+                        </StackPanel>
+                        <StackPanel Margin="129,7,282,98">
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding AChar.characterRace.RaceName, UpdateSourceTrigger=PropertyChanged}"
+                                       Height="20"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium Cond"
+                                       FontSize="12"
+                                       Padding="0,6,0,0" />
+                            <Border BorderBrush="#A0A0A0"
+                                    BorderThickness="3"
+                                    Height="3"
+                                    Margin="0,0,28.927,0" />
+                            <Label Content="RACE"
+                                   Margin="0,0,-0.073,0"
+                                   FontFamily="Franklin Gothic Heavy"
+                                   Foreground="White"
+                                   FontSize="12" />
+                        </StackPanel>
+                        <StackPanel Margin="256,7,162,98">
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding AChar.characterClass.ClassName, UpdateSourceTrigger=PropertyChanged}"
+                                       Height="20"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium Cond"
+                                       FontSize="12"
+                                       Padding="0,6,0,0" />
+                            <Border BorderBrush="#A0A0A0"
+                                    BorderThickness="3"
+                                    Height="3"
+                                    Margin="0,0,28.927,0" />
+                            <Label Content="CLASS"
+                                   Margin="0,0,-0.073,0"
+                                   FontFamily="Franklin Gothic Heavy"
+                                   Foreground="White"
+                                   FontSize="12" />
+                        </StackPanel>
+                        <StackPanel Margin="397,7,27,98">
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding AChar.characterBackground.BackgroundName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                       Height="20"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium Cond"
+                                       FontSize="12"
+                                       Padding="0,6,0,0" />
+                            <Border BorderBrush="#A0A0A0"
+                                    BorderThickness="3"
+                                    Height="3"
+                                    Margin="0,0,9.873,0" />
+                            <Label Content="BACKGROUND"
+                                   Margin="0,0,-0.073,0"
+                                   FontFamily="Franklin Gothic Heavy"
+                                   Foreground="White"
+                                   FontSize="12" />
+                        </StackPanel>
+                        <StackPanel Margin="10,87,429.727,18.109">
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding AChar.characterBio.CharAge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                       Height="20"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium Cond"
+                                       FontSize="12"
+                                       Padding="0,6,0,0" />
+                            <Border BorderBrush="#A0A0A0"
+                                    BorderThickness="3"
+                                    Height="3"
+                                    Margin="0,0,28.927,0" />
+                            <Label Content="AGE"
+                                   Margin="0,0,-0.073,0"
+                                   FontFamily="Franklin Gothic Heavy"
+                                   Foreground="White"
+                                   FontSize="12" />
+                        </StackPanel>
+                        <StackPanel Margin="150,87,261,18">
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding AChar.characterBio.CharBirthday, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                       Height="20"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium Cond"
+                                       FontSize="12"
+                                       Padding="0,6,0,0" />
+                            <Border BorderBrush="#A0A0A0"
+                                    BorderThickness="3"
+                                    Height="3"
+                                    Margin="0,0,28.927,0" />
+                            <Label Content="BIRTHDAY"
+                                   Margin="0,0,-0.073,0"
+                                   FontFamily="Franklin Gothic Heavy"
+                                   Foreground="White"
+                                   FontSize="12" />
+                        </StackPanel>
+                        <StackPanel Margin="323,87,59.727,18.109">
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="TextBlock"
+                                       Height="20"
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Medium Cond"
+                                       FontSize="12"
+                                       Padding="0,6,0,0" />
+                            <Border BorderBrush="#A0A0A0"
+                                    BorderThickness="3"
+                                    Height="3"
+                                    Margin="0,0,28.927,0" />
+                            <Label Content="ALIGNMENT"
+                                   Margin="0,0,-0.073,0"
+                                   FontFamily="Franklin Gothic Heavy"
+                                   Foreground="White"
+                                   FontSize="12" />
+                        </StackPanel>
+                    </Grid>
 
 
 
+                </Border>
+
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+                        Grid.RowSpan="2"
+                        Margin="1,10,0,15"
+                        Grid.Column="1">
+                <Border BorderBrush="LightGray"
+                        BorderThickness="2"
+                        Height="355" />
+            </StackPanel>
+            <StackPanel Grid.Column="2"
+                        Grid.Row="2"
+                        Margin="0,10,34,15">
+                <Border BorderBrush="LightGray"
+                        BorderThickness="2"
+                        Height="165"
+                        Width="340" />
+            </StackPanel>
+            <StackPanel Grid.Column="2"
+                        Grid.Row="2"
+                        Margin="0,175,34,15"
+                        Grid.RowSpan="2">
+                <Border BorderBrush="LightGray"
+                        BorderThickness="2"
+                        Height="190" />
+            </StackPanel>
+        </Grid>
 
         <Border BorderBrush="#1E2124"
                 BorderThickness="3"
                 Margin="0,0,874,-4"
                 Grid.Column="1" />
-        <Label Content="No Character Data Found..."
-               HorizontalAlignment="Left"
-               Foreground="#A0A0A0"
-               Margin="22,10,0,0"
-               VerticalAlignment="Top"
-               Grid.Column="1"
-               Height="35"
-               Width="243"
-               FontFamily="Franklin Gothic Heavy"
-               FontSize="18" />
-        <ContentControl  Content="{Binding ChildView}"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Width="874"
-                        Height="630"
-                        Margin="6,0,0,0"
-                        Grid.Column="1">
-
-        </ContentControl>
     </Grid>
 </UserControl>
