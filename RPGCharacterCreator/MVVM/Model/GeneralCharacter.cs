@@ -11,6 +11,9 @@ namespace RPGCharacterCreator
         public Background characterBackground { get; set; }
         public Race characterRace { get; set; } 
 
+        private int _characterNumber { get; set; }
+        public int CharacterNumber { get { return _characterNumber; } set { _characterNumber = value; } }
+
     }
     interface CharacterBuilder
     {
@@ -31,6 +34,8 @@ namespace RPGCharacterCreator
         void buildSkills();
 
         void buildAlignment();
+
+        void setNumber(int number);
 
         GeneralCharacter GetCharacter();
 
@@ -75,6 +80,8 @@ namespace RPGCharacterCreator
 
         public void buildAlignment() { }
 
+        public void setNumber(int number) { character.CharacterNumber = number; }
+
         public GeneralCharacter GetCharacter()
         {
             return character;
@@ -99,13 +106,14 @@ namespace RPGCharacterCreator
             return charBuilder;
         }
 
-        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Class aClass, Race aRace, Background aBackground)
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Class aClass, Race aRace, Background aBackground, int CharNumber)
         {
             aCharacterBuilder.buildBio(aBio);
             aCharacterBuilder.buildPortrait();
             aCharacterBuilder.buildClass(aClass);
             aCharacterBuilder.buildRace(aRace);
             aCharacterBuilder.buildBackground(aBackground);
+            aCharacterBuilder.setNumber(CharNumber);
 
             return aCharacterBuilder.GetCharacter();
 

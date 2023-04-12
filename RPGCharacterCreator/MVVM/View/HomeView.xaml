@@ -18,11 +18,12 @@
         <ScrollViewer>
             <StackPanel>
                 <ItemsControl x:Name="characterControl"
-                              ItemsSource="{Binding charDict, UpdateSourceTrigger=PropertyChanged}" AlternationCount="100">
+                              ItemsSource="{Binding CharCollection, UpdateSourceTrigger=PropertyChanged}" AlternationCount="100">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 
-                            <RadioButton Content="{Binding Path=(ItemsControl.AlternationIndex),  RelativeSource={RelativeSource TemplatedParent},  StringFormat={}Index is {0}}"
+                            <RadioButton GroupName="characterButtons"
+                                         Content="{Binding Path=CharCollection, RelativeSource=Self}"
                                          Tag="race and Class"
                                          Height="80"
                                          Width="400"
@@ -32,6 +33,7 @@
                                          Style="{StaticResource CharacterButtonMenu}"
                                          FontSize="19"
                                          Command="{Binding Path=DataContext.ChangeCharacterCommand, ElementName = characterControl }"
+                                         CommandParameter="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource TemplatedParent}}"
                                          Visibility="Visible">
                             </RadioButton>
                         </DataTemplate>

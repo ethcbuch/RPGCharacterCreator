@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
@@ -134,11 +135,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
-                homeVM.charDict.Add(characterCount.ToString(), director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground));
-
+                homeVM.CharCollection.Add(director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, characterCount));
+                
                 characterCount++;
                 director.getBuilder().reset();
 
+                //resets everything for next character
                 overviewVM.OverviewBio = new Bio();
                 overviewVM.OverviewClass = new Class();
                 overviewVM.OverviewRace = new Race();
@@ -146,22 +148,27 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 classVM.AClass = new Class();
                 bioVM.TempBio = new Bio();
                 raceVM.ARace = new Race();
+                backgroundVM.ABackground = new Model.Background();
 
                 CurrentView = homeVM;
                 ButtCancel = false;
             });
 
-            homeVM.ChangeCharacterCommand = new RelayCommand(o =>
+            homeVM.ChangeCharacterCommand = new RelayCommand(parameter =>
             {
+                homeVM.currentCharacter = homeVM.CharCollection[(int)parameter];
+                characterVM.currentCharacter = homeVM.CharCollection[(int)parameter];
 
-                homeVM.currentCharacter = homeVM.charDict["0"];
-                characterVM.currentCharacter = homeVM.charDict["0"];
-                homeVM.ChildView = characterVM;
+                if (homeVM.ChildView != characterVM)
+                {
+    
+                    homeVM.ChildView = characterVM;
+                }
+                else
+                    characterVM = new CharacterViewModel(homeVM.currentCharacter);
 
-                
+
             });
-
-
         }
     }
 }
