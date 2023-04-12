@@ -23,7 +23,7 @@
                         <DataTemplate>
 
                             <RadioButton GroupName="characterButtons"
-                                         Content="{Binding Path=CharCollection, RelativeSource=Self}"
+                                         Content="{Binding Path=CharCollection}"
                                          Tag="race and Class"
                                          Height="80"
                                          Width="400"
