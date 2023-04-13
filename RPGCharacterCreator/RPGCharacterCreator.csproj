@@ -58,11 +58,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\Model\Alignment.cs" />
     <Compile Include="MVVM\Model\Background.cs" />
     <Compile Include="MVVM\Model\Bio.cs" />
     <Compile Include="MVVM\Model\Class.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MVVM\Model\Portrait.cs" />
     <Compile Include="MVVM\Model\Race.cs" />
     <Compile Include="MVVM\ViewModel\AlignmentViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BackgroundViewModel.cs" />

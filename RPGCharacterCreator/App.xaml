@@ -27,6 +27,7 @@
             <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
                 <view:HomeView />
             </DataTemplate>
+            
 
             <DataTemplate DataType="{x:Type viewmodel:BioViewModel}">
                 <view:BioView />
@@ -43,6 +44,11 @@
             <DataTemplate DataType="{x:Type viewmodel:BackgroundViewModel}">
                 <view:BackgroundView />
             </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewmodel:AlignmentViewModel}">
+                <view:AlignmentView />
+            </DataTemplate>
+
 
             <DataTemplate DataType="{x:Type viewmodel:OverviewViewModel}">
                 <view:OverviewView />

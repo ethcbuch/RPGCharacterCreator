@@ -1,4 +1,5 @@
 ﻿using RPGCharacterCreator.Core;
+using RPGCharacterCreator.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,8 +14,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
 
     //class manages what view the user will see   
-    internal class MainViewModel :  ObservableObject
-    { 
+    internal class MainViewModel : ObservableObject
+    {
 
         CharacterBuilder builder;
 
@@ -27,6 +28,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand ClassViewCommand { get; set; }
         public RelayCommand RaceViewCommand { get; set; }
         public RelayCommand BackgroundViewCommand { get; set; }
+        public RelayCommand AlignmentViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
 
@@ -40,6 +42,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public BackgroundViewModel backgroundVM { get; set; }
 
         public OverviewViewModel overviewVM { get; set; }
+
+        public AlignmentViewModel alignmentVM { get; set; }
 
         // _currentView of type object(allows for the storing of any type)
         private object _currentView;
@@ -84,6 +88,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         int characterCount = 0;
 
+        Portrait charPortrait = new Portrait();
+
         //constructor sets up main view
         public MainViewModel()
         {
@@ -93,8 +99,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             classVM = new ClassViewModel();
             raceVM = new RaceViewModel();
             backgroundVM = new BackgroundViewModel();
-            overviewVM = new OverviewViewModel(bioVM, classVM, raceVM, backgroundVM);
-
+            alignmentVM = new AlignmentViewModel();
+            overviewVM = new OverviewViewModel(bioVM, classVM, raceVM, backgroundVM, alignmentVM);
 
             builder = new GeneralCharacterBuilder();
 
@@ -141,13 +147,22 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 ButtCancel = true;
             });
 
-            BackgroundViewCommand = new RelayCommand(o => { CurrentView = backgroundVM; });
+            BackgroundViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = backgroundVM;
+            });
+
+
+            AlignmentViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = alignmentVM;
+            });
 
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
                 homeVM.CharCollection.Add(director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, characterCount));
-                
+
                 characterCount++;
                 director.getBuilder().reset();
 
@@ -156,17 +171,17 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewClass = new Class();
                 overviewVM.OverviewRace = new Race();
                 overviewVM.OverviewBackground = new Model.Background();
+                overviewVM.OverviewAlignment = new Alignment();
                 classVM.AClass = new Class();
                 bioVM.TempBio = new Bio();
                 raceVM.ARace = new Race();
                 backgroundVM.ABackground = new Model.Background();
+                alignmentVM.AAlignment = new Alignment();
 
                 CurrentView = homeVM;
                 ButtCancel = false;
                 ButtChecked = false;
             });
-
-            Task.Run(() => { while (true) { Debug.WriteLine(overviewVM.OverviewBio.CharName); Thread.Sleep(1000); } });
         }
     }
 }

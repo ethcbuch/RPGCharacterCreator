@@ -12,7 +12,7 @@
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/Images/placeholder.png"
+                                <Image Source="{Binding characterPortrait.portraitPath}"
                                        Height="65"
                                        Width="65"
                                        Margin="5,0,0,0" />

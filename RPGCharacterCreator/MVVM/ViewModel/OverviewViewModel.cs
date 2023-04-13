@@ -47,25 +47,52 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         private Race _overviewRace;
         public Race OverviewRace
         {
-            get { return _overviewRace; }
-            set { _overviewRace = value; OnPropertyChanged(); }
+            get
+            {
+                return _overviewRace; 
+            }
+            set
+            {
+                _overviewRace = value;
+                OnPropertyChanged();
+            }
         }
 
         //added 
         private Background _overviewBackground;
         public Background OverviewBackground
         {
-            get { return _overviewBackground; }
-            set { _overviewBackground = value; OnPropertyChanged(); }
+            get 
+            {
+                return _overviewBackground; 
+            }
+            set 
+            { 
+                _overviewBackground = value; 
+                OnPropertyChanged(); 
+            }
+        }
+        private Alignment _overviewAlignment;
+        public Alignment OverviewAlignment
+        {
+            get
+            { 
+                return _overviewAlignment; 
+            }
+            set 
+            { 
+                _overviewAlignment = value; 
+                OnPropertyChanged(); 
+            }
         }
 
-
-        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM)
+        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM, AlignmentViewModel alignmentVM)
         {
             OverviewBio = bioVM.TempBio;
             OverviewClass = classVM.AClass;
             OverviewRace = raceVM.ARace;
             OverviewBackground = backgroundVM.ABackground;
+            OverviewAlignment = alignmentVM.AAlignment;
         }
     }
 }

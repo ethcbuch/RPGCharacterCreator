@@ -221,7 +221,7 @@
                         </StackPanel>
                         <StackPanel Margin="323,87,59.727,18.109">
                             <TextBlock TextWrapping="Wrap"
-                                       Text="TextBlock"
+                                       Text="{Binding AChar.characterAlignment.AlignmentName, UpdateSourceTrigger=PropertyChanged}"
                                        Height="20"
                                        Foreground="White"
                                        FontFamily="Franklin Gothic Medium Cond"
