@@ -25,7 +25,7 @@
 
                             <RadioButton GroupName="characterButtons"
                                          Content="{Binding characterBio.CharName}"
-                                         Tag="{Binding characterRace.RaceName}"
+                                         Tag="{Binding characterRace.RaceName }"
                                          Height="80"
                                          Width="400"
                                          FontFamily="Franklin Gothic Heavy"
