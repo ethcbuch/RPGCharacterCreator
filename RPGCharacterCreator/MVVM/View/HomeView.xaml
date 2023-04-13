@@ -25,7 +25,6 @@
 
                             <RadioButton GroupName="characterButtons"
                                          Content="{Binding characterBio.CharName}"
-                                         Tag="{Binding characterRace.RaceName }"
                                          Height="80"
                                          Width="400"
                                          FontFamily="Franklin Gothic Heavy"
@@ -46,7 +45,7 @@
                              FontFamily="Franklin Gothic Heavy"
                              Foreground="White"
                              HorizontalContentAlignment="Center"
-                             Style="{StaticResource CharacterButtonMenu}"
+                             Style="{StaticResource CreateButtonMenu}"
                              FontSize="19"
                              Command="{Binding CreateCharacterCommand}"
                              Visibility="Visible" />

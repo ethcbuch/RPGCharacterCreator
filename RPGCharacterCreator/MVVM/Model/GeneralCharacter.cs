@@ -14,6 +14,8 @@ namespace RPGCharacterCreator
         private int _characterNumber { get; set; }
         public int CharacterNumber { get { return _characterNumber; } set { _characterNumber = value; } }
 
+
+
     }
     interface CharacterBuilder
     {

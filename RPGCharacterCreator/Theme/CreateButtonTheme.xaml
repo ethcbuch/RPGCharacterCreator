@@ -3,7 +3,7 @@
 
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="{x:Type RadioButton}"
-           x:Key="CharacterButtonMenu">
+           x:Key="CreateButtonMenu">
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
@@ -16,22 +16,14 @@
                                        Height="65"
                                        Width="65"
                                        Margin="5,0,0,0" />
-                                <StackPanel Orientation="Vertical">
+                                <StackPanel>
                                     <Label x:Name="nameLabel"
                                            Content="{TemplateBinding Property=Content}"
                                            Foreground="White"
                                            FontFamily="Franklin Gothic Heavy"
                                            FontSize="19" />
-                                    <TextBlock>
-                                        <Run Text="{Binding characterRace.RaceName}" />
-                                        <Run Text="{Binding characterClass.ClassName}" />
-                                    </TextBlock>
                                 </StackPanel>
-
-
-
                             </StackPanel>
-
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>

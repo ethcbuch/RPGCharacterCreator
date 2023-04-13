@@ -13,6 +13,7 @@
             
             
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/CreateButtonTheme.xaml" />
                 <ResourceDictionary Source="Theme/CreationTabsTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml" />
                 <ResourceDictionary Source="Theme/PortraitButtonTheme.xaml" />
