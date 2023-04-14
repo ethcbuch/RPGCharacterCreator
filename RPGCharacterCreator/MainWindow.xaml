@@ -71,7 +71,8 @@
                 <RadioButton x:Name="portraitButton"
                              Height="80"
                              Width="100"
-                             Style="{StaticResource PortraitButtonMenu}"
+                             Style="{StaticResource PortraitTabMenu}"
+                             Command="{Binding PortraitViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="classButton"
                              Content="CLASS"

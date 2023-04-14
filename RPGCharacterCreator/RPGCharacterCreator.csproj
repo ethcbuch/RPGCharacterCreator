@@ -86,9 +86,6 @@
     <Compile Include="MVVM\View\BioView.xaml.cs">
       <DependentUpon>BioView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\CharacterView.xaml.cs">
-      <DependentUpon>CharacterView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MVVM\View\ClassView.xaml.cs">
       <DependentUpon>ClassView.xaml</DependentUpon>
     </Compile>
@@ -127,10 +124,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\CharacterView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MVVM\View\RaceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -155,7 +148,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\PortraitButtonTheme.xaml">
+    <Page Include="Theme\PortraitTabTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +184,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Theme\PortraitButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -220,20 +217,214 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\LogoFlat.png">
+    <Content Include="Images\Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\LogoFlat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\68iITxCg4W8uoE1MNwzw--1--op5p1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\68iITxCg4W8uoE1MNwzw--2--58t8o.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\68iITxCg4W8uoE1MNwzw--3--esnyz.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\8WTkUr6N6jhyiblnFmtK--1--bak8j.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\8WTkUr6N6jhyiblnFmtK--2--44cwk.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\8WTkUr6N6jhyiblnFmtK--3--6s8aw.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\8WTkUr6N6jhyiblnFmtK--4--9oaql.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\961EFPgHZi7FdNQKZQxq--1--fsnm2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\961EFPgHZi7FdNQKZQxq--2--qwsy7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\961EFPgHZi7FdNQKZQxq--3--tj8a6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\961EFPgHZi7FdNQKZQxq--4--7iao6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\dR6gi6rbo2sqtloF0QNx--1--7jzjm.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\dR6gi6rbo2sqtloF0QNx--2--31u3k.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\dR6gi6rbo2sqtloF0QNx--3--94au5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\dR6gi6rbo2sqtloF0QNx--4--cy2z3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ehBiI89QuIXJksURQbfH--1--k30p7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ehBiI89QuIXJksURQbfH--2--4usjv.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ehBiI89QuIXJksURQbfH--3--45ssa.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ehBiI89QuIXJksURQbfH--4--mxne7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\F65vmoOdz7mxwBl0HXQl--1--dk8ba.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\F65vmoOdz7mxwBl0HXQl--2--u9z85.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\F65vmoOdz7mxwBl0HXQl--3--0hn4q.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\F65vmoOdz7mxwBl0HXQl--4--j8qyh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\IT3WxAUswPuK3xtq3Gjt--1--fu14z.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\IT3WxAUswPuK3xtq3Gjt--2--c1sy5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\IT3WxAUswPuK3xtq3Gjt--3--zmtka.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\IT3WxAUswPuK3xtq3Gjt--4--giwac.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\L9MqlXl8H4P9T8DkibXp--1--on22s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\L9MqlXl8H4P9T8DkibXp--2--ytrr2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\L9MqlXl8H4P9T8DkibXp--3--ihify.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\L9MqlXl8H4P9T8DkibXp--4--hix08.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LBlfFTF9T6XfqnTGuzRD--1--qnnvi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LBlfFTF9T6XfqnTGuzRD--2--m4nis.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LBlfFTF9T6XfqnTGuzRD--3--lj6c8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LBlfFTF9T6XfqnTGuzRD--4--yejsm.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\lIzBDlcAWkH31WivB4I2--1--4ewwc.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\lIzBDlcAWkH31WivB4I2--3--8s48r.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LZAl8Gpu5acADbhtO4vR--1--ahgc6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LZAl8Gpu5acADbhtO4vR--2--fhvoq.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LZAl8Gpu5acADbhtO4vR--3--0d93e.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LZAl8Gpu5acADbhtO4vR--4--5u182.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\MlssSRC7sQjF9JdfCr6N--3--pro5s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\PqMsY7aiPw7yNWIBbicp--1--42288.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\PqMsY7aiPw7yNWIBbicp--2--69tzn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\PqMsY7aiPw7yNWIBbicp--3--8b1rc.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\PqMsY7aiPw7yNWIBbicp--4--0wly2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\tESR19dAkWfbfAf5hIfe--1--gd1xk.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\tESR19dAkWfbfAf5hIfe--2--2rhur.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\tESR19dAkWfbfAf5hIfe--3--g3lw1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\tESR19dAkWfbfAf5hIfe--4--xg99l.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\vpx9NIWOSCYeN9d9KlrC--2--uxg3t.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\vpx9NIWOSCYeN9d9KlrC--3--oavrt.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\vpx9NIWOSCYeN9d9KlrC--4--izms9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\VwYnZW2BhB8HmAN2QIOH--1--iqp5d.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\VwYnZW2BhB8HmAN2QIOH--2--24k7p.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\VwYnZW2BhB8HmAN2QIOH--3--dc9tz.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\z24xhJLSZd1QSBTQTY8D--1--muzj2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\z24xhJLSZd1QSBTQTY8D--2--5nf8l.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\z24xhJLSZd1QSBTQTY8D--3--3mwp2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\z24xhJLSZd1QSBTQTY8D--4--prcwu.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ZMoKWCrAxcfkrfASTWe9--1--0smak.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ZMoKWCrAxcfkrfASTWe9--2--73seq.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ZMoKWCrAxcfkrfASTWe9--3--k2ci7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\ZMoKWCrAxcfkrfASTWe9--4--zc50s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\placeholder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\placeholder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\LogoStacked.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="Images\LogoStacked.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

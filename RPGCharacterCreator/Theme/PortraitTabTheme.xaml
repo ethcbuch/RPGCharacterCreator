@@ -3,7 +3,7 @@
 
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="{x:Type RadioButton}"
-           x:Key="PortraitButtonMenu">
+           x:Key="PortraitTabMenu">
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
@@ -11,12 +11,17 @@
                         <Grid VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="{Binding}"
-                                       Height="240"
-                                       Width="240"
-                                       Margin="5,5,5,5" />
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/Images/placeholder.png"
+                                       Height="50"
+                                       Width="50" />
+                                <Label Content="PORTRAIT" 
+                                       Foreground="White"
+                                       FontFamily="Franklin Gothic Heavy"
+                                       FontSize="19"/>
+
                             </StackPanel>
+
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>

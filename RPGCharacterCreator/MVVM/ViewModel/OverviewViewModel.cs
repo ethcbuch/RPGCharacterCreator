@@ -29,6 +29,21 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
+        private Portrait _overviewPortrait;
+
+        public Portrait OverviewPortrait
+        {
+            get
+            {
+                return _overviewPortrait;
+            }
+            set
+            {
+                _overviewPortrait = value;
+                OnPropertyChanged();
+            }
+        }
+
         private Class _overviewClass;
 
         public Class OverviewClass
@@ -86,9 +101,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
-        public OverviewViewModel(BioViewModel bioVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM, AlignmentViewModel alignmentVM)
+        public OverviewViewModel(BioViewModel bioVM, PortraitViewModel portraitVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM, AlignmentViewModel alignmentVM)
         {
             OverviewBio = bioVM.TempBio;
+            OverviewPortrait = portraitVM.APortrait;
             OverviewClass = classVM.AClass;
             OverviewRace = raceVM.ARace;
             OverviewBackground = backgroundVM.ABackground;

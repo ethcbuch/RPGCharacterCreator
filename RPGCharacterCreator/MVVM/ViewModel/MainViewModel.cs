@@ -25,6 +25,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
 
         public RelayCommand BioViewCommand { get; set; }
+        public RelayCommand PortraitViewCommand { get; set; }
         public RelayCommand ClassViewCommand { get; set; }
         public RelayCommand RaceViewCommand { get; set; }
         public RelayCommand BackgroundViewCommand { get; set; }
@@ -36,6 +37,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public HomeViewModel homeVM { get; set; }
 
         public BioViewModel bioVM { get; set; }
+        public PortraitViewModel portraitVM { get; set; }
         public RaceViewModel raceVM { get; set; }
 
         public ClassViewModel classVM { get; set; }
@@ -96,11 +98,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             //creates instances of the views that user can see/select from
             homeVM = new HomeViewModel();
             bioVM = new BioViewModel();
+            portraitVM = new PortraitViewModel();
             classVM = new ClassViewModel();
             raceVM = new RaceViewModel();
             backgroundVM = new BackgroundViewModel();
             alignmentVM = new AlignmentViewModel();
-            overviewVM = new OverviewViewModel(bioVM, classVM, raceVM, backgroundVM, alignmentVM);
+            overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, alignmentVM);
 
             builder = new GeneralCharacterBuilder();
 
@@ -123,6 +126,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = bioVM;
             });
 
+            PortraitViewCommand = new RelayCommand(o =>
+            {
+
+                CurrentView = portraitVM;
+            });
+
             RaceViewCommand = new RelayCommand(o => { CurrentView = raceVM; });
 
             ClassViewCommand = new RelayCommand(o =>
@@ -134,9 +143,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             OverviewViewCommand = new RelayCommand(o =>
             {
                 overviewVM.OverviewBio = bioVM.TempBio;
+                overviewVM.OverviewPortrait = portraitVM.APortrait;
                 overviewVM.OverviewClass = classVM.AClass;
                 overviewVM.OverviewRace = raceVM.ARace;
                 overviewVM.OverviewBackground = backgroundVM.ABackground;
+                overviewVM.OverviewAlignment = alignmentVM.AAlignment;
 
                 CurrentView = overviewVM;
             });
@@ -168,12 +179,15 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
                 //resets everything for next character
                 overviewVM.OverviewBio = new Bio();
+                overviewVM.OverviewPortrait = new Portrait();
                 overviewVM.OverviewClass = new Class();
                 overviewVM.OverviewRace = new Race();
                 overviewVM.OverviewBackground = new Model.Background();
                 overviewVM.OverviewAlignment = new Alignment();
-                classVM.AClass = new Class();
+
                 bioVM.TempBio = new Bio();
+                portraitVM.APortrait = new Portrait();
+                classVM.AClass = new Class();
                 raceVM.ARace = new Race();
                 backgroundVM.ABackground = new Model.Background();
                 alignmentVM.AAlignment = new Alignment();

@@ -16,9 +16,10 @@
                 <ResourceDictionary Source="Theme/CreateButtonTheme.xaml" />
                 <ResourceDictionary Source="Theme/CreationTabsTheme.xaml"/>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml" />
-                <ResourceDictionary Source="Theme/PortraitButtonTheme.xaml" />
+                <ResourceDictionary Source="Theme/PortraitTabTheme.xaml" />
                 <ResourceDictionary Source="Theme/FinalButtonTheme.xaml" />
                 <ResourceDictionary Source="Theme/CharacterButtonTheme.xaml" />
+                <ResourceDictionary Source="Theme/PortraitButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
@@ -31,6 +32,10 @@
 
             <DataTemplate DataType="{x:Type viewmodel:BioViewModel}">
                 <view:BioView />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewmodel:PortraitViewModel}">
+                <view:PortraitView />
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewmodel:ClassViewModel}">

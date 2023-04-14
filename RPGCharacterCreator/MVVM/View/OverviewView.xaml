@@ -24,19 +24,22 @@
             <ColumnDefinition Width="365" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Border BorderBrush="LightGray"
+        <Border BorderBrush="#A0a0a0"
                 BorderThickness="2"
-                Margin="0,10,0,150"
-                Grid.RowSpan="4"
-                HorizontalAlignment="Center"
-                Width="400" />
+                Margin="5,10,0,30"
+                Grid.RowSpan="3"
+                HorizontalAlignment="Left"
+                Width="395"
+                Height="400">
+            <Image Source="{Binding OverviewPortrait.PortraitPath,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </Border>
         <Border VerticalAlignment="Top"
                 Grid.RowSpan="4"
                 Margin="5,10,5,0"
                 Height="610"
                 Grid.Column="1"
                 BorderThickness="2"
-                BorderBrush="LightGray">
+                BorderBrush="#A0A0A0">
             <TextBlock TextWrapping="Wrap"
                        Background="Transparent"
                        FontFamily="Franklin Gothic Medium"
@@ -63,7 +66,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="2">
 
-            <Border BorderBrush="LightGray"
+            <Border BorderBrush="#A0A0A0"
                     BorderThickness="3"
                     Height="155">
                 <Grid>
@@ -178,7 +181,7 @@
                     </StackPanel>
                     <StackPanel Margin="323,87,59.727,18.109">
                         <TextBlock TextWrapping="Wrap"
-                                   Text="{Binding OverviewAlignment.AlignmentName, UpdateSourceTrigger=PropertyChanged}"
+                                   Text="{Binding OverviewAlignment.AlignmentName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
                                    Foreground="White"
@@ -205,13 +208,13 @@
                     Grid.Row="2"
                     Grid.RowSpan="2"
                     Margin="0,0,0,10">
-            <Border BorderBrush="LightGray"
+            <Border BorderBrush="#A0A0A0"
                     BorderThickness="2"
                     Height="370" />
         </StackPanel>
         <StackPanel Grid.Column="3"
                     Grid.Row="2">
-            <Border BorderBrush="LightGray"
+            <Border BorderBrush="#A0A0A0"
                     BorderThickness="2"
                     Height="190"
                     Width="365" />
@@ -219,7 +222,7 @@
         <StackPanel Grid.Column="3"
                     Grid.Row="3"
                     Margin="0,0,0,10">
-            <Border BorderBrush="LightGray"
+            <Border BorderBrush="#A0A0A0"
                     BorderThickness="2"
                     Height="180" />
         </StackPanel>
@@ -229,10 +232,10 @@
                      Foreground="White"
                      HorizontalContentAlignment="Center"
                      Style="{StaticResource FinalButtonMenu}"
-                     FontSize="24"
+                     FontSize="26"
                      Command="{Binding FinalizeButtonCommand}"
                      Visibility="Visible"
-                     Margin="5,51,5,20"
+                     Margin="5,0,10,36"
                      Grid.Row="3" />
     </Grid>
 </UserControl>
