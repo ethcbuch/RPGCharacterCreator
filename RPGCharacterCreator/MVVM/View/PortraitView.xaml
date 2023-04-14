@@ -13,7 +13,7 @@
             <StackPanel>
                 <ItemsControl x:Name="characterControl"
                               ItemsSource="{Binding arrays, UpdateSourceTrigger=PropertyChanged}"
-                              AlternationCount="100">
+                              AlternationCount="200">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="3" />

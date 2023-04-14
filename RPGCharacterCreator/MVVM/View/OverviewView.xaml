@@ -31,7 +31,8 @@
                 HorizontalAlignment="Left"
                 Width="395"
                 Height="400">
-            <Image Source="{Binding OverviewPortrait.PortraitPath,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Image Source="{Binding OverviewPortrait.PortraitPath,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0.255,-1.745,-0.4,-0.036" />
         </Border>
         <Border VerticalAlignment="Top"
                 Grid.RowSpan="4"
