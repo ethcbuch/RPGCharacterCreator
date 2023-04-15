@@ -50,8 +50,10 @@
                              Visibility="Visible" />
             </StackPanel>
         </ScrollViewer>
-
-        <Grid Grid.Column="1"
+        
+        <Grid x:Name="characterGrid"
+              Grid.Column="1"
+              Visibility="{Binding GridVis}"
               Margin="5.418,0,0.291,0.109">
             <Grid.RowDefinitions>
                 <RowDefinition Height="95" />
@@ -239,11 +241,7 @@
                                    FontSize="12" />
                         </StackPanel>
                     </Grid>
-
-
-
                 </Border>
-
             </StackPanel>
             <StackPanel Grid.Row="2"
                         Grid.RowSpan="2"
@@ -440,5 +438,16 @@
                 BorderThickness="3"
                 Margin="0,0,874,-4"
                 Grid.Column="1" />
+        <Label Grid.Column="1"
+               Content="NO CHARACTER DATA FOUND...."
+               HorizontalAlignment="Left"
+               Margin="10,10,0,0"
+               VerticalAlignment="Top"
+               Height="40"
+               Foreground="#A0a0a0"
+               Width="433"
+               FontSize="28"
+               Visibility="{Binding LabelVis}"
+               FontFamily="Franklin Gothic Heavy" />
     </Grid>
 </UserControl>

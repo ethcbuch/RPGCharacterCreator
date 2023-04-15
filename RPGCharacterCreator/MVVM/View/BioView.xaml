@@ -101,7 +101,7 @@
                    FontSize="36" />
             <TextBox x:Name="birthdayTextbox"
                      TextWrapping="NoWrap"
-                     Width="231"
+                     Width="316"
                      Height="34"
                      Background="#00000000"
                      Foreground="White"
@@ -119,7 +119,7 @@
         </StackPanel>
         <Border BorderBrush="#A0A0A0"
                 BorderThickness="3"
-                Margin="55,104,287,51"
+                Margin="55,104,205,51"
                 Grid.Row="2" />
         <StackPanel Margin="0,1,0,-1"
                     Grid.Row="3">

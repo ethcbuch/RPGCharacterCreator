@@ -61,6 +61,8 @@
     <Compile Include="MVVM\Model\Alignment.cs" />
     <Compile Include="MVVM\Model\Background.cs" />
     <Compile Include="MVVM\Model\Bio.cs" />
+    <Compile Include="MVVM\Model\CharacterBuilder.cs" />
+    <Compile Include="MVVM\Model\CharacterDirector.cs" />
     <Compile Include="MVVM\Model\Class.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />

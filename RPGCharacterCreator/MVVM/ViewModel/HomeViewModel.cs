@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
-
+using System.Windows;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -34,6 +34,28 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
+        private Visibility _gridVis = Visibility.Hidden;
+        public Visibility GridVis
+        {
+            get { return _gridVis; }
+            set
+            {
+                _gridVis = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _labelVis = Visibility.Visible;
+        public Visibility LabelVis
+        {
+            get { return _labelVis; }
+            set
+            {
+                _labelVis = value;
+                OnPropertyChanged();
+            }
+        }
+
         private GeneralCharacter _aChar = new GeneralCharacter();
 
         public GeneralCharacter AChar
@@ -54,6 +76,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             ChangeCharacterCommand = new RelayCommand(parameter =>
             {
+                GridVis = Visibility.Visible;
                 AChar = CharCollection[(int)parameter];
 
             });

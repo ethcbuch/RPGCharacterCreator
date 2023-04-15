@@ -203,7 +203,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 statsVM.CharStats = new Stats();
                 alignmentVM.AAlignment = new Alignment();
 
+                homeVM.LabelVis = Visibility.Hidden;
+
                 CurrentView = homeVM;
+
                 ButtCancel = false;
                 ButtChecked = false;
             });
