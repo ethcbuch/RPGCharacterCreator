@@ -24,7 +24,7 @@ namespace RPGCharacterCreator
 
         void buildBio(Bio aBio);
 
-        void buildPortrait();
+        void buildPortrait(Portrait aPortrait);
 
         void buildClass(Class aClass);
 
@@ -59,7 +59,10 @@ namespace RPGCharacterCreator
             character.characterBio = aBio;
         }
 
-        public void buildPortrait() { }
+        public void buildPortrait(Portrait aPortrait) 
+        {
+            character.characterPortrait = aPortrait;
+        }
 
         public void buildClass(Class aClass)
         {
@@ -112,10 +115,10 @@ namespace RPGCharacterCreator
             return charBuilder;
         }
 
-        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Class aClass, Race aRace, Background aBackground, int CharNumber)
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Portrait aPortrait, Class aClass, Race aRace, Background aBackground, int CharNumber)
         {
             aCharacterBuilder.buildBio(aBio);
-            aCharacterBuilder.buildPortrait();
+            aCharacterBuilder.buildPortrait(aPortrait);
             aCharacterBuilder.buildClass(aClass);
             aCharacterBuilder.buildRace(aRace);
             aCharacterBuilder.buildBackground(aBackground);

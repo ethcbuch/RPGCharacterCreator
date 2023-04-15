@@ -66,6 +66,7 @@
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MVVM\Model\Portrait.cs" />
     <Compile Include="MVVM\Model\Race.cs" />
+    <Compile Include="MVVM\Model\Stats.cs" />
     <Compile Include="MVVM\ViewModel\AlignmentViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BackgroundViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BioViewModel.cs" />
@@ -230,18 +231,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\159IbenNWY0adERmJSdP--1--m52n7.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Portraits\4zgtEiBGYNi1w4SeIDkE--1--b5bci.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Portraits\4zgtEiBGYNi1w4SeIDkE--2--qklbp.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Portraits\4zgtEiBGYNi1w4SeIDkE--3--86zfq.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Portraits\4zgtEiBGYNi1w4SeIDkE--4--hq465.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\68iITxCg4W8uoE1MNwzw--1--op5p1.jpg">

@@ -12,7 +12,7 @@
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="{Binding characterPortrait.portraitPath}"
+                                <Image Source="{Binding characterPortrait.PortraitPath}"
                                        Height="65"
                                        Width="65"
                                        Margin="5,0,0,0" />
@@ -21,8 +21,11 @@
                                            Content="{TemplateBinding Property=Content}"
                                            Foreground="White"
                                            FontFamily="Franklin Gothic Heavy"
-                                           FontSize="19" />
-                                    <TextBlock>
+                                           FontSize="21" 
+                                           Padding="5,5,0,0"/>
+                                    <TextBlock
+                                        FontSize="21"
+                                        Padding="5,5,0,0">
                                         <Run Text="{Binding characterRace.RaceName}" />
                                         <Run Text="{Binding characterClass.ClassName}" />
                                     </TextBlock>

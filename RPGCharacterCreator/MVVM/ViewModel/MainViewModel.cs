@@ -172,7 +172,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
-                homeVM.CharCollection.Add(director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, characterCount));
+                homeVM.CharCollection.Add(director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, characterCount));
 
                 characterCount++;
                 director.getBuilder().reset();
