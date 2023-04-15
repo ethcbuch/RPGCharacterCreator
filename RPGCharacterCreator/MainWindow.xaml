@@ -116,7 +116,7 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding ClassViewCommand}"
+                             Command="{Binding StatsViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="skillsButton"
                              Content="SKILLS"

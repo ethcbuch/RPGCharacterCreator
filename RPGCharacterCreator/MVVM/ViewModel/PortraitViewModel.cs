@@ -1,4 +1,5 @@
-﻿using RPGCharacterCreator.Core;
+﻿using Microsoft.Win32;
+using RPGCharacterCreator.Core;
 using RPGCharacterCreator.MVVM.Model;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
     {
 
         public RelayCommand ChoosePortraitCommand { get; set; }
+
+        public RelayCommand ImportPortraitCommand { get; set; }
+
 
         private Portrait _aPortrait = new Portrait();
 
@@ -41,6 +45,19 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             ChoosePortraitCommand = new RelayCommand(o =>
             {
                 APortrait.PortraitPath = arrays[(int)o];
+                OnPropertyChanged();
+            });
+
+            ImportPortraitCommand = new RelayCommand(o =>
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+
+                openFileDialog.ShowDialog();
+
+                APortrait.PortraitPath = openFileDialog.FileName;
+
                 OnPropertyChanged();
             });
         }

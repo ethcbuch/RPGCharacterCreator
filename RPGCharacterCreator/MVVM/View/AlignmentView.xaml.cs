@@ -22,6 +22,8 @@ namespace RPGCharacterCreator.MVVM.View
     {
         public AlignmentView()
         {
+            
+            
             InitializeComponent();
         }
     }

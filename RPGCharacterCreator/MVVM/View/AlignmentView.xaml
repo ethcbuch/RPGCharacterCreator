@@ -28,8 +28,7 @@
                        Text="{Binding AAlignment.AlignmentName}"
                        HorizontalAlignment="Center"
                        Foreground="White"
-                       Margin="0,0,0,20
-                   "
+                       Margin="0,0,0,20"
                        FontFamily="Franklin Gothic Heavy"
                        FontSize="84"
                        Height="102" />

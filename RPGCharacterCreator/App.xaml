@@ -49,6 +49,9 @@
             <DataTemplate DataType="{x:Type viewmodel:BackgroundViewModel}">
                 <view:BackgroundView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:StatsViewModel}">
+                <view:StatsView />
+            </DataTemplate>
             
             <DataTemplate DataType="{x:Type viewmodel:AlignmentViewModel}">
                 <view:AlignmentView />

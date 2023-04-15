@@ -105,9 +105,6 @@
     <Compile Include="MVVM\View\SkillsView.xaml.cs">
       <DependentUpon>SkillsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\StatsView.xaml.cs">
-      <DependentUpon>StatsView.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,6 +118,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\View\AlignmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\BackgroundView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +129,10 @@
     <Page Include="MVVM\View\RaceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\StatsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\CharacterButtonTheme.xaml">
       <SubType>Designer</SubType>
@@ -150,10 +155,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\PortraitTabTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\AlignmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,16 +182,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\StatsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Theme\PortraitButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\View\StatsView.xaml.cs">
+      <DependentUpon>StatsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -230,7 +230,19 @@
     <Content Include="Images\Portraits\0aW7q4wBIW3ohbAWQduS--4--o0mrc.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\0crOfudSV4qTxSQTOJg8--1--n74na.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\159IbenNWY0adERmJSdP--1--m52n7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\1M9elWXE5E5pM6AVjKee--2--fmnux.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\1M9elWXE5E5pM6AVjKee--3--fm2hs.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\1M9elWXE5E5pM6AVjKee--4--9a03h.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\68iITxCg4W8uoE1MNwzw--1--op5p1.jpg">
@@ -266,6 +278,12 @@
     <Content Include="Images\Portraits\961EFPgHZi7FdNQKZQxq--4--7iao6.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\9fZb8DS7XdK9SSBPZNbJ--1--f5q4r.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\AWNr9hnbhSK2JDVZVXsh--1--so5tk.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\Brtw0GFQegNTgliJAfKW--1--pe9tx.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -276,6 +294,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\Brtw0GFQegNTgliJAfKW--4--r5qg5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\CT351N8gWi8v2sARcKXF--4--yexyf.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\dR6gi6rbo2sqtloF0QNx--1--7jzjm.jpg">
@@ -326,6 +347,18 @@
     <Content Include="Images\Portraits\F65vmoOdz7mxwBl0HXQl--4--j8qyh.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\FfvG8bTpBUINyzFA2eUt--1--8z6di.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\FfvG8bTpBUINyzFA2eUt--3--ken5u.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\FfvG8bTpBUINyzFA2eUt--4--s8uu5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\FlHBTkMnRlC43P8xXXjy--1--18j3o.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\g0u5sjtbx9sUoDOy7KmN--1--jyr1b.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -336,6 +369,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\gp9WifAQz5kVrjPCOxZS--4--x0b27.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\gQY61XMdGJxAx3yk3XOn--1--i5yh8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\gQY61XMdGJxAx3yk3XOn--2--73z4f.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\gQY61XMdGJxAx3yk3XOn--3--msgsw.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\gQY61XMdGJxAx3yk3XOn--4--0qubj.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\h4DQSCU80MdGHLArFSiS--1--grl6g.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\i1WvMXrDnwuf0Ov2fahV--1--wiv8z.jpg">
@@ -362,13 +410,25 @@
     <Content Include="Images\Portraits\IT3WxAUswPuK3xtq3Gjt--4--giwac.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\IVGYgO5Q5SVk7bId3j0Z--1--mxyax.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\jo9c1dpmIisCE9lqQDR1--1--ovgxx.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\JrpXBUVwR3RNrhFPYGrK--1--638ac.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\jSLyoaPvMytOOT4A5mUE--1--z398k.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\K1zWi3jcP2KHf7qt2pF5--1--80pq6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\kKDGepIZkf3XZbjb25RA--1--b7vbj.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\KygApvtPMbIfJCSCAnCU--1--2ioic.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\L9MqlXl8H4P9T8DkibXp--1--on22s.jpg">
@@ -381,6 +441,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\L9MqlXl8H4P9T8DkibXp--4--hix08.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\LB9EmeTPz3Ty3lcVE1nl--1--twy8w.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\LBlfFTF9T6XfqnTGuzRD--1--qnnvi.jpg">
@@ -401,6 +464,9 @@
     <Content Include="Images\Portraits\lIzBDlcAWkH31WivB4I2--3--8s48r.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\lksXl5i5fGCcbv0Pmp6H--1--fo01r.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\LZAl8Gpu5acADbhtO4vR--1--ahgc6.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -411,6 +477,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\LZAl8Gpu5acADbhtO4vR--4--5u182.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\m3BQ4ou4qtB5oqjNUp34--1--0qge9.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\mAqNoLECntGawRKP0zsL--2--m3h17.jpg">
@@ -425,6 +494,15 @@
     <Content Include="Images\Portraits\mV39xMjMk4RiUUtZ2ye7--1--qxq11.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\mW0Y6bgAMAOMhTpvYX8y--1--vnadb.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\NnR0GCZmuoxfn43Bb0ho--1--u6mbr.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\NpFaTvSUvBcqFpLIfpqK--1--7k0ap.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\PqMsY7aiPw7yNWIBbicp--1--42288.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -435,6 +513,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\PqMsY7aiPw7yNWIBbicp--4--0wly2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\QdetgMBRUC0gQ5iF5yPu--1--naap0.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\s0Bn1sNfMswTicVqV8TX--2--ndiuf.jpg">
@@ -464,6 +545,18 @@
     <Content Include="Images\Portraits\tESR19dAkWfbfAf5hIfe--4--xg99l.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\UXcMrbTG8kAjHMrB72eB--1--5x3ur.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\UXcMrbTG8kAjHMrB72eB--2--bztuc.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\UXcMrbTG8kAjHMrB72eB--3--97tno.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\UXcMrbTG8kAjHMrB72eB--4--5362z.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\vpx9NIWOSCYeN9d9KlrC--2--uxg3t.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -482,7 +575,16 @@
     <Content Include="Images\Portraits\VwYnZW2BhB8HmAN2QIOH--3--dc9tz.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\WgmufLAFos0lYmX4fON9--1--4g1b8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\WOImbhwfbc3VCT89V9w4--1--n3lcz.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\wsdii6zNKRqhgRS2jHBR--1--ds395.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\XWYXhV1CTMjeF1ifF1yO--1--fmo45.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\y36wd0go3ya0JUjfTJnP--3--e31au.jpg">
@@ -503,6 +605,9 @@
     <Content Include="Images\Portraits\z24xhJLSZd1QSBTQTY8D--4--prcwu.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Portraits\Zce6YZ8bPqCP2VPZ1PCI--1--b7sve.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Portraits\ZMoKWCrAxcfkrfASTWe9--1--0smak.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -513,6 +618,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\ZMoKWCrAxcfkrfASTWe9--4--zc50s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Portraits\zx1xlobh2ooiuboVK7wM--4--fiztx.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Portraits\ZYOGXowZ7WhGeExgc0Ie--1--12lxh.jpg">

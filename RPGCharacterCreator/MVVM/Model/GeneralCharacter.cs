@@ -10,7 +10,8 @@ namespace RPGCharacterCreator
         public Portrait characterPortrait { get; set; } = new Portrait();
         public Class characterClass { get; set; }
         public Background characterBackground { get; set; }
-        public Race characterRace { get; set; } 
+        public Race characterRace { get; set; }
+        public Stats characterStats { get; set; }
         public Alignment characterAlignment { get; set; }
         private int _characterNumber { get; set; }
         public int CharacterNumber { get { return _characterNumber; } set { _characterNumber = value; } }
@@ -32,7 +33,7 @@ namespace RPGCharacterCreator
 
         void buildBackground(Background aBackgroud);
 
-        void buildStats();
+        void buildStats(Stats CharStats);
 
         void buildSkills();
 
@@ -80,7 +81,10 @@ namespace RPGCharacterCreator
 
         }
 
-        public void buildStats() { }
+        public void buildStats(Stats CharStats) 
+        {
+            character.characterStats = CharStats;
+        }
 
         public void buildSkills() { }
 
@@ -115,7 +119,7 @@ namespace RPGCharacterCreator
             return charBuilder;
         }
 
-        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Portrait aPortrait, Class aClass, Race aRace, Background aBackground, int CharNumber)
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Portrait aPortrait, Class aClass, Race aRace, Background aBackground, Stats CharStats, Alignment aAlignment, int CharNumber)
         {
             aCharacterBuilder.buildBio(aBio);
             aCharacterBuilder.buildPortrait(aPortrait);
@@ -123,6 +127,8 @@ namespace RPGCharacterCreator
             aCharacterBuilder.buildRace(aRace);
             aCharacterBuilder.buildBackground(aBackground);
             aCharacterBuilder.setNumber(CharNumber);
+            aCharacterBuilder.buildAlignment(aAlignment);
+            aCharacterBuilder.buildStats(CharStats);
 
             return aCharacterBuilder.GetCharacter();
 

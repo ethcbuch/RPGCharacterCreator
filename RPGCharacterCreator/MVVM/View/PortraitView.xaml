@@ -23,8 +23,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 
-                            <RadioButton GroupName=""
-                                         Height="250"
+                            <RadioButton Height="250"
                                          Width="250"
                                          FontFamily="Franklin Gothic Heavy"
                                          Foreground="White"
@@ -50,15 +49,15 @@
                     Width="460"
                     Margin="0,0,0,0" />
         </Border>
-        
-<RadioButton x:Name="importButton"
+
+        <RadioButton x:Name="importButton"
                      Content="IMPORT PORTRAIT"
                      FontFamily="Franklin Gothic Heavy"
                      Foreground="White"
                      HorizontalContentAlignment="Center"
                      Style="{StaticResource FinalButtonMenu}"
                      FontSize="24"
-                     Command="{Binding FinalizeButtonCommand}"
+                     Command="{Binding ImportPortraitCommand}"
                      Visibility="Visible"
                      Margin="810,500,10,25" />
     </Grid>
