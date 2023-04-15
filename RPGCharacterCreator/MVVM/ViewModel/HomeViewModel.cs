@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Windows;
+using System.Diagnostics;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -15,6 +16,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand CreateCharacterCommand { get; set; }
 
         public RelayCommand ChangeCharacterCommand { get; set; }
+
+        public RelayCommand EditCharacterCommand { get; set; }
+        public RelayCommand DeleteCharacterCommand { get; set; }
 
         private object _childView;
 
@@ -68,6 +72,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
+        public int currentCharacterIndex { get; set; } = -1;
+
         public ObservableCollection<GeneralCharacter> CharCollection { get; set; }
 
         public HomeViewModel()
@@ -76,9 +82,33 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             ChangeCharacterCommand = new RelayCommand(parameter =>
             {
+                //The current character selected, used for deleting and editing characters.
+                currentCharacterIndex = (int)parameter;
                 GridVis = Visibility.Visible;
                 AChar = CharCollection[(int)parameter];
 
+            });
+            DeleteCharacterCommand = new RelayCommand(parameter =>
+            {
+                //If no character is selected cannot delete
+                if (currentCharacterIndex == -1 )
+                {
+                    return;
+                }
+                else
+                {
+                    CharCollection.RemoveAt(currentCharacterIndex);
+                    AChar = new GeneralCharacter();
+                    //A character is no longer selected so value is reset.
+                    currentCharacterIndex = -1;
+                    //If there are no characters in the system then the a message is shown and the character dsiplay is hidden
+                    if (CharCollection.Count == 0)
+                    {
+                        GridVis = Visibility.Hidden;
+                        LabelVis = Visibility.Visible;
+                    }
+                }
+               
             });
         }
 

@@ -25,5 +25,6 @@ namespace RPGCharacterCreator.MVVM.View
             InitializeComponent();
         }
 
+
     }
 }

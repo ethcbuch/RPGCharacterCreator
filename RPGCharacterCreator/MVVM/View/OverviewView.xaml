@@ -32,7 +32,7 @@
                 Width="395"
                 Height="400">
             <Image Source="{Binding OverviewPortrait.PortraitPath,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="0.255,-1.745,-0.4,-0.036" />
+                   Stretch="Fill" />
         </Border>
         <Border VerticalAlignment="Top"
                 Grid.RowSpan="4"
@@ -397,8 +397,19 @@
                      Style="{StaticResource FinalButtonMenu}"
                      FontSize="26"
                      Command="{Binding FinalizeButtonCommand}"
-                     Visibility="Visible"
-                     Margin="5,0,10,36"
+                     Visibility="{Binding FinishVis}"
+                     Margin="5,18,10,18"
+                     Grid.Row="3" />
+        <RadioButton x:Name="finaliseEditButton"
+                     Content="FINISH EDITING CHARACTER"
+                     FontFamily="Franklin Gothic Heavy"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     Style="{StaticResource FinalButtonMenu}"
+                     FontSize="26"
+                     Visibility="{Binding EditVis}"
+                     Command="{Binding FinalizeEditButtonCommand}"
+                     Margin="5,18,11,18"
                      Grid.Row="3" />
     </Grid>
 </UserControl>

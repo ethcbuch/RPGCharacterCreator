@@ -12,16 +12,27 @@
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/Images/placeholder.png"
-                                       Height="65"
-                                       Width="65"
-                                       Margin="5,0,0,0" />
+                                <TextBlock HorizontalAlignment="Left"
+                                           Margin="5,5,0,0"
+                                           Grid.Row="1"
+                                           Background="#36393E"
+                                           TextWrapping="Wrap"
+                                           Text="+"
+                                           TextAlignment="Center"
+                                           FontWeight="Bold"
+                                           FontFamily="Cambria Math"
+                                           Foreground="White"
+                                           FontSize="58"
+                                           VerticalAlignment="Top"
+                                           Height="69"
+                                           Width="69" />
                                 <StackPanel>
                                     <Label x:Name="nameLabel"
                                            Content="{TemplateBinding Property=Content}"
                                            Foreground="White"
                                            FontFamily="Franklin Gothic Heavy"
-                                           FontSize="19" />
+                                           Padding="5,20,0,0"
+                                           FontSize="26" />
                                 </StackPanel>
                             </StackPanel>
                         </Grid>

@@ -15,7 +15,7 @@
             <ColumnDefinition Width="880" />
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer>
+        <ScrollViewer Margin="0,0,0,90">
             <StackPanel>
                 <ItemsControl x:Name="characterControl"
                               ItemsSource="{Binding CharCollection, UpdateSourceTrigger=PropertyChanged}"
@@ -73,7 +73,8 @@
                     Grid.RowSpan="3"
                     HorizontalAlignment="Left"
                     Width="265">
-                <Image Source="{Binding AChar.characterPortrait.PortraitPath}" />
+                <Image Source="{Binding AChar.characterPortrait.PortraitPath}"
+                       Stretch="Fill"/>
             </Border>
             <Border VerticalAlignment="Top"
                     Grid.RowSpan="2"
@@ -449,5 +450,27 @@
                FontSize="28"
                Visibility="{Binding LabelVis}"
                FontFamily="Franklin Gothic Heavy" />
+        <StackPanel Margin="0,535,0,0"
+                    Orientation="Horizontal">
+            <RadioButton x:Name="editButton"
+                         Content="EDIT"
+                         Height="95"
+                         Width="200"
+                         FontFamily="Franklin Gothic Heavy"
+                         Foreground="White"
+                         Style="{StaticResource FinalButtonMenu}"
+                         FontSize="25"
+                         Command="{Binding EditCharacterCommand}"/>
+            <RadioButton x:Name="deleteButton"
+                         Content="DELETE"
+                         Height="95"
+                         Width="200"
+                         FontFamily="Franklin Gothic Heavy"
+                         Foreground="White"
+                         Style="{StaticResource FinalButtonMenu}"
+                         FontSize="25"
+                         Command="{Binding DeleteCharacterCommand}" />
+
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -120,6 +120,13 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = homeVM;
+                bioVM.TempBio = new Bio();
+                portraitVM.APortrait = new Portrait();
+                classVM.AClass = new Class();
+                raceVM.ARace = new Race();
+                backgroundVM.ABackground = new Model.Background();
+                statsVM.CharStats = new Stats();
+                alignmentVM.AAlignment = new Alignment();
                 ButtCancel = false;
 
             });
@@ -177,6 +184,32 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = alignmentVM;
             });
 
+            homeVM.EditCharacterCommand = new RelayCommand(o =>
+            {
+
+                if (homeVM.currentCharacterIndex == -1)
+                {
+                    return;
+                }
+                else
+                {
+                    bioVM.TempBio = homeVM.CharCollection[homeVM.currentCharacterIndex].characterBio;
+                    portraitVM.APortrait = homeVM.CharCollection[homeVM.currentCharacterIndex].characterPortrait;
+                    classVM.AClass = homeVM.CharCollection[homeVM.currentCharacterIndex].characterClass;
+                    raceVM.ARace = homeVM.CharCollection[homeVM.currentCharacterIndex].characterRace;
+                    backgroundVM.ABackground = homeVM.CharCollection[homeVM.currentCharacterIndex].characterBackground;
+                    statsVM.CharStats = homeVM.CharCollection[homeVM.currentCharacterIndex].characterStats;
+                    alignmentVM.AAlignment = homeVM.CharCollection[homeVM.currentCharacterIndex].characterAlignment;
+
+
+                    overviewVM.FinishVis = Visibility.Hidden;
+                    overviewVM.EditVis = Visibility.Visible;
+
+                    CurrentView = bioVM;
+                    ButtCancel = true;
+                }
+
+            });
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
@@ -210,6 +243,40 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 ButtCancel = false;
                 ButtChecked = false;
             });
+
+            overviewVM.FinalizeEditButtonCommand = new RelayCommand(o =>
+            {
+            homeVM.CharCollection[homeVM.currentCharacterIndex] = director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, overviewVM.OverviewStats, overviewVM.OverviewAlignment, homeVM.currentCharacterIndex);
+
+            //resets everything for next character
+            overviewVM.OverviewBio = new Bio();
+            overviewVM.OverviewPortrait = new Portrait();
+            overviewVM.OverviewClass = new Class();
+            overviewVM.OverviewRace = new Race();
+            overviewVM.OverviewBackground = new Model.Background();
+            overviewVM.OverviewStats = new Stats();
+            overviewVM.OverviewAlignment = new Alignment();
+
+
+            bioVM.TempBio = new Bio();
+            portraitVM.APortrait = new Portrait();
+            classVM.AClass = new Class();
+            raceVM.ARace = new Race();
+            backgroundVM.ABackground = new Model.Background();
+            statsVM.CharStats = new Stats();
+            alignmentVM.AAlignment = new Alignment();
+
+            overviewVM.FinishVis = Visibility.Visible;
+            overviewVM.EditVis = Visibility.Hidden;
+
+            homeVM.LabelVis = Visibility.Hidden;
+
+            CurrentView = homeVM;
+
+            ButtCancel = false;
+            ButtChecked = false;
+        });
+
         }
-    }
+}
 }

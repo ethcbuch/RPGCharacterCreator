@@ -7,12 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
     internal class OverviewViewModel : ObservableObject
     {
         public RelayCommand FinalizeButtonCommand { get; set; }
+
+        public RelayCommand FinalizeEditButtonCommand { get; set; }
+
+        private Visibility _editVis = Visibility.Hidden;
+        public Visibility EditVis
+        {
+            get { return _editVis; }
+            set
+            {
+                _editVis = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _finishVis = Visibility.Visible;
+        public Visibility FinishVis
+        {
+            get { return _finishVis; }
+            set
+            {
+                _finishVis = value;
+                OnPropertyChanged();
+            }
+        }
 
         private Bio _overviewBio;
 

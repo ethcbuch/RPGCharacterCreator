@@ -23,7 +23,8 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 
-                            <RadioButton Height="250"
+                            <RadioButton GroupName="Portraits"
+                                        Height="250"
                                          Width="250"
                                          FontFamily="Franklin Gothic Heavy"
                                          Foreground="White"
