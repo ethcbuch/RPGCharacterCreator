@@ -11,6 +11,13 @@ namespace RPGCharacterCreator.MVVM.ViewModel
     class AlignmentViewModel : ObservableObject
     {
         public RelayCommand LawfulGoodButtonCommand { get; set; }
+        public RelayCommand NeutralGoodButtonCommand { get; set; }
+        public RelayCommand ChaoticGoodButtonCommand { get; set; }
+        public RelayCommand LawfulNeutralButtonCommand { get; set; }
+        public RelayCommand TrueNeutralButtonCommand { get; set; }
+        public RelayCommand ChaoticNeutralButtonCommand { get; set; }
+        public RelayCommand LawfulEvilButtonCommand { get; set; }
+        public RelayCommand NeutralEvilButtonCommand { get; set; }
         public RelayCommand ChaoticEvilButtonCommand { get; set; }
 
         private Alignment _aAlignment;
@@ -29,6 +36,48 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             LawfulGoodButtonCommand = new RelayCommand(o =>
             {
                 AAlignment = new LawfulGood();
+                OnPropertyChanged();
+            });
+
+            NeutralGoodButtonCommand = new RelayCommand(o =>
+            {
+                AAlignment = new NeutralGood();
+                OnPropertyChanged();
+            });
+
+            ChaoticGoodButtonCommand = new RelayCommand(o =>
+            {
+                AAlignment = new ChaoticGood();
+                OnPropertyChanged();
+            });
+
+            LawfulNeutralButtonCommand = new RelayCommand(o =>
+            {
+                AAlignment = new LawfulNeutral();
+                OnPropertyChanged();
+            });
+
+            TrueNeutralButtonCommand = new RelayCommand(o =>
+            {
+                AAlignment = new TrueNeutral();
+                OnPropertyChanged();
+            });
+
+            ChaoticNeutralButtonCommand = new RelayCommand(o =>
+            {
+                AAlignment = new ChaoticNeutral();
+                OnPropertyChanged();
+            });
+
+            LawfulEvilButtonCommand = new RelayCommand(o =>
+            {
+                AAlignment = new LawfulEvil();
+                OnPropertyChanged();
+            });
+
+            NeutralEvilButtonCommand = new RelayCommand(o =>
+            {
+                AAlignment = new NeutralEvil();
                 OnPropertyChanged();
             });
 

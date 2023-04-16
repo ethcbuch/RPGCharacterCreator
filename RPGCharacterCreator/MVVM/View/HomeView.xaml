@@ -50,7 +50,6 @@
                              Visibility="Visible" />
             </StackPanel>
         </ScrollViewer>
-        
         <Grid x:Name="characterGrid"
               Grid.Column="1"
               Visibility="{Binding GridVis}"

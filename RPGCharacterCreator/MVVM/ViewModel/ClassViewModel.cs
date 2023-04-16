@@ -10,8 +10,17 @@ namespace RPGCharacterCreator.MVVM.ViewModel
     {
 
         public RelayCommand WarriorButtonCommand { get; set; }
-
         public RelayCommand RogueButtonCommand { get; set; }
+
+        public RelayCommand PaladinButtonCommand { get; set; }
+        public RelayCommand RangerButtonCommand { get; set; }
+        public RelayCommand WizardButtonCommand { get; set; }
+        public RelayCommand BardButtonCommand { get; set; }
+        public RelayCommand BarbarianButtonCommand { get; set; }
+        public RelayCommand MonkButtonCommand { get; set; }
+        public RelayCommand ClericButtonCommand { get; set; }
+        public RelayCommand DruidButtonCommand { get; set; }
+
 
         private Class _aClass = new Class();
 
@@ -41,6 +50,57 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 AClass = new Rogue();
                 OnPropertyChanged();
             });
+
+            //check
+
+            PaladinButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Paladin();
+                OnPropertyChanged();
+            });
+
+            RangerButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Ranger();
+                OnPropertyChanged();
+            });
+
+            WizardButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Wizard();
+                OnPropertyChanged();
+            });
+
+            BardButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Bard();
+                OnPropertyChanged();
+            });
+
+            BarbarianButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Barbarian();
+                OnPropertyChanged();
+            });
+
+            MonkButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Monk();
+                OnPropertyChanged();
+            });
+
+            ClericButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Cleric();
+                OnPropertyChanged();
+            });
+
+            DruidButtonCommand = new RelayCommand(o =>
+            {
+                AClass = new Druid();
+                OnPropertyChanged();
+            });
+
 
         }
 

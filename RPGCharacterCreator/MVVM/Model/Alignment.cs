@@ -65,4 +65,146 @@ namespace RPGCharacterCreator.MVVM.Model
         }
     }
 
+
+
+    internal class LawfulNeutral : Alignment
+    {
+        private string _alignmentName = "Lawful Neutral";
+        private string _alignmentDescription = "Lawful Neutral characters follow the rules without preference for good or evil. They strive to maintain balance and order in the world, and they believe in the concept of a society that is well-ordered and regulated.";
+
+        public new string AlignmentName
+        {
+            get { return _alignmentName; }
+            set { _alignmentName = value; OnPropertyChanged(); }
+        }
+
+        public new string AlignmentDescription
+        {
+            get { return _alignmentDescription; }
+            set { _alignmentDescription = value; OnPropertyChanged(); }
+        }
+    }
+
+
+
+    internal class TrueNeutral : Alignment
+    {
+        private string _alignmentName = "Neutral";
+        private string _alignmentDescription = "Neutral characters are committed to the balance of things and believe in avoiding extremes. They value the balance of good and evil, order and chaos, and law and freedom. They may appear indecisive or uncommitted, but they are simply waiting for the right moment to act.";
+
+        public new string AlignmentName
+        {
+            get { return _alignmentName; }
+            set { _alignmentName = value; OnPropertyChanged(); }
+        }
+
+        public new string AlignmentDescription
+        {
+            get { return _alignmentDescription; }
+            set { _alignmentDescription = value; OnPropertyChanged(); }
+        }
+    }
+
+
+    internal class ChaoticNeutral : Alignment
+    {
+        private string _alignmentName = "Chaotic Neutral";
+        private string _alignmentDescription = "Chaotic Neutral characters are unpredictable and value their personal freedom above all else. They believe in a world without order or control, and they tend to be individualistic, independent, and distrustful of authority. They may commit good or evil acts depending on their mood or whims.";
+
+        public new string AlignmentName
+        {
+            get { return _alignmentName; }
+            set { _alignmentName = value; OnPropertyChanged(); }
+        }
+
+        public new string AlignmentDescription
+        {
+            get { return _alignmentDescription; }
+            set { _alignmentDescription = value; OnPropertyChanged(); }
+        }
+    }
+
+
+    internal class LawfulEvil : Alignment
+    {
+        private string _alignmentName = "Lawful Evil";
+        private string _alignmentDescription = "Lawful Evil characters believe in using the rules and order of society to gain power and control over others. They may appear honorable or even admirable, but they are willing to do whatever it takes to achieve their goals. They believe that the ends justify the means, and they are not afraid to use evil or immoral methods to achieve their aims.";
+
+        public new string AlignmentName
+        {
+            get { return _alignmentName; }
+            set { _alignmentName = value; OnPropertyChanged(); }
+        }
+
+        public new string AlignmentDescription
+        {
+            get { return _alignmentDescription; }
+            set { _alignmentDescription = value; OnPropertyChanged(); }
+        }
+    }
+    // Class for Neutral Good (concrete class which inherits from the Alignment class)
+    internal class NeutralGood : Alignment
+    {
+        private string _alignmentName = "Neutral Good";
+        private string _alignmentDescription = "Neutral Good characters do the best they can to help others according to their needs. They are not committed to upholding the law or maintaining social order, but they also do not seek to disrupt it. They are kind-hearted and believe in the value of individual freedom and happiness, but not at the expense of others.";
+
+        public new string AlignmentName
+        {
+            get { return _alignmentName; }
+            set { _alignmentName = value; OnPropertyChanged(); }
+        }
+
+        public new string AlignmentDescription
+        {
+            get { return _alignmentDescription; }
+            set { _alignmentDescription = value; OnPropertyChanged(); }
+        }
+    }
+
+    // Class for Chaotic Good (concrete class which inherits from the Alignment class)
+    internal class ChaoticGood : Alignment
+    {
+        private string _alignmentName = "Chaotic Good";
+        private string _alignmentDescription = "A chaotic good character acts as their conscience directs them with little regard for what others expect of them. They make their own way, but they're kind and benevolent. They believe in goodness and right but have little use for laws and regulations. They hate it when people try to intimidate others and tell them what to do. They follow their own moral compass, which, although good, may not agree with that of society.";
+
+        public new string AlignmentName
+        {
+            get { return _alignmentName; }
+            set { _alignmentName = value; OnPropertyChanged(); }
+        }
+
+        public new string AlignmentDescription
+        {
+            get { return _alignmentDescription; }
+            set { _alignmentDescription = value; OnPropertyChanged(); }
+        }
+    }
+
+    internal class NeutralEvil : Alignment
+    {
+        private string _alignmentName = "Neutral Evil";
+        private string _alignmentDescription = "Neutral Evil characters are interested only in themselves and their own advancement. They are not bound by any rules or loyalties, but they do not have the anarchic tendencies";
+    public new string AlignmentName
+        {
+            get { return _alignmentName; }
+            set { _alignmentName = value; OnPropertyChanged(); }
+        }
+
+        public new string AlignmentDescription
+        {
+            get { return _alignmentDescription; }
+            set { _alignmentDescription = value; OnPropertyChanged(); }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

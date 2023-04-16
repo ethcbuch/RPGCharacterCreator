@@ -82,16 +82,27 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             ChangeCharacterCommand = new RelayCommand(parameter =>
             {
-                //The current character selected, used for deleting and editing characters.
+                //added this in because was getting strange bugs IF
+                // create a char, create a second char
+                // click on the newly created char and edit name and finalize
+                //click on the first char you created and edit without finalizing
+                // edit the newly created char and change something and finalize
+                // the changes will save onto the both
+
+                //i think this fixed it
+                if (currentCharacterIndex != -1)
+                {
+                    CharCollection[currentCharacterIndex] = AChar;
+                }
                 currentCharacterIndex = (int)parameter;
                 GridVis = Visibility.Visible;
                 AChar = CharCollection[(int)parameter];
-
             });
+
             DeleteCharacterCommand = new RelayCommand(parameter =>
             {
                 //If no character is selected cannot delete
-                if (currentCharacterIndex == -1 )
+                if (currentCharacterIndex == -1)
                 {
                     return;
                 }
@@ -108,9 +119,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                         LabelVis = Visibility.Visible;
                     }
                 }
-               
-            });
-        }
 
+            });
+      
+        }
     }
 }
+

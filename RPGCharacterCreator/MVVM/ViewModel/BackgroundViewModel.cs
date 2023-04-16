@@ -9,6 +9,22 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand SageButtonCommand { get; set; }
 
+        public RelayCommand KnightButtonCommand { get; set; }
+
+        public RelayCommand SpyButtonCommand { get; set; }
+
+        public RelayCommand SmugglerButtonCommand { get; set; }
+
+        public RelayCommand SailorButtonCommand { get; set; }
+
+        public RelayCommand SoldierButtonCommand { get; set; }
+
+        public RelayCommand EntertainerButtonCommand { get; set; }
+
+        public RelayCommand AcolyteButtonCommand { get; set; }
+
+        public RelayCommand CriminalButtonCommand { get; set; }
+
         private Background _aBackground;
 
         public Background ABackground
@@ -34,6 +50,54 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             SageButtonCommand = new RelayCommand(o =>
             {
                 ABackground = new Sage();
+                OnPropertyChanged();
+            });
+
+            KnightButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Knight();
+                OnPropertyChanged();
+            });
+
+            SpyButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Spy();
+                OnPropertyChanged();
+            });
+
+            SmugglerButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Smuggler();
+                OnPropertyChanged();
+            });
+
+            SailorButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Sailor();
+                OnPropertyChanged();
+            });
+
+            SoldierButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Soldier();
+                OnPropertyChanged();
+            });
+
+            EntertainerButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Entertainer();
+                OnPropertyChanged();
+            });
+
+            AcolyteButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Acolyte();
+                OnPropertyChanged();
+            });
+
+            CriminalButtonCommand = new RelayCommand(o =>
+            {
+                ABackground = new Criminal();
                 OnPropertyChanged();
             });
         }

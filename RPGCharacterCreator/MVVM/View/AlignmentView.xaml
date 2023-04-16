@@ -62,9 +62,7 @@
 
         <ScrollViewer Grid.RowSpan="4"
                       VerticalScrollBarVisibility="Auto"
-                      Height="562"
-                      VerticalAlignment="Top"
-                      Margin="0,68,0,0">
+                      Margin="0,68,0,-170">
             <StackPanel>
                 <RadioButton x:Name="LawfulGoodButton"
                              Content="LAWFUL GOOD"
@@ -88,6 +86,89 @@
                              FontSize="19"
                              Command="{Binding ChaoticEvilButtonCommand}"
                              Visibility="Visible" />
+                <RadioButton x:Name="ChaoticGoodButton"
+                             Content="CHAOTIC GOOD"
+                             Height="65"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CreationTabsMenu}"
+                             FontSize="19"
+                             Command="{Binding ChaoticGoodButtonCommand}"
+                             Visibility="Visible" />
+
+                <RadioButton x:Name="LawfulNeutralButton"
+                             Content="LAWFUL NEUTRAL"
+                             Height="65"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CreationTabsMenu}"
+                             FontSize="19"
+                             Command="{Binding LawfulNeutralButtonCommand}"
+                             Visibility="Visible" />
+
+                <RadioButton x:Name="TrueNeutralButton"
+                             Content="NEUTRAL"
+                             Height="65"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CreationTabsMenu}"
+                             FontSize="19"
+                             Command="{Binding TrueNeutralButtonCommand}"
+                             Visibility="Visible" />
+
+                <RadioButton x:Name="ChaoticNeutralButton"
+                             Content="CHAOTIC NEUTRAL"
+                             Height="65"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CreationTabsMenu}"
+                             FontSize="19"
+                             Command="{Binding ChaoticNeutralButtonCommand}"
+                             Visibility="Visible" />
+
+                <RadioButton x:Name="LawfulEvilButton"
+                             Content="LAWFUL EVIL"
+                             Height="65"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CreationTabsMenu}"
+                             FontSize="19"
+                             Command="{Binding LawfulEvilButtonCommand}"
+                             Visibility="Visible" />
+
+                <RadioButton x:Name="NeutralEvilButton"
+                             Content="NEUTRAL EVIL"
+                             Height="65"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CreationTabsMenu}"
+                             FontSize="19"
+                             Command="{Binding NeutralEvilButtonCommand}"
+                             Visibility="Visible" />
+                <RadioButton x:Name="NeutralGoodButton"
+                             Content="NEUTRAL GOOD"
+                             Height="65"
+                             Width="370"
+                             FontFamily="Franklin Gothic Heavy"
+                             Foreground="White"
+                             HorizontalContentAlignment="Center"
+                             Style="{StaticResource CreationTabsMenu}"
+                             FontSize="19"
+                             Command="{Binding NeutralGoodButtonCommand}"
+                             Visibility="Visible" />
+
             </StackPanel>
         </ScrollViewer>
         <Border BorderBrush="#1E2124"
