@@ -20,7 +20,7 @@
     </Window.DataContext>
     
     <Border x:Name="windowBackground"
-            Background="{Binding theme.BackgroundColor}"
+            Background="{Binding MainTheme.BackgroundColor}"
             CornerRadius="10">
 
         <Grid>
@@ -33,7 +33,7 @@
             </Grid.RowDefinitions>
 
             <Border x:Name="headerBorder"
-                    Background="{Binding theme.TabColor}"
+                    Background="{Binding MainTheme.TabColor}"
                     Margin="-2,25,0,-25" />
             <Border
                     BorderThickness="0"
@@ -53,7 +53,7 @@
                              Height="80"
                              Width="250"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource HomeButtonMenu}"
                              FontSize="24"
                              Command="{Binding HomeViewCommand}" />
@@ -63,7 +63,7 @@
                              Height="80"
                              Width="140"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
                              Command="{Binding BioViewCommand}"
@@ -80,7 +80,7 @@
                              Height="80"
                              Width="90"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -91,7 +91,7 @@
                              Height="80"
                              Width="90"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -102,7 +102,7 @@
                              Height="80"
                              Width="150"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -113,7 +113,7 @@
                              Height="80"
                              Width="90"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -124,7 +124,7 @@
                              Height="80"
                              Width="90"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -135,7 +135,7 @@
                              Height="80"
                              Width="130"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -147,7 +147,7 @@
                              Height="80"
                              Width="145"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              IsChecked="{Binding ButtChecked}"
                              Style="{StaticResource CreationTabsMenu}"
@@ -190,7 +190,8 @@
                                   IsCheckable="True"
                                   Command="{Binding ThemeCommand}"
                                   CommandParameter="dark"
-                                  core:MenuItemExtensions.GroupName="Themes" />
+                                  core:MenuItemExtensions.GroupName="Themes"
+                                  Background="Transparent" />
                         <MenuItem Header="Light Mode"
                                   IsCheckable="True"
                                   Command="{Binding ThemeCommand}"

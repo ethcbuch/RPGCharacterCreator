@@ -149,6 +149,22 @@ namespace RPGCharacterCreator.MVVM.Model
 
     class LightTheme : Theme
     {
+        BrushConverter convert;
+
+        public LightTheme()
+        {
+            convert = new BrushConverter();
+
+            _backgroundColor = (Brush)convert.ConvertFromString("#E5E5E5");
+            _tabColor = (Brush)convert.ConvertFromString("#BFBFBF");
+            _borderColor1 = (Brush)convert.ConvertFromString("#565656");
+            _borderColor2 = (Brush)convert.ConvertFromString("#999999");
+            _buttonColor = (Brush)convert.ConvertFromString("#BFBFBF");
+            _textColor = (Brush)convert.ConvertFromString("#303030");
+
+
+        }
+
         private Brush _backgroundColor;
 
         public new Brush BackgroundColor

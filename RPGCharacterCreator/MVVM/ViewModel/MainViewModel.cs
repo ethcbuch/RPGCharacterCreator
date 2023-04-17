@@ -52,7 +52,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public ThemeFactory themeFactory { get; set; }
 
-        public Theme theme { get; set; }
+        private Theme _mainTheme;
+
+        public Theme MainTheme
+        {
+            get { return _mainTheme; }
+            set { _mainTheme = value; OnPropertyChanged(); }
+        }
+
 
         // _currentView of type object(allows for the storing of any type)
         private object _currentView;
@@ -116,7 +123,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             //Sets default dark theme
             themeFactory = new ThemeFactory();
 
-            theme = themeFactory.createTheme("dark");
+            MainTheme = themeFactory.createTheme("dark");
             homeVM.HomeTheme = themeFactory.createTheme("dark");
             bioVM.BioTheme = themeFactory.createTheme("dark");
             portraitVM.PortraitTheme = themeFactory.createTheme("dark");
@@ -137,7 +144,16 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             ThemeCommand = new RelayCommand(o =>
             {
-                theme = themeFactory.createTheme((string)o);
+                MainTheme = themeFactory.createTheme((string)o);
+                homeVM.HomeTheme = themeFactory.createTheme((string)o);
+                bioVM.BioTheme = themeFactory.createTheme((string)o);
+                portraitVM.PortraitTheme = themeFactory.createTheme((string)o);
+                classVM.ClassTheme = themeFactory.createTheme((string)o);
+                raceVM.RaceTheme = themeFactory.createTheme((string)o);
+                backgroundVM.BackgroundTheme = themeFactory.createTheme((string)o);
+                alignmentVM.AlignmentTheme = themeFactory.createTheme((string)o);
+                statsVM.StatsTheme = themeFactory.createTheme((string)o);
+                overviewVM.OverviewTheme = themeFactory.createTheme((string)o);
             });
 
             //lambda is ready to be called when button is clicked
