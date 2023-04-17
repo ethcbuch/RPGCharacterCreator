@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
@@ -29,51 +30,51 @@ namespace RPGCharacterCreator.MVVM.Model
 
     class Theme : ObservableObject
     {
-        private string _backgroundColor;
+        private Brush _backgroundColor;
 
-        public string BackgroundColor
+        public Brush BackgroundColor
         {
             get { return _backgroundColor; }
             set { _backgroundColor = value; OnPropertyChanged(); }
         }
-        private string _tabColor;
+        private Brush _tabColor;
 
-        public string TabColor
+        public Brush TabColor
         {
             get { return _tabColor; }
             set { _tabColor = value; OnPropertyChanged(); }
         }
 
-        private string _borderColor1;
+        private Brush _borderColor1;
 
-        public string BorderColor1
+        public Brush BorderColor1
         {
             get { return _borderColor1; }
             set { _borderColor1 = value; OnPropertyChanged(); }
         }
 
-        private string _borderColor2;
+        private Brush _borderColor2;
 
-        public string BorderColor2
+        public Brush BorderColor2
         {
             get { return _borderColor2; }
             set { _borderColor2 = value; OnPropertyChanged(); }
         }
 
-        private string _buttonColor;
+        private Brush _buttonColor;
 
-        public string ButtonColor
+        public Brush ButtonColor
         {
             get { return _buttonColor; }
             set { _buttonColor = value; OnPropertyChanged(); }
         }
 
-        private string _textColor;
+        private Brush _textColor1;
 
-        public string TextColor
+        public Brush TextColor1
         {
-            get { return _textColor; }
-            set { _textColor = value; OnPropertyChanged(); }
+            get { return _textColor1; }
+            set { _textColor1 = value; OnPropertyChanged(); }
         }
 
 
@@ -81,83 +82,106 @@ namespace RPGCharacterCreator.MVVM.Model
 
     class DarkTheme : Theme
     {
-        private string _backgroundColor;
+        BrushConverter convert;
 
-        public new string BackgroundColor
+        public DarkTheme()
+        {
+            convert = new BrushConverter();
+
+            _backgroundColor = (Brush)convert.ConvertFromString("#424549");
+            _tabColor = (Brush)convert.ConvertFromString("#36393E");
+            _borderColor1 = (Brush)convert.ConvertFromString("#1E2124");
+            _borderColor2 = (Brush)convert.ConvertFromString("#A0A0A0");
+            _buttonColor = (Brush)convert.ConvertFromString("#36393E");
+
+
+        }
+
+        private Brush _backgroundColor { get; set; }
+        public new Brush BackgroundColor
         {
             get { return _backgroundColor; }
             set { _backgroundColor = value; OnPropertyChanged(); }
         }
-        private string _tabColor;
+        private Brush _tabColor;
 
-        public new string TabColor
+        public new Brush TabColor
         {
             get { return _tabColor; }
             set { _tabColor = value; OnPropertyChanged(); }
         }
 
-        private string _borderColor1 = "#36393E";
+        private Brush _borderColor1;
 
-        public new string BorderColor1
+        public new Brush BorderColor1
         {
             get { return _borderColor1; }
             set { _borderColor1 = value; OnPropertyChanged(); }
         }
 
-        private string _borderColor2;
+        private Brush _borderColor2;
 
-        public new string BorderColor2
+        public new Brush BorderColor2
         {
             get { return _borderColor2; }
             set { _borderColor2 = value; OnPropertyChanged(); }
         }
 
-        private string _buttonColor;
+        private Brush _buttonColor;
 
-        public new string ButtonColor
+        public new Brush ButtonColor
         {
             get { return _buttonColor; }
             set { _buttonColor = value; OnPropertyChanged(); }
         }
 
-        private string _textColor;
+        private Brush _textColor1;
 
-        public new string TextColor
+        public new Brush TextColor1
         {
-            get { return _textColor; }
-            set { _textColor = value; OnPropertyChanged(); }
+            get { return _textColor1; }
+            set { _textColor1 = value; OnPropertyChanged(); }
         }
+
+        private Brush _textColor2;
+
+        public new Brush TextColor2
+        {
+            get { return _textColor2; }
+            set { _textColor2 = value; OnPropertyChanged(); }
+        }
+
 
     }
 
     class LightTheme : Theme
     {
-        private string _backgroundColor;
+        private Brush _backgroundColor;
 
-        public new string BackgroundColor
+        public new Brush BackgroundColor
         {
             get { return _backgroundColor; }
             set { _backgroundColor = value; OnPropertyChanged(); }
         }
-        private string _tabColor;
+        private Brush _tabColor;
 
-        public new string TabColor
+        public new Brush TabColor
         {
             get { return _tabColor; }
             set { _tabColor = value; OnPropertyChanged(); }
         }
 
-        private string _borderColor1;
+        private Brush _borderColor1;
 
-        public new string BorderColor1
+        public new Brush BorderColor1
         {
             get { return _borderColor1; }
             set { _borderColor1 = value; OnPropertyChanged(); }
         }
 
-        private string _borderColor2;
+        private Brush _borderColor2;
 
-        public new string BorderColor2
+        public new Brush BorderColor2
         {
             get { return _borderColor2; }
             set { _borderColor2 = value; OnPropertyChanged(); }
@@ -165,17 +189,17 @@ namespace RPGCharacterCreator.MVVM.Model
 
 
 
-        private string _buttonColor;
+        private Brush _buttonColor;
 
-        public new string ButtonColor
+        public new Brush ButtonColor
         {
             get { return _buttonColor; }
             set { _buttonColor = value; OnPropertyChanged(); }
         }
 
-        private string _textColor;
+        private Brush _textColor;
 
-        public new string TextColor
+        public new Brush TextColor
         {
             get { return _textColor; }
             set { _textColor = value; OnPropertyChanged(); }
