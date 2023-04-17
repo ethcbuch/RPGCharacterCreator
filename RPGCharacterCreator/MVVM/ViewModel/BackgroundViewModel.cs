@@ -9,6 +9,15 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand SageButtonCommand { get; set; }
 
+
+        private Theme _backgroundTheme;
+
+        public Theme BackgroundTheme
+        {
+            get { return _backgroundTheme; }
+            set { _backgroundTheme = value; }
+        }
+
         private Background _aBackground;
 
         public Background ABackground

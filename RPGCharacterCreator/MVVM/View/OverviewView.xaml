@@ -40,11 +40,11 @@
                 Height="610"
                 Grid.Column="1"
                 BorderThickness="2"
-                BorderBrush="#A0A0A0">
+                BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}">
             <TextBlock TextWrapping="Wrap"
                        Background="Transparent"
                        FontFamily="Franklin Gothic Medium"
-                       Foreground="White"
+                       Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                        FontSize="16"
                        Text="{Binding OverviewBio.CharBio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Padding="2,0,0,0">
@@ -56,7 +56,7 @@
                     Grid.ColumnSpan="2">
 
             <Label Content="{Binding OverviewBio.CharName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                   Foreground="White"
+                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontFamily="Franklin Gothic Heavy"
                    FontSize="72"
                    Height="90"
@@ -67,7 +67,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="2">
 
-            <Border BorderBrush="#A0A0A0"
+            <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="3"
                     Height="155">
                 <Grid>
@@ -76,17 +76,17 @@
                                    Margin="0,0,28.873,0"
                                    Height="20"
                                    Background="Transparent"
-                                   Foreground="White"
+                                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="14" />
-                        <Border BorderBrush="#A0A0A0"
+                        <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                                 BorderThickness="2"
                                 Height="3"
                                 Margin="0,0,28.927,0" />
                         <Label Content="GENDER"
                                Margin="0,0,-0.073,0"
                                FontFamily="Franklin Gothic Heavy"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="14" />
                     </StackPanel>
                     <StackPanel Margin="152,7,287.727,98.109">
@@ -94,17 +94,17 @@
                                    Text="{Binding OverviewRace.RaceName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
-                                   Foreground="White"
+                                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="14" />
-                        <Border BorderBrush="#A0A0A0"
+                        <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                                 BorderThickness="3"
                                 Height="3"
                                 Margin="0,0,28.927,0" />
                         <Label Content="RACE"
                                Margin="0,0,-0.073,0"
                                FontFamily="Franklin Gothic Heavy"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="14" />
                     </StackPanel>
                     <StackPanel Margin="302,7,137.727,98.109">
@@ -112,18 +112,18 @@
                                    Text="{Binding OverviewClass.ClassName, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
-                                   Foreground="White"
+                                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="14">
                         </TextBlock>
-                        <Border BorderBrush="#A0A0A0"
+                        <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                                 BorderThickness="3"
                                 Height="3"
                                 Margin="0,0,28.927,0" />
                         <Label Content="CLASS"
                                Margin="0,0,-0.073,0"
                                FontFamily="Franklin Gothic Heavy"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="14" />
                     </StackPanel>
                     <StackPanel Margin="440,7,-0.273,98.109">
@@ -131,17 +131,17 @@
                                    Text="{Binding OverviewBackground.BackgroundName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
-                                   Foreground="White"
+                                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="14" />
-                        <Border BorderBrush="#A0A0A0"
+                        <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                                 BorderThickness="3"
                                 Height="3"
                                 Margin="0,0,9.873,0" />
                         <Label Content="BACKGROUND"
                                Margin="0,0,-0.073,0"
                                FontFamily="Franklin Gothic Heavy"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="14" />
                     </StackPanel>
                     <StackPanel Margin="10,87,429.727,18.109">
@@ -149,17 +149,17 @@
                                    Text="{Binding OverviewBio.CharAge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
-                                   Foreground="White"
+                                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="18" />
-                        <Border BorderBrush="#A0A0A0"
+                        <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                                 BorderThickness="3"
                                 Height="3"
                                 Margin="0,0,28.927,0" />
                         <Label Content="AGE"
                                Margin="0,0,-0.073,0"
                                FontFamily="Franklin Gothic Heavy"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="14" />
                     </StackPanel>
                     <StackPanel Margin="160,87,279.727,18.109">
@@ -167,17 +167,17 @@
                                    Text="{Binding OverviewBio.CharBirthday, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
-                                   Foreground="White"
+                                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="14" />
-                        <Border BorderBrush="#A0A0A0"
+                        <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                                 BorderThickness="3"
                                 Height="3"
                                 Margin="0,0,28.927,0" />
                         <Label Content="BIRTHDAY"
                                Margin="0,0,-0.073,0"
                                FontFamily="Franklin Gothic Heavy"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="14" />
                     </StackPanel>
                     <StackPanel Margin="323,87,59.727,18.109">
@@ -185,17 +185,17 @@
                                    Text="{Binding OverviewAlignment.AlignmentName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                    Margin="0,0,28.873,0"
                                    Height="20"
-                                   Foreground="White"
+                                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                    FontFamily="Franklin Gothic Medium Cond"
                                    FontSize="14" />
-                        <Border BorderBrush="#A0A0A0"
+                        <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                                 BorderThickness="3"
                                 Height="3"
                                 Margin="0,0,28.927,0" />
                         <Label Content="ALIGNMENT"
                                Margin="0,0,-0.073,0"
                                FontFamily="Franklin Gothic Heavy"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="14" />
                     </StackPanel>
                 </Grid>
@@ -206,19 +206,19 @@
                     Grid.Row="2"
                     Grid.RowSpan="2"
                     Margin="0,0,0,10">
-            <Border BorderBrush="#A0A0A0"
+            <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="2"
                     Height="370">
                 <Grid>
                     <TextBlock HorizontalAlignment="Left"
                                Margin="8,12,0,0"
-                               Background="#36393E"
+                               Background="{Binding OverviewTheme.ButtonColor, UpdateSourceTrigger=PropertyChanged}"
                                TextWrapping="Wrap"
                                Text="{Binding OverviewStats.Strength, UpdateSourceTrigger=PropertyChanged}"
                                TextAlignment="Center"
                                Padding="5,10,5,5"
                                FontSize="23"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                VerticalAlignment="Top"
                                Height="44"
                                Width="45"
@@ -232,16 +232,16 @@
                            Height="44"
                            Width="138"
                            FontFamily="Franklin Gothic Heavy"
-                           Foreground="White"
+                           Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="22" />
                     <TextBlock HorizontalAlignment="Left"
                                Margin="8,63,0,0"
-                               Background="#36393E"
+                               Background="{Binding OverviewTheme.ButtonColor, UpdateSourceTrigger=PropertyChanged}"
                                Text="{Binding OverviewStats.Dexterity}"
                                TextAlignment="Center"
                                Padding="5,10,5,5"
                                FontSize="23"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                VerticalAlignment="Top"
                                Height="43"
                                Width="45"
@@ -254,16 +254,16 @@
                            Height="43"
                            Width="135"
                            FontFamily="Franklin Gothic Heavy"
-                           Foreground="White"
+                           Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="22" />
                     <TextBlock HorizontalAlignment="Left"
                                Margin="8,112,0,0"
-                               Background="#36393E"
+                               Background="{Binding OverviewTheme.ButtonColor, UpdateSourceTrigger=PropertyChanged}"
                                Text="{Binding OverviewStats.Intelligence}"
                                TextAlignment="Center"
                                Padding="5,10,5,5"
                                FontSize="23"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                VerticalAlignment="Top"
                                Height="43"
                                Width="45"
@@ -277,16 +277,16 @@
                            Height="43"
                            Width="138"
                            FontFamily="Franklin Gothic Heavy"
-                           Foreground="White"
+                           Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="19" />
                     <TextBlock HorizontalAlignment="Left"
                                Margin="8,163,0,0"
-                               Background="#36393E"
+                               Background="{Binding OverviewTheme.ButtonColor, UpdateSourceTrigger=PropertyChanged}"
                                Text="{Binding OverviewStats.Wisdom}"
                                TextAlignment="Center"
                                Padding="5,10,5,5"
                                FontSize="23"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                VerticalAlignment="Top"
                                Height="43"
                                Width="45"
@@ -300,16 +300,16 @@
                            Height="43"
                            Width="138"
                            FontFamily="Franklin Gothic Heavy"
-                           Foreground="White"
+                           Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="22" />
                     <TextBlock HorizontalAlignment="Left"
                                Margin="8,213,0,0"
-                               Background="#36393E"
+                               Background="{Binding OverviewTheme.ButtonColor, UpdateSourceTrigger=PropertyChanged}"
                                Text="{Binding OverviewStats.Constitution}"
                                TextAlignment="Center"
                                Padding="5,10,5,5"
                                FontSize="23"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                VerticalAlignment="Top"
                                Height="43"
                                Width="45"
@@ -323,16 +323,16 @@
                            Height="43"
                            Width="138"
                            FontFamily="Franklin Gothic Heavy"
-                           Foreground="White"
+                           Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="19" />
                     <TextBlock HorizontalAlignment="Left"
                                Margin="8,262,0,0"
-                               Background="#36393E"
+                               Background="{Binding OverviewTheme.ButtonColor, UpdateSourceTrigger=PropertyChanged}"
                                Text="{Binding OverviewStats.Charisma}"
                                TextAlignment="Center"
                                Padding="5,10,5,5"
                                FontSize="23"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                VerticalAlignment="Top"
                                Height="43"
                                Width="45"
@@ -346,16 +346,16 @@
                            Height="43"
                            Width="138"
                            FontFamily="Franklin Gothic Heavy"
-                           Foreground="White"
+                           Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="22" />
                     <TextBlock HorizontalAlignment="Left"
                                Margin="8,312,0,0"
-                               Background="#36393E"
+                               Background="{Binding OverviewTheme.ButtonColor, UpdateSourceTrigger=PropertyChanged}"
                                Text="{Binding OverviewStats.Luck}"
                                TextAlignment="Center"
                                Padding="5,10,5,5"
                                FontSize="23"
-                               Foreground="White"
+                               Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                                VerticalAlignment="Top"
                                Height="44"
                                Width="45"
@@ -369,7 +369,7 @@
                            Height="44"
                            Width="138"
                            FontFamily="Franklin Gothic Heavy"
-                           Foreground="White"
+                           Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="22" />
 
                 </Grid>
@@ -377,7 +377,7 @@
         </StackPanel>
         <StackPanel Grid.Column="3"
                     Grid.Row="2">
-            <Border BorderBrush="#A0A0A0"
+            <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="2"
                     Height="190"
                     Width="365" />
@@ -385,14 +385,14 @@
         <StackPanel Grid.Column="3"
                     Grid.Row="3"
                     Margin="0,0,0,10">
-            <Border BorderBrush="#A0A0A0"
+            <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="2"
                     Height="180" />
         </StackPanel>
         <RadioButton x:Name="finalizeButton"
                      Content="FINISH CHARACTER CREATION"
                      FontFamily="Franklin Gothic Heavy"
-                     Foreground="White"
+                     Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                      HorizontalContentAlignment="Center"
                      Style="{StaticResource FinalButtonMenu}"
                      FontSize="26"
@@ -403,7 +403,7 @@
         <RadioButton x:Name="finaliseEditButton"
                      Content="FINISH EDITING CHARACTER"
                      FontFamily="Franklin Gothic Heavy"
-                     Foreground="White"
+                    Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                      HorizontalContentAlignment="Center"
                      Style="{StaticResource FinalButtonMenu}"
                      FontSize="26"

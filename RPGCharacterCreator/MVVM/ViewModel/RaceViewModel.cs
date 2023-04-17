@@ -14,6 +14,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand DwarfButtonCommand { get; set; }
 
+        private Theme _raceTheme;
+
+        public Theme RaceTheme
+        {
+            get { return _raceTheme; }
+            set { _raceTheme = value; }
+        }
+
         private Race _aRace;
 
         public Race ARace

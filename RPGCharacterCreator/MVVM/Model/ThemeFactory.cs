@@ -69,12 +69,12 @@ namespace RPGCharacterCreator.MVVM.Model
             set { _buttonColor = value; OnPropertyChanged(); }
         }
 
-        private Brush _textColor1;
+        private Brush _textColor;
 
-        public Brush TextColor1
+        public Brush TextColor
         {
-            get { return _textColor1; }
-            set { _textColor1 = value; OnPropertyChanged(); }
+            get { return _textColor; }
+            set { _textColor = value; OnPropertyChanged(); }
         }
 
 
@@ -93,6 +93,7 @@ namespace RPGCharacterCreator.MVVM.Model
             _borderColor1 = (Brush)convert.ConvertFromString("#1E2124");
             _borderColor2 = (Brush)convert.ConvertFromString("#A0A0A0");
             _buttonColor = (Brush)convert.ConvertFromString("#36393E");
+            _textColor = (Brush)convert.ConvertFromString("#FFFFFF");
 
 
         }
@@ -135,20 +136,12 @@ namespace RPGCharacterCreator.MVVM.Model
             set { _buttonColor = value; OnPropertyChanged(); }
         }
 
-        private Brush _textColor1;
+        private Brush _textColor;
 
-        public new Brush TextColor1
+        public new Brush TextColor
         {
-            get { return _textColor1; }
-            set { _textColor1 = value; OnPropertyChanged(); }
-        }
-
-        private Brush _textColor2;
-
-        public new Brush TextColor2
-        {
-            get { return _textColor2; }
-            set { _textColor2 = value; OnPropertyChanged(); }
+            get { return _textColor; }
+            set { _textColor = value; OnPropertyChanged(); }
         }
 
 
@@ -199,7 +192,7 @@ namespace RPGCharacterCreator.MVVM.Model
 
         private Brush _textColor;
 
-        public new Brush TextColor
+        public Brush TextColor
         {
             get { return _textColor; }
             set { _textColor = value; OnPropertyChanged(); }

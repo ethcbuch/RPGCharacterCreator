@@ -1,4 +1,5 @@
 ﻿using RPGCharacterCreator.Core;
+using RPGCharacterCreator.MVVM.Model;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,6 +23,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 _tempBio = value;
                 OnPropertyChanged();
             }
+        }
+
+        private Theme _bioTheme;
+
+        public Theme BioTheme
+        {
+            get { return _bioTheme; }
+            set { _bioTheme = value; }
         }
 
 

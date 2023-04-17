@@ -113,9 +113,19 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             alignmentVM = new AlignmentViewModel();
             overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM);
 
+            //Sets default dark theme
             themeFactory = new ThemeFactory();
 
             theme = themeFactory.createTheme("dark");
+            homeVM.HomeTheme = themeFactory.createTheme("dark");
+            bioVM.BioTheme = themeFactory.createTheme("dark");
+            portraitVM.PortraitTheme = themeFactory.createTheme("dark");
+            classVM.ClassTheme = themeFactory.createTheme("dark");
+            raceVM.RaceTheme = themeFactory.createTheme("dark");
+            backgroundVM.BackgroundTheme = themeFactory.createTheme("dark");
+            alignmentVM.AlignmentTheme = themeFactory.createTheme("dark");
+            statsVM.StatsTheme = themeFactory.createTheme("dark");
+            overviewVM.OverviewTheme = themeFactory.createTheme("dark");
 
             builder = new GeneralCharacterBuilder();
 

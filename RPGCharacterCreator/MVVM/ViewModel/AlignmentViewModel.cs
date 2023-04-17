@@ -13,6 +13,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand LawfulGoodButtonCommand { get; set; }
         public RelayCommand ChaoticEvilButtonCommand { get; set; }
 
+        private Theme _alignmentTheme;
+
+        public Theme AlignmentTheme
+        {
+            get { return _alignmentTheme; }
+            set { _alignmentTheme = value; }
+        }
+
         private Alignment _aAlignment;
         public Alignment AAlignment
         {

@@ -20,7 +20,7 @@
     </Window.DataContext>
     
     <Border x:Name="windowBackground"
-            Background="#424549"
+            Background="{Binding theme.BackgroundColor}"
             CornerRadius="10">
 
         <Grid>
