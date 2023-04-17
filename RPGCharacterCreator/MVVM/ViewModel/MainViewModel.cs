@@ -33,6 +33,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand AlignmentViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
+        public RelayCommand ThemeCommand { get; set; }
 
         //properties with type of view to to be shown(home,bio,class,overview)
         public HomeViewModel homeVM { get; set; }
@@ -48,6 +49,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public OverviewViewModel overviewVM { get; set; }
 
         public AlignmentViewModel alignmentVM { get; set; }
+
+        public ThemeFactory themeFactory { get; set; }
+
+        public Theme theme { get; set; }
 
         // _currentView of type object(allows for the storing of any type)
         private object _currentView;
@@ -108,6 +113,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             alignmentVM = new AlignmentViewModel();
             overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM);
 
+            
+
             builder = new GeneralCharacterBuilder();
 
             director = new CharacterDirector(builder);
@@ -115,6 +122,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             //the users view will be automatically be set to the homeVM
             CurrentView = homeVM;
 
+
+            ThemeCommand = new RelayCommand(o =>
+            {
+                theme = themeFactory.createTheme((string)o);
+            });
 
             //lambda is ready to be called when button is clicked
             HomeViewCommand = new RelayCommand(o =>

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RPGCharacterCreator"
         xmlns:view="clr-namespace:RPGCharacterCreator.MVVM.View"
         xmlns:viewmodel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
+        xmlns:core="clr-namespace:RPGCharacterCreator.Core"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="730"
@@ -17,7 +18,7 @@
     <Window.DataContext>
         <viewmodel:MainViewModel />
     </Window.DataContext>
-
+    
     <Border x:Name="windowBackground"
             Background="#424549"
             CornerRadius="10">
@@ -32,9 +33,9 @@
             </Grid.RowDefinitions>
 
             <Border x:Name="headerBorder"
-                    Background="#36393E"
+                    Background="{Binding theme.BorderColor1}"
                     Margin="-2,25,2,-25" />
-            <Border BorderBrush="#2F3236"
+            <Border
                     BorderThickness="0"
                     Background="#2F3236"
                     Margin="0,0,0,55" />
@@ -165,7 +166,6 @@
                     HorizontalAlignment="Left"
                     Margin="1254,2,0,0"
                     FontSize="13"
-                    
                     VerticalAlignment="Top"
                     Foreground="White"
                     Height="21"
@@ -173,6 +173,36 @@
                     Click="Button_Click"
                     Background="#FFEF0000"
                     FontWeight="Bold" />
+            <Menu DockPanel.Dock="Top"
+                  Margin="0,0,1255,55"
+                  Background="{x:Null}">
+                <MenuItem Width="24"
+                          Height="25"
+                          Background="#2F3236"
+                          BorderThickness="0">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/Gear.png"
+                               Margin="-4,-4,-4,-4" />
+                    </MenuItem.Icon>
+                    <MenuItem Header="Themes">
+                        <MenuItem Header="Dark Mode"
+                                  IsChecked="True"
+                                  IsCheckable="True"
+                                  Command="{Binding ThemeCommand}"
+                                  CommandParameter="dark"
+                                  core:MenuItemExtensions.GroupName="Themes" />
+                        <MenuItem Header="Light Mode"
+                                  IsCheckable="True"
+                                  Command="{Binding ThemeCommand}"
+                                  CommandParameter="light"
+                                  core:MenuItemExtensions.GroupName="Themes" />
+
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Header="DM Mode"
+                              IsCheckable="True" />
+                </MenuItem>
+            </Menu>
 
 
 

@@ -15,7 +15,7 @@
             <ColumnDefinition Width="880" />
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer Margin="0,0,0,90">
+        <ScrollViewer Margin="0,0,0,85">
             <StackPanel>
                 <ItemsControl x:Name="characterControl"
                               ItemsSource="{Binding CharCollection, UpdateSourceTrigger=PropertyChanged}"
@@ -450,11 +450,11 @@
                FontSize="28"
                Visibility="{Binding LabelVis}"
                FontFamily="Franklin Gothic Heavy" />
-        <StackPanel Margin="0,535,0,0"
+        <StackPanel Margin="0,545,0,0"
                     Orientation="Horizontal">
             <RadioButton x:Name="editButton"
                          Content="EDIT"
-                         Height="95"
+                         Height="83"
                          Width="200"
                          FontFamily="Franklin Gothic Heavy"
                          Foreground="White"
@@ -463,7 +463,7 @@
                          Command="{Binding EditCharacterCommand}"/>
             <RadioButton x:Name="deleteButton"
                          Content="DELETE"
-                         Height="95"
+                         Height="83"
                          Width="200"
                          FontFamily="Franklin Gothic Heavy"
                          Foreground="White"
