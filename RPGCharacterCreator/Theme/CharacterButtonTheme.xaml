@@ -13,20 +13,30 @@
                               HorizontalAlignment="Stretch"
                               Background="{TemplateBinding Background}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="{Binding characterPortrait.PortraitPath}"
-                                       Height="65"
-                                       Width="65"
-                                       Margin="5,0,0,0" />
+                                <Border BorderBrush="{Binding Path=DataContext.HomeTheme.BorderColor2, ElementName = characterControl, UpdateSourceTrigger=PropertyChanged}"
+                                        BorderThickness="2"
+                                        Height="65"
+                                        Width="65"
+                                        Margin="5,0,0,0">
+                                    <Image Source="{Binding characterPortrait.PortraitPath}"
+                                           Height="65"
+                                           Width="65"
+                                           Margin="0,0,0,0" />
+
+                                </Border>
+                              
                                 <StackPanel Orientation="Vertical">
                                     <Label x:Name="nameLabel"
                                            Content="{TemplateBinding Property=Content}"
                                            Foreground="White"
                                            FontFamily="Franklin Gothic Heavy"
                                            FontSize="21" 
+                                           Margin="3"
                                            Padding="5,5,0,0"/>
                                     <TextBlock
                                         FontSize="21"
-                                        Padding="5,5,0,0">
+                                        Padding="5,5,0,0"
+                                        Margin="3">
                                         <Run Text="{Binding characterRace.RaceName}" />
                                         <Run Text="{Binding characterClass.ClassName}" />
                                     </TextBlock>

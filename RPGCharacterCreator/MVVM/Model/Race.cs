@@ -1,6 +1,11 @@
-﻿using RPGCharacterCreator.Core;
+﻿using RPGCharacterCreator;
+using RPGCharacterCreator.Core;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
+[XmlInclude(typeof(Human))]
+
+[XmlInclude(typeof(Dwarf))]
 public class Race : ObservableObject
 {
     private string _raceName { get; set; }

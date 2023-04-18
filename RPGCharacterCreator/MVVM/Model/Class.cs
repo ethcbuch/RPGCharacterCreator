@@ -1,9 +1,15 @@
 ﻿using RPGCharacterCreator.Core;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 
 namespace RPGCharacterCreator
 {
+
+
+    [XmlInclude(typeof(Warrior))]
+
+    [XmlInclude(typeof(Rogue))]
     public class Class : ObservableObject
     {
         private string _className { get; set; }

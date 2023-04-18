@@ -67,8 +67,8 @@
                 <ColumnDefinition Width="374" />
                 <ColumnDefinition Width="0*" />
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="LightGray"
-                    BorderThickness="2"
+            <Border BorderBrush="{Binding HomeTheme.BorderColor2}"
+                    BorderThickness="3"
                     Margin="10,10,0,170"
                     Grid.RowSpan="3"
                     HorizontalAlignment="Left"
@@ -81,7 +81,7 @@
                     Margin="11,30,35,0"
                     Height="335"
                     BorderThickness="2"
-                    BorderBrush="LightGray"
+                    BorderBrush="{Binding HomeTheme.BorderColor2}"
                     Grid.Row="2">
                 <TextBlock TextWrapping="Wrap"
                            Background="Transparent"

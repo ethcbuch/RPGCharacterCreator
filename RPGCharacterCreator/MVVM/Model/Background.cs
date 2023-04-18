@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
+
+    [XmlInclude(typeof(Noble))]
+    [XmlInclude(typeof(Sage))]
     public class Background : ObservableObject
     {
         private string _backgroundName { get; set; }

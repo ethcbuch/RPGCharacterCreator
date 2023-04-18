@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
     class SkillsViewModel : ObservableObject
     {
-        private Skills _charSkills;
+        private Skills _charSkills = new Skills();
 
         public Skills CharSkills
         {
@@ -29,5 +30,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             get { return _skillsTheme; }
             set { _skillsTheme = value; OnPropertyChanged(); }
         }
+
+
     }
 }

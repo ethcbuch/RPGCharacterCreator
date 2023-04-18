@@ -1,43 +1,48 @@
-﻿<UserControl x:Class="RPGCharacterCreator.MVVM.View.SkillsView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:RPGCharacterCreator.MVVM.View"
+             xmlns:Model="clr-namespace:RPGCharacterCreator.MVVM.Model"
+             xmlns:ViewModel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
+             x:Class="RPGCharacterCreator.MVVM.View.SkillsView"
              mc:Ignorable="d"
              d:DesignHeight="630"
              d:DesignWidth="1280">
     <Grid>
-        <ListView x:Name="traits"
+        <ItemsControl x:Name="chosenSkills2"
                       Background="Transparent"
-                  ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
-                      Margin="30,80,700,35">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock FontFamily="Franklin Gothic Medium"
-                               Foreground="{Binding Path=DataContext.SkillsTheme.TextColor, ElementName=traits,UpdateSourceTrigger=PropertyChanged}"
-                               Text="{Binding UpdateSourceTrigger=PropertyChanged}"
-                               FontSize="18"
-                               Height="28"
-                               Width="260"
-                               Margin="5,0,4.2,0"
-                               Padding="2,0,0,0" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>
-        <ItemsControl x:Name="traits_Copy"
-                      Background="Transparent"
-                      ItemsSource="{Binding  CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
                       Margin="700,80,30,35">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock FontFamily="Franklin Gothic Medium"
-                               Foreground="{Binding DataContext.SkillsTheme.TextColor, ElementName=traits, UpdateSourceTrigger=PropertyChanged}"
-                               Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                    <RadioButton FontFamily="Franklin Gothic Medium"
+                                 Foreground="{Binding DataContext.SkillsTheme.TextColor, ElementName=chosenSkills, UpdateSourceTrigger=PropertyChanged}"
+                                 Content="{Binding UpdateSourceTrigger=PropertyChanged}"
+                                 FontSize="18"
+                                 Height="28"
+                                 Width="260"
+                                 Style="{StaticResource CreationTabsMenu}"
+                                 Margin="5,0,4.2,0"
+                                 Padding="2,0,0,0" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
+        <ItemsControl x:Name="chosenSkills"
+                      Background="Transparent"
+                      ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
+                      Margin="30,80,700,35">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <RadioButton FontFamily="Franklin Gothic Medium"
+                               Foreground="{Binding DataContext.SkillsTheme.TextColor, ElementName=chosenSkills, UpdateSourceTrigger=PropertyChanged}"
+                               Content="{Binding UpdateSourceTrigger=PropertyChanged}"
                                FontSize="18"
                                Height="28"
                                Width="260"
+                                 Style="{StaticResource CreationTabsMenu}"
                                Margin="5,0,4.2,0"
                                Padding="2,0,0,0" />
                 </DataTemplate>

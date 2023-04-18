@@ -127,6 +127,20 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             alignmentVM = new AlignmentViewModel();
             overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM);
 
+            //Read from the xml file the characters created in previous sessions
+            XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
+            using (StreamReader rd = new StreamReader("characters.xml"))
+            {
+                homeVM.CharCollection = xs.Deserialize(rd) as ObservableCollection<GeneralCharacter>;
+            }
+
+            characterCount = homeVM.CharCollection.Count;
+
+            if (characterCount > 0) 
+            {
+                homeVM.LabelVis = Visibility.Hidden;
+            }
+
             //Sets default dark theme
             themeFactory = new ThemeFactory();
 
@@ -167,7 +181,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             //lambda is ready to be called when button is clicked
             HomeViewCommand = new RelayCommand(o =>
-            {
+            { 
+
                 CurrentView = homeVM;
                 bioVM.TempBio = new Bio();
                 portraitVM.APortrait = new Portrait();
@@ -306,6 +321,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
             homeVM.CharCollection[homeVM.currentCharacterIndex] = director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, overviewVM.OverviewStats, overviewVM.OverviewAlignment, homeVM.currentCharacterIndex);
 
+            director.getBuilder().reset();
+
             //resets everything for next character
             overviewVM.OverviewBio = new Bio();
             overviewVM.OverviewPortrait = new Portrait();
@@ -338,9 +355,18 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             CloseCommand = new RelayCommand(o =>
             {
+                //Reads charCollection to xml file
+                var serializer = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
+                using (TextWriter writer = new StreamWriter("characters.xml"))
+                {
+                    serializer.Serialize(writer, homeVM.CharCollection);
+                }
 
                 System.Windows.Application.Current.Shutdown();
             });
+
+
+            
 
         }
     }

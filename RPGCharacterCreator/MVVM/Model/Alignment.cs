@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml.Serialization;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
+
+
+    [XmlInclude(typeof(ChaoticEvil))]
+    [XmlInclude(typeof(LawfulGood))]
     //class for alignment for the character
     public class Alignment : ObservableObject
     {
