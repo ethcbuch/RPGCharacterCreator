@@ -8,21 +8,11 @@
              d:DesignHeight="630"
              d:DesignWidth="1280">
     <Grid>
-        <ItemsControl x:Name="traits"
+        <ListView x:Name="traits"
                       Background="Transparent"
                   ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
                       Margin="30,80,700,35">
-            <ItemsControl.Items>
-                <TextBlock FontFamily="Franklin Gothic Medium"
-                           Foreground="{Binding Path=DataContext.SkillsTheme.TextColor, ElementName=traits,UpdateSourceTrigger=PropertyChanged}"
-                           Text="{Binding UpdateSourceTrigger=PropertyChanged}"
-                           FontSize="18"
-                           Height="28"
-                           Width="260"
-                           Margin="5,0,4.2,0"
-                           Padding="2,0,0,0" />
-            </ItemsControl.Items>
-            <ItemsControl.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock FontFamily="Franklin Gothic Medium"
                                Foreground="{Binding Path=DataContext.SkillsTheme.TextColor, ElementName=traits,UpdateSourceTrigger=PropertyChanged}"
@@ -33,9 +23,9 @@
                                Margin="5,0,4.2,0"
                                Padding="2,0,0,0" />
                 </DataTemplate>
-            </ItemsControl.ItemTemplate>
+            </ListView.ItemTemplate>
 
-        </ItemsControl>
+        </ListView>
         <ItemsControl x:Name="traits_Copy"
                       Background="Transparent"
                       ItemsSource="{Binding  CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
