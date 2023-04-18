@@ -10,10 +10,11 @@
              d:DesignHeight="630"
              d:DesignWidth="1280">
     <Grid>
-        <ItemsControl x:Name="chosenSkills2"
+        <ItemsControl x:Name="skillsList"
                       Background="Transparent"
                       ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
-                      Margin="700,80,30,35">
+                      Margin="30,80,700,35"
+                      AlternationCount="40">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <RadioButton FontFamily="Franklin Gothic Medium"
@@ -33,7 +34,7 @@
         <ItemsControl x:Name="chosenSkills"
                       Background="Transparent"
                       ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
-                      Margin="30,80,700,35">
+                      Margin="700,80,30,35">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <RadioButton FontFamily="Franklin Gothic Medium"
