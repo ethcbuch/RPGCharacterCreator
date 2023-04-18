@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
- 
+        // Builder class interface for the creation of a character
         interface CharacterBuilder
         {
             void reset();
@@ -33,6 +33,7 @@ namespace RPGCharacterCreator.MVVM.Model
 
         }
 
+        // concrete class for the builder design pattern for creating a general character
         internal class GeneralCharacterBuilder : CharacterBuilder
         {
 

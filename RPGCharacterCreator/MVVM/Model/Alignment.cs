@@ -27,7 +27,7 @@ namespace RPGCharacterCreator.MVVM.Model
         }
     }
 
-    //Class for Lawful good (concrete class which inheirts from the Alignment class)
+    //class for Lawful good (concrete class which inheirts from the Alignment class)
     internal class LawfulGood : Alignment
     {
         private string _alignmentName = "Lawful Good";
@@ -46,8 +46,7 @@ namespace RPGCharacterCreator.MVVM.Model
         }
     }
 
-
-    //Class for Chaotic Evil (concrete class which inheirts from the Alignment class)
+    //class for Chaotic Evil (concrete class which inheirts from the Alignment class)
     internal class ChaoticEvil : Alignment
     {
         private string _alignmentName = "Chaotic Evil";
@@ -66,7 +65,7 @@ namespace RPGCharacterCreator.MVVM.Model
     }
 
 
-
+    //class for Lawful Neutral (concrete class which inheirts from the Alignment class)
     internal class LawfulNeutral : Alignment
     {
         private string _alignmentName = "Lawful Neutral";
@@ -86,7 +85,7 @@ namespace RPGCharacterCreator.MVVM.Model
     }
 
 
-
+    //class for True Neutral (concrete class which inheirts from the Alignment class)
     internal class TrueNeutral : Alignment
     {
         private string _alignmentName = "Neutral";
@@ -105,7 +104,7 @@ namespace RPGCharacterCreator.MVVM.Model
         }
     }
 
-
+    //class for Chaotic Neutral (concrete class which inheirts from the Alignment class)
     internal class ChaoticNeutral : Alignment
     {
         private string _alignmentName = "Chaotic Neutral";
@@ -124,7 +123,7 @@ namespace RPGCharacterCreator.MVVM.Model
         }
     }
 
-
+    //class for Lawful Evil (concrete class which inheirts from the Alignment class)
     internal class LawfulEvil : Alignment
     {
         private string _alignmentName = "Lawful Evil";
@@ -142,7 +141,7 @@ namespace RPGCharacterCreator.MVVM.Model
             set { _alignmentDescription = value; OnPropertyChanged(); }
         }
     }
-    // Class for Neutral Good (concrete class which inherits from the Alignment class)
+    //class for Neutral Good (concrete class which inherits from the Alignment class)
     internal class NeutralGood : Alignment
     {
         private string _alignmentName = "Neutral Good";
@@ -161,7 +160,7 @@ namespace RPGCharacterCreator.MVVM.Model
         }
     }
 
-    // Class for Chaotic Good (concrete class which inherits from the Alignment class)
+    // class for Chaotic Good (concrete class which inherits from the Alignment class)
     internal class ChaoticGood : Alignment
     {
         private string _alignmentName = "Chaotic Good";
@@ -180,6 +179,7 @@ namespace RPGCharacterCreator.MVVM.Model
         }
     }
 
+    // class for Neutral Evil (concrete class which inherits from the Alignment class)
     internal class NeutralEvil : Alignment
     {
         private string _alignmentName = "Neutral Evil";

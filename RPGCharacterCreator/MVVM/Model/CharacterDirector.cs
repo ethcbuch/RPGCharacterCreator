@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
+    // director of the builder design pattern which determines in what order the character will be buillt
     internal class CharacterDirector
     {
         private CharacterBuilder charBuilder;

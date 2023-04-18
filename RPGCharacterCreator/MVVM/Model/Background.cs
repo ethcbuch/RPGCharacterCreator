@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
+    // class for the background of the character
     internal class Background : ObservableObject
     {
         private string _backgroundName { get; set; }
@@ -15,11 +16,11 @@ namespace RPGCharacterCreator.MVVM.Model
 
         public  string BackgroundName { get { return _backgroundName; } set { _backgroundName = value; OnPropertyChanged(); } }
         public string BackgroundDescription { get { return _backgroundDescription; } set { _backgroundDescription = value; OnPropertyChanged(); } }
-        public List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
-
-
+        public List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } 
+        }
     }
 
+    //class for Noble (concrete class which inheirts from the Background class)
     internal class Noble : Background
     {
         private string _backgroundName = "Noble";
@@ -32,7 +33,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
 
     }
-
+    //class for Sage (concrete class which inheirts from the Background class)
     internal class Sage : Background
     {
         private string _backgroundName = "Sage";
@@ -45,6 +46,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
 
     }
+    //class for Criminal (concrete class which inheirts from the Background class)
     internal class Criminal : Background
     {
         private string _backgroundName = "Criminal";
@@ -57,6 +59,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
     }
 
+    //class for Soldier (concrete class which inheirts from the Background class)
     internal class Soldier : Background
     {
         private string _backgroundName = "Soldier";
@@ -69,6 +72,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
     }
 
+    //class for Entertainer (concrete class which inheirts from the Background class)
     internal class Entertainer : Background
     {
         private string _backgroundName = "Entertainer";
@@ -81,6 +85,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
     }
 
+    //class for Sailor (concrete class which inheirts from the Background class)
     internal class Sailor : Background
     {
         private string _backgroundName = "Sailor";
@@ -93,7 +98,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
     }
 
-
+    //class for Acolyte (concrete class which inheirts from the Background class)
     internal class Acolyte : Background
     {
         private string _backgroundName = "Acolyte";
@@ -106,7 +111,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
     }
 
-
+    //class for Knight (concrete class which inheirts from the Background class)
     internal class Knight : Background
     {
         private string _backgroundName = "Knight";
@@ -119,6 +124,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
     }
 
+    //class for Spy (concrete class which inheirts from the Background class)
     internal class Spy : Background
     {
         private string _backgroundName = "Spy";
@@ -131,6 +137,7 @@ namespace RPGCharacterCreator.MVVM.Model
         public new List<string> BackgroundSkills { get { return _backgroundSkills; } set { _backgroundSkills = value; OnPropertyChanged(); } }
     }
 
+    //class for Smuggler (concrete class which inheirts from the Background class)
     internal class Smuggler : Background
     {
         private string _backgroundName = "Smuggler";

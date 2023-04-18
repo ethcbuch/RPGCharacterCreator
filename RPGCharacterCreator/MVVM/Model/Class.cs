@@ -4,6 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace RPGCharacterCreator
 {
+    // class for Class of the character
     internal class Class : ObservableObject
     {
         private string _className { get; set; }
@@ -27,6 +28,8 @@ namespace RPGCharacterCreator
         public  List<string> ClassAbilities { get { return _classAbilities; } set { _classAbilities = value; OnPropertyChanged(); } }
     }
 
+
+    //class for Warrior (concrete class which inheirts from the Class class)
     internal class Warrior : Class
     {
         private string _className { get; set; } = "Warrior";
@@ -71,7 +74,7 @@ namespace RPGCharacterCreator
         }
 
     }
-
+    //class for Rogue (concrete class which inheirts from the Class class)
     internal class Rogue : Class
     {
         private string _className = "Rogue";
@@ -117,7 +120,7 @@ namespace RPGCharacterCreator
 
     }
 
-
+    //class for Paladin (concrete class which inheirts from the Class class)
     internal class Paladin : Class
     {
         private string _className { get; set; } = "Paladin";
@@ -164,7 +167,7 @@ namespace RPGCharacterCreator
         }
     }
 
-
+    //class for Ranger (concrete class which inheirts from the Class class)
     internal class Ranger : Class
     {
         private string _className { get; set; } = "Ranger";
@@ -211,7 +214,7 @@ namespace RPGCharacterCreator
         }
     }
 
-
+    //class for Paladin (concrete class which inheirts from the Class class)
     internal class Wizard : Class
     {
         private string _className { get; set; } = "Wizard";
@@ -258,7 +261,7 @@ namespace RPGCharacterCreator
         }
     }
 
-
+    //class for Bard (concrete class which inheirts from the Class class)
     internal class Bard : Class
     {
         private string _className { get; set; } = "Bard";
@@ -305,6 +308,7 @@ namespace RPGCharacterCreator
         }
     }
 
+    //class for Barbarian (concrete class which inheirts from the Class class)
     internal class Barbarian : Class
     {
         private string _className { get; set; } = "Barbarian";
@@ -349,6 +353,7 @@ namespace RPGCharacterCreator
         }
     }
 
+    //class for Monk (concrete class which inheirts from the Class class)
     internal class Monk : Class
     {
         private string _className { get; set; } = "Monk";
@@ -393,6 +398,7 @@ namespace RPGCharacterCreator
         }
     }
 
+    //class for Druid (concrete class which inheirts from the Class class)
     internal class Druid : Class
     {
         private string _className { get; set; } = "Druid";
@@ -437,6 +443,7 @@ namespace RPGCharacterCreator
         }
     }
 
+    //class for Cleric (concrete class which inheirts from the Class class)
     internal class Cleric : Class
     {
         private string _className { get; set; } = "Cleric";
@@ -480,39 +487,4 @@ namespace RPGCharacterCreator
             set { _classAbilities = value; OnPropertyChanged(); }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -75,8 +75,8 @@
                              FontSize="19"
                              Command="{Binding LawfulGoodButtonCommand}"
                              Visibility="Visible" />
-                <RadioButton x:Name="ChaoticEvilButton"
-                             Content="CHAOTIC EVIL"
+               <RadioButton x:Name="NeutralGoodButton"
+                             Content="NEUTRAL GOOD"
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
@@ -84,7 +84,7 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding ChaoticEvilButtonCommand}"
+                             Command="{Binding NeutralGoodButtonCommand}" 
                              Visibility="Visible" />
                 <RadioButton x:Name="ChaoticGoodButton"
                              Content="CHAOTIC GOOD"
@@ -97,7 +97,6 @@
                              FontSize="19"
                              Command="{Binding ChaoticGoodButtonCommand}"
                              Visibility="Visible" />
-
                 <RadioButton x:Name="LawfulNeutralButton"
                              Content="LAWFUL NEUTRAL"
                              Height="65"
@@ -109,7 +108,6 @@
                              FontSize="19"
                              Command="{Binding LawfulNeutralButtonCommand}"
                              Visibility="Visible" />
-
                 <RadioButton x:Name="TrueNeutralButton"
                              Content="NEUTRAL"
                              Height="65"
@@ -121,7 +119,6 @@
                              FontSize="19"
                              Command="{Binding TrueNeutralButtonCommand}"
                              Visibility="Visible" />
-
                 <RadioButton x:Name="ChaoticNeutralButton"
                              Content="CHAOTIC NEUTRAL"
                              Height="65"
@@ -133,9 +130,10 @@
                              FontSize="19"
                              Command="{Binding ChaoticNeutralButtonCommand}"
                              Visibility="Visible" />
-
-                <RadioButton x:Name="LawfulEvilButton"
-                             Content="LAWFUL EVIL"
+                
+                
+                <RadioButton x:Name="ChaoticEvilButton"
+                             Content="CHAOTIC EVIL"
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
@@ -143,9 +141,8 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding LawfulEvilButtonCommand}"
+                             Command="{Binding ChaoticEvilButtonCommand}"
                              Visibility="Visible" />
-
                 <RadioButton x:Name="NeutralEvilButton"
                              Content="NEUTRAL EVIL"
                              Height="65"
@@ -157,8 +154,8 @@
                              FontSize="19"
                              Command="{Binding NeutralEvilButtonCommand}"
                              Visibility="Visible" />
-                <RadioButton x:Name="NeutralGoodButton"
-                             Content="NEUTRAL GOOD"
+                <RadioButton x:Name="LawfulEvilButton"
+                             Content="LAWFUL EVIL"
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
@@ -166,9 +163,8 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding NeutralGoodButtonCommand}"
+                             Command="{Binding LawfulEvilButtonCommand}"
                              Visibility="Visible" />
-
             </StackPanel>
         </ScrollViewer>
         <Border BorderBrush="#1E2124"
@@ -180,7 +176,6 @@
                     Grid.Row="2"
                     Margin="0,0,0,-177"
                     Grid.RowSpan="2" />
-
         <StackPanel Grid.Column="1"
                     Grid.Row="2"
                     Margin="0,0,20,-177"
@@ -203,9 +198,5 @@
                        Padding="5,2,0,0"
                        Width="866" />
         </StackPanel>
-
-
-
-
     </Grid>
 </UserControl>
