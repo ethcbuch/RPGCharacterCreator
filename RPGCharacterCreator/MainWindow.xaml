@@ -170,7 +170,7 @@
                     Foreground="White"
                     Height="21"
                     Width="24"
-                    Click="Button_Click"
+                    Command="{Binding CloseCommand}"
                     Background="#FFEF0000"
                     FontWeight="Bold" />
             <Menu DockPanel.Dock="Top"

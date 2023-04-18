@@ -2,12 +2,15 @@
 using RPGCharacterCreator.MVVM.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml.Serialization;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -33,6 +36,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand AlignmentViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
+        public RelayCommand CloseCommand { get; set; }
         public RelayCommand ThemeCommand { get; set; }
 
         //properties with type of view to to be shown(home,bio,class,overview)
@@ -119,6 +123,21 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             statsVM = new StatsViewModel();
             alignmentVM = new AlignmentViewModel();
             overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM);
+
+            //XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
+            //using (StreamReader rd = new StreamReader("characters.xml"))
+            //{
+            //    homeVM.CharCollection = xs.Deserialize(rd) as ObservableCollection<GeneralCharacter>;
+            //}
+
+            //if (homeVM.CharCollection.Count > 0) { characterCount = homeVM.CharCollection.Count; }
+
+            //if (homeVM.CharCollection.Count > 0)
+            //{
+            //    homeVM.GridVis = Visibility.Visible;
+            //    homeVM.LabelVis = Visibility.Hidden;
+            //}
+
 
             //Sets default dark theme
             themeFactory = new ThemeFactory();
@@ -316,6 +335,18 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             ButtCancel = false;
             ButtChecked = false;
         });
+
+
+            //CloseCommand = new RelayCommand(o =>
+            //{
+            //    xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
+            //    using (StreamWriter wr = new StreamWriter("characters.xml"))
+            //    {
+            //        xs.Serialize(wr, homeVM.CharCollection);
+            //    }
+
+            //    System.Windows.Application.Current.Shutdown();
+            //});
 
         }
 }

@@ -43,7 +43,6 @@
                              Height="80"
                              Width="380"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="{Binding HomeTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreateButtonMenu}"
                              FontSize="19"

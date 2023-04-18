@@ -21,7 +21,7 @@
             </Setter>
 
             <Setter Property="Background"
-                    Value="#36393E" />
+                    Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MainTheme.ButtonColor}" />
             <Setter Property="BorderThickness"
                     Value="2" />
         </Style.Setters>
@@ -29,7 +29,7 @@
             <Trigger Property="IsChecked"
                      Value="True">
                 <Setter Property="Background"
-                        Value="#282A2D" />
+                        Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MainTheme.ButtonClicked}" />
             </Trigger>
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
@@ -39,7 +39,7 @@
                                Value="true" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Background"
-                        Value="#34363A" />
+                        Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MainTheme.MouseOver}" />
             </MultiDataTrigger>
         </Style.Triggers>
     </Style>

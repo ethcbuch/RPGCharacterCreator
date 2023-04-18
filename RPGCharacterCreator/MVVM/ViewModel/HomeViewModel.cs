@@ -28,7 +28,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme HomeTheme
         {
             get { return _homeTheme; }
-            set { _homeTheme = value; }
+            set { _homeTheme = value; OnPropertyChanged(); }
         }
 
         private Visibility _gridVis = Visibility.Hidden;
@@ -71,8 +71,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public HomeViewModel()
         {
+            
+
             CharCollection = new ObservableCollection<GeneralCharacter>();
 
+            
             ChangeCharacterCommand = new RelayCommand(parameter =>
             {
                 //The current character selected, used for deleting and editing characters.

@@ -77,6 +77,18 @@ namespace RPGCharacterCreator.MVVM.Model
             set { _textColor = value; OnPropertyChanged(); }
         }
 
+        private Brush _mouseOver;
+        public Brush MouseOver
+        {
+            get { return _mouseOver; }
+            set { _mouseOver = value; OnPropertyChanged(); }
+        }
+        private Brush _buttonClicked;
+        public Brush ButtonClicked
+        {
+            get { return _buttonClicked; }
+            set { _buttonClicked = value; OnPropertyChanged(); }
+        }
 
     }
 
@@ -94,6 +106,8 @@ namespace RPGCharacterCreator.MVVM.Model
             _borderColor2 = (Brush)convert.ConvertFromString("#A0A0A0");
             _buttonColor = (Brush)convert.ConvertFromString("#36393E");
             _textColor = (Brush)convert.ConvertFromString("#FFFFFF");
+            _buttonClicked = (Brush)convert.ConvertFromString("#282A2D");
+            _mouseOver = (Brush)convert.ConvertFromString("#34363A");
 
 
         }
@@ -144,7 +158,18 @@ namespace RPGCharacterCreator.MVVM.Model
             set { _textColor = value; OnPropertyChanged(); }
         }
 
-
+        private Brush _mouseOver;
+        public new Brush MouseOver
+        {
+            get { return _mouseOver; }
+            set { _mouseOver = value; OnPropertyChanged(); }
+        }
+        private Brush _buttonClicked;
+        public new Brush ButtonClicked
+        {
+            get { return _buttonClicked; }
+            set { _buttonClicked = value; OnPropertyChanged(); }
+        }
     }
 
     class LightTheme : Theme
@@ -155,13 +180,14 @@ namespace RPGCharacterCreator.MVVM.Model
         {
             convert = new BrushConverter();
 
-            _backgroundColor = (Brush)convert.ConvertFromString("#E5E5E5");
-            _tabColor = (Brush)convert.ConvertFromString("#BFBFBF");
+            _backgroundColor = (Brush)convert.ConvertFromString("#D8D8D8");
+            _tabColor = (Brush)convert.ConvertFromString("#C9CCCC");
             _borderColor1 = (Brush)convert.ConvertFromString("#565656");
             _borderColor2 = (Brush)convert.ConvertFromString("#999999");
-            _buttonColor = (Brush)convert.ConvertFromString("#BFBFBF");
-            _textColor = (Brush)convert.ConvertFromString("#303030");
-
+            _buttonColor = (Brush)convert.ConvertFromString("#C9CCCC");
+            _textColor = (Brush)convert.ConvertFromString("#2D2D3A");
+            _buttonClicked = (Brush)convert.ConvertFromString("#ADADAD");
+            _mouseOver = (Brush)convert.ConvertFromString("#ABADAD");
 
         }
 
@@ -208,10 +234,24 @@ namespace RPGCharacterCreator.MVVM.Model
 
         private Brush _textColor;
 
-        public Brush TextColor
+        public new Brush TextColor
         {
             get { return _textColor; }
             set { _textColor = value; OnPropertyChanged(); }
+        }
+
+        private Brush _mouseOver;
+        public new Brush MouseOver
+        {
+            get { return _mouseOver; }
+            set { _mouseOver = value; OnPropertyChanged(); }
+        }
+
+        private Brush _buttonClicked;
+        public new Brush ButtonClicked
+        {
+            get { return _buttonClicked; }
+            set { _buttonClicked = value; OnPropertyChanged(); }
         }
     }
 }

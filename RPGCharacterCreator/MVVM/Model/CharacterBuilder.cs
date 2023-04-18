@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace RPGCharacterCreator.MVVM.Model
 {
  
-        interface CharacterBuilder
+        public interface CharacterBuilder
         {
             void reset();
 
@@ -33,7 +33,7 @@ namespace RPGCharacterCreator.MVVM.Model
 
         }
 
-        internal class GeneralCharacterBuilder : CharacterBuilder
+        public class GeneralCharacterBuilder : CharacterBuilder
         {
 
             public GeneralCharacter character = new GeneralCharacter();

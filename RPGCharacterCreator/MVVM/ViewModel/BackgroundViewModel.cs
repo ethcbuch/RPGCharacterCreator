@@ -15,7 +15,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme BackgroundTheme
         {
             get { return _backgroundTheme; }
-            set { _backgroundTheme = value; }
+            set { _backgroundTheme = value; OnPropertyChanged(); }
         }
 
         private Background _aBackground;

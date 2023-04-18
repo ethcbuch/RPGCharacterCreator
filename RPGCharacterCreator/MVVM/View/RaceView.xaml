@@ -135,14 +135,15 @@
                    Foreground="{Binding RaceTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="0,0,0.291,0" />
-			<ItemsControl Background="Transparent"
+			<ItemsControl x:Name="traits"
+                          Background="Transparent"
                           ItemsSource="{Binding ARace.RaceTraits, UpdateSourceTrigger=PropertyChanged}"
                           Height="200"
                           Margin="0,0,0.291,0">
 				<ItemsControl.ItemTemplate>
 					<DataTemplate>
 						<TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="{Binding RaceTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                                   Foreground="{Binding Path=DataContext.RaceTheme.TextColor, ElementName=traits,UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
                                    Height="28"

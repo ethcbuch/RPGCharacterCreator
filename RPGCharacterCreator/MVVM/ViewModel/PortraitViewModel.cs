@@ -22,7 +22,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme PortraitTheme
         {
             get { return _portraitTheme; }
-            set { _portraitTheme = value; }
+            set { _portraitTheme = value; OnPropertyChanged(); }
         }
 
 

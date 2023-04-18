@@ -22,7 +22,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme OverviewTheme
         {
             get { return _overviewTheme; }
-            set { _overviewTheme = value; }
+            set { _overviewTheme = value; OnPropertyChanged(); }
         }
 
         private Visibility _editVis = Visibility.Hidden;

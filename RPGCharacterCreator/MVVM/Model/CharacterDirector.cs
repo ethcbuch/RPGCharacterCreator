@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
-    internal class CharacterDirector
+    public class CharacterDirector
     {
         private CharacterBuilder charBuilder;
 

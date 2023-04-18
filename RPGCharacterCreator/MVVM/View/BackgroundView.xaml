@@ -140,14 +140,15 @@
                    Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="0,0,0.291,0" />
-            <ItemsControl Background="Transparent"
+            <ItemsControl x:Name="skills"
+                          Background="Transparent"
                           ItemsSource="{Binding ABackground.BackgroundSkills, UpdateSourceTrigger=PropertyChanged}"
                           Height="200"
                           Margin="0,0,0.291,0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                                   Foreground="{Binding Path=DataContext.BackgroundTheme.TextColor, ElementName=skills,UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
                                    Height="28"

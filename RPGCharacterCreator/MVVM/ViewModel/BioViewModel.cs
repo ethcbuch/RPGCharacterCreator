@@ -30,7 +30,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme BioTheme
         {
             get { return _bioTheme; }
-            set { _bioTheme = value; }
+            set { _bioTheme = value; OnPropertyChanged(); }
         }
 
 

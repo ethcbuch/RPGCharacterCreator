@@ -18,7 +18,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme AlignmentTheme
         {
             get { return _alignmentTheme; }
-            set { _alignmentTheme = value; }
+            set { _alignmentTheme = value; OnPropertyChanged(); }
         }
 
         private Alignment _aAlignment;

@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace RPGCharacterCreator
 {
-    internal class Class : ObservableObject
+    public class Class : ObservableObject
     {
         private string _className { get; set; }
         private string _classDesciption { get; set; }
@@ -27,7 +27,7 @@ namespace RPGCharacterCreator
         public  List<string> ClassAbilities { get { return _classAbilities; } set { _classAbilities = value; OnPropertyChanged(); } }
     }
 
-    internal class Warrior : Class
+    public class Warrior : Class
     {
         private string _className { get; set; } = "Warrior";
         private string _classDesciption { get; set; } = "This guy fights on the front lines";
@@ -71,7 +71,7 @@ namespace RPGCharacterCreator
         }
 
     }
-    internal class Rogue : Class
+    public class Rogue : Class
     {
         private string _className = "Rogue";
         private string _classDesciption = "This is one sneaky boi";

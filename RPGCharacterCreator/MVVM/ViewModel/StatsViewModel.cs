@@ -32,7 +32,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme StatsTheme
         {
             get { return _statsTheme; }
-            set { _statsTheme = value; }
+            set { _statsTheme = value; OnPropertyChanged(); }
         }
 
         private Stats _charStats = new Stats();

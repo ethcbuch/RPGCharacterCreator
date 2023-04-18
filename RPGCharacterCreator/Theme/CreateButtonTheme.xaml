@@ -15,13 +15,13 @@
                                 <TextBlock HorizontalAlignment="Left"
                                            Margin="5,5,0,0"
                                            Grid.Row="1"
-                                           Background="#36393E"
+                                           Background="{Binding HomeTheme.ButtonColor}"
                                            TextWrapping="Wrap"
                                            Text="+"
                                            TextAlignment="Center"
                                            FontWeight="Bold"
                                            FontFamily="Cambria Math"
-                                           Foreground="White"
+                                           Foreground="{Binding HomeTheme.TextColor}"
                                            FontSize="58"
                                            VerticalAlignment="Top"
                                            Height="69"
@@ -29,7 +29,7 @@
                                 <StackPanel>
                                     <Label x:Name="nameLabel"
                                            Content="{TemplateBinding Property=Content}"
-                                           Foreground="White"
+                                            Foreground="{Binding HomeTheme.TextColor}"
                                            FontFamily="Franklin Gothic Heavy"
                                            Padding="5,20,0,0"
                                            FontSize="26" />
@@ -49,7 +49,7 @@
             <Trigger Property="IsChecked"
                      Value="True">
                 <Setter Property="Background"
-                        Value="#282A2D" />
+                        Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MainTheme.ButtonClicked}" />
             </Trigger>
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
@@ -59,7 +59,7 @@
                                Value="true" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Background"
-                        Value="#34363A" />
+                        Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MainTheme.MouseOver}" />
             </MultiDataTrigger>
         </Style.Triggers>
     </Style>

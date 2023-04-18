@@ -19,7 +19,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public Theme RaceTheme
         {
             get { return _raceTheme; }
-            set { _raceTheme = value; }
+            set { _raceTheme = value; OnPropertyChanged(); }
         }
 
         private Race _aRace;
