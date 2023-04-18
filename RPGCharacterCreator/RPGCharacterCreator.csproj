@@ -65,6 +65,7 @@
     <Compile Include="MVVM\Model\Class.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MVVM\Model\Skills.cs" />
     <Compile Include="MVVM\Model\ThemeFactory.cs" />
     <Compile Include="MVVM\Model\Portrait.cs" />
     <Compile Include="MVVM\Model\Race.cs" />
@@ -219,7 +220,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="characters.xml" />
     <Resource Include="Images\Gear.png" />
     <Content Include="Images\Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

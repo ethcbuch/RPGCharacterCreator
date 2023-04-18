@@ -1,12 +1,73 @@
 ﻿<UserControl x:Class="RPGCharacterCreator.MVVM.View.SkillsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:RPGCharacterCreator.MVVM.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d"
+             d:DesignHeight="630"
+             d:DesignWidth="1280">
     <Grid>
-            
+        <ItemsControl x:Name="traits"
+                      Background="Transparent"
+                  ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
+                      Margin="30,80,700,35">
+            <ItemsControl.Items>
+                <TextBlock FontFamily="Franklin Gothic Medium"
+                           Foreground="{Binding Path=DataContext.SkillsTheme.TextColor, ElementName=traits,UpdateSourceTrigger=PropertyChanged}"
+                           Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                           FontSize="18"
+                           Height="28"
+                           Width="260"
+                           Margin="5,0,4.2,0"
+                           Padding="2,0,0,0" />
+            </ItemsControl.Items>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontFamily="Franklin Gothic Medium"
+                               Foreground="{Binding Path=DataContext.SkillsTheme.TextColor, ElementName=traits,UpdateSourceTrigger=PropertyChanged}"
+                               Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                               FontSize="18"
+                               Height="28"
+                               Width="260"
+                               Margin="5,0,4.2,0"
+                               Padding="2,0,0,0" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+        <ItemsControl x:Name="traits_Copy"
+                      Background="Transparent"
+                      ItemsSource="{Binding  CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
+                      Margin="700,80,30,35">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontFamily="Franklin Gothic Medium"
+                               Foreground="{Binding DataContext.SkillsTheme.TextColor, ElementName=traits, UpdateSourceTrigger=PropertyChanged}"
+                               Text="{Binding UpdateSourceTrigger=PropertyChanged}"
+                               FontSize="18"
+                               Height="28"
+                               Width="260"
+                               Margin="5,0,4.2,0"
+                               Padding="2,0,0,0" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+
+        <TextBlock Text="CHOOSE SKILLS"
+                   VerticalAlignment="Top"
+                   Foreground="{Binding SkillsTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,25,700,0"
+                   FontFamily="Franklin Gothic Heavy"
+                   FontSize="36"
+                   Height="50" />
+        <TextBlock Text="CHOSEN SKILLS"
+                   VerticalAlignment="Top"
+                   Foreground="{Binding SkillsTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="700,25,30,0"
+                   FontFamily="Franklin Gothic Heavy"
+                   FontSize="36"
+                   Height="50" />
     </Grid>
 </UserControl>

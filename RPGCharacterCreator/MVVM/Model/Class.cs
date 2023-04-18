@@ -20,7 +20,7 @@ namespace RPGCharacterCreator
         }
 
         public string ClassName { get { return _className; } set { _className = value; OnPropertyChanged(); } }
-        public  string ClassDescription { get { return _className; } set { _className = value; OnPropertyChanged(); } }
+        public  string ClassDescription { get { return _classDesciption; } set { _classDesciption = value; OnPropertyChanged(); } }
         public  List<string> ClassPrimaryStats { get { return _classPrimaryStats; } set { _classPrimaryStats = value; OnPropertyChanged(); } }
         public  List<string> ClassSecondaryStats { get { return _classSecondaryStats; } set { _classSecondaryStats = value; OnPropertyChanged(); } }
         public  List<string> ClassSkills { get { return _classSkills; } set { _classSkills = value; OnPropertyChanged(); } }

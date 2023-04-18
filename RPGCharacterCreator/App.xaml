@@ -52,7 +52,11 @@
             <DataTemplate DataType="{x:Type viewmodel:StatsViewModel}">
                 <view:StatsView />
             </DataTemplate>
-            
+            <DataTemplate DataType="{x:Type viewmodel:SkillsViewModel}">
+                <view:SkillsView />
+            </DataTemplate>
+
+
             <DataTemplate DataType="{x:Type viewmodel:AlignmentViewModel}">
                 <view:AlignmentView />
             </DataTemplate>

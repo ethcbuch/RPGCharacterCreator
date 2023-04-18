@@ -128,7 +128,7 @@
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
-                             Command="{Binding ClassViewCommand}"
+                             Command="{Binding SkillsViewCommand}"
                              Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
                 <RadioButton x:Name="alignmentButton"
                              Content="ALIGNMENT"

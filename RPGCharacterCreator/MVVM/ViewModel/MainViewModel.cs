@@ -33,6 +33,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand RaceViewCommand { get; set; }
         public RelayCommand BackgroundViewCommand { get; set; }
         public RelayCommand StatsViewCommand { get; set; }
+        public RelayCommand SkillsViewCommand { get; set; }
         public RelayCommand AlignmentViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
@@ -49,6 +50,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public ClassViewModel classVM { get; set; }
         public BackgroundViewModel backgroundVM { get; set; }
         public StatsViewModel statsVM { get; set; }
+        public SkillsViewModel skillsVM { get; set; }
 
         public OverviewViewModel overviewVM { get; set; }
 
@@ -121,23 +123,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             raceVM = new RaceViewModel();
             backgroundVM = new BackgroundViewModel();
             statsVM = new StatsViewModel();
+            skillsVM = new SkillsViewModel();
             alignmentVM = new AlignmentViewModel();
             overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM);
-
-            //XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
-            //using (StreamReader rd = new StreamReader("characters.xml"))
-            //{
-            //    homeVM.CharCollection = xs.Deserialize(rd) as ObservableCollection<GeneralCharacter>;
-            //}
-
-            //if (homeVM.CharCollection.Count > 0) { characterCount = homeVM.CharCollection.Count; }
-
-            //if (homeVM.CharCollection.Count > 0)
-            //{
-            //    homeVM.GridVis = Visibility.Visible;
-            //    homeVM.LabelVis = Visibility.Hidden;
-            //}
-
 
             //Sets default dark theme
             themeFactory = new ThemeFactory();
@@ -151,6 +139,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             backgroundVM.BackgroundTheme = themeFactory.createTheme("dark");
             alignmentVM.AlignmentTheme = themeFactory.createTheme("dark");
             statsVM.StatsTheme = themeFactory.createTheme("dark");
+            skillsVM.SkillsTheme = themeFactory.createTheme("dark");
             overviewVM.OverviewTheme = themeFactory.createTheme("dark");
 
             builder = new GeneralCharacterBuilder();
@@ -172,6 +161,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 backgroundVM.BackgroundTheme = themeFactory.createTheme((string)o);
                 alignmentVM.AlignmentTheme = themeFactory.createTheme((string)o);
                 statsVM.StatsTheme = themeFactory.createTheme((string)o);
+                skillsVM.SkillsTheme = themeFactory.createTheme((string)o);
                 overviewVM.OverviewTheme = themeFactory.createTheme((string)o);
             });
 
@@ -201,7 +191,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = portraitVM;
             });
 
-            RaceViewCommand = new RelayCommand(o => { CurrentView = raceVM; });
+            RaceViewCommand = new RelayCommand(o => 
+            {
+                CurrentView = raceVM; 
+            });
 
             ClassViewCommand = new RelayCommand(o =>
             {
@@ -237,6 +230,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
                 CurrentView = statsVM;
             });
+
+            SkillsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = skillsVM;
+            });
+
 
             AlignmentViewCommand = new RelayCommand(o =>
             {
@@ -337,17 +336,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         });
 
 
-            //CloseCommand = new RelayCommand(o =>
-            //{
-            //    xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
-            //    using (StreamWriter wr = new StreamWriter("characters.xml"))
-            //    {
-            //        xs.Serialize(wr, homeVM.CharCollection);
-            //    }
+            CloseCommand = new RelayCommand(o =>
+            {
 
-            //    System.Windows.Application.Current.Shutdown();
-            //});
+                System.Windows.Application.Current.Shutdown();
+            });
 
         }
-}
+    }
 }
