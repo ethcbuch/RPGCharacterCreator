@@ -167,7 +167,7 @@
                     Margin="1254,2,0,0"
                     FontSize="17"
                     VerticalAlignment="Top"
-                    Foreground="White"
+                     Foreground="{Binding MainTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                     Height="21"
                     Width="24"
                     Padding="0,-3,0,0"
@@ -199,6 +199,33 @@
                                   Command="{Binding ThemeCommand}"
                                   CommandParameter="light"
                                   core:MenuItemExtensions.GroupName="Themes" />
+                        <MenuItem Header="Red Mode"
+                                  IsCheckable="True"
+                                  Command="{Binding ThemeCommand}"
+                                  CommandParameter="red"
+                                  core:MenuItemExtensions.GroupName="Themes" />
+                        <MenuItem Header="Blue Mode"
+                                  IsCheckable="True"
+                                  Command="{Binding ThemeCommand}"
+                                  CommandParameter="blue"
+                                  core:MenuItemExtensions.GroupName="Themes" />
+                        <MenuItem Header="Green Mode"
+                                  IsCheckable="True"
+                                  Command="{Binding ThemeCommand}"
+                                  CommandParameter="green"
+                                  core:MenuItemExtensions.GroupName="Themes" />
+                        <MenuItem Header="Purple Mode"
+                                  IsCheckable="True"
+                                  Command="{Binding ThemeCommand}"
+                                  CommandParameter="purple"
+                                  core:MenuItemExtensions.GroupName="Themes" />
+                        <MenuItem Header="UTM Mode"
+                                  IsCheckable="True"
+                                  Command="{Binding ThemeCommand}"
+                                  CommandParameter="UTM"
+                                  core:MenuItemExtensions.GroupName="Themes" />
+
+
 
                     </MenuItem>
                     <Separator />

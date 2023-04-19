@@ -29,7 +29,6 @@
                                          Height="80"
                                          Width="400"
                                          FontFamily="Franklin Gothic Heavy"
-                                         Foreground="{Binding Path=DataContext.HomeTheme.TextColor, ElementName = characterControl, UpdateSourceTrigger=PropertyChanged}"
                                          HorizontalContentAlignment="Center"
                                          Style="{StaticResource CharacterButtonMenu}"
                                          Command="{Binding Path=DataContext.ChangeCharacterCommand, ElementName = characterControl }"
@@ -40,7 +39,7 @@
                 </ItemsControl>
                 <RadioButton x:Name="createButton"
                              Content="CREATE CHARACTER"
-                             Height="80"
+                             Height="80"                           
                              Width="384"
                              FontFamily="Franklin Gothic Heavy"
                              HorizontalContentAlignment="Center"
