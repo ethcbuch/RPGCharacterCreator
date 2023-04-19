@@ -27,7 +27,7 @@
             <TextBlock Grid.RowSpan="2"
                        Text="{Binding ABackground.BackgroundName}"
                        HorizontalAlignment="Center"
-                       Foreground="White"
+                       Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                        Margin="0,0,0,20"
                        FontFamily="Franklin Gothic Heavy"
                        FontSize="84"
@@ -37,24 +37,24 @@
                     Margin="0,-1,0,1">
             <TextBlock Text="CHOOSE BACKGROUND"
                        VerticalAlignment="Center"
-                       Foreground="White"
+                       Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                        Margin="10,10,0,20"
                        FontFamily="Franklin Gothic Heavy"
                        FontSize="33"
                        Height="50" />
 
         </StackPanel>
-        <Border BorderBrush="#1E2124"
+        <Border BorderBrush="{Binding BackgroundTheme.BorderColor1, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="4"
                 Margin="0,65,0,2" />
-        <Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="{Binding BackgroundTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="3"
                 Margin="2,0,1,235"
                 Grid.Row="2"
                 Grid.Column="1"
                 Grid.ColumnSpan="3">
         </Border>
-        <Border BorderBrush="#1E2124"
+        <Border BorderBrush="{Binding BackgroundTheme.BorderColor1, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="2"
                 Margin="0,0,270,-190"
                 Grid.Column="1"
@@ -69,7 +69,7 @@
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -80,7 +80,7 @@
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -177,12 +177,12 @@
 
             </StackPanel>
         </ScrollViewer>
-        <Border BorderBrush="#1E2124"
+        <Border BorderBrush="{Binding BackgroundTheme.BorderColor1, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="4"
                 Margin="0,-1,268,-180"
                 Grid.Column="1"
                 Grid.RowSpan="4" />
-        <Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="{Binding BackgroundTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="3"
                 Margin="265.291,31.309,370.291,-190.182"
                 Grid.Row="1"
@@ -204,14 +204,14 @@
             <Label Content="BACKGROUND DESCRIPTION"
                    Height="33"
                    FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
+                   Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="0,0,-0.327,0"
                    Width="507" />
             <TextBlock TextWrapping="Wrap"
                        Text="{Binding ABackground.BackgroundDescription, UpdateSourceTrigger=PropertyChanged}"
                        FontFamily="Franklin Gothic Medium"
-                       Foreground="White"
+                       Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                        FontSize="16"
                        Height="490"
                        Padding="5,2,0,0"
@@ -224,17 +224,18 @@
             <Label Content="BACKGROUND SKILLS"
                    Height="37"
                    FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
+                   Foreground="{Binding BackgroundTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="0,0,0.291,0" />
-            <ItemsControl Background="Transparent"
+            <ItemsControl x:Name="skills"
+                          Background="Transparent"
                           ItemsSource="{Binding ABackground.BackgroundSkills, UpdateSourceTrigger=PropertyChanged}"
                           Height="200"
                           Margin="0,0,0.291,0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
+                                   Foreground="{Binding Path=DataContext.BackgroundTheme.TextColor, ElementName=skills,UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
                                    Height="28"

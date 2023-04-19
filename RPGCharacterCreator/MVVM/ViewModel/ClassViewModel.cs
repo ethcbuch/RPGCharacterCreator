@@ -1,4 +1,5 @@
 ﻿using RPGCharacterCreator.Core;
+using RPGCharacterCreator.MVVM.Model;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,6 +21,15 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand MonkButtonCommand { get; set; }
         public RelayCommand ClericButtonCommand { get; set; }
         public RelayCommand DruidButtonCommand { get; set; }
+
+
+        private Theme _classTheme;
+
+        public Theme ClassTheme
+        {
+            get { return _classTheme; }
+            set { _classTheme = value; OnPropertyChanged(); }
+        }
 
 
         private Class _aClass = new Class();

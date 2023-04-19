@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\MenuItemExtensions.cs" />
     <Compile Include="MVVM\Model\Alignment.cs" />
     <Compile Include="MVVM\Model\Background.cs" />
     <Compile Include="MVVM\Model\Bio.cs" />
@@ -64,6 +65,8 @@
     <Compile Include="MVVM\Model\Class.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MVVM\Model\Skills.cs" />
+    <Compile Include="MVVM\Model\ThemeFactory.cs" />
     <Compile Include="MVVM\Model\Portrait.cs" />
     <Compile Include="MVVM\Model\Race.cs" />
     <Compile Include="MVVM\Model\Stats.cs" />
@@ -217,6 +220,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Gear.png" />
     <Content Include="Images\Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

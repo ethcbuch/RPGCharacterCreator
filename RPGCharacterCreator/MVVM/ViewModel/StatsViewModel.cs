@@ -27,6 +27,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand AddLuckCommand { get; set; }
         public RelayCommand SubtractLuckCommand { get; set; }
 
+        private Theme _statsTheme;
+
+        public Theme StatsTheme
+        {
+            get { return _statsTheme; }
+            set { _statsTheme = value; OnPropertyChanged(); }
+        }
+
         private Stats _charStats = new Stats();
 
         public Stats CharStats

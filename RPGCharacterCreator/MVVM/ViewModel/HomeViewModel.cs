@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Windows;
 using System.Diagnostics;
+using RPGCharacterCreator.MVVM.Model;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -20,22 +21,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand EditCharacterCommand { get; set; }
         public RelayCommand DeleteCharacterCommand { get; set; }
 
-        private object _childView;
 
-        public object ChildView
+
+        private Theme _homeTheme;
+
+        public Theme HomeTheme
         {
-            //returns the current view object is on
-            get
-            {
-                return _childView;
-            }
-            //sets _currentView to value (whatever its set to) and calls the OnPropertyChange()
-            set
-            {
-                _childView = value;
-                //notifies that there has been changes
-                OnPropertyChanged();
-            }
+            get { return _homeTheme; }
+            set { _homeTheme = value; OnPropertyChanged(); }
         }
 
         private Visibility _gridVis = Visibility.Hidden;
@@ -78,8 +71,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public HomeViewModel()
         {
+            
+
             CharCollection = new ObservableCollection<GeneralCharacter>();
 
+            
             ChangeCharacterCommand = new RelayCommand(parameter =>
             {
                 //added this in because was getting strange bugs IF

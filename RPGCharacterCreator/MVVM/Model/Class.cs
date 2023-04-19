@@ -1,11 +1,16 @@
 ﻿using RPGCharacterCreator.Core;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 
 namespace RPGCharacterCreator
 {
-    // class for Class of the character
-    internal class Class : ObservableObject
+
+
+    [XmlInclude(typeof(Warrior))]
+
+    [XmlInclude(typeof(Rogue))]
+    public class Class : ObservableObject
     {
         private string _className { get; set; }
         private string _classDesciption { get; set; }
@@ -21,16 +26,14 @@ namespace RPGCharacterCreator
         }
 
         public string ClassName { get { return _className; } set { _className = value; OnPropertyChanged(); } }
-        public  string ClassDescription { get { return _className; } set { _className = value; OnPropertyChanged(); } }
+        public  string ClassDescription { get { return _classDesciption; } set { _classDesciption = value; OnPropertyChanged(); } }
         public  List<string> ClassPrimaryStats { get { return _classPrimaryStats; } set { _classPrimaryStats = value; OnPropertyChanged(); } }
         public  List<string> ClassSecondaryStats { get { return _classSecondaryStats; } set { _classSecondaryStats = value; OnPropertyChanged(); } }
         public  List<string> ClassSkills { get { return _classSkills; } set { _classSkills = value; OnPropertyChanged(); } }
         public  List<string> ClassAbilities { get { return _classAbilities; } set { _classAbilities = value; OnPropertyChanged(); } }
     }
 
-
-    //class for Warrior (concrete class which inheirts from the Class class)
-    internal class Warrior : Class
+    public class Warrior : Class
     {
         private string _className { get; set; } = "Warrior";
         private string _classDesciption { get; set; } = "This guy fights on the front lines";
@@ -74,8 +77,7 @@ namespace RPGCharacterCreator
         }
 
     }
-    //class for Rogue (concrete class which inheirts from the Class class)
-    internal class Rogue : Class
+    public class Rogue : Class
     {
         private string _className = "Rogue";
         private string _classDesciption = "This is one sneaky boi";

@@ -17,6 +17,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand FinalizeEditButtonCommand { get; set; }
 
+        private Theme _overviewTheme;
+
+        public Theme OverviewTheme
+        {
+            get { return _overviewTheme; }
+            set { _overviewTheme = value; OnPropertyChanged(); }
+        }
+
         private Visibility _editVis = Visibility.Hidden;
         public Visibility EditVis
         {

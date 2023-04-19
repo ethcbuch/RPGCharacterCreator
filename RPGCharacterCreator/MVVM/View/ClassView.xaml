@@ -1,9 +1,10 @@
-﻿<UserControl x:Class="RPGCharacterCreator.MVVM.View.ClassView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:RPGCharacterCreator.MVVM.View"
+             xmlns:ViewModel="clr-namespace:RPGCharacterCreator.MVVM.ViewModel"
+             x:Class="RPGCharacterCreator.MVVM.View.ClassView"
              mc:Ignorable="d"
              d:DesignHeight="630"
              d:DesignWidth="1280">
@@ -27,9 +28,8 @@
             <TextBlock Grid.RowSpan="2"
                        Text="{Binding AClass.ClassName}"
                        HorizontalAlignment="Center"
-                       Foreground="White"
-                       Margin="0,0,0,20
-                   "
+                       Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                       Margin="0,0,0,20                    "
                        FontFamily="Franklin Gothic Heavy"
                        FontSize="84"
                        Height="102" />
@@ -38,24 +38,24 @@
                     Margin="0,-1,0,1">
             <TextBlock Text="CHOOSE CLASS"
                        VerticalAlignment="Center"
-                       Foreground="White"
+                       Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                        Margin="10,10,0,20"
                        FontFamily="Franklin Gothic Heavy"
                        FontSize="36"
-                       Height="50" />
+                       Height="50">
+            </TextBlock>
 
         </StackPanel>
-        <Border BorderBrush="#1E2124"
+        <Border BorderBrush="{Binding ClassTheme.BorderColor1, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="4"
                 Margin="0,65,0,2" />
-        <Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="{Binding ClassTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="3"
                 Margin="2,0,1,235"
                 Grid.Row="2"
                 Grid.Column="1"
-                Grid.ColumnSpan="3">
-        </Border>
-        <Border BorderBrush="#1E2124"
+                Grid.ColumnSpan="3" />
+        <Border BorderBrush="{Binding ClassTheme.BorderColor1, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="2"
                 Margin="0,0,270,-190"
                 Grid.Column="1"
@@ -70,7 +70,7 @@
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -81,7 +81,7 @@
                              Height="65"
                              Width="370"
                              FontFamily="Franklin Gothic Heavy"
-                             Foreground="White"
+                             Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Center"
                              Style="{StaticResource CreationTabsMenu}"
                              FontSize="19"
@@ -166,25 +166,25 @@
 							 Visibility="Visible" />
             </StackPanel>
         </ScrollViewer>
-        <Border BorderBrush="#1E2124"
+        <Border BorderBrush="{Binding ClassTheme.BorderColor1, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="4"
                 Margin="0,-1,268,-180"
                 Grid.Column="1"
                 Grid.RowSpan="4" />
-        <Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="{Binding ClassTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="3"
                 Margin="0.291,2.891,259.018,-190.182"
                 Grid.Row="2"
                 Grid.Column="2"
                 Grid.RowSpan="2" />
-        <Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="{Binding ClassTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="3"
                 Margin="265.291,31.309,370.291,-190.182"
                 Grid.Row="1"
                 Grid.Column="2"
                 Grid.RowSpan="3"
                 Grid.ColumnSpan="2" />
-        <Border BorderBrush="#A0A0A0"
+        <Border BorderBrush="{Binding ClassTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="3"
                 Margin="6,0,0,105"
                 Grid.Row="3"
@@ -201,10 +201,11 @@
             <Label Content="PRIMARY STATS"
                    Height="33"
                    FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
+                   Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="10,0,0.309,0" />
-            <ItemsControl Background="Transparent"
+            <ItemsControl x:Name="primStats"
+                          Background="Transparent"
                           ItemsSource="{Binding AClass.ClassPrimaryStats, UpdateSourceTrigger=PropertyChanged}"
                           Height="207"
                           Margin="0,0,0.309,0"
@@ -212,7 +213,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
+                                   Foreground="{Binding Path=DataContext.ClassTheme.TextColor, ElementName=primStats,UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
                                    Height="28"
@@ -231,13 +232,13 @@
             <Label Content="CLASS DESCRIPTION"
                    Height="33"
                    FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
+                   Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="0,0,-0.327,0" />
             <TextBlock TextWrapping="Wrap"
                        Text="{Binding AClass.ClassDescription, UpdateSourceTrigger=PropertyChanged}"
                        FontFamily="Franklin Gothic Medium"
-                       Foreground="White"
+                       Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                        FontSize="16"
                        Height="490"
                        Padding="5,2,0,0"
@@ -249,16 +250,17 @@
             <Label Content="SECONDARY STATS"
                    Height="50"
                    FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
+                   Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24" />
-            <ItemsControl Background="Transparent"
+            <ItemsControl x:Name="seconStats"
+                          Background="Transparent"
                           ItemsSource="{Binding AClass.ClassSecondaryStats, UpdateSourceTrigger=PropertyChanged}"
                           Height="236"
                           Margin="0,0,0.2,0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
+                                   Foreground="{Binding Path=DataContext.ClassTheme.TextColor, ElementName=seconStats,UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
                                    Height="28"
@@ -276,17 +278,18 @@
             <Label Content="CLASS SKILLS"
                    Height="37"
                    FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
+                   Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="0,0,0.291,0" />
-            <ItemsControl Background="Transparent"
+            <ItemsControl x:Name="skills"
+                          Background="Transparent"
                           ItemsSource="{Binding AClass.ClassSkills, UpdateSourceTrigger=PropertyChanged}"
                           Height="200"
                           Margin="0,0,0.291,0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
+                                   Foreground="{Binding Path=DataContext.ClassTheme.TextColor, ElementName=skills,UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
                                    Height="28"
@@ -304,17 +307,18 @@
             <Label Content="CLASS ABILITIES"
                    Height="41"
                    FontFamily="Franklin Gothic Heavy"
-                   Foreground="White"
+                   Foreground="{Binding ClassTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                    FontSize="24"
                    Margin="0,0,0.164,0" />
-            <ItemsControl Background="Transparent"
+            <ItemsControl x:Name="abilities"
+                          Background="Transparent"
                           ItemsSource="{Binding AClass.ClassAbilities, UpdateSourceTrigger=PropertyChanged}"
                           Height="245"
                           Margin="0,0,0.164,0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock FontFamily="Franklin Gothic Medium"
-                                   Foreground="White"
+                                   Foreground="{Binding Path=DataContext.ClassTheme.TextColor, ElementName=abilities,UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding UpdateSourceTrigger=PropertyChanged}"
                                    FontSize="18"
                                    Height="28"

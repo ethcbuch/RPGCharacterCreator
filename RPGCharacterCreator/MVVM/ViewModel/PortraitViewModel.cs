@@ -17,6 +17,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand ImportPortraitCommand { get; set; }
 
+        private Theme _portraitTheme;
+
+        public Theme PortraitTheme
+        {
+            get { return _portraitTheme; }
+            set { _portraitTheme = value; OnPropertyChanged(); }
+        }
+
 
         private Portrait _aPortrait = new Portrait();
 

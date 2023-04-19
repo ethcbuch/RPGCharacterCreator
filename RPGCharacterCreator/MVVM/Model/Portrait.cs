@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
-    internal class Portrait : ObservableObject
+    public class Portrait : ObservableObject
     {
         private string _portraitPath { get; set; } = "/Images/placeholder.png";
 

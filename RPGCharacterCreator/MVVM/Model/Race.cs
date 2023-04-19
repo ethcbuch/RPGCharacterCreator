@@ -1,7 +1,12 @@
-﻿using RPGCharacterCreator.Core;
+﻿using RPGCharacterCreator;
+using RPGCharacterCreator.Core;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
-internal class Race : ObservableObject
+[XmlInclude(typeof(Human))]
+
+[XmlInclude(typeof(Dwarf))]
+public class Race : ObservableObject
 {
     private string _raceName { get; set; }
     private string _raceDesciption { get; set; }
@@ -28,7 +33,7 @@ internal class Race : ObservableObject
 
 }
 
-internal class Human : Race
+public class Human : Race
 {
     private string _raceName = "Human";
     private string _raceDesciption = "Humans are the youngest of the common races, late to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it is because of their shorter lives that they strive to achieve as much as they can in the years they are given. Or maybe they feel they have something to prove to the elder races, and that’s why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds. ";
@@ -52,7 +57,7 @@ internal class Human : Race
         set { _raceTraits = value; OnPropertyChanged(); }
     }
 }
-internal class Dwarf : Race
+public class Dwarf : Race
 {
     private string _raceName = "Dwarf";
     private string _raceDesciption = "Though they stand well under 5 feet tall, dwarves are so broad and compact that they can weigh as much as a human standing nearly two feet taller. Their courage and endurance are also easily a match for any of the larger folk.";

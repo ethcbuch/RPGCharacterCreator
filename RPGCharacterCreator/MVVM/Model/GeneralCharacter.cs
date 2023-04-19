@@ -4,7 +4,7 @@ using RPGCharacterCreator.MVVM.View;
 
 namespace RPGCharacterCreator
 {
-    internal class GeneralCharacter
+    public class GeneralCharacter
     {
         public Bio characterBio { get; set; }
         public Portrait characterPortrait { get; set; } = new Portrait();

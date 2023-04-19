@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGCharacterCreator.MVVM.Model
 {
-    class Stats : ObservableObject
+    public class Stats : ObservableObject
     {
         private int _strength = 50;
 

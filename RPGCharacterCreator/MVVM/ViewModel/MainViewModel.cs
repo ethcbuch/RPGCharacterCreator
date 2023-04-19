@@ -2,12 +2,15 @@
 using RPGCharacterCreator.MVVM.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml.Serialization;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -30,9 +33,12 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand RaceViewCommand { get; set; }
         public RelayCommand BackgroundViewCommand { get; set; }
         public RelayCommand StatsViewCommand { get; set; }
+        public RelayCommand SkillsViewCommand { get; set; }
         public RelayCommand AlignmentViewCommand { get; set; }
         public RelayCommand OverviewViewCommand { get; set; }
 
+        public RelayCommand CloseCommand { get; set; }
+        public RelayCommand ThemeCommand { get; set; }
 
         //properties with type of view to to be shown(home,bio,class,overview)
         public HomeViewModel homeVM { get; set; }
@@ -44,10 +50,22 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public ClassViewModel classVM { get; set; }
         public BackgroundViewModel backgroundVM { get; set; }
         public StatsViewModel statsVM { get; set; }
+        public SkillsViewModel skillsVM { get; set; }
 
         public OverviewViewModel overviewVM { get; set; }
 
         public AlignmentViewModel alignmentVM { get; set; }
+
+        public ThemeFactory themeFactory { get; set; }
+
+        private Theme _mainTheme;
+
+        public Theme MainTheme
+        {
+            get { return _mainTheme; }
+            set { _mainTheme = value; OnPropertyChanged(); }
+        }
+
 
         // _currentView of type object(allows for the storing of any type)
         private object _currentView;
@@ -105,8 +123,38 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             raceVM = new RaceViewModel();
             backgroundVM = new BackgroundViewModel();
             statsVM = new StatsViewModel();
+            skillsVM = new SkillsViewModel();
             alignmentVM = new AlignmentViewModel();
             overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM);
+
+            //Read from the xml file the characters created in previous sessions
+            XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
+            using (StreamReader rd = new StreamReader("characters.xml"))
+            {
+                homeVM.CharCollection = xs.Deserialize(rd) as ObservableCollection<GeneralCharacter>;
+            }
+
+            characterCount = homeVM.CharCollection.Count;
+
+            if (characterCount > 0) 
+            {
+                homeVM.LabelVis = Visibility.Hidden;
+            }
+
+            //Sets default dark theme
+            themeFactory = new ThemeFactory();
+
+            MainTheme = themeFactory.createTheme("dark");
+            homeVM.HomeTheme = themeFactory.createTheme("dark");
+            bioVM.BioTheme = themeFactory.createTheme("dark");
+            portraitVM.PortraitTheme = themeFactory.createTheme("dark");
+            classVM.ClassTheme = themeFactory.createTheme("dark");
+            raceVM.RaceTheme = themeFactory.createTheme("dark");
+            backgroundVM.BackgroundTheme = themeFactory.createTheme("dark");
+            alignmentVM.AlignmentTheme = themeFactory.createTheme("dark");
+            statsVM.StatsTheme = themeFactory.createTheme("dark");
+            skillsVM.SkillsTheme = themeFactory.createTheme("dark");
+            overviewVM.OverviewTheme = themeFactory.createTheme("dark");
 
             builder = new GeneralCharacterBuilder();
 
@@ -116,9 +164,25 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             CurrentView = homeVM;
 
 
+            ThemeCommand = new RelayCommand(o =>
+            {
+                MainTheme = themeFactory.createTheme((string)o);
+                homeVM.HomeTheme = themeFactory.createTheme((string)o);
+                bioVM.BioTheme = themeFactory.createTheme((string)o);
+                portraitVM.PortraitTheme = themeFactory.createTheme((string)o);
+                classVM.ClassTheme = themeFactory.createTheme((string)o);
+                raceVM.RaceTheme = themeFactory.createTheme((string)o);
+                backgroundVM.BackgroundTheme = themeFactory.createTheme((string)o);
+                alignmentVM.AlignmentTheme = themeFactory.createTheme((string)o);
+                statsVM.StatsTheme = themeFactory.createTheme((string)o);
+                skillsVM.SkillsTheme = themeFactory.createTheme((string)o);
+                overviewVM.OverviewTheme = themeFactory.createTheme((string)o);
+            });
+
             //lambda is ready to be called when button is clicked
             HomeViewCommand = new RelayCommand(o =>
-            {
+            { 
+
                 CurrentView = homeVM;
                 bioVM.TempBio = new Bio();
                 portraitVM.APortrait = new Portrait();
@@ -142,7 +206,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = portraitVM;
             });
 
-            RaceViewCommand = new RelayCommand(o => { CurrentView = raceVM; });
+            RaceViewCommand = new RelayCommand(o => 
+            {
+                CurrentView = raceVM; 
+            });
 
             ClassViewCommand = new RelayCommand(o =>
             {
@@ -178,6 +245,13 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
                 CurrentView = statsVM;
             });
+
+            SkillsViewCommand = new RelayCommand(o =>
+            {
+
+                CurrentView = skillsVM;
+            });
+
 
             AlignmentViewCommand = new RelayCommand(o =>
             {
@@ -248,6 +322,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
             homeVM.CharCollection[homeVM.currentCharacterIndex] = director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, overviewVM.OverviewStats, overviewVM.OverviewAlignment, homeVM.currentCharacterIndex);
 
+            director.getBuilder().reset();
+
             //resets everything for next character
             overviewVM.OverviewBio = new Bio();
             overviewVM.OverviewPortrait = new Portrait();
@@ -277,6 +353,22 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             ButtChecked = false;
         });
 
+
+            CloseCommand = new RelayCommand(o =>
+            {
+                //Reads charCollection to xml file
+                var serializer = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
+                using (TextWriter writer = new StreamWriter("characters.xml"))
+                {
+                    serializer.Serialize(writer, homeVM.CharCollection);
+                }
+
+                System.Windows.Application.Current.Shutdown();
+            });
+
+
+            
+
         }
-}
+    }
 }

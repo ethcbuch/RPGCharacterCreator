@@ -25,6 +25,15 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         public RelayCommand CriminalButtonCommand { get; set; }
 
+
+        private Theme _backgroundTheme;
+
+        public Theme BackgroundTheme
+        {
+            get { return _backgroundTheme; }
+            set { _backgroundTheme = value; OnPropertyChanged(); }
+        }
+
         private Background _aBackground;
 
         public Background ABackground

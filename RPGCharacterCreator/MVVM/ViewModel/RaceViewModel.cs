@@ -21,6 +21,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         public RelayCommand CyborgButtonCommand { get; set; }
         public RelayCommand FaerieButtonCommand { get; set; }
 
+        private Theme _raceTheme;
+
+        public Theme RaceTheme
+        {
+            get { return _raceTheme; }
+            set { _raceTheme = value; OnPropertyChanged(); }
+        }
+
         private Race _aRace;
 
         public Race ARace

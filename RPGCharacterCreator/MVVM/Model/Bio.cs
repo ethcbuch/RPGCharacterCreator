@@ -2,8 +2,7 @@
 
 namespace RPGCharacterCreator
 {
-    // class for the Bio section of the character
-    internal class Bio : ObservableObject
+    public class Bio : ObservableObject
     {
         private string _charName { get; set; }
         private string _charBirthday { get; set; } 

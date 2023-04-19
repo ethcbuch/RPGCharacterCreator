@@ -25,14 +25,16 @@
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="#282A2D"/>
+                <Setter Property="Background"
+                        Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MainTheme.ButtonClicked}" />
             </Trigger>
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
                     <Condition Binding = "{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="false"/>
                     <Condition Binding = "{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="true"/>
                 </MultiDataTrigger.Conditions>
-                <Setter Property="Background" Value="#34363A"/>
+                <Setter Property="Background"
+                        Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MainTheme.MouseOver}" />
             </MultiDataTrigger>
         </Style.Triggers>
     </Style>
