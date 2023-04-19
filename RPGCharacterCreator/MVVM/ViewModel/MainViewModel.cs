@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
@@ -129,10 +130,19 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             //Read from the xml file the characters created in previous sessions
             XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
-            using (StreamReader rd = new StreamReader("characters.xml"))
+
+            if (File.Exists("characters.xml")) 
             {
-                homeVM.CharCollection = xs.Deserialize(rd) as ObservableCollection<GeneralCharacter>;
+                using (StreamReader rd = new StreamReader("characters.xml"))
+                {
+                    homeVM.CharCollection = xs.Deserialize(rd) as ObservableCollection<GeneralCharacter>;
+                }
             }
+            else
+            {
+                XmlWriter xmlWriter = XmlWriter.Create("characters.xml");
+            }
+            
 
             characterCount = homeVM.CharCollection.Count;
 
@@ -246,8 +256,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = statsVM;
             });
 
-            SkillsViewCommand = new RelayCommand(o =>
+                SkillsViewCommand = new RelayCommand(o =>
             {
+                
+                
 
                 CurrentView = skillsVM;
             });
@@ -357,15 +369,15 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             CloseCommand = new RelayCommand(o =>
             {
                 //Reads charCollection to xml file
-                var serializer = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
                 using (TextWriter writer = new StreamWriter("characters.xml"))
                 {
-                    serializer.Serialize(writer, homeVM.CharCollection);
+                    xs.Serialize(writer, homeVM.CharCollection);
                 }
 
                 System.Windows.Application.Current.Shutdown();
             });
 
+           
 
             
 

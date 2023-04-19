@@ -19,6 +19,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         private Skills _charSkills = new Skills();
 
+        private Background _chosenBackground;
+
+        public Background ChosenBackground
+        {
+            get { return _chosenBackground; }
+            set { _chosenBackground = value; OnPropertyChanged(); }
+        }
+
         public Skills CharSkills
         {
             get { return _charSkills; }
