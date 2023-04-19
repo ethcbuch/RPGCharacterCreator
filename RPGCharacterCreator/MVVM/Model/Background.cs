@@ -15,7 +15,7 @@ namespace RPGCharacterCreator.MVVM.Model
     {
         private string _backgroundName { get; set; }
         private string _backgroundDescription { get; set; }
-        private List<string> _backgroundSkills { get; set; }
+        private List<string> _backgroundSkills { get; set; } = new List<string>();
 
         public  string BackgroundName { get { return _backgroundName; } set { _backgroundName = value; OnPropertyChanged(); } }
         public string BackgroundDescription { get { return _backgroundDescription; } set { _backgroundDescription = value; OnPropertyChanged(); } }

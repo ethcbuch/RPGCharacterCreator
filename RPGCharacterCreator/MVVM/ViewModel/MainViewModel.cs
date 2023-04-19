@@ -248,6 +248,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             SkillsViewCommand = new RelayCommand(o =>
             {
+
                 CurrentView = skillsVM;
             });
 

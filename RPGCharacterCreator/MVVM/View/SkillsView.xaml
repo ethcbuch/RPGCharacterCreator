@@ -24,6 +24,8 @@
                                  Height="28"
                                  Width="260"
                                  Style="{StaticResource CreationTabsMenu}"
+                                 Command="{Binding Path=DataContext.AddSkillCommand, ElementName = skillsList }"
+                                 CommandParameter="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource TemplatedParent}}"
                                  Margin="5,0,4.2,0"
                                  Padding="2,0,0,0" />
                 </DataTemplate>
@@ -33,7 +35,7 @@
 
         <ItemsControl x:Name="chosenSkills"
                       Background="Transparent"
-                      ItemsSource="{Binding CharSkills.SkillsList, UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding CharSkills.ChosenList, UpdateSourceTrigger=PropertyChanged}"
                       Margin="700,80,30,35">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
@@ -44,7 +46,9 @@
                                Height="28"
                                Width="260"
                                  Style="{StaticResource CreationTabsMenu}"
-                               Margin="5,0,4.2,0"
+                                 Command="{Binding Path=DataContext.RemoveSkillCommand, ElementName = skillsList }"
+                                 CommandParameter="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource TemplatedParent}}"
+                                 Margin="5,0,4.2,0"
                                Padding="2,0,0,0" />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
