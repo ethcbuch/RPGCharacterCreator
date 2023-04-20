@@ -375,20 +375,42 @@
                 </Grid>
             </Border>
         </StackPanel>
-        <StackPanel Grid.Column="3"
-                    Grid.Row="2">
+        <Grid Grid.Column="3"
+              Grid.Row="2">
             <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="2"
                     Height="190"
                     Width="365" />
-        </StackPanel>
-        <StackPanel Grid.Column="3"
-                    Grid.Row="3"
-                    Margin="0,0,0,10">
+            <Label Content="SKILLS"
+                   VerticalAlignment="Top"
+                   VerticalContentAlignment="Center"
+                   Height="32"
+                   FontFamily="Franklin Gothic Heavy"
+                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                   FontSize="22"
+                   Margin="0,0,280,0" />
             <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="2"
-                    Height="180" />
-        </StackPanel>
+                    Margin="0,0,280,155" />
+        </Grid>
+        <Grid Grid.Column="3"
+              Grid.Row="3">
+            <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
+                    BorderThickness="2"
+                    Width="365"
+                    Margin="0,0,0,10" />
+            <Label Content="ABILITES"
+                   VerticalAlignment="Top"
+                   VerticalContentAlignment="Center"
+                   Height="35"
+                   FontFamily="Franklin Gothic Heavy"
+                   Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                   FontSize="22"
+                   Margin="0,0,260,0" />
+            <Border BorderBrush="{Binding OverviewTheme.BorderColor2, UpdateSourceTrigger=PropertyChanged}"
+                    BorderThickness="2"
+                    Margin="0,0,260,155" />
+        </Grid>
         <RadioButton x:Name="finalizeButton"
                      Content="FINISH CHARACTER CREATION"
                      FontFamily="Franklin Gothic Heavy"
@@ -403,7 +425,7 @@
         <RadioButton x:Name="finaliseEditButton"
                      Content="FINISH EDITING CHARACTER"
                      FontFamily="Franklin Gothic Heavy"
-                    Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                     Foreground="{Binding OverviewTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
                      HorizontalContentAlignment="Center"
                      Style="{StaticResource FinalButtonMenu}"
                      FontSize="26"

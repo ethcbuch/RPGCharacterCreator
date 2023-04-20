@@ -19,6 +19,14 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
         private Skills _charSkills = new Skills();
 
+        private Background _chosenBackground = new Background();
+
+        public Background ChosenBackground
+        {
+            get { return _chosenBackground; }
+            set { _chosenBackground = value; OnPropertyChanged(); }
+        }
+
         public Skills CharSkills
         {
             get { return _charSkills; }
@@ -38,6 +46,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
         }
         public SkillsViewModel()
         {
+
+
+
             AddSkillCommand = new RelayCommand(o =>
             {
                 CharSkills.ChosenList.Add(CharSkills.SkillsList[(int)o]);
