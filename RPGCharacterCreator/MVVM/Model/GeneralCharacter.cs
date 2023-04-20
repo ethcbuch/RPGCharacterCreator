@@ -11,6 +11,7 @@ namespace RPGCharacterCreator
         public Class characterClass { get; set; }
         public Background characterBackground { get; set; }
         public Race characterRace { get; set; }
+        public Skills characterSkills { get; set; } 
         public Stats characterStats { get; set; }
         public Alignment characterAlignment { get; set; }
         private int _characterNumber { get; set; }

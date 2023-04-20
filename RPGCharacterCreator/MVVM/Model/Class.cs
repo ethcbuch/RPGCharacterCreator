@@ -8,8 +8,15 @@ namespace RPGCharacterCreator
 
 
     [XmlInclude(typeof(Warrior))]
-
     [XmlInclude(typeof(Rogue))]
+    [XmlInclude(typeof(Paladin))]
+    [XmlInclude(typeof(Ranger))]
+    [XmlInclude(typeof(Wizard))]
+    [XmlInclude(typeof(Bard))]
+    [XmlInclude(typeof(Barbarian))]
+    [XmlInclude(typeof(Monk))]
+    [XmlInclude(typeof(Druid))]
+    [XmlInclude(typeof(Cleric))]
     public class Class : ObservableObject
     {
         private string _className { get; set; }
@@ -123,7 +130,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Paladin (concrete class which inheirts from the Class class)
-    internal class Paladin : Class
+    public class Paladin : Class
     {
         private string _className { get; set; } = "Paladin";
         private string _classDesciption { get; set; } = "A holy knight, dedicated to righteousness and justice.";
@@ -170,7 +177,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Ranger (concrete class which inheirts from the Class class)
-    internal class Ranger : Class
+    public class Ranger : Class
     {
         private string _className { get; set; } = "Ranger";
         private string _classDesciption { get; set; } = "Skilled hunter and tracker.";
@@ -217,7 +224,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Paladin (concrete class which inheirts from the Class class)
-    internal class Wizard : Class
+    public class Wizard : Class
     {
         private string _className { get; set; } = "Wizard";
         private string _classDesciption { get; set; } = "A master of arcane magic.";
@@ -264,7 +271,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Bard (concrete class which inheirts from the Class class)
-    internal class Bard : Class
+    public class Bard : Class
     {
         private string _className { get; set; } = "Bard";
         private string _classDesciption { get; set; } = "A master of music, storytelling, and magic.";
@@ -311,7 +318,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Barbarian (concrete class which inheirts from the Class class)
-    internal class Barbarian : Class
+    public class Barbarian : Class
     {
         private string _className { get; set; } = "Barbarian";
         private string _classDesciption { get; set; } = "Wild savage who uses brute force and rage to overpower their enemies.";
@@ -356,7 +363,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Monk (concrete class which inheirts from the Class class)
-    internal class Monk : Class
+    public class Monk : Class
     {
         private string _className { get; set; } = "Monk";
         private string _classDesciption { get; set; } = "Master of martial arts, using their training and discipline to defeat their foes.";
@@ -401,7 +408,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Druid (concrete class which inheirts from the Class class)
-    internal class Druid : Class
+    public class Druid : Class
     {
         private string _className { get; set; } = "Druid";
         private string _classDesciption { get; set; } = "A divine spellcaster who draws magic from the natural world";
@@ -446,7 +453,7 @@ namespace RPGCharacterCreator
     }
 
     //class for Cleric (concrete class which inheirts from the Class class)
-    internal class Cleric : Class
+    public class Cleric : Class
     {
         private string _className { get; set; } = "Cleric";
         private string _classDesciption { get; set; } = "A holy spellcaster devoted to a particular deity.";

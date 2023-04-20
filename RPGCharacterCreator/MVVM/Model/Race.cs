@@ -4,8 +4,15 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 
 [XmlInclude(typeof(Human))]
-
 [XmlInclude(typeof(Dwarf))]
+[XmlInclude(typeof(Elf))]
+[XmlInclude(typeof(Orc))]
+[XmlInclude(typeof(Halfling))]
+[XmlInclude(typeof(Gnome))]
+[XmlInclude(typeof(Dragon))]
+[XmlInclude(typeof(Goblin))]
+[XmlInclude(typeof(Cyborg))]
+[XmlInclude(typeof(Faerie))]
 public class Race : ObservableObject
 {
     private string _raceName { get; set; }
@@ -82,7 +89,7 @@ public class Dwarf : Race
     }
 }
 
-internal class Elf : Race
+public class Elf : Race
 {
     private string _raceName = "Elf";
     private string _raceDesciption = "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it. They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze.";
@@ -107,7 +114,7 @@ internal class Elf : Race
     }
 }
 
-internal class Orc : Race
+public class Orc : Race
 {
     private string _raceName = "Orc";
     private string _raceDesciption = "Orcs are fierce, brutish creatures known for their strength and aggression. They are often seen as violent and uncivilized by other races, but their society is actually quite structured, with a strong emphasis on strength and loyalty to one's clan.";
@@ -132,7 +139,7 @@ internal class Orc : Race
     }
 }
 
-internal class Halfling : Race
+public class Halfling : Race
 {
     private string _raceName = "Halfling";
     private string _raceDesciption = "Halflings are a small and unassuming folk, known for their love of good food and comfortable living. They are often underestimated by other races, but their small size and quick wits make them surprisingly agile and resourceful in a tight spot.";
@@ -157,7 +164,7 @@ internal class Halfling : Race
     }
 }
 
-internal class Gnome : Race
+public class Gnome : Race
 {
     private string _raceName = "Gnome";
     private string _raceDescription = "Gnomes are a diminutive, wiry race of tinkers who live underground. Though gnomes love jokes of all kinds, particularly puns and pranks, they are also talented engineers and inventors.";
@@ -182,7 +189,7 @@ internal class Gnome : Race
     }
 }
 
-internal class Goblin : Race
+public class Goblin : Race
 {
     private string _raceName = "Goblin";
     private string _raceDescription = "Goblins are small, mischievous humanoids who live in caves, abandoned mines, and other dark, underground places. They are known for their love of shiny objects, their ability to create explosive devices, and their general tendency to cause chaos and destruction.";
@@ -207,7 +214,7 @@ internal class Goblin : Race
     }
 }
 
-internal class Dragon : Race
+public class Dragon : Race
 {
     private string _raceName = "Dragon";
     private string _raceDescription = "Dragons are ancient, powerful reptilian creatures that can breathe fire or frost. They hoard treasure, guard ancient ruins, and sometimes take human form to interact with mortals. They are highly intelligent and often possess magical abilities.";
@@ -231,7 +238,7 @@ internal class Dragon : Race
         set { _raceTraits = value; OnPropertyChanged(); }
     }
 }
-internal class Cyborg : Race
+public class Cyborg : Race
 {
     private string _raceName = "Cyborg";
     private string _raceDescription = "Cyborgs are beings who have had mechanical or technological components integrated with their bodies. They are often highly skilled in technology and combat, and may have abilities beyond those of normal humans or machines.";
@@ -257,7 +264,7 @@ internal class Cyborg : Race
 }
 
 
-internal class Faerie : Race
+public class Faerie : Race
 {
     private string _raceName = "Faerie";
     private string _raceDescription = "Faeries are small, magical beings that dwell in hidden places within the natural world. They are known for their mischievous nature and powerful magic, which they often use to play pranks on unsuspecting humans. However, they can also be kind and helpful to those they deem worthy of their aid.";

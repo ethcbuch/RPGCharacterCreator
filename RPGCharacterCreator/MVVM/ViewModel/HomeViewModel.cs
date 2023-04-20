@@ -86,10 +86,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 // the changes will save onto the both
 
                 //i think this fixed it
-                if (currentCharacterIndex != -1)
-                {
-                    CharCollection[currentCharacterIndex] = AChar;
-                }
+                //if (currentCharacterIndex != -1)
+                //{
+                //    CharCollection[currentCharacterIndex] = AChar;
+                //}
                 currentCharacterIndex = (int)parameter;
                 GridVis = Visibility.Visible;
                 AChar = CharCollection[(int)parameter];
