@@ -256,10 +256,17 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = statsVM;
             });
 
-                SkillsViewCommand = new RelayCommand(o =>
+            SkillsViewCommand = new RelayCommand(o =>
             {
-                
-                
+                if (backgroundVM.ABackground != null) 
+                {
+                    skillsVM.ChosenBackground = backgroundVM.ABackground;
+                    skillsVM.CharSkills.ChosenList = new ObservableCollection<string>(skillsVM.ChosenBackground.BackgroundSkills);
+
+                    foreach (var item in skillsVM.CharSkills.ChosenList) { skillsVM.CharSkills.SkillsList.Remove(item); }
+                }
+
+                    
 
                 CurrentView = skillsVM;
             });
