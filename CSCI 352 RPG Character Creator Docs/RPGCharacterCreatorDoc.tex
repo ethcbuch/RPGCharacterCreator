@@ -140,7 +140,7 @@
 
 \begin{document}
 
-\title{RPG Character Creator Documentation}
+\title{RPG Character Creator}
 %
 %
 
@@ -151,7 +151,7 @@
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-The RPG Character Creator is a tool that lets users create their own characters for RPG games, from Tabletop RPG enthusiasts to casual gamers. This project is currently in the planning stage and is still being worked on.
+The RPG Character Creator is a tool that lets users create their own characters for RPG games, from Tabletop RPG enthusiasts to casual gamers. The project is close to a finished state and allows the user create a character from a predefined set of classes, races, backgrounds, and skills. The program allows you to save your characters so you can come back and look at your created character. It also allows you to edit and delete previously created characters.
 \end{abstract}
 
 }
@@ -172,19 +172,19 @@ The RPG Character Creator is a tool that lets users create their own characters 
 
 
 
-Character creation is a very important part of any RPG experience. The RPG Character Creator is designed to provide an easy way to plan out future RPG journeys, whether you are an experienced RPG veteran or new to the RPG genre, the RPG Character Creator will provide a fun and engaging way to customize certain aspects of your character.While it is not necessary to plan out your character in advance, doing so allows stronger, more focused characters that can make your experience playing through the game better. While we can't provide a RPG character creator that covers every RPG system, we do hope our more generalized system allows the user to create a character that covers many different games.
+Character creation is a very important part of any RPG (Role Playing Game) experience. The RPG Character Creator is designed to provide an easy way to plan out future RPG journeys, whether you are an experienced RPG veteran or new to the RPG genre, the RPG Character Creator will provide a fun and engaging way to customize certain aspects of your character.While it is not necessary to plan out your character in advance, doing so allows stronger, more focused characters that can make your experience playing through the game better. While we can't provide a RPG character creator that covers every RPG system, we do hope our more generalized system allows the user to create a character that covers many different games. The tool can also be used not just for tabletop games, but can also be used to design a character for video games and even can be used for planning characters for something such as a novel.
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 
 \subsection{Background}
 If you are unfamiliar with the RPG (Role-Playing Game) genre, there are a few things you should know. Firstly, RPGs allow you to play the role of a fictional character in a narrative-driven story. You are then given the ability to create and customize you character choosing who and what you want to play as. Some different attributes that you might be able to customize would include:
 \begin{itemize}
-\item Name
-\item Appearance.
-\item Class
-\item Race
-\item Background
-\item Skills and Abilities
+\item Name, Biography, Age, Gender and Birthday
+\item Appearance of your character through AI generated portraits or import your own image
+\item Predefined Classes
+\item Predefined Races
+\item Predefined Backgrounds
+\item Choose your character's stats and skills
 \end{itemize}
 
 \subsection{Impacts}
@@ -193,24 +193,25 @@ While this project might not be impactful to everyone,we hope that the RPG Chara
 \subsection{Challenges}
 A few challenges that we anticipate through the course of this project include:
 \begin{itemize} 
-\item Not being that acquainted with WPF Applications enough to do implement functionality.
+\item Limitations of WPF
 \item Creating a GUI that makes it easy for the user to navigate through.
-\item “Broken windows” in our code.
 \item Being able to finish the project on time.
 \end{itemize}
 
 A way we would overcome these challenges is by following the stages in the waterfall software development life cycle (SDLC). The SDLC makes sure that as we progress through the different phases of this project we keep in mind what has to be accomplished in order to move forward to the next stage.
 
+As we wrap of development of the program outside of stretch goals, some challenges that came up when developing the application was updating the UI dynamically, getting finished in time, and not letting the project get too overwhelming. As the first demo day approached, we had little of the project done. We got a reasonable amount done for it, but before that deadline was set, we had problems getting started. There was always that question of "Where do we even start?", but we did some research of WPF applications and that allowed us to get a somewhat working UI out for the demo. A lot of this project did not have a lot of hard parts but many different small parts that required some work. We should of sat down and came up with a list of what races, classes, and backgrounds and had all of the information required for each done before it came time to implement them, but we ended up just winging it.
 
 
 \section{Scope}
-The completion of the project would mean that the user can create a single or multiple RPG characters by customizing the characters Name, Class, Attributes, Stats and much more.
+The completion of the project would mean that the user can create multiple RPG characters by customizing the character's Name, Portrait, Class, Race, Background, Stats, Skills and alignment.
 The RPG Character Creator would show the list of characters that have been created allowing for the creation/deletion of characters and even modifying characters after they have been created.
 A few stretch goals we have include:
 \begin{itemize} 
 \item Different rule sets for different types of RPGs (example: Fallout/ DnD 5e)
 \item Allow for the user to toggle a DM mode which allows them to add custom skills, abilities, races, and  classes to the character creator allowing for more customization of characters.
 \end{itemize}
+The implementation is done for everything outside of the designated stretch goals. There is still areas of improvement that need to be made for the base program, the main program mostly works bug-free.
 
 \subsection{Requirements}
 We want to make sure that our project meets the user's needs, so we looked at similar RPG character creator websites and looked at a variety of different video game character creators to understand what is required to create a fulfilling character creator that does not make the user want for more customization. We found that users prefer something that's easy to use, responsive, and gives the user many different options. Based on what we found users preferred, we created these requirements for our application.
@@ -255,12 +256,9 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline
 10 & Finish Character on Overview Screen & User & Med & 1\\
 \hline
-11 & Edit Character & User & Med & 4\\
-\hline
-12 & Delete Character & User & Med & 5\\
-\hline
-13 & Export Character & User & Hard & 6\\
-\hline
+11 & Edit Character and Delete Character & User & Med & 4\\
+
+
 
 \end{tabular}
 \caption{RPG Character Creator Use Case Table}
@@ -442,30 +440,16 @@ Basic flow for the process:
 
 \begin{itemize}
 \item[Use Case Number:] 11
-\item[Use Case Name:] Edit Character
+\item[Use Case Name:] Edit Character and delete character
 \item[Description:] If there are characters in the system then the user can go back and edit their characters allowing them to go back through the character creation screen.
 \end{itemize}
 Basic flow for the process:
 \begin{enumerate}
 \item User is on Main Menu screen
 \item User can click on character they want to select in left tab.
-\item User can then navigate to bottom left of screen and press the Edit button.
-\item This will then take them back to the character creation menu.
+\item User can then navigate to bottom left of screen and press the Edit button or delete button
+\item This will then take them back to the character creation menu or deletes the selected character.
 \item[Termination Outcome:] Once the user has edited the character to how they want they will go back to the Overview screen and press "Finish character Creation" button again.
-\end{enumerate}
-
-\begin{itemize}
-\item[Use Case Number:] 12
-\item[Use Case Name:] Delete Character
-\item[Description:] If there are characters in the system that the user wants to delete they can by using the delete character function.
-\end{itemize}
-Basic flow for the process:
-\begin{enumerate}
-\item User is on Main Menu screen
-\item User can click on character they want to select in left tab.
-\item User can then navigate to bottom left of screen and press the delete button.
-\item A confirmation menu will then pop up and the user will need to press "Yes" if they want to delete the character and "No" if they want to cancel deleting the character.
-\item[Termination Outcome:] Once the user has closed the confirmation menu, the character will be deleted and the App functions as normal.
 \end{enumerate}
 
 \begin{figure}[ht!]
@@ -490,18 +474,72 @@ Basic flow for the process:
 \end{enumerate}
 
 \subsection{Interface Mockups}
-
+	Screenshots of what the final UI looks like. Once the program is started the user is met with an empty screen, with the only thing showing up is a message saying "No Character Data Found" and the create character button. If the user has started the program before then the saved characters should appear. Note, characters will only save if they have been finished, by selecting the finish character button on the Overview screen and the user exits the program through the X in the top right corner. Also, to get back to the main menu, the user needs to press on the RPG Character Creator logo.
 \begin{figure}[H]
-\includegraphics[height=240px, width=426px]{CSCI 352 Interface Mockups/Interface Mockup 0.png}
-\caption{Might have intro menu maybe not}
+\includegraphics[height=240px, width=426px]{Finished Interface/mainScreen.png}
+\caption{Main Screen, nothing selected}
 \centering
 \end{figure}
-
 \begin{figure}[H]
-\includegraphics[height=240px, width=426px]{CSCI 352 Interface Mockups/Interface Mockup 1.png}
-\caption{What the prgroam would look like with character added}
+\includegraphics[height=240px, width=426px]{Finished Interface/mainScreenSelected.png}
+\caption{Main Screen, character selected}
 \centering
 \end{figure}
+The user can select their characters on this page by clicking the button. Selected characters can be edited or deleted. Pressing the edit button take the user back through character creation.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/charInfoScreen.png}
+\caption{Character Bio screen}
+\centering
+\end{figure}
+The user inputs the character info into the text boxes. To continue character creation press any of the other tabs at the top of the screen. The user can come back to the character tab later if they need to.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/portraitScreen.png}
+\caption{Portrait Screen}
+\centering
+\end{figure}
+The user can select a portrait from the ones provided or import their own image by pressing the import portrait button.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/classScreen.png}
+\caption{Class Screen}
+\centering
+\end{figure}
+The user can select their class.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/raceScreen.png}
+\caption{Race Screen}
+\centering
+\end{figure}
+The user can select their race.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/backgroundScreen.png}
+\caption{Background Screen}
+\centering
+\end{figure}
+The user can select their background.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/statsScreen.png}
+\caption{Stats Screen}
+\centering
+\end{figure}
+The user can increase or decrease their stats.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/skillsScreen.png}
+\caption{Skills Screen}
+\centering
+\end{figure}
+The skills from background are inherited, and the user can pick from the skills in the left panel.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/alignmentScreen.png}
+\caption{Alignment Screen}
+\centering
+\end{figure}
+The user can choose their character's alignment.
+\begin{figure}[H]
+\includegraphics[height=240px, width=426px]{Finished Interface/overviewScreen.png}
+\caption{Overview Screen}
+\centering
+\end{figure}
+The user can look over their character and then finish it by pressing the Finish Character Creation Button. This adds the character to the system and they can save it by exiting the program by pressing the x in the top right corner.
 
 \section{Project Timeline}
 \textbf{Project Proposal Draft (February 04, 2023)} - First, we brainstormed ideas for a project that would be worth pursuing, and then we drafted a project proposal. This proposal included a project name, an abstract, an introduction, and a scope. Finally, we created a Github repository and uploaded the proposal to it.
@@ -518,7 +556,7 @@ Coding of the actual project began during these two periods beginning with the i
 \\[10pt]
 \textbf{Penultimate Writeup(April 21, 2023)} - We plan to revisit our work and make necessary updates to our documentation to ensure that it is accurate and up-to-date by the specified time.
 \\[10pt]
-\textbf{Presentation Draft (April 21, 2023)} - We plan on presenting our slides, and giving a small demo of our current project to receive feedback before our final presentation.
+\textbf{Presentation Draft (April 21, 2023)} - We plan on finishing a draft for our presentation slides.
 \\[10pt]
 \textbf{Final presentation(April 29, 2023)} - We plan on finishing our project and giving our final presentation to the class.
 \\[10pt]
@@ -543,7 +581,7 @@ In addition to the design patterns, we have also implemented the Model-View-View
 \label{themeFact}
 \end{figure}
 
-The following UML is an Abstract Factory Design pattern see Figure \ref{themeFact}
+The following UML is an Factory Design pattern see Figure \ref{themeFact}
 
 The BackgroundFactory is an abstract class that defines a factory method, ‘CreateBackground()’ , which returns a Background object.
 
@@ -584,17 +622,13 @@ The CharacterDirector class acts as a director, which looks over  the constructi
 
 
 \subsection{Design Patterns Used}
-Make sure to actually use at least 2 design patterns from this class.  This is not normally part of such documentation, but largely just specific to this class -- I want to see you use the patterns!
-
+We used the builder design pattern which allows us to build a character all in one step. We first gather all the information need to create a character then call the builder through the director which creates a character with all the information that we need for the character. It can also create empty characters which the user can go back and edit.
+To implement different themes for the UI we implemented a factory method which allows us to easily create different themes. All of the UI elements are bound to different variables and the factory method assigns these variables different color values. This allows for us to add many different themes and if we need to, edit already create themes.
 
 \section{Results}
-This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
-
+Outside of the stretch goals, I think that the project ended up where we wanted it to when we first came up with the idea. Right now its scope is somewhat limited but for the most part it covers the most commonly used characteristics that define traditional RPG characters. The framework is there for being able to implement a means of creating custom classes, races, backgrounds, etc. which would greatly increase the applicability of the application. While it is done in the sense that it works like we first planned it to, there is still parts of the project that need some "love" added to them. Quality of life(QoL) features such search bars, sorting, tool tips are definitely missing from the project. Overall, we are happy with what we were able to accomplish with one of first major projects.
 \subsection{Future Work}
-Where are you going next with your project?
-For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
-By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
-
+In the future, like mentioned in the results section, there is a need for some QoL features and some love to go towards the more neglected parts of the project. While the implementation of different RPG systems would require a major rework of how the current UI is implemented, adding a DM mode would not. This DM mode would allow for the user them self to cover any areas of character creation that we might of missed allowing for them to get their character exactly how they want them. 
 
 
 
