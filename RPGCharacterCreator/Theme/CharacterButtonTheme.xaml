@@ -4,7 +4,7 @@
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="{x:Type RadioButton}"
            x:Key="CharacterButtonMenu">
-        
+
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
@@ -24,19 +24,19 @@
                                            Margin="0,0,0,0" />
 
                                 </Border>
-                              
+
                                 <StackPanel Orientation="Vertical">
                                     <Label x:Name="nameLabel"
                                            Content="{TemplateBinding Property=Content}"
                                            Foreground="{Binding Path=DataContext.HomeTheme.TextColor, ElementName = characterControl, UpdateSourceTrigger=PropertyChanged}"
                                            FontFamily="Franklin Gothic Heavy"
-                                           FontSize="21" 
+                                           FontSize="21"
                                            Margin="3"
-                                           Padding="5,5,0,0"/>
-                                    <TextBlock
-                                        FontSize="21"
-                                        Padding="5,5,0,0"
-                                        Margin="3">
+                                           Padding="5,5,0,0" />
+                                    <TextBlock Foreground="{Binding Path=DataContext.HomeTheme.TextColor, ElementName = characterControl, UpdateSourceTrigger=PropertyChanged}"
+                                               FontSize="21"
+                                               Padding="5,5,0,0"
+                                               Margin="3">
                                         <Run Text="{Binding characterRace.RaceName}" />
                                         <Run Text="{Binding characterClass.ClassName}" />
                                     </TextBlock>

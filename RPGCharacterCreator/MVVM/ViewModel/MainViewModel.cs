@@ -126,7 +126,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             statsVM = new StatsViewModel();
             skillsVM = new SkillsViewModel();
             alignmentVM = new AlignmentViewModel();
-            overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM);
+            overviewVM = new OverviewViewModel(bioVM, portraitVM, classVM, raceVM, backgroundVM, statsVM, alignmentVM, skillsVM);
 
             //Read from the xml file the characters created in previous sessions
             XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
@@ -237,6 +237,22 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewAlignment = alignmentVM.AAlignment;
                 overviewVM.OverviewStats = statsVM.CharStats;
 
+                if (classVM.AClass.ClassSkills != null) 
+                {
+                    foreach (string s in classVM.AClass.ClassSkills)
+                    {
+                        overviewVM.OverviewAbilites.Add(s);
+                    }
+                }
+
+                //if (raceVM.ARace.RaceTraits != null)
+                //{
+                //    foreach (string s in raceVM.ARace.RaceTraits)
+                //    {
+                //        overviewVM.OverviewAbilites.Add(s);
+                //    }
+                //}
+
                 CurrentView = overviewVM;
             });
 
@@ -258,13 +274,17 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             SkillsViewCommand = new RelayCommand(o =>
             {
-                if (backgroundVM.ABackground != null) 
+
+                 if (backgroundVM.ABackground != null) 
                 {
+                    
+
                     skillsVM.ChosenBackground = backgroundVM.ABackground;
                     skillsVM.CharSkills.ChosenList = new ObservableCollection<string>(skillsVM.ChosenBackground.BackgroundSkills);
 
                     foreach (var item in skillsVM.CharSkills.ChosenList) { skillsVM.CharSkills.SkillsList.Remove(item); }
                 }
+
 
                     
 

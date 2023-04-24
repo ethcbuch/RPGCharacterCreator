@@ -149,7 +149,25 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             }
         }
 
-        public OverviewViewModel(BioViewModel bioVM, PortraitViewModel portraitVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM, StatsViewModel statsVM, AlignmentViewModel alignmentVM)
+        private Skills _overviewSkills;
+
+        public Skills OverviewSkills
+        {
+            get { return _overviewSkills; }
+            set { _overviewSkills = value; }
+        }
+
+        private List<string> _overviewAbilities = new List<string>();
+
+        public List<string> OverviewAbilites
+        {
+            get { return _overviewAbilities; }
+            set { _overviewAbilities = value; }
+        }
+
+
+
+        public OverviewViewModel(BioViewModel bioVM, PortraitViewModel portraitVM, ClassViewModel classVM, RaceViewModel raceVM, BackgroundViewModel backgroundVM, StatsViewModel statsVM, AlignmentViewModel alignmentVM, SkillsViewModel skillsVM)
         {
             OverviewBio = bioVM.TempBio;
             OverviewPortrait = portraitVM.APortrait;
@@ -158,6 +176,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             OverviewBackground = backgroundVM.ABackground;
             OverviewStats = statsVM.CharStats;
             OverviewAlignment = alignmentVM.AAlignment;
+            OverviewSkills = skillsVM.CharSkills;
+
+            
+            
         }
     }
 }

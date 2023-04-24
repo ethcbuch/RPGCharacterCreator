@@ -1,5 +1,6 @@
 ﻿using RPGCharacterCreator.Core;
 using RPGCharacterCreator.MVVM.Model;
+using System.Windows.Media.Media3D;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -71,49 +72,72 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             KnightButtonCommand = new RelayCommand(o =>
             {
+                Knight knight = new Knight();
                 ABackground = new Knight();
+
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(knight.BackgroundSkills);
                 OnPropertyChanged();
             });
 
             SpyButtonCommand = new RelayCommand(o =>
             {
+                Spy spy = new Spy();
                 ABackground = new Spy();
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(spy.BackgroundSkills);
                 OnPropertyChanged();
             });
 
             SmugglerButtonCommand = new RelayCommand(o =>
             {
+                Smuggler smug = new Smuggler();
                 ABackground = new Smuggler();
+
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(smug.BackgroundSkills);
                 OnPropertyChanged();
             });
 
             SailorButtonCommand = new RelayCommand(o =>
             {
+                Sailor sailor = new Sailor();
                 ABackground = new Sailor();
+
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(sailor.BackgroundSkills);
                 OnPropertyChanged();
             });
 
             SoldierButtonCommand = new RelayCommand(o =>
             {
+                Soldier sold = new Soldier();
                 ABackground = new Soldier();
+
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(sold.BackgroundSkills);
                 OnPropertyChanged();
             });
 
             EntertainerButtonCommand = new RelayCommand(o =>
             {
+                Entertainer enter = new Entertainer();
                 ABackground = new Entertainer();
+
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(enter.BackgroundSkills);
                 OnPropertyChanged();
             });
 
             AcolyteButtonCommand = new RelayCommand(o =>
             {
+                Acolyte acol = new Acolyte();
                 ABackground = new Acolyte();
+
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(acol.BackgroundSkills);
                 OnPropertyChanged();
             });
 
             CriminalButtonCommand = new RelayCommand(o =>
             {
+                Criminal crim = new Criminal();
                 ABackground = new Criminal();
+
+                ABackground.BackgroundSkills = new System.Collections.ObjectModel.ObservableCollection<string>(crim.BackgroundSkills);
                 OnPropertyChanged();
             });
         }

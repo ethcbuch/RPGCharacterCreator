@@ -34,37 +34,37 @@ namespace RPGCharacterCreator.MVVM.View
         private void dexLabel_MouseEnter(object sender, MouseEventArgs e)
         {
             this.statName.Text = "DEXTERITY";
-            this.statDesc.Text = "The measure of how strong your character is.";
+            this.statDesc.Text = "The measure of your character's balance, physical precision, and agility.";
         }
 
         private void intLabel_MouseEnter(object sender, MouseEventArgs e)
         {
             this.statName.Text = "INTELLIGENCE";
-            this.statDesc.Text = "The measure of how strong your character is.";
+            this.statDesc.Text = "The measure of smart your character is.";
         }
 
         private void wisLabel_MouseEnter(object sender, MouseEventArgs e)
         {
             this.statName.Text = "WISDOM";
-            this.statDesc.Text = "The measure of how strong your character is.";
+            this.statDesc.Text = "The measure of how well your character understands the world around them, their intuition and common sense.";
         }
 
         private void conLabel_MouseEnter(object sender, MouseEventArgs e)
         {
             this.statName.Text = "CONSTITUTION";
-            this.statDesc.Text = "The measure of how strong your character is.";
+            this.statDesc.Text = "The measure of how resiliant your character is.";
         }
 
         private void chaLabel_MouseEnter(object sender, MouseEventArgs e)
         {
             this.statName.Text = "CHARISMA";
-            this.statDesc.Text = "The measure of how strong your character is.";
+            this.statDesc.Text = "The measure of how likeable your character is.";
         }
 
         private void lckLabel_MouseEnter(object sender, MouseEventArgs e)
         {
             this.statName.Text = "LUCK";
-            this.statDesc.Text = "The measure of how strong your character is.";
+            this.statDesc.Text = "The measure of your character's ability to always end up in the right situation";
         }
     }
 }

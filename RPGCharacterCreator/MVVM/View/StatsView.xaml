@@ -446,17 +446,20 @@
                    FontSize="36"
                    Margin="10,14,-368,6"
                    Grid.Column="1" />
-        <TextBlock x:Name="statDesc"
-                   Text=""
-                   TextWrapping="Wrap"
-                   Foreground="{Binding StatsTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
-                   FontFamily="Franklin Gothic Heavy"
-                   FontSize="22"
-                   Margin="10,12,-341,20"
-                   Grid.Row="1"
-                   Grid.Column="1"
-                   Height="NaN"
-                   Width="NaN" />
+        <Grid Grid.Column="1"
+              Margin="10,0,-341,35"
+              Grid.Row="1">
+            <TextBlock x:Name="statDesc"
+                       Text=""
+                       TextWrapping="Wrap"
+                       Foreground="{Binding StatsTheme.TextColor, UpdateSourceTrigger=PropertyChanged}"
+                       FontFamily="Franklin Gothic Heavy"
+                       FontSize="21"
+                       Width="600"
+                       Margin="0,0,20,44"
+                       Padding="0,2,0,0" />
+        </Grid>
+        
         <Border BorderBrush="{Binding StatsTheme.BorderColor1, UpdateSourceTrigger=PropertyChanged}"
                 BorderThickness="4"
                 Margin="643,0,3,-10"

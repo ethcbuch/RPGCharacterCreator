@@ -22,7 +22,7 @@ namespace RPGCharacterCreator.MVVM.Model
 			set { _skillsList = value; OnPropertyChanged(); }
 		}
 
-        private ObservableCollection<string> _chosenList { get; set; } = new ObservableCollection<string>();
+        private ObservableCollection<string> _chosenList { get; set; }
 
         public ObservableCollection<string> ChosenList
         {
