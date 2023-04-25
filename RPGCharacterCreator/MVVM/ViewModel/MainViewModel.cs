@@ -237,7 +237,29 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewAlignment = alignmentVM.AAlignment;
                 overviewVM.OverviewStats = statsVM.CharStats;
                 overviewVM.OverviewSkills = skillsVM.CharSkills;
+
+                if (classVM.AClass != overviewVM.OverviewClass || raceVM.ARace != overviewVM.OverviewRace)
+                {
+                    overviewVM.OverviewAbilites.CharAbilites = new ObservableCollection<string>(classVM.AClass.ClassAbilities);
+
+                    if (overviewVM.OverviewRace != null)
+                    {
+                        foreach (string s in raceVM.ARace.RaceTraits)
+                        {
+                            Debug.Write(s);
+                            overviewVM.OverviewAbilites.CharAbilites.Add(s);
+                        }
+
+                    }
+                }
+
+
                 overviewVM.OverviewAbilites.CharAbilites = classVM.AClass.ClassAbilities;
+                foreach (string s in raceVM.ARace.RaceTraits)
+                {
+                    Debug.Write(s);
+                    overviewVM.OverviewAbilites.CharAbilites.Add(s);
+                }
 
                 CurrentView = overviewVM;
             });
