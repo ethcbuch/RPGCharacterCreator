@@ -2,6 +2,7 @@
 using RPGCharacterCreator.MVVM.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -157,9 +158,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             set { _overviewSkills = value; }
         }
 
-        private List<string> _overviewAbilities = new List<string>();
+        private ObservableCollection<string> _overviewAbilities = new ObservableCollection<string>();
 
-        public List<string> OverviewAbilites
+        public ObservableCollection<string> OverviewAbilites
         {
             get { return _overviewAbilities; }
             set { _overviewAbilities = value; }
@@ -177,7 +178,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             OverviewStats = statsVM.CharStats;
             OverviewAlignment = alignmentVM.AAlignment;
             OverviewSkills = skillsVM.CharSkills;
-
+            
             
             
         }

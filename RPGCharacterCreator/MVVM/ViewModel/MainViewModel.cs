@@ -236,22 +236,30 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewBackground = backgroundVM.ABackground;
                 overviewVM.OverviewAlignment = alignmentVM.AAlignment;
                 overviewVM.OverviewStats = statsVM.CharStats;
+                overviewVM.OverviewSkills = skillsVM.CharSkills;
 
-                if (classVM.AClass.ClassSkills != null) 
+                if (classVM.AClass != overviewVM.OverviewClass || raceVM.ARace != overviewVM.OverviewRace)
                 {
-                    foreach (string s in classVM.AClass.ClassSkills)
+                    overviewVM.OverviewAbilites = new ObservableCollection<string>(classVM.AClass.ClassAbilities);
+
+                    if(overviewVM.OverviewRace != null)
                     {
-                        overviewVM.OverviewAbilites.Add(s);
+                        foreach(string s in raceVM.ARace.RaceTraits) 
+                        { 
+                            Debug.Write(s);
+                            overviewVM.OverviewAbilites.Add(s);
+                        }
+                        
                     }
                 }
 
-                //if (raceVM.ARace.RaceTraits != null)
-                //{
-                //    foreach (string s in raceVM.ARace.RaceTraits)
-                //    {
-                //        overviewVM.OverviewAbilites.Add(s);
-                //    }
-                //}
+
+                overviewVM.OverviewAbilites = classVM.AClass.ClassAbilities;
+                foreach (string s in raceVM.ARace.RaceTraits)
+                {
+                    Debug.Write(s);
+                    overviewVM.OverviewAbilites.Add(s);
+                }
 
                 CurrentView = overviewVM;
             });
@@ -274,19 +282,24 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             SkillsViewCommand = new RelayCommand(o =>
             {
-
-                 if (backgroundVM.ABackground != null) 
+               
+                if (backgroundVM.ABackground != null)
                 {
-                    
+                    //if the background changes resets the skills menu.
+                    if (backgroundVM.ABackground != skillsVM.ChosenBackground)
+                    {
+                        skillsVM.CharSkills = new Skills();
+                        skillsVM.CharSkills.ChosenList = new ObservableCollection<string>(backgroundVM.ABackground.BackgroundSkills);
 
-                    skillsVM.ChosenBackground = backgroundVM.ABackground;
-                    skillsVM.CharSkills.ChosenList = new ObservableCollection<string>(skillsVM.ChosenBackground.BackgroundSkills);
+                        foreach (var item in skillsVM.CharSkills.ChosenList) { skillsVM.CharSkills.SkillsList.Remove(item); }
+                    }
 
-                    foreach (var item in skillsVM.CharSkills.ChosenList) { skillsVM.CharSkills.SkillsList.Remove(item); }
                 }
 
+                skillsVM.ChosenBackground = backgroundVM.ABackground;
 
-                    
+
+
 
                 CurrentView = skillsVM;
             });

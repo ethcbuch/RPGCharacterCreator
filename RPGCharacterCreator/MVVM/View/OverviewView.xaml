@@ -405,7 +405,7 @@
                                    Height="28"
                                    Width="260"
                                    Margin="5,0,4.2,0"
-                                   Padding="-40,5,0,0" />
+                                   Padding="0,5,0,0" />
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
 
@@ -430,8 +430,10 @@
                     Margin="0,0,260,155" />
             <ItemsControl x:Name="abilities"
                           Background="Transparent"
-                          ItemsSource="{Binding OverviewAbilities, UpdateSourceTrigger=PropertyChanged}"
-                          Margin="0,32,0,0">
+                          ItemsSource="{Binding OverviewAbilites, UpdateSourceTrigger=PropertyChanged}"
+                          Margin="0,32,0,0"
+                          Height="148"
+                          VerticalAlignment="Top">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock FontFamily="Franklin Gothic Medium"
@@ -441,7 +443,7 @@
                                    Height="28"
                                    Width="260"
                                    Margin="5,0,4.2,0"
-                                   Padding="-40,5,0,0" />
+                                   Padding="0,5,0,0" />
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

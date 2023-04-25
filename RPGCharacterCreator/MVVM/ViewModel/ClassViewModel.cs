@@ -1,5 +1,6 @@
 ﻿using RPGCharacterCreator.Core;
 using RPGCharacterCreator.MVVM.Model;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
@@ -50,9 +51,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             WarriorButtonCommand = new RelayCommand(o =>
             {
+                Warrior warrior = new Warrior();
                 AClass = new Warrior();
 
-                OnPropertyChanged();
+                AClass.ClassAbilities = new ObservableCollection<string>(warrior.ClassAbilities);
             });
 
             RogueButtonCommand = new RelayCommand(o =>

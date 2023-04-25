@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RPGCharacterCreator.MVVM.Model;
+using System.Collections.ObjectModel;
 
 namespace RPGCharacterCreator.MVVM.ViewModel
 {
@@ -47,8 +48,10 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             HumanButtonCommand = new RelayCommand(o =>
             {
+                Human human = new Human();
                 ARace = new Human();
-                OnPropertyChanged();
+
+                ARace.RaceTraits = new ObservableCollection<string>(human.RaceTraits);
             });
 
             DwarfButtonCommand = new RelayCommand(o =>
