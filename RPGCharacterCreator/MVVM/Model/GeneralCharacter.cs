@@ -1,6 +1,7 @@
 ﻿using RPGCharacterCreator.Core;
 using RPGCharacterCreator.MVVM.Model;
 using RPGCharacterCreator.MVVM.View;
+using System.Collections.ObjectModel;
 
 namespace RPGCharacterCreator
 {
@@ -14,8 +15,6 @@ namespace RPGCharacterCreator
         public Skills characterSkills { get; set; } 
         public Stats characterStats { get; set; }
         public Alignment characterAlignment { get; set; }
-        private int _characterNumber { get; set; }
-        public int CharacterNumber { get { return _characterNumber; } set { _characterNumber = value; } }
-
+        public Abilites characterAbilites { get; set; }
     }
 }

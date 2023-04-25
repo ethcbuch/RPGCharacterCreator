@@ -20,6 +20,7 @@
                 <ResourceDictionary Source="Theme/FinalButtonTheme.xaml" />
                 <ResourceDictionary Source="Theme/CharacterButtonTheme.xaml" />
                 <ResourceDictionary Source="Theme/PortraitButtonTheme.xaml" />
+                <ResourceDictionary Source="Theme/SkillsButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <BooleanToVisibilityConverter x:Key="BoolToVis" />

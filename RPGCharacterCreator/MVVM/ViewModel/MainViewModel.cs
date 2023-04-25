@@ -131,7 +131,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             //Read from the xml file the characters created in previous sessions
             XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<GeneralCharacter>));
 
-            if (File.Exists("characters.xml")) 
+            if (File.Exists("characters.xml"))
             {
                 using (StreamReader rd = new StreamReader("characters.xml"))
                 {
@@ -142,11 +142,11 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             {
                 XmlWriter xmlWriter = XmlWriter.Create("characters.xml");
             }
-            
+
 
             characterCount = homeVM.CharCollection.Count;
 
-            if (characterCount > 0) 
+            if (characterCount > 0)
             {
                 homeVM.LabelVis = Visibility.Hidden;
             }
@@ -191,7 +191,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             //lambda is ready to be called when button is clicked
             HomeViewCommand = new RelayCommand(o =>
-            { 
+            {
 
                 CurrentView = homeVM;
                 bioVM.TempBio = new Bio();
@@ -216,9 +216,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 CurrentView = portraitVM;
             });
 
-            RaceViewCommand = new RelayCommand(o => 
+            RaceViewCommand = new RelayCommand(o =>
             {
-                CurrentView = raceVM; 
+                CurrentView = raceVM;
             });
 
             ClassViewCommand = new RelayCommand(o =>
@@ -237,29 +237,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewAlignment = alignmentVM.AAlignment;
                 overviewVM.OverviewStats = statsVM.CharStats;
                 overviewVM.OverviewSkills = skillsVM.CharSkills;
-
-                if (classVM.AClass != overviewVM.OverviewClass || raceVM.ARace != overviewVM.OverviewRace)
-                {
-                    overviewVM.OverviewAbilites = new ObservableCollection<string>(classVM.AClass.ClassAbilities);
-
-                    if(overviewVM.OverviewRace != null)
-                    {
-                        foreach(string s in raceVM.ARace.RaceTraits) 
-                        { 
-                            Debug.Write(s);
-                            overviewVM.OverviewAbilites.Add(s);
-                        }
-                        
-                    }
-                }
-
-
-                overviewVM.OverviewAbilites = classVM.AClass.ClassAbilities;
-                foreach (string s in raceVM.ARace.RaceTraits)
-                {
-                    Debug.Write(s);
-                    overviewVM.OverviewAbilites.Add(s);
-                }
+                overviewVM.OverviewAbilites.CharAbilites = classVM.AClass.ClassAbilities;
 
                 CurrentView = overviewVM;
             });
@@ -282,7 +260,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             SkillsViewCommand = new RelayCommand(o =>
             {
-               
+
                 if (backgroundVM.ABackground != null)
                 {
                     //if the background changes resets the skills menu.
@@ -326,7 +304,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                     backgroundVM.ABackground = homeVM.CharCollection[homeVM.currentCharacterIndex].characterBackground;
                     statsVM.CharStats = homeVM.CharCollection[homeVM.currentCharacterIndex].characterStats;
                     alignmentVM.AAlignment = homeVM.CharCollection[homeVM.currentCharacterIndex].characterAlignment;
-
+                    skillsVM.CharSkills = homeVM.CharCollection[homeVM.currentCharacterIndex].characterSkills;
+                    overviewVM.OverviewAbilites = homeVM.CharCollection[homeVM.currentCharacterIndex].characterAbilites;
 
                     overviewVM.FinishVis = Visibility.Hidden;
                     overviewVM.EditVis = Visibility.Visible;
@@ -339,7 +318,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             overviewVM.FinalizeButtonCommand = new RelayCommand(o =>
             {
-                homeVM.CharCollection.Add(director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, overviewVM.OverviewStats, overviewVM.OverviewAlignment, characterCount));
+                homeVM.CharCollection.Add(director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, overviewVM.OverviewStats, overviewVM.OverviewAlignment, overviewVM.OverviewSkills, overviewVM.OverviewAbilites));
 
                 characterCount++;
                 director.getBuilder().reset();
@@ -352,6 +331,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 overviewVM.OverviewBackground = new Model.Background();
                 overviewVM.OverviewStats = new Stats();
                 overviewVM.OverviewAlignment = new Alignment();
+                overviewVM.OverviewSkills = new Skills();
+                overviewVM.OverviewAbilites = new Abilites();
 
 
                 bioVM.TempBio = new Bio();
@@ -361,6 +342,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 backgroundVM.ABackground = new Model.Background();
                 statsVM.CharStats = new Stats();
                 alignmentVM.AAlignment = new Alignment();
+                skillsVM.CharSkills = new Skills();
+
 
                 homeVM.LabelVis = Visibility.Hidden;
 
@@ -372,38 +355,42 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             overviewVM.FinalizeEditButtonCommand = new RelayCommand(o =>
             {
-            homeVM.CharCollection[homeVM.currentCharacterIndex] = director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, overviewVM.OverviewStats, overviewVM.OverviewAlignment, homeVM.currentCharacterIndex);
+                homeVM.CharCollection[homeVM.currentCharacterIndex] = director.makeGeneralCharacter(builder, overviewVM.OverviewBio, overviewVM.OverviewPortrait, overviewVM.OverviewClass, overviewVM.OverviewRace, overviewVM.OverviewBackground, overviewVM.OverviewStats, overviewVM.OverviewAlignment, overviewVM.OverviewSkills, overviewVM.OverviewAbilites);
 
-            director.getBuilder().reset();
+                director.getBuilder().reset();
 
-            //resets everything for next character
-            overviewVM.OverviewBio = new Bio();
-            overviewVM.OverviewPortrait = new Portrait();
-            overviewVM.OverviewClass = new Class();
-            overviewVM.OverviewRace = new Race();
-            overviewVM.OverviewBackground = new Model.Background();
-            overviewVM.OverviewStats = new Stats();
-            overviewVM.OverviewAlignment = new Alignment();
+                //resets everything for next character
+                overviewVM.OverviewBio = new Bio();
+                overviewVM.OverviewPortrait = new Portrait();
+                overviewVM.OverviewClass = new Class();
+                overviewVM.OverviewRace = new Race();
+                overviewVM.OverviewBackground = new Model.Background();
+                overviewVM.OverviewStats = new Stats();
+                overviewVM.OverviewAlignment = new Alignment();
+                overviewVM.OverviewSkills = new Skills();
+                overviewVM.OverviewAbilites = new Abilites();
 
 
-            bioVM.TempBio = new Bio();
-            portraitVM.APortrait = new Portrait();
-            classVM.AClass = new Class();
-            raceVM.ARace = new Race();
-            backgroundVM.ABackground = new Model.Background();
-            statsVM.CharStats = new Stats();
-            alignmentVM.AAlignment = new Alignment();
+                bioVM.TempBio = new Bio();
+                portraitVM.APortrait = new Portrait();
+                classVM.AClass = new Class();
+                raceVM.ARace = new Race();
+                backgroundVM.ABackground = new Model.Background();
+                statsVM.CharStats = new Stats();
+                alignmentVM.AAlignment = new Alignment();
+                skillsVM.CharSkills = new Skills();
 
-            overviewVM.FinishVis = Visibility.Visible;
-            overviewVM.EditVis = Visibility.Hidden;
 
-            homeVM.LabelVis = Visibility.Hidden;
+                overviewVM.FinishVis = Visibility.Visible;
+                overviewVM.EditVis = Visibility.Hidden;
 
-            CurrentView = homeVM;
+                homeVM.LabelVis = Visibility.Hidden;
 
-            ButtCancel = false;
-            ButtChecked = false;
-        });
+                CurrentView = homeVM;
+
+                ButtCancel = false;
+                ButtChecked = false;
+            });
 
 
             CloseCommand = new RelayCommand(o =>
@@ -417,9 +404,9 @@ namespace RPGCharacterCreator.MVVM.ViewModel
                 System.Windows.Application.Current.Shutdown();
             });
 
-           
 
-            
+
+
 
         }
     }

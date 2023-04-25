@@ -28,7 +28,7 @@ namespace RPGCharacterCreator
         {
             get; set;
         }
-        private ObservableCollection<string> _classAbilities
+        private ObservableCollection<string> _classAbilities 
         {
             get; set;
         }

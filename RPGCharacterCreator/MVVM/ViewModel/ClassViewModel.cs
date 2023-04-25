@@ -59,58 +59,76 @@ namespace RPGCharacterCreator.MVVM.ViewModel
 
             RogueButtonCommand = new RelayCommand(o =>
             {
+                Rogue rogue = new Rogue();
                 AClass = new Rogue();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(rogue.ClassAbilities);
             });
 
             //check
 
             PaladinButtonCommand = new RelayCommand(o =>
             {
+                Paladin paladin = new Paladin();
                 AClass = new Paladin();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(paladin.ClassAbilities);
             });
 
             RangerButtonCommand = new RelayCommand(o =>
             {
+                Ranger ranger = new Ranger();
                 AClass = new Ranger();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(ranger.ClassAbilities);
             });
 
             WizardButtonCommand = new RelayCommand(o =>
             {
+                Wizard wizard = new Wizard();
                 AClass = new Wizard();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(wizard.ClassAbilities);
             });
 
             BardButtonCommand = new RelayCommand(o =>
             {
+                Bard bard = new Bard();
                 AClass = new Bard();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(bard.ClassAbilities);
             });
 
             BarbarianButtonCommand = new RelayCommand(o =>
             {
+                Barbarian barbarian = new Barbarian();
                 AClass = new Barbarian();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(barbarian.ClassAbilities);
             });
 
             MonkButtonCommand = new RelayCommand(o =>
             {
+                Monk monk = new Monk();
                 AClass = new Monk();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(monk.ClassAbilities);
             });
 
             ClericButtonCommand = new RelayCommand(o =>
             {
+                Cleric cleric = new Cleric();
                 AClass = new Cleric();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(cleric.ClassAbilities);
             });
 
             DruidButtonCommand = new RelayCommand(o =>
             {
+                Druid druid = new Druid();
                 AClass = new Druid();
-                OnPropertyChanged();
+
+                AClass.ClassAbilities = new ObservableCollection<string>(druid.ClassAbilities);
             });
 
 

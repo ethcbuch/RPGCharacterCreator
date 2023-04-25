@@ -18,7 +18,7 @@ public class Race : ObservableObject
 {
     private string _raceName { get; set; }
     private string _raceDesciption { get; set; }
-    private ObservableCollection<string> _raceTraits { get; set; }
+    private ObservableCollection<string> _raceTraits { get; set; } = new ObservableCollection<string>();
 
     public  string RaceName
     {

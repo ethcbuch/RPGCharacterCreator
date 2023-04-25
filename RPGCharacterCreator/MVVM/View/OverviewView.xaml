@@ -430,7 +430,7 @@
                     Margin="0,0,260,155" />
             <ItemsControl x:Name="abilities"
                           Background="Transparent"
-                          ItemsSource="{Binding OverviewAbilites, UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding OverviewAbilites.CharAbilites, UpdateSourceTrigger=PropertyChanged}"
                           Margin="0,32,0,0"
                           Height="148"
                           VerticalAlignment="Top">

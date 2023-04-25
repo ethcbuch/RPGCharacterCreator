@@ -158,9 +158,8 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             set { _overviewSkills = value; }
         }
 
-        private ObservableCollection<string> _overviewAbilities = new ObservableCollection<string>();
-
-        public ObservableCollection<string> OverviewAbilites
+        private Abilites _overviewAbilities;
+        public Abilites OverviewAbilites
         {
             get { return _overviewAbilities; }
             set { _overviewAbilities = value; }
@@ -178,6 +177,7 @@ namespace RPGCharacterCreator.MVVM.ViewModel
             OverviewStats = statsVM.CharStats;
             OverviewAlignment = alignmentVM.AAlignment;
             OverviewSkills = skillsVM.CharSkills;
+            OverviewAbilites = new Abilites();
             
             
             

@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Core\MenuItemExtensions.cs" />
+    <Compile Include="MVVM\Model\Abilites.cs" />
     <Compile Include="MVVM\Model\Alignment.cs" />
     <Compile Include="MVVM\Model\Background.cs" />
     <Compile Include="MVVM\Model\Bio.cs" />
@@ -186,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\PortraitButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\SkillsButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,17 +23,17 @@ namespace RPGCharacterCreator.MVVM.Model
             return charBuilder;
         }
 
-        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Portrait aPortrait, Class aClass, Race aRace, Background aBackground, Stats CharStats, Alignment aAlignment, int CharNumber)
+        public GeneralCharacter makeGeneralCharacter(CharacterBuilder aCharacterBuilder, Bio aBio, Portrait aPortrait, Class aClass, Race aRace, Background aBackground, Stats CharStats, Alignment aAlignment, Skills CharSkills, Abilites CharAbilites)
         {
             aCharacterBuilder.buildBio(aBio);
             aCharacterBuilder.buildPortrait(aPortrait);
             aCharacterBuilder.buildClass(aClass);
             aCharacterBuilder.buildRace(aRace);
             aCharacterBuilder.buildBackground(aBackground);
-            aCharacterBuilder.setNumber(CharNumber);
             aCharacterBuilder.buildAlignment(aAlignment);
             aCharacterBuilder.buildStats(CharStats);
-
+            aCharacterBuilder.buildSkills(CharSkills);
+            aCharacterBuilder.buildAbilities(CharAbilites);
             return aCharacterBuilder.GetCharacter();
 
         }
